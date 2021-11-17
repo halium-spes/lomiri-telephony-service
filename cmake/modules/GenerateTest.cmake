@@ -20,6 +20,9 @@
 #
 
 include(CMakeParseArguments)
+find_program(DCONF_SERVICE dconf-service
+             PATHS /usr/local/libexec /usr/local/lib/dconf /usr/libexec /usr/lib/dconf
+             NO_DEFAULT_PATH)
 find_program(DBUS_RUNNER dbus-test-runner)
 
 function(generate_test TESTNAME)
@@ -110,7 +113,7 @@ function(generate_telepathy_test TESTNAME)
 
     set(TASKS --task gnome-keyring-daemon -p -r -p -d --task-name gnome-keyring --ignore-return
               --task ${CMAKE_BINARY_DIR}/tests/common/NotificationsMock --task-name notifications --ignore-return
-              --task /usr/lib/dconf/dconf-service --task-name dconf-service --ignore-return
+              --task "${DCONF_SERVICE}" --task-name dconf-service --ignore-return
               --task dconf -p write -p /org/gnome/empathy/use-conn -p false --task-name dconf-write --wait-for ca.desrt.dconf --ignore-return
               --task /usr/lib/telepathy/mission-control-5 --task-name mission-control --wait-for ca.desrt.dconf --ignore-return
               --task ${CMAKE_BINARY_DIR}/tests/common/mock/telepathy-mock --task-name telepathy-mock --wait-for org.freedesktop.Telepathy.MissionControl5 --ignore-return
