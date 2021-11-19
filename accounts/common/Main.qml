@@ -20,7 +20,7 @@
  */
 
 import QtQuick 2.0
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import Ubuntu.OnlineAccounts.Plugin 1.0
 
 Item {
@@ -71,7 +71,7 @@ Item {
     Button {
         id: btnConfirm
         text: i18n.tr("Continue")
-        color: UbuntuColors.orange
+        color: LomiriColors.orange
         anchors {
             left: parent.left
             right: parent.right

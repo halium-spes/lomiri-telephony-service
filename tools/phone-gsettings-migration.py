@@ -33,7 +33,7 @@ dict = {}
 
 proxy = dbus.SystemBus().get_object('org.freedesktop.Accounts','/org/freedesktop/Accounts/User%d' % os.getuid())
 properties_manager = dbus.Interface(proxy, 'org.freedesktop.DBus.Properties')
-currentSimNames = properties_manager.Get('com.ubuntu.touch.AccountsService.Phone', 'SimNames')
+currentSimNames = properties_manager.Get('com.lomiri.touch.AccountsService.Phone', 'SimNames')
 
 print("Migrating gsettings to Accounts Service")
 
@@ -43,10 +43,10 @@ currentDefaultSimForCalls = gsettings.get_string("default-sim-for-calls")
 currentDefaultSimForMessages = gsettings.get_string("default-sim-for-messages")
 currentMmsGroupChatEnabled = gsettings.get_boolean("mms-group-chat-enabled")
 
-properties_manager.Set('com.ubuntu.touch.AccountsService.Phone', 'DefaultSimForCalls', dbus.String(currentDefaultSimForCalls))
-properties_manager.Set('com.ubuntu.touch.AccountsService.Phone', 'DefaultSimForMessages', dbus.String(currentDefaultSimForMessages))
-properties_manager.Set('com.ubuntu.touch.AccountsService.Phone', 'MmsGroupChatEnabled', dbus.Boolean(currentMmsGroupChatEnabled))
+properties_manager.Set('com.lomiri.touch.AccountsService.Phone', 'DefaultSimForCalls', dbus.String(currentDefaultSimForCalls))
+properties_manager.Set('com.lomiri.touch.AccountsService.Phone', 'DefaultSimForMessages', dbus.String(currentDefaultSimForMessages))
+properties_manager.Set('com.lomiri.touch.AccountsService.Phone', 'MmsGroupChatEnabled', dbus.Boolean(currentMmsGroupChatEnabled))
 
 if len(currentSimNames) > 0:
-    properties_manager.Set('com.ubuntu.touch.AccountsService.Phone', 'SimNames', dbus.Dictionary(currentSimNames))
+    properties_manager.Set('com.lomiri.touch.AccountsService.Phone', 'SimNames', dbus.Dictionary(currentSimNames))
 

@@ -664,9 +664,9 @@ void TelepathyHelper::onPhoneSettingsChanged(const QString &key)
 
 void TelepathyHelper::unlockSimCards() const
 {
-    QDBusInterface connectivityIface("com.ubuntu.connectivity1",
-                                    "/com/ubuntu/connectivity1/Private",
-                                    "com.ubuntu.connectivity1.Private");
+    QDBusInterface connectivityIface("com.lomiri.connectivity1",
+                                    "/com/lomiri/connectivity1/Private",
+                                    "com.lomiri.connectivity1.Private");
     connectivityIface.asyncCall("UnlockAllModems");
 }
 

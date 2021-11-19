@@ -130,7 +130,7 @@ bool GreeterContacts::silentMode()
 {
     QMutexLocker locker(&mMutex);
     if (!mSilentMode.isValid()) {
-        mSilentMode = getUserValue("com.ubuntu.touch.AccountsService.Sound", "SilentMode");
+        mSilentMode = getUserValue("com.lomiri.touch.AccountsService.Sound", "SilentMode");
     }
     return mSilentMode.toBool();
 }
@@ -139,7 +139,7 @@ QString GreeterContacts::incomingCallSound()
 {
     QMutexLocker locker(&mMutex);
     if (!mIncomingCallSound.isValid()) {
-        mIncomingCallSound = getUserValue("com.ubuntu.touch.AccountsService.Sound", "IncomingCallSound");
+        mIncomingCallSound = getUserValue("com.lomiri.touch.AccountsService.Sound", "IncomingCallSound");
     }
     return mIncomingCallSound.toString();
 }
@@ -148,7 +148,7 @@ QString GreeterContacts::incomingMessageSound()
 {
     QMutexLocker locker(&mMutex);
     if (!mIncomingMessageSound.isValid()) {
-        mIncomingMessageSound = getUserValue("com.ubuntu.touch.AccountsService.Sound", "IncomingMessageSound");
+        mIncomingMessageSound = getUserValue("com.lomiri.touch.AccountsService.Sound", "IncomingMessageSound");
     }
     return mIncomingMessageSound.toString();
 }
@@ -157,11 +157,11 @@ bool GreeterContacts::incomingCallVibrate()
 {
     if (silentMode()) {
         QMutexLocker locker(&mMutex);
-        return getUserValue("com.ubuntu.touch.AccountsService.Sound", "IncomingCallVibrateSilentMode").toBool();
+        return getUserValue("com.lomiri.touch.AccountsService.Sound", "IncomingCallVibrateSilentMode").toBool();
     }
     QMutexLocker locker(&mMutex);
     if (!mIncomingCallVibrate.isValid()) {
-        mIncomingCallVibrate = getUserValue("com.ubuntu.touch.AccountsService.Sound", "IncomingCallVibrate");
+        mIncomingCallVibrate = getUserValue("com.lomiri.touch.AccountsService.Sound", "IncomingCallVibrate");
     }
     return mIncomingCallVibrate.toBool();
 }
@@ -170,11 +170,11 @@ bool GreeterContacts::incomingMessageVibrate()
 {
     if (silentMode()) {
         QMutexLocker locker(&mMutex);
-        return getUserValue("com.ubuntu.touch.AccountsService.Sound", "IncomingMessageVibrateSilentMode").toBool();
+        return getUserValue("com.lomiri.touch.AccountsService.Sound", "IncomingMessageVibrateSilentMode").toBool();
     }
     QMutexLocker locker(&mMutex);
     if (!mIncomingMessageVibrate.isValid()) {
-        mIncomingMessageVibrate = getUserValue("com.ubuntu.touch.AccountsService.Sound", "IncomingMessageVibrate");
+        mIncomingMessageVibrate = getUserValue("com.lomiri.touch.AccountsService.Sound", "IncomingMessageVibrate");
     }
     return mIncomingMessageVibrate.toBool();
 }
@@ -183,7 +183,7 @@ bool GreeterContacts::dialpadSoundsEnabled()
 {
     QMutexLocker locker(&mMutex);
     if (!mDialpadSoundsEnabled.isValid()) {
-        mDialpadSoundsEnabled = getUserValue("com.ubuntu.touch.AccountsService.Sound", "DialpadSoundsEnabled");
+        mDialpadSoundsEnabled = getUserValue("com.lomiri.touch.AccountsService.Sound", "DialpadSoundsEnabled");
     }
     return mDialpadSoundsEnabled.toBool();
 }
@@ -192,7 +192,7 @@ bool GreeterContacts::mmsEnabled()
 {
     QMutexLocker locker(&mMutex);
     if (!mMmsEnabled.isValid()) {
-        mMmsEnabled = getUserValue("com.ubuntu.touch.AccountsService.Phone", "MmsEnabled");
+        mMmsEnabled = getUserValue("com.lomiri.touch.AccountsService.Phone", "MmsEnabled");
     }
     return mMmsEnabled.toBool();
 }
@@ -201,7 +201,7 @@ QString GreeterContacts::defaultSimForCalls()
 {
     QMutexLocker locker(&mMutex);
     if (!mDefaultSimForCalls.isValid()) {
-        mDefaultSimForCalls = getUserValue("com.ubuntu.touch.AccountsService.Phone", "DefaultSimForCalls");
+        mDefaultSimForCalls = getUserValue("com.lomiri.touch.AccountsService.Phone", "DefaultSimForCalls");
     }
     return mDefaultSimForCalls.toString();
 }
@@ -210,7 +210,7 @@ QString GreeterContacts::defaultSimForMessages()
 {
     QMutexLocker locker(&mMutex);
     if (!mDefaultSimForMessages.isValid()) {
-        mDefaultSimForMessages = getUserValue("com.ubuntu.touch.AccountsService.Phone", "DefaultSimForMessages");
+        mDefaultSimForMessages = getUserValue("com.lomiri.touch.AccountsService.Phone", "DefaultSimForMessages");
     }
     return mDefaultSimForMessages.toString();
 }
@@ -220,7 +220,7 @@ QVariantMap GreeterContacts::simNames()
     QMutexLocker locker(&mMutex);
     QVariantMap namesAsVariantMap;
     if (!mSimNames.isValid()) {
-        QVariant value = getUserValue("com.ubuntu.touch.AccountsService.Phone", "SimNames");
+        QVariant value = getUserValue("com.lomiri.touch.AccountsService.Phone", "SimNames");
         // the signature is a{ss} instead of a{sv}
         QMap<QString, QString> names = qdbus_cast<QMap<QString, QString> >(value);
         QMapIterator<QString, QString> i(names);
@@ -263,7 +263,7 @@ void GreeterContacts::setMmsEnabled(bool enabled)
                          "/org/freedesktop/Accounts/User" + uid,
                          "org.freedesktop.DBus.Properties",
                          QDBusConnection::AS_BUSNAME());
-    iface.asyncCall("Set", "com.ubuntu.touch.AccountsService.Phone", "MmsEnabled", QVariant::fromValue(QDBusVariant(enabled)));
+    iface.asyncCall("Set", "com.lomiri.touch.AccountsService.Phone", "MmsEnabled", QVariant::fromValue(QDBusVariant(enabled)));
 }
 
 void GreeterContacts::setDefaultSimForMessages(const QString &objPath)
@@ -273,7 +273,7 @@ void GreeterContacts::setDefaultSimForMessages(const QString &objPath)
                          "/org/freedesktop/Accounts/User" + uid,
                          "org.freedesktop.DBus.Properties",
                          QDBusConnection::AS_BUSNAME());
-    iface.asyncCall("Set", "com.ubuntu.touch.AccountsService.Phone", "DefaultSimForMessages", QVariant::fromValue(QDBusVariant(objPath)));
+    iface.asyncCall("Set", "com.lomiri.touch.AccountsService.Phone", "DefaultSimForMessages", QVariant::fromValue(QDBusVariant(objPath)));
 }
 
 void GreeterContacts::setDefaultSimForCalls(const QString &objPath)
@@ -283,7 +283,7 @@ void GreeterContacts::setDefaultSimForCalls(const QString &objPath)
                          "/org/freedesktop/Accounts/User" + uid,
                          "org.freedesktop.DBus.Properties",
                          QDBusConnection::AS_BUSNAME());
-    iface.asyncCall("Set", "com.ubuntu.touch.AccountsService.Phone", "DefaultSimForCalls", QVariant::fromValue(QDBusVariant(objPath)));
+    iface.asyncCall("Set", "com.lomiri.touch.AccountsService.Phone", "DefaultSimForCalls", QVariant::fromValue(QDBusVariant(objPath)));
 }
 
 void GreeterContacts::setSimNames(const QVariantMap &simNames)
@@ -301,7 +301,7 @@ void GreeterContacts::setSimNames(const QVariantMap &simNames)
                          "/org/freedesktop/Accounts/User" + uid,
                          "org.freedesktop.DBus.Properties",
                          QDBusConnection::AS_BUSNAME());
-    iface.asyncCall("Set", "com.ubuntu.touch.AccountsService.Phone", "SimNames", QVariant::fromValue(QDBusVariant(QVariant::fromValue(newSimNames))));
+    iface.asyncCall("Set", "com.lomiri.touch.AccountsService.Phone", "SimNames", QVariant::fromValue(QDBusVariant(QVariant::fromValue(newSimNames))));
 }
 
 void GreeterContacts::setDialpadSoundsEnabled(bool enabled)
@@ -311,7 +311,7 @@ void GreeterContacts::setDialpadSoundsEnabled(bool enabled)
                          "/org/freedesktop/Accounts/User" + uid,
                          "org.freedesktop.DBus.Properties",
                          QDBusConnection::AS_BUSNAME());
-    iface.asyncCall("Set", "com.ubuntu.touch.AccountsService.Sound", "DialpadSoundsEnabled", QVariant::fromValue(QDBusVariant(enabled)));
+    iface.asyncCall("Set", "com.lomiri.touch.AccountsService.Sound", "DialpadSoundsEnabled", QVariant::fromValue(QDBusVariant(enabled)));
 }
 
 QVariant GreeterContacts::getUserValue(const QString &interface, const QString &propName)
@@ -353,7 +353,7 @@ void GreeterContacts::accountsPropertiesChanged(const QString &interface,
         } else if (invalidated.contains("CurrentContact")) {
             queryContact(message.path());
         }
-    } else if (interface == "com.ubuntu.touch.AccountsService.Sound" &&
+    } else if (interface == "com.lomiri.touch.AccountsService.Sound" &&
                message.path() == mActiveUser) {
         checkUpdatedValue(changed, invalidated, "SilentMode", mSilentMode);
         checkUpdatedValue(changed, invalidated, "IncomingCallSound", mIncomingCallSound);
@@ -367,7 +367,7 @@ void GreeterContacts::accountsPropertiesChanged(const QString &interface,
         Q_FOREACH(const QString &key, invalidated) {
             Q_EMIT soundSettingsChanged(key);
         }
-    } else if (interface == "com.ubuntu.touch.AccountsService.Phone" &&
+    } else if (interface == "com.lomiri.touch.AccountsService.Phone" &&
                message.path() == mActiveUser) {
         checkUpdatedValue(changed, invalidated, "DefaultSimForCalls", mDefaultSimForCalls);
         checkUpdatedValue(changed, invalidated, "DefaultSimForMessages", mDefaultSimForMessages);
