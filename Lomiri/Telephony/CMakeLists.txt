@@ -25,7 +25,7 @@ target_link_libraries(telephonyservice-qml
 enable_coverage(telephonyservice-qml)
 
 configure_file(qmldir.in ${CMAKE_CURRENT_BINARY_DIR}/qmldir)
-set(PLUGIN_DIR ${QT_INSTALL_QML}/Ubuntu/Telephony)
+set(PLUGIN_DIR ${QT_INSTALL_QML}/Lomiri/Telephony)
 install(TARGETS telephonyservice-qml DESTINATION ${PLUGIN_DIR})
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/qmldir DESTINATION ${PLUGIN_DIR})
 

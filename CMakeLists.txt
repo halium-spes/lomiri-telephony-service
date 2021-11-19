@@ -108,7 +108,7 @@ set(ASSETS_DIR assets)
 install(DIRECTORY ${ASSETS_DIR} DESTINATION ${TELEPHONY_SERVICE_DIR})
 
 add_subdirectory(libtelephonyservice)
-add_subdirectory(Ubuntu)
+add_subdirectory(Lomiri)
 add_subdirectory(handler)
 add_subdirectory(tools)
 add_subdirectory(icons)

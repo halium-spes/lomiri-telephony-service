@@ -1,4 +1,4 @@
-module Ubuntu.Telephony.PhoneNumber
+module Lomiri.Telephony.PhoneNumber
 plugin telephonyservice-phonenumber-qml
 
 PhoneNumberField 0.1 PhoneNumberField.qml

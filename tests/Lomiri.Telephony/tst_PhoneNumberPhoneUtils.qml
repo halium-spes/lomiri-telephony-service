@@ -18,7 +18,7 @@
 
 import QtQuick 2.2
 import QtTest 1.0
-import Ubuntu.Telephony.PhoneNumber 0.1 as PhoneNumber
+import Lomiri.Telephony.PhoneNumber 0.1 as PhoneNumber
 
 TestCase {
     id: phoneNumberPhoneUtils

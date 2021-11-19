@@ -1,14 +1,14 @@
 include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
     ${TP_QT5_INCLUDE_DIRS}
-    ${CMAKE_SOURCE_DIR}/Ubuntu/Telephony
+    ${CMAKE_SOURCE_DIR}/Lomiri/Telephony
     ${CMAKE_SOURCE_DIR}/libtelephonyservice
     ${CMAKE_SOURCE_DIR}/tests/common
     ${CMAKE_BINARY_DIR}/tests/common
     ${GSETTINGS_QT_INCLUDE_DIRS}
     )
 
-set(SOURCE_DIR ${CMAKE_SOURCE_DIR}/Ubuntu/Telephony)
+set(SOURCE_DIR ${CMAKE_SOURCE_DIR}/Lomiri/Telephony)
 generate_test(ContactWatcherTest USE_UI
               SOURCES ContactWatcherTest.cpp
               LIBRARIES telephonyservice-qml Qt5::Contacts Qt5::Core Qt5::DBus Qt5::Qml Qt5::Test)

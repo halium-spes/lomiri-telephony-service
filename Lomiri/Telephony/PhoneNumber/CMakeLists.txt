@@ -27,7 +27,7 @@ target_link_libraries(telephonyservice-phonenumber-qml
     Qt5::Quick
     )
 
-set(PHONENUMBER_PLUGIN_DIR ${QT_INSTALL_QML}/Ubuntu/Telephony/PhoneNumber)
+set(PHONENUMBER_PLUGIN_DIR ${QT_INSTALL_QML}/Lomiri/Telephony/PhoneNumber)
 install(TARGETS telephonyservice-phonenumber-qml DESTINATION ${PHONENUMBER_PLUGIN_DIR})
 install(FILES ${PHONENUMBER_QMLS} DESTINATION ${PHONENUMBER_PLUGIN_DIR})
 

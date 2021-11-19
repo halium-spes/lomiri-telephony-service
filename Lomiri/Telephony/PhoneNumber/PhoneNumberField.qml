@@ -21,28 +21,28 @@
 
 import QtQuick 2.4
 import Lomiri.Components 1.3
-import Ubuntu.Telephony.PhoneNumber 0.1
+import Lomiri.Telephony.PhoneNumber 0.1
 import "PhoneNumber.js" as PhoneNumberJS
 
 /*!
-    \qmltype PhoneNumberInput
-    \inqmlmodule Ubuntu.Telephony.PhoneNumberPhoneNumberJS 0.1
+    \qmltype PhoneNumberField
+    \inqmlmodule Lomiri.Telephony.PhoneNumber 0.1
     \brief The PhoneNumberField element allows to format a phone-number as you type
-    The PhoneNumberInput uses TextInput as base class
+    The PhoneNumberInput uses TextField as base class
 
     \b{This component is under heavy development.}
 
     Example:
     \qml
     Item {
-        PhoneNumberInput {
+        PhoneNumberField {
             autoFormat: true
             defaultRegion: "US"
         }
     \endqml
 */
-TextInput {
-    id: phoneNumberInput
+TextField {
+    id: phoneNumberField
 
     /*!
       Specifies whether the phone number format is enabled or not.
@@ -72,10 +72,10 @@ TextInput {
         id: formatter
     }
 
-    onTextChanged: PhoneNumberJS.onTextChange(phoneNumberInput, formatter)
+    onTextChanged: PhoneNumberJS.onTextChange(phoneNumberField, formatter)
     onAutoFormatChanged: {
         if (autoFormat) {
-            PhoneNumberJS.onTextChange(phoneNumberInput, formatter)
+            PhoneNumberJS.onTextChange(phoneNumberField, formatter)
         }
     }
 }

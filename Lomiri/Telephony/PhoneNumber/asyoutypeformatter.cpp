@@ -30,7 +30,7 @@
 
 /*!
     \qmltype AsYouTypeFormatter
-    \inqmlmodule Ubuntu.Telephony.PhoneNumber 0.1
+    \inqmlmodule Lomiri.Telephony.PhoneNumber 0.1
     \brief The AsYouTypeFormatter is a helper class to format phone numbers
 
     \b{This component is under heavy development.}
