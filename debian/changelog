@@ -1,3 +1,12 @@
+telephony-service (0.4+0ubports4) focal; urgency=medium
+
+  * Update for focal
+  * Update descriptions, homepage and VCS repo
+  * Update dh version
+  * Rename Ubuntu to Lomiri and adjust paths
+
+ -- Guido Berhoerster <guido+ubports@berhoerster.name>  Fri, 19 Nov 2021 16:17:06 +0100
+
 telephony-service (0.4+0ubports3) xenial; urgency=medium
 
   * mms lost or on download error: notify user

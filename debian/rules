@@ -10,11 +10,11 @@ DEB_HOST_ARCH := $(shell dpkg-architecture -qDEB_HOST_ARCH)
 # Ref.: https://bugs.launchpad.net/ubuntu/+source/mesa/+bug/1585942
 qmltestskip_architectures := arm64 powerpc s390x
 
-override_dh_install:
-	dh_install --fail-missing
-
 %:
-	dh $@ --parallel --with translations
+	dh $@ --with=translations
+
+override_dh_missing:
+	dh_missing --fail-missing
 
 override_dh_auto_configure:
 ifeq ($(DEB_HOST_ARCH),$(findstring $(DEB_HOST_ARCH), $(qmltestskip_architectures)))

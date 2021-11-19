@@ -1,11 +1,11 @@
 Source: telephony-service
 Section: libs
 Priority: optional
-Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Maintainer: UBports developers <devs@ubports.com>
 Build-Depends: cmake,
                dbus-test-runner,
                dconf-cli,
-               debhelper (>= 9),
+               debhelper-compat (= 12),
                dh-translations,
                gnome-keyring,
                libhistoryservice-dev,
@@ -36,20 +36,16 @@ Build-Depends: cmake,
                telepathy-mission-control-5,
                xvfb <!nocheck>,
 Standards-Version: 3.9.4
-Homepage: https://launchpad.net/telephony-service
-# If you aren't a member of ~phablet-team but need to upload packaging changes,
-# just go ahead.  ~phablet-team will notice and sync up the code again.
-Vcs-Bzr: https://code.launchpad.net/~phablet-team/telephony-service/trunk
+Homepage: https://gitlab.com/ubports/core/telephony-service/
+Vcs-Git: https://gitlab.com/ubports/core/telephony-service.git
 X-Ubuntu-Use-Langpack: yes
 
 Package: telephony-service
 Architecture: any
 Multi-Arch: foreign
-Pre-Depends: dpkg (>= 1.15.6~)
 Conflicts: phone-app
 Replaces: phone-app
-Depends: accountsservice-ubuntu-touch-schemas,
-         gsettings-ubuntu-schemas,
+Depends: lomiri-schemas,
          history-service,
          libnotify4,
          telepathy-mission-control-5,
@@ -60,59 +56,56 @@ Depends: accountsservice-ubuntu-touch-schemas,
          ${misc:Depends},
          ${shlibs:Depends},
 Suggests: telepathy-ofono
-Description: Telephony service components for Ubuntu - backend
- Telephony service components for Ubuntu.
+Description: Telephony service components for Lomiri - backend
+ Telephony service components for Lomiri.
  .
  This package contains the backend components providing the telephony 
  features such as calling and texting.
 
-Package: qtdeclarative5-ubuntu-telephony0.1
+Package: qml-module-lomiri-telephony0.1
 Architecture: any
 Multi-Arch: same
-Pre-Depends: dpkg (>= 1.15.6~)
-Depends: gsettings-ubuntu-schemas,
+Depends: lomiri-schemas,
          qtcontact5-galera[!s390x],
          telephony-service (>= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
 Suggests: telepathy-ofono
-Description: Telephony service components for Ubuntu - QML plugin
- Telephony service components for Ubuntu.
+Description: Telephony service components for Lomiri - QML plugin
+ Telephony service components for Lomiri.
  .
  This package contains the QML plugin providing the features from the telephony
  service to applications.
 
-Package: qtdeclarative5-ubuntu-telephony-phonenumber0.1
+Package: qml-module-lomiri-telephony-phonenumber0.1
 Architecture: any
 Multi-Arch: same
-Pre-Depends: dpkg (>= 1.15.6~)
 Depends: ${misc:Depends},
          ${shlibs:Depends},
-         qtdeclarative5-ubuntu-ui-toolkit-plugin,
-Description: Telephony service components for Ubuntu - QML plugin
- Telephony PhoneNumber components for Ubuntu.
+         qml-module-lomiri-components
+Description: Telephony service components for Lomiri - QML plugin
+ Telephony PhoneNumber components for Lomiri.
  .
  This package contains the QML plugin providing the features from the telephony
  PhoneNumber to applications.
 
-Package: account-plugin-sip-unity8
+Package: account-plugin-sip-lomiri
 Architecture: all
-Pre-Depends: dpkg (>= 1.15.6~)
 Depends: mcp-account-manager-uoa-common,
          telepathy-accounts-signon,
          telepathy-rakia
-Description: Online account plugin for unity8
- Online account plugin for unity8.
+Description: Online account plugin for Lomiri
+ Online account plugin for Lomiri.
  .
  This package contains the online account plugin providing sip account.
 
-Package: account-plugin-irc-unity8
+Package: account-plugin-irc-lomiri
 Architecture: all
 Pre-Depends: dpkg (>= 1.15.6~)
 Depends: mcp-account-manager-uoa-common,
          mfw-plugin-irc
-Description: Online account plugin for unity8
- Online account plugin for unity8.
+Description: Online account plugin for Lomiri
+ Online account plugin for Lomiri.
  .
  This package contains the online account plugin providing irc account.
 

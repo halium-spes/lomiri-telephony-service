@@ -1,0 +1,5 @@
+usr/lib/*/qt5/qml/Lomiri/Telephony/PhoneNumber/libtelephonyservice-phonenumber-qml.so
+usr/lib/*/qt5/qml/Lomiri/Telephony/PhoneNumber/PhoneNumberField.qml
+usr/lib/*/qt5/qml/Lomiri/Telephony/PhoneNumber/PhoneNumberInput.qml
+usr/lib/*/qt5/qml/Lomiri/Telephony/PhoneNumber/PhoneNumber.js
+usr/lib/*/qt5/qml/Lomiri/Telephony/PhoneNumber/qmldir
