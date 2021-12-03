@@ -115,7 +115,6 @@ add_subdirectory(icons)
 add_subdirectory(po)
 add_subdirectory(tests)
 add_subdirectory(protocols)
-add_subdirectory(accounts)
 
 if (WANT_UI_SERVICES)
     add_subdirectory(indicator)
