@@ -6,6 +6,8 @@ telephony-service (0.4+0ubports4) focal; urgency=medium
   * Rename Ubuntu to Lomiri and adjust paths
   * Remove obsolete account-plugin-irc-unity8, account-plugin-sip-unity8
     subpackages
+  * Add missing dependencies on python3, python3-debus, python3-gi for
+    phone-gsettings-migration.py
 
  -- Guido Berhoerster <guido+ubports@berhoerster.name>  Fri, 19 Nov 2021 16:17:06 +0100
 
