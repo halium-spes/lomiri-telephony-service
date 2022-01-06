@@ -2,6 +2,10 @@ telephony-service (0.5) UNRELEASED; urgency=medium
 
   * Port to lomiri-url-dispatcher
 
+  [jEzEk]
+  * Make it possible to ask nuntium for MMS message re-download.
+  * Revert status on dbus reply error on message redownload
+
  -- Guido Berhoerster <guido+gitlab.com@berhoerster.name>  Wed, 20 Apr 2022 16:12:04 +0200
 
 telephony-service (0.4+0ubports4) focal; urgency=medium
