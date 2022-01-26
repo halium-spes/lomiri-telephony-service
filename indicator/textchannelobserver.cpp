@@ -143,7 +143,7 @@ QVariantMap getInterfaceProperties(const Tp::AbstractInterface *interface)
 }
 
 TextChannelObserver::TextChannelObserver(QObject *parent) :
-    mPowerdIface("com.canonical.powerd", "/com/canonical/powerd", "com.canonical.powerd", QDBusConnection::systemBus()),
+    mPowerdIface("com.lomiri.Repowerd", "/com/lomiri/Repowerd", "com.lomiri.Repowerd", QDBusConnection::systemBus()),
     QObject(parent)
 {
     connect(MessagingMenu::instance(),
