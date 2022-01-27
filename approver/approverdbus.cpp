@@ -27,8 +27,8 @@
 // Qt
 #include <QtDBus/QDBusConnection>
 
-static const char* DBUS_SERVICE = "com.canonical.Approver";
-static const char* DBUS_OBJECT_PATH = "/com/canonical/Approver";
+static const char* DBUS_SERVICE = "com.lomiri.TelephonyServiceApprover";
+static const char* DBUS_OBJECT_PATH = "/com/lomiri/TelephonyServiceApprover";
 
 ApproverDBus::ApproverDBus(Approver *approver, QObject* parent) : QObject(parent), mApprover(approver)
 {

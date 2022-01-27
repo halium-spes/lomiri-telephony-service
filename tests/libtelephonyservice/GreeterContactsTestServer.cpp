@@ -44,7 +44,7 @@ public:
 class TelepathyInterface : public QObject
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "com.canonical.TelephonyServiceApprover")
+    Q_CLASSINFO("D-Bus Interface", "com.lomiri.TelephonyServiceApprover")
 
     Q_PROPERTY(QVariantMap CurrentContact READ CurrentContact WRITE SetCurrentContact)
 
@@ -141,7 +141,7 @@ void TelepathyInterface::SetCurrentContact(const QVariantMap &map)
     message = QDBusMessage::createSignal(userPath,
                                          "org.freedesktop.DBus.Properties",
                                          "PropertiesChanged");
-    message << "com.canonical.TelephonyServiceApprover";
+    message << "com.lomiri.TelephonyServiceApprover";
     if (mUseInvalidated) {
         QStringList invalidatedProps;
         invalidatedProps << "CurrentContact";

@@ -445,7 +445,7 @@ void ChatEntry::sendMessage(const QString &accountId, const QString &message, co
 {
     QString objPath = ChatManager::instance()->sendMessage(accountId, message, attachments, properties);
     QDBusInterface *sendingJob = new QDBusInterface(TelepathyHelper::instance()->handlerInterface()->service(), objPath,
-                                                    "com.canonical.TelephonyServiceHandler.MessageSendingJob");
+                                                    "com.lomiri.TelephonyServiceHandler.MessageSendingJob");
     connect(sendingJob, SIGNAL(finished()), SLOT(onSendingMessageFinished()));
 }
 
@@ -780,7 +780,7 @@ void ChatEntry::startChat()
 {
     QString objPath = ChatManager::instance()->startChat(accountId(), generateProperties());
     QDBusInterface *job = new QDBusInterface(TelepathyHelper::instance()->handlerInterface()->service(), objPath,
-                                                    "com.canonical.TelephonyServiceHandler.ChatStartingJob");
+                                                    "com.lomiri.TelephonyServiceHandler.ChatStartingJob");
     connect(job, SIGNAL(finished()), SLOT(onChatStartingFinished()));
 }
 

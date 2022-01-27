@@ -37,12 +37,12 @@ configure_file(org.freedesktop.Telepathy.Client.TelephonyServiceApprover.service
 install(TARGETS telephony-service-approver RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.freedesktop.Telepathy.Client.TelephonyServiceApprover.service DESTINATION share/dbus-1/services)
 install(FILES TelephonyServiceApprover.client DESTINATION share/telepathy/clients)
-install(FILES 50-com.canonical.TelephonyServiceApprover.pkla DESTINATION "${CMAKE_INSTALL_FULL_LOCALSTATEDIR}/lib/polkit-1/localauthority/10-vendor.d")
-install(FILES com.canonical.TelephonyServiceApprover.policy DESTINATION share/polkit-1/actions)
-install(FILES com.canonical.TelephonyServiceApprover.xml DESTINATION share/dbus-1/interfaces)
+install(FILES 50-com.lomiri.TelephonyServiceApprover.pkla DESTINATION "${CMAKE_INSTALL_FULL_LOCALSTATEDIR}/lib/polkit-1/localauthority/10-vendor.d")
+install(FILES com.lomiri.TelephonyServiceApprover.policy DESTINATION share/polkit-1/actions)
+install(FILES com.lomiri.TelephonyServiceApprover.xml DESTINATION share/dbus-1/interfaces)
 
 # Create accountsservice symlink for above dbus interface
 install(CODE "
 execute_process(COMMAND mkdir -p \"\$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/accountsservice/interfaces\")
-execute_process(COMMAND ln -sf ../../dbus-1/interfaces/com.canonical.TelephonyServiceApprover.xml \"\$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/accountsservice/interfaces\")
+execute_process(COMMAND ln -sf ../../dbus-1/interfaces/com.lomiri.TelephonyServiceApprover.xml \"\$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/accountsservice/interfaces\")
     ")

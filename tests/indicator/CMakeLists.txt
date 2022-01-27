@@ -18,7 +18,7 @@ if (NOT ("${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "aarch64"))
                             LIBRARIES ${TP_QT5_LIBRARIES} telephonyservice mockcontroller telepathytest ${HISTORY_LIBRARIES}
                             TASKS --task xvfb-run -p -a -p ${CMAKE_BINARY_DIR}/indicator/telephony-service-indicator
                                    --task-name telephony-service-indicator
-                                   --wait-for com.canonical.TelephonyServiceHandler
+                                   --wait-for com.lomiri.TelephonyServiceHandler
                                    --ignore-return)
 endif()
 

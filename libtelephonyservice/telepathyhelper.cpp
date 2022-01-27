@@ -297,9 +297,9 @@ QDBusInterface *TelepathyHelper::handlerInterface() const
     // delay the loading of the handler interface, as it seems this is triggering
     // the dbus activation of the handler process
     if (!mHandlerInterface) {
-        mHandlerInterface = new QDBusInterface("com.canonical.TelephonyServiceHandler",
-                                               "/com/canonical/TelephonyServiceHandler",
-                                               "com.canonical.TelephonyServiceHandler",
+        mHandlerInterface = new QDBusInterface("com.lomiri.TelephonyServiceHandler",
+                                               "/com/lomiri/TelephonyServiceHandler",
+                                               "com.lomiri.TelephonyServiceHandler",
                                                QDBusConnection::sessionBus(),
                                                const_cast<TelepathyHelper*>(this));
     }
@@ -310,8 +310,8 @@ QDBusInterface *TelepathyHelper::approverInterface() const
 {
     if (!mApproverInterface) {
         mApproverInterface = new QDBusInterface("org.freedesktop.Telepathy.Client.TelephonyServiceApprover",
-                                               "/com/canonical/Approver",
-                                               "com.canonical.TelephonyServiceApprover",
+                                               "/com/lomiri/TelephonyServiceApprover",
+                                               "com.lomiri.TelephonyServiceApprover",
                                                QDBusConnection::sessionBus(),
                                                const_cast<TelepathyHelper*>(this));
     }

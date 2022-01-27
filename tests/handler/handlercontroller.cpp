@@ -23,9 +23,9 @@
 #include <QDBusReply>
 #include <QDebug>
 
-#define HANDLER_SERVICE "com.canonical.TelephonyServiceHandler"
-#define HANDLER_OBJECT "/com/canonical/TelephonyServiceHandler"
-#define HANDLER_INTERFACE "com.canonical.TelephonyServiceHandler"
+#define HANDLER_SERVICE "com.lomiri.TelephonyServiceHandler"
+#define HANDLER_OBJECT "/com/lomiri/TelephonyServiceHandler"
+#define HANDLER_INTERFACE "com.lomiri.TelephonyServiceHandler"
 
 HandlerController *HandlerController::instance()
 {
@@ -64,10 +64,10 @@ QVariantMap HandlerController::getCallProperties(const QString &objectPath)
 
 bool HandlerController::callIndicatorVisible()
 {
-    QDBusInterface handlerPropertiesInterface("com.canonical.TelephonyServiceHandler",
-                                              "/com/canonical/TelephonyServiceHandler",
+    QDBusInterface handlerPropertiesInterface("com.lomiri.TelephonyServiceHandler",
+                                              "/com/lomiri/TelephonyServiceHandler",
                                               "org.freedesktop.DBus.Properties");
-    QDBusReply<QVariantMap> reply = handlerPropertiesInterface.call("GetAll", "com.canonical.TelephonyServiceHandler");
+    QDBusReply<QVariantMap> reply = handlerPropertiesInterface.call("GetAll", "com.lomiri.TelephonyServiceHandler");
     if (!reply.isValid()) {
         return false;
     }
@@ -155,11 +155,11 @@ void HandlerController::acknowledgeMessages(const QVariantMap &properties)
 
 void HandlerController::setCallIndicatorVisible(bool visible)
 {
-    QDBusInterface handlerPropertiesInterface("com.canonical.TelephonyServiceHandler",
-                                              "/com/canonical/TelephonyServiceHandler",
+    QDBusInterface handlerPropertiesInterface("com.lomiri.TelephonyServiceHandler",
+                                              "/com/lomiri/TelephonyServiceHandler",
                                               "org.freedesktop.DBus.Properties");
     handlerPropertiesInterface.call("Set",
-                                    "com.canonical.TelephonyServiceHandler",
+                                    "com.lomiri.TelephonyServiceHandler",
                                     "CallIndicatorVisible", QVariant::fromValue(QDBusVariant(visible)));
 }
 

@@ -22,9 +22,9 @@
 #include <QDBusReply>
 #include <QDebug>
 
-#define APPROVER_SERVICE "com.canonical.Approver"
-#define APPROVER_OBJECT "/com/canonical/Approver"
-#define APPROVER_INTERFACE "com.canonical.TelephonyServiceApprover"
+#define APPROVER_SERVICE "com.lomiri.TelephonyServiceApprover"
+#define APPROVER_OBJECT "/com/lomiri/TelephonyServiceApprover"
+#define APPROVER_INTERFACE "com.lomiri.TelephonyServiceApprover"
 
 ApproverController *ApproverController::instance()
 {

@@ -23,7 +23,7 @@
 #include "telepathyhelper.h"
 #include <QSettings>
 
-#define SETTINGS_DOMAIN "com.canonical.TelephonyServiceHandler"
+#define SETTINGS_DOMAIN "com.lomiri.TelephonyServiceHandler"
 
 AccountProperties *AccountProperties::instance()
 {

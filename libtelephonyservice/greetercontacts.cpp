@@ -346,7 +346,7 @@ void GreeterContacts::accountsPropertiesChanged(const QString &interface,
                                                 const QStringList &invalidated,
                                                 const QDBusMessage &message)
 {
-    if (interface == "com.canonical.TelephonyServiceApprover") {
+    if (interface == "com.lomiri.TelephonyServiceApprover") {
         if (changed.contains("CurrentContact")) {
             mContacts.insert(message.path(), qdbus_cast<QVariantMap>(changed.value("CurrentContact")));
             signalIfNeeded();
@@ -436,7 +436,7 @@ void GreeterContacts::queryContact(const QString &user)
                          user,
                          "org.freedesktop.DBus.Properties",
                          QDBusConnection::AS_BUSNAME());
-    QDBusPendingCall call = iface.asyncCall("Get", "com.canonical.TelephonyServiceApprover", "CurrentContact");
+    QDBusPendingCall call = iface.asyncCall("Get", "com.lomiri.TelephonyServiceApprover", "CurrentContact");
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(call, this);
     watcher->setProperty("telepathyPath", QVariant(user));
     connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher *)),
@@ -517,7 +517,7 @@ void GreeterContacts::emitContact(const QContact &contact)
                          "/org/freedesktop/Accounts/User" + uid,
                          "org.freedesktop.DBus.Properties",
                          QDBusConnection::AS_BUSNAME());
-    iface.asyncCall("Set", "com.canonical.TelephonyServiceApprover", "CurrentContact", QVariant::fromValue(QDBusVariant(QVariant(map))));
+    iface.asyncCall("Set", "com.lomiri.TelephonyServiceApprover", "CurrentContact", QVariant::fromValue(QDBusVariant(QVariant(map))));
 }
 
 QVariantMap GreeterContacts::contactToMap(const QContact &contact)

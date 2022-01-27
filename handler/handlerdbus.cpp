@@ -35,8 +35,8 @@
 // Qt
 #include <QtDBus/QDBusConnection>
 
-static const char* DBUS_SERVICE = "com.canonical.TelephonyServiceHandler";
-static const char* DBUS_OBJECT_PATH = "/com/canonical/TelephonyServiceHandler";
+static const char* DBUS_SERVICE = "com.lomiri.TelephonyServiceHandler";
+static const char* DBUS_OBJECT_PATH = "/com/lomiri/TelephonyServiceHandler";
 
 HandlerDBus::HandlerDBus(QObject* parent) : QObject(parent), mCallIndicatorVisible(false)
 {
