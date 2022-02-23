@@ -34,9 +34,9 @@
 #include "accountentry.h"
 #include "protocol.h"
 
-#define CANONICAL_TELEPHONY_VOICEMAIL_IFACE "com.lomiri.Telephony.Voicemail"
-#define CANONICAL_TELEPHONY_USSD_IFACE "com.lomiri.Telephony.USSD"
-#define CANONICAL_TELEPHONY_EMERGENCYMODE_IFACE "com.lomiri.Telephony.EmergencyMode"
+#define LOMIRI_TELEPHONY_VOICEMAIL_IFACE "com.lomiri.Telephony.Voicemail"
+#define LOMIRI_TELEPHONY_USSD_IFACE "com.lomiri.Telephony.USSD"
+#define LOMIRI_TELEPHONY_EMERGENCYMODE_IFACE "com.lomiri.Telephony.EmergencyMode"
 
 template<> bool qMapLessThanKey<QStringList>(const QStringList &key1, const QStringList &key2);
 
