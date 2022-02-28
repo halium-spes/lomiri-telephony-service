@@ -400,7 +400,7 @@ void HandlerTest::testAcknowledgeMessage()
     // first send a message to a certain number so the handler request one channel
     QString objectPath = HandlerController::instance()->sendMessage(mTpAccount->uniqueIdentifier(), QStringList() << recipient, message);
     QDBusInterface *sendingJob = new QDBusInterface(TelepathyHelper::instance()->handlerInterface()->service(), objectPath,
-                                                    "com.canonical.TelephonyServiceHandler.MessageSendingJob");
+                                                    "com.lomiri.TelephonyServiceHandler.MessageSendingJob");
     QSignalSpy handlerHasChannel(sendingJob, SIGNAL(finished()));
 
     TRY_COMPARE(messageSentSpy.count(), 1);

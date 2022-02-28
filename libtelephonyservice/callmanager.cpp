@@ -51,25 +51,25 @@ CallManager::CallManager(QObject *parent)
 
     // connect the dbus signal
     QDBusConnection connection = QDBusConnection::sessionBus();
-    connection.connect("com.canonical.TelephonyServiceHandler",
-                       "/com/canonical/TelephonyServiceHandler",
-                       "com.canonical.TelephonyServiceHandler",
+    connection.connect("com.lomiri.TelephonyServiceHandler",
+                       "/com/lomiri/TelephonyServiceHandler",
+                       "com.lomiri.TelephonyServiceHandler",
                        "CallIndicatorVisibleChanged",
                        this, SLOT(onCallIndicatorVisibleChanged(bool)));
-    connection.connect("com.canonical.TelephonyServiceHandler",
-                       "/com/canonical/TelephonyServiceHandler",
-                       "com.canonical.TelephonyServiceHandler",
+    connection.connect("com.lomiri.TelephonyServiceHandler",
+                       "/com/lomiri/TelephonyServiceHandler",
+                       "com.lomiri.TelephonyServiceHandler",
                        "ConferenceCallRequestFinished",
                        this, SLOT(onConferenceCallRequestFinished(bool)));
 }
 
 void CallManager::refreshProperties()
 {
-    QDBusInterface handlerPropertiesInterface("com.canonical.TelephonyServiceHandler",
-                                              "/com/canonical/TelephonyServiceHandler",
+    QDBusInterface handlerPropertiesInterface("com.lomiri.TelephonyServiceHandler",
+                                              "/com/lomiri/TelephonyServiceHandler",
                                               "org.freedesktop.DBus.Properties");
     QDBusReply<QVariantMap> reply = handlerPropertiesInterface.call("GetAll",
-                                                                    "com.canonical.TelephonyServiceHandler");
+                                                                    "com.lomiri.TelephonyServiceHandler");
     if (!reply.isValid()) {
         qWarning() << "Failed to refresh the properties from the handler";
         return;
@@ -82,11 +82,11 @@ void CallManager::refreshProperties()
 
 void CallManager::setDBusProperty(const QString &name, const QVariant &value)
 {
-    QDBusInterface handlerPropertiesInterface("com.canonical.TelephonyServiceHandler",
-                                              "/com/canonical/TelephonyServiceHandler",
+    QDBusInterface handlerPropertiesInterface("com.lomiri.TelephonyServiceHandler",
+                                              "/com/lomiri/TelephonyServiceHandler",
                                               "org.freedesktop.DBus.Properties");
     handlerPropertiesInterface.call("Set",
-                                    "com.canonical.TelephonyServiceHandler",
+                                    "com.lomiri.TelephonyServiceHandler",
                                     name, QVariant::fromValue(QDBusVariant(value)));
 }
 

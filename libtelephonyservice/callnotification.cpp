@@ -27,9 +27,9 @@ namespace C {
 }
 
 CallNotification::CallNotification(QObject *parent) :
-    QObject(parent), mIndicatorIface("com.canonical.TelephonyServiceIndicator",
-                                     "/com/canonical/TelephonyServiceIndicator",
-                                     "com.canonical.TelephonyServiceIndicator")
+    QObject(parent), mIndicatorIface("com.lomiri.TelephonyServiceIndicator",
+                                     "/com/lomiri/TelephonyServiceIndicator",
+                                     "com.lomiri.TelephonyServiceIndicator")
 {
 }
 

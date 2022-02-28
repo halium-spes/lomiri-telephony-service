@@ -68,7 +68,7 @@ GreeterContacts::GreeterContacts(QObject *parent)
     // Are we in greeter mode or not?
     if (isGreeterMode()) {
         connection = QDBusConnection::sessionBus();
-        connection.connect("com.canonical.UnityGreeter",
+        connection.connect("com.lomiri.LomiriGreeter",
                            "/list",
                            "org.freedesktop.DBus.Properties",
                            "PropertiesChanged",
@@ -92,12 +92,12 @@ GreeterContacts::GreeterContacts(QObject *parent)
 
     // get the current value of greeter's isActive property
     connection = QDBusConnection::sessionBus();
-    QDBusInterface greeterPropsIface("com.canonical.UnityGreeter",
+    QDBusInterface greeterPropsIface("com.lomiri.LomiriGreeter",
                                      "/",
                                      "org.freedesktop.DBus.Properties");
-    QDBusReply<QVariant> reply = greeterPropsIface.call("Get", "com.canonical.UnityGreeter", "IsActive");
+    QDBusReply<QVariant> reply = greeterPropsIface.call("Get", "com.lomiri.LomiriGreeter", "IsActive");
     mGreeterActive = reply.isValid() && reply.value().toBool();
-    connection.connect("com.canonical.UnityGreeter",
+    connection.connect("com.lomiri.LomiriGreeter",
                        "/",
                        "org.freedesktop.DBus.Properties",
                        "PropertiesChanged",
@@ -237,7 +237,7 @@ void GreeterContacts::greeterListPropertiesChanged(const QString &interface,
                                                const QVariantMap &changed,
                                                const QStringList &invalidated)
 {
-    if (interface == "com.canonical.UnityGreeter.List") {
+    if (interface == "com.lomiri.LomiriGreeter.List") {
         if (changed.contains("ActiveEntry")) {
             updateActiveUser(changed.value("ActiveEntry").toString());
         } else if (invalidated.contains("ActiveEntry")) {
@@ -248,7 +248,7 @@ void GreeterContacts::greeterListPropertiesChanged(const QString &interface,
 
 void GreeterContacts::greeterPropertiesChanged(const QString &interface, const QVariantMap &changed, const QStringList &invalidated)
 {
-    if (interface == "com.canonical.UnityGreeter") {
+    if (interface == "com.lomiri.LomiriGreeter") {
         if (changed.contains("IsActive")) {
             mGreeterActive = changed.value("IsActive").toBool();
             Q_EMIT greeterActiveChanged();
@@ -346,7 +346,7 @@ void GreeterContacts::accountsPropertiesChanged(const QString &interface,
                                                 const QStringList &invalidated,
                                                 const QDBusMessage &message)
 {
-    if (interface == "com.canonical.TelephonyServiceApprover") {
+    if (interface == "com.lomiri.TelephonyServiceApprover") {
         if (changed.contains("CurrentContact")) {
             mContacts.insert(message.path(), qdbus_cast<QVariantMap>(changed.value("CurrentContact")));
             signalIfNeeded();
@@ -420,11 +420,11 @@ void GreeterContacts::accountsGetContactReply(QDBusPendingCallWatcher *watcher)
 
 void GreeterContacts::queryEntry()
 {
-    QDBusInterface iface("com.canonical.UnityGreeter",
+    QDBusInterface iface("com.lomiri.LomiriGreeter",
                          "/list",
                          "org.freedesktop.DBus.Properties",
                          QDBusConnection::sessionBus());
-    QDBusPendingCall call = iface.asyncCall("Get", "com.canonical.UnityGreeter.List", "ActiveEntry");
+    QDBusPendingCall call = iface.asyncCall("Get", "com.lomiri.LomiriGreeter.List", "ActiveEntry");
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(call, this);
     connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher *)),
             this, SLOT(greeterGetEntryReply(QDBusPendingCallWatcher *)));
@@ -436,7 +436,7 @@ void GreeterContacts::queryContact(const QString &user)
                          user,
                          "org.freedesktop.DBus.Properties",
                          QDBusConnection::AS_BUSNAME());
-    QDBusPendingCall call = iface.asyncCall("Get", "com.canonical.TelephonyServiceApprover", "CurrentContact");
+    QDBusPendingCall call = iface.asyncCall("Get", "com.lomiri.TelephonyServiceApprover", "CurrentContact");
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(call, this);
     watcher->setProperty("telepathyPath", QVariant(user));
     connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher *)),
@@ -517,7 +517,7 @@ void GreeterContacts::emitContact(const QContact &contact)
                          "/org/freedesktop/Accounts/User" + uid,
                          "org.freedesktop.DBus.Properties",
                          QDBusConnection::AS_BUSNAME());
-    iface.asyncCall("Set", "com.canonical.TelephonyServiceApprover", "CurrentContact", QVariant::fromValue(QDBusVariant(QVariant(map))));
+    iface.asyncCall("Set", "com.lomiri.TelephonyServiceApprover", "CurrentContact", QVariant::fromValue(QDBusVariant(QVariant(map))));
 }
 
 QVariantMap GreeterContacts::contactToMap(const QContact &contact)
@@ -571,9 +571,9 @@ QContact GreeterContacts::mapToContact(const QVariantMap &map)
 void GreeterContacts::showGreeter()
 {
     QMutexLocker locker(&mMutex);
-    QDBusInterface iface("com.canonical.UnityGreeter",
+    QDBusInterface iface("com.lomiri.LomiriGreeter",
                          "/",
-                         "com.canonical.UnityGreeter",
+                         "com.lomiri.LomiriGreeter",
                          QDBusConnection::sessionBus());
     iface.call("ShowGreeter");
 }

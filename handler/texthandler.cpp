@@ -35,7 +35,7 @@
 
 TextHandler::TextHandler(QObject *parent)
 : QObject(parent)
-  , mMessagingAppMonitor("com.canonical.MessagingApp", QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForRegistration|QDBusServiceWatcher::WatchForUnregistration), mMessagingAppRegistered(false)
+  , mMessagingAppMonitor("com.lomiri.MessagingApp", QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForRegistration|QDBusServiceWatcher::WatchForUnregistration), mMessagingAppRegistered(false)
 {
     qDBusRegisterMetaType<AttachmentStruct>();
     qDBusRegisterMetaType<AttachmentList>();

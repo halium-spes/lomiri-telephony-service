@@ -53,10 +53,10 @@ target_link_libraries(telephony-service-handler
 
 enable_coverage(telephony-service-handler)
 
-configure_file(com.canonical.TelephonyServiceHandler.service.in com.canonical.TelephonyServiceHandler.service)
+configure_file(com.lomiri.TelephonyServiceHandler.service.in com.lomiri.TelephonyServiceHandler.service)
 configure_file(org.freedesktop.Telepathy.Client.TelephonyServiceHandler.service.in org.freedesktop.Telepathy.Client.TelephonyServiceHandler.service)
 
 install(TARGETS telephony-service-handler RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.freedesktop.Telepathy.Client.TelephonyServiceHandler.service DESTINATION share/dbus-1/services)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/com.canonical.TelephonyServiceHandler.service DESTINATION share/dbus-1/services)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/com.lomiri.TelephonyServiceHandler.service DESTINATION share/dbus-1/services)
 install(FILES TelephonyServiceHandler.client DESTINATION share/telepathy/clients)

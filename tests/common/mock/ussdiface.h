@@ -31,7 +31,7 @@ class BaseConnectionUSSDInterface;
 
 typedef Tp::SharedPtr<BaseConnectionUSSDInterface> BaseConnectionUSSDInterfacePtr;
 
-#define TP_QT_IFACE_CONNECTION_USSD "com.canonical.Telephony.USSD"
+#define TP_QT_IFACE_CONNECTION_USSD "com.lomiri.Telephony.USSD"
 
 class TP_QT_EXPORT BaseConnectionUSSDInterface : public Tp::AbstractConnectionInterface
 {
@@ -99,7 +99,7 @@ class TP_QT_EXPORT ConnectionInterfaceUSSDAdaptor : public Tp::AbstractAdaptor
     Q_OBJECT
     Q_CLASSINFO("D-Bus Interface", TP_QT_IFACE_CONNECTION_USSD)
     Q_CLASSINFO("D-Bus Introspection", ""
-"  <interface name=\"com.canonical.Telephony.USSD\">\n"
+"  <interface name=\"com.lomiri.Telephony.USSD\">\n"
 "    <property access=\"read\" type=\"s\" name=\"State\"/>\n"
 "    <property access=\"read\" type=\"s\" name=\"Serial\"/>\n"
 "    <method name=\"Initiate\">\n"

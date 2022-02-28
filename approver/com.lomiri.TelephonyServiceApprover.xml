@@ -1,13 +1,13 @@
 <node>
-  <interface name="com.canonical.TelephonyServiceApprover">
+  <interface name="com.lomiri.TelephonyServiceApprover">
 
     <annotation name="org.freedesktop.Accounts.VendorExtension" value="true"/>
 
     <annotation name="org.freedesktop.Accounts.Authentication.ChangeOwn"
-                value="com.canonical.TelephonyServiceApprover.ChangeOwn"/>
+                value="com.lomiri.TelephonyServiceApprover.ChangeOwn"/>
 
     <annotation name="org.freedesktop.Accounts.Authentication.ReadAny"
-                value="com.canonical.TelephonyServiceApprover.ReadAny"/>
+                value="com.lomiri.TelephonyServiceApprover.ReadAny"/>
 
     <property name="CurrentContact" type="a{sv}" access="readwrite">
       <annotation name="org.freedesktop.Accounts.DefaultValue" value="{}"/>

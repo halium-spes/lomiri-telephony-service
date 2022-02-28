@@ -25,9 +25,9 @@
 PowerDDBus::PowerDDBus()
     : mPowerDIface{
         new QDBusInterface(
-            "com.canonical.powerd",
-            "/com/canonical/powerd",
-            "com.canonical.powerd",
+            "com.lomiri.Repowerd",
+            "/com/lomiri/Repowerd",
+            "com.lomiri.Repowerd",
             QDBusConnection::systemBus())}
 {
 }

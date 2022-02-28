@@ -44,7 +44,7 @@ public:
 class TelepathyInterface : public QObject
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "com.canonical.TelephonyServiceApprover")
+    Q_CLASSINFO("D-Bus Interface", "com.lomiri.TelephonyServiceApprover")
 
     Q_PROPERTY(QVariantMap CurrentContact READ CurrentContact WRITE SetCurrentContact)
 
@@ -69,7 +69,7 @@ private:
 class ListInterface : public QObject
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "com.canonical.UnityGreeter.List")
+    Q_CLASSINFO("D-Bus Interface", "com.lomiri.LomiriGreeter.List")
 
     Q_PROPERTY(QString ActiveEntry READ ActiveEntry WRITE SetActiveEntry)
 
@@ -91,7 +91,7 @@ private:
 class GreeterInterface : public QObject
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "com.canonical.UnityGreeter")
+    Q_CLASSINFO("D-Bus Interface", "com.lomiri.LomiriGreeter")
 
     Q_PROPERTY(bool IsActive READ IsActive WRITE SetIsActive)
 
@@ -141,7 +141,7 @@ void TelepathyInterface::SetCurrentContact(const QVariantMap &map)
     message = QDBusMessage::createSignal(userPath,
                                          "org.freedesktop.DBus.Properties",
                                          "PropertiesChanged");
-    message << "com.canonical.TelephonyServiceApprover";
+    message << "com.lomiri.TelephonyServiceApprover";
     if (mUseInvalidated) {
         QStringList invalidatedProps;
         invalidatedProps << "CurrentContact";
@@ -187,7 +187,7 @@ void ListInterface::SetActiveEntry(const QString &entry)
     message = QDBusMessage::createSignal("/list",
                                          "org.freedesktop.DBus.Properties",
                                          "PropertiesChanged");
-    message << "com.canonical.UnityGreeter.List";
+    message << "com.lomiri.LomiriGreeter.List";
     if (mUseInvalidated) {
         QStringList invalidatedProps;
         invalidatedProps << "ActiveEntry";
@@ -226,7 +226,7 @@ int main(int argc, char *argv[])
     GreeterInterface greeter;
     connection.registerObject("/", &greeter, QDBusConnection::ExportScriptableContents);
 
-    connection.registerService("com.canonical.UnityGreeter");
+    connection.registerService("com.lomiri.LomiriGreeter");
     connection.registerService("org.freedesktop.Accounts");
 
     return a.exec();
@@ -253,7 +253,7 @@ void GreeterInterface::SetIsActive(bool active)
     message = QDBusMessage::createSignal("/",
                                          "org.freedesktop.DBus.Properties",
                                          "PropertiesChanged");
-    message << "com.canonical.UnityGreeter";
+    message << "com.lomiri.LomiriGreeter";
 
     QVariantMap changedProps;
     changedProps.insert("IsActive", QVariant(active));

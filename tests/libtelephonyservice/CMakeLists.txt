@@ -46,7 +46,7 @@ generate_test(CallNotificationTest USE_DBUS
               SOURCES CallNotificationTest.cpp ${LIBTELEPHONYSERVICE_DIR}/callnotification.cpp
               LIBRARIES Qt5::Core Qt5::DBus Qt5::Test
               TASKS --task ${CMAKE_CURRENT_BINARY_DIR}/IndicatorMock --task-name indicator --ignore-return
-              WAIT_FOR com.canonical.TelephonyServiceIndicator)
+              WAIT_FOR com.lomiri.TelephonyServiceIndicator)
 
 generate_test(ContactUtilsTest SOURCES ContactUtilsTest.cpp LIBRARIES Qt5::Contacts Qt5::Core Qt5::Test telephonyservice USE_UI)
 generate_test(PhoneUtilsTest SOURCES PhoneUtilsTest.cpp LIBRARIES telephonyservice Qt5::Core Qt5::Test USE_UI)

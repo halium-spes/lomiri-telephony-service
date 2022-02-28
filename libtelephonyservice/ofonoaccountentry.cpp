@@ -179,34 +179,34 @@ void OfonoAccountEntry::onConnectionChanged(Tp::ConnectionPtr connection)
         // disconnect any previous dbus connections
         if (!mConnectionInfo.objectPath.isEmpty()) {
             dbusConnection.disconnect(mConnectionInfo.busName, mConnectionInfo.objectPath,
-                                      CANONICAL_TELEPHONY_EMERGENCYMODE_IFACE, "EmergencyNumbersChanged",
+                                      LOMIRI_TELEPHONY_EMERGENCYMODE_IFACE, "EmergencyNumbersChanged",
                                       this, SLOT(onEmergencyNumbersChanged(QStringList)));
 
             // connect the voicemail number changed signal
             dbusConnection.disconnect(mConnectionInfo.busName, mConnectionInfo.objectPath,
-                                      CANONICAL_TELEPHONY_VOICEMAIL_IFACE, "VoicemailNumberChanged",
+                                      LOMIRI_TELEPHONY_VOICEMAIL_IFACE, "VoicemailNumberChanged",
                                       this, SLOT(onVoicemailNumberChanged(QString)));
 
             dbusConnection.disconnect(mConnectionInfo.busName, mConnectionInfo.objectPath,
-                                      CANONICAL_TELEPHONY_VOICEMAIL_IFACE, "VoicemailCountChanged",
+                                      LOMIRI_TELEPHONY_VOICEMAIL_IFACE, "VoicemailCountChanged",
                                       this, SLOT(onVoicemailCountChanged(uint)));
 
             dbusConnection.disconnect(mConnectionInfo.busName, mConnectionInfo.objectPath,
-                                      CANONICAL_TELEPHONY_VOICEMAIL_IFACE, "VoicemailIndicatorChanged",
+                                      LOMIRI_TELEPHONY_VOICEMAIL_IFACE, "VoicemailIndicatorChanged",
                                       this, SLOT(onVoicemailIndicatorChanged(bool)));
 
             dbusConnection.disconnect(mConnectionInfo.busName, mConnectionInfo.objectPath,
-                                      CANONICAL_TELEPHONY_EMERGENCYMODE_IFACE, "CountryCodeChanged",
+                                      LOMIRI_TELEPHONY_EMERGENCYMODE_IFACE, "CountryCodeChanged",
                                       this, SLOT(onCountryCodeChanged(QString)));
         }
     } else {
         // connect the emergency numbers changed signal
         dbusConnection.connect(mConnectionInfo.busName, mConnectionInfo.objectPath,
-                               CANONICAL_TELEPHONY_EMERGENCYMODE_IFACE, "EmergencyNumbersChanged",
+                               LOMIRI_TELEPHONY_EMERGENCYMODE_IFACE, "EmergencyNumbersChanged",
                                this, SLOT(onEmergencyNumbersChanged(QStringList)));
 
         // and get the current value of the emergency numbers
-        QDBusInterface connIface(mConnectionInfo.busName, mConnectionInfo.objectPath, CANONICAL_TELEPHONY_EMERGENCYMODE_IFACE);
+        QDBusInterface connIface(mConnectionInfo.busName, mConnectionInfo.objectPath, LOMIRI_TELEPHONY_EMERGENCYMODE_IFACE);
         QDBusReply<QStringList> replyNumbers = connIface.call("EmergencyNumbers");
         if (replyNumbers.isValid()) {
             mEmergencyNumbers = replyNumbers.value();
@@ -217,7 +217,7 @@ void OfonoAccountEntry::onConnectionChanged(Tp::ConnectionPtr connection)
 
         // connect the country code changed signal
         dbusConnection.connect(mConnectionInfo.busName, mConnectionInfo.objectPath,
-                               CANONICAL_TELEPHONY_EMERGENCYMODE_IFACE, "CountryCodeChanged",
+                               LOMIRI_TELEPHONY_EMERGENCYMODE_IFACE, "CountryCodeChanged",
                                this, SLOT(onCountryCodeChanged(QString)));
 
         // and get the current value of the country code
@@ -229,10 +229,10 @@ void OfonoAccountEntry::onConnectionChanged(Tp::ConnectionPtr connection)
 
         // connect the voicemail number changed signal
         dbusConnection.connect(mConnectionInfo.busName, mConnectionInfo.objectPath,
-                               CANONICAL_TELEPHONY_VOICEMAIL_IFACE, "VoicemailNumberChanged",
+                               LOMIRI_TELEPHONY_VOICEMAIL_IFACE, "VoicemailNumberChanged",
                                this, SLOT(onVoicemailNumberChanged(QString)));
 
-        QDBusInterface voicemailIface(mConnectionInfo.busName, mConnectionInfo.objectPath, CANONICAL_TELEPHONY_VOICEMAIL_IFACE);
+        QDBusInterface voicemailIface(mConnectionInfo.busName, mConnectionInfo.objectPath, LOMIRI_TELEPHONY_VOICEMAIL_IFACE);
         QDBusReply<QString> replyNumber = voicemailIface.call("VoicemailNumber");
         if (replyNumber.isValid()) {
             mVoicemailNumber = replyNumber.value();
@@ -245,7 +245,7 @@ void OfonoAccountEntry::onConnectionChanged(Tp::ConnectionPtr connection)
 
         // connect the voicemail count changed signal
         dbusConnection.connect(mConnectionInfo.busName, mConnectionInfo.objectPath,
-                               CANONICAL_TELEPHONY_VOICEMAIL_IFACE, "VoicemailCountChanged",
+                               LOMIRI_TELEPHONY_VOICEMAIL_IFACE, "VoicemailCountChanged",
                                this, SLOT(onVoicemailCountChanged(uint)));
 
         QDBusReply<uint> replyCount = voicemailIface.call("VoicemailCount");
@@ -258,7 +258,7 @@ void OfonoAccountEntry::onConnectionChanged(Tp::ConnectionPtr connection)
 
         // connect the voicemail indicator changed signal
         dbusConnection.connect(mConnectionInfo.busName, mConnectionInfo.objectPath,
-                               CANONICAL_TELEPHONY_VOICEMAIL_IFACE, "VoicemailIndicatorChanged",
+                               LOMIRI_TELEPHONY_VOICEMAIL_IFACE, "VoicemailIndicatorChanged",
                                this, SLOT(onVoicemailIndicatorChanged(bool)));
 
         QDBusReply<bool> replyIndicator = voicemailIface.call("VoicemailIndicator");
@@ -270,7 +270,7 @@ void OfonoAccountEntry::onConnectionChanged(Tp::ConnectionPtr connection)
         }
 
         // and get the serial
-        QDBusInterface ussdIface(mConnectionInfo.busName, mConnectionInfo.objectPath, CANONICAL_TELEPHONY_USSD_IFACE);
+        QDBusInterface ussdIface(mConnectionInfo.busName, mConnectionInfo.objectPath, LOMIRI_TELEPHONY_USSD_IFACE);
         mSerial = ussdIface.property("Serial").toString();
         if (mReady) {
             Q_EMIT serialChanged();

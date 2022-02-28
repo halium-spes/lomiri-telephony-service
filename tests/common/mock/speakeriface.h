@@ -27,7 +27,7 @@
 #include <TelepathyQt/DBusError>
 #include <TelepathyQt/Callbacks>
 
-#define TP_QT_IFACE_CHANNEL_SPEAKER "com.canonical.Telephony.Speaker"
+#define TP_QT_IFACE_CHANNEL_SPEAKER "com.lomiri.Telephony.Speaker"
 
 class BaseChannelSpeakerInterface;
 
@@ -76,7 +76,7 @@ class TP_QT_EXPORT ChannelInterfaceSpeakerAdaptor : public Tp::AbstractAdaptor
     Q_OBJECT
     Q_CLASSINFO("D-Bus Interface", TP_QT_IFACE_CHANNEL_SPEAKER)
     Q_CLASSINFO("D-Bus Introspection", ""
-"  <interface name=\"com.canonical.Telephony.Speaker\">\n"
+"  <interface name=\"com.lomiri.Telephony.Speaker\">\n"
 "    <property access=\"read\" type=\"b\" name=\"SpeakerMode\"/>\n"
 "    <method name=\"turnOnSpeaker\">\n"
 "      <arg direction=\"in\" type=\"b\" name=\"active\"/>\n"

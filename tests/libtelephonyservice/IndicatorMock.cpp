@@ -23,8 +23,8 @@
 #include <QDBusObjectPath>
 #include <QDebug>
 
-#define INDICATOR_DBUS_SERVICE_NAME "com.canonical.TelephonyServiceIndicator"
-#define INDICATOR_DBUS_OBJ_PATH "/com/canonical/TelephonyServiceIndicator"
+#define INDICATOR_DBUS_SERVICE_NAME "com.lomiri.TelephonyServiceIndicator"
+#define INDICATOR_DBUS_OBJ_PATH "/com/lomiri/TelephonyServiceIndicator"
 
 class IndicatorMock : public QObject
 {

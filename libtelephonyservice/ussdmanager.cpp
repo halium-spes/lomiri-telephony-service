@@ -41,19 +41,19 @@ USSDManager::USSDManager(AccountEntry *account, QObject *parent)
 
 void USSDManager::initiate(const QString &command)
 {
-    QDBusInterface ussdIface(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE);
+    QDBusInterface ussdIface(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE);
     ussdIface.asyncCall("Initiate", command);
 }
 
 void USSDManager::respond(const QString &reply)
 {
-    QDBusInterface ussdIface(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE);
+    QDBusInterface ussdIface(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE);
     ussdIface.asyncCall("Respond", reply);
 }
 
 void USSDManager::cancel()
 {
-    QDBusInterface ussdIface(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE);
+    QDBusInterface ussdIface(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE);
     ussdIface.asyncCall("Cancel");
 }
 
@@ -63,19 +63,19 @@ void USSDManager::connectAllSignals()
         return;
     }
 
-    QDBusConnection::sessionBus().connect(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE, "StateChanged", this, SLOT(onStateChanged(QString)));
-    QDBusConnection::sessionBus().connect(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE, "RequestReceived", this, SIGNAL(requestReceived(QString)));
-    QDBusConnection::sessionBus().connect(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE, "NotificationReceived", this, SIGNAL(notificationReceived(QString)));
-    QDBusConnection::sessionBus().connect(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE, "InitiateUSSDComplete", this, SIGNAL(initiateUSSDComplete(QString)));
-    QDBusConnection::sessionBus().connect(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE, "RespondComplete", this, SIGNAL(respondComplete(bool, QString)));
-    QDBusConnection::sessionBus().connect(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE, "BarringComplete", this, SIGNAL(barringComplete(QString, QString, QVariantMap)));
-    QDBusConnection::sessionBus().connect(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE, "ForwardingComplete", this, SIGNAL(forwardingComplete(QString, QString, QVariantMap)));
-    QDBusConnection::sessionBus().connect(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE, "WaitingComplete", this, SIGNAL(waitingComplete(QString, QVariantMap)));
-    QDBusConnection::sessionBus().connect(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE, "CallingLinePresentationComplete", this, SIGNAL(callingLinePresentationComplete(QString, QString)));
-    QDBusConnection::sessionBus().connect(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE, "CallingLineRestrictionComplete", this, SIGNAL(callingLineRestrictionComplete(QString, QString)));
-    QDBusConnection::sessionBus().connect(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE, "ConnectedLineRestrictionComplete", this, SIGNAL(connectedLineRestrictionComplete(QString, QString)));
-    QDBusConnection::sessionBus().connect(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE, "ConnectedLinePresentationComplete", this, SIGNAL(connectedLinePresentationComplete(QString, QString)));
-    QDBusConnection::sessionBus().connect(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE, "InitiateFailed", this, SIGNAL(initiateFailed()));
+    QDBusConnection::sessionBus().connect(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE, "StateChanged", this, SLOT(onStateChanged(QString)));
+    QDBusConnection::sessionBus().connect(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE, "RequestReceived", this, SIGNAL(requestReceived(QString)));
+    QDBusConnection::sessionBus().connect(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE, "NotificationReceived", this, SIGNAL(notificationReceived(QString)));
+    QDBusConnection::sessionBus().connect(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE, "InitiateUSSDComplete", this, SIGNAL(initiateUSSDComplete(QString)));
+    QDBusConnection::sessionBus().connect(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE, "RespondComplete", this, SIGNAL(respondComplete(bool, QString)));
+    QDBusConnection::sessionBus().connect(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE, "BarringComplete", this, SIGNAL(barringComplete(QString, QString, QVariantMap)));
+    QDBusConnection::sessionBus().connect(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE, "ForwardingComplete", this, SIGNAL(forwardingComplete(QString, QString, QVariantMap)));
+    QDBusConnection::sessionBus().connect(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE, "WaitingComplete", this, SIGNAL(waitingComplete(QString, QVariantMap)));
+    QDBusConnection::sessionBus().connect(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE, "CallingLinePresentationComplete", this, SIGNAL(callingLinePresentationComplete(QString, QString)));
+    QDBusConnection::sessionBus().connect(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE, "CallingLineRestrictionComplete", this, SIGNAL(callingLineRestrictionComplete(QString, QString)));
+    QDBusConnection::sessionBus().connect(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE, "ConnectedLineRestrictionComplete", this, SIGNAL(connectedLineRestrictionComplete(QString, QString)));
+    QDBusConnection::sessionBus().connect(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE, "ConnectedLinePresentationComplete", this, SIGNAL(connectedLinePresentationComplete(QString, QString)));
+    QDBusConnection::sessionBus().connect(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE, "InitiateFailed", this, SIGNAL(initiateFailed()));
 }
 
 void USSDManager::disconnectAllSignals()
@@ -83,19 +83,19 @@ void USSDManager::disconnectAllSignals()
     if (mBusName.isEmpty() || mObjectPath.isEmpty()) {
         return;
     }
-    QDBusConnection::sessionBus().disconnect(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE, "StateChanged", this, SLOT(onStateChanged(QString)));
-    QDBusConnection::sessionBus().disconnect(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE, "RequestReceived", this, SIGNAL(requestReceived(QString)));
-    QDBusConnection::sessionBus().disconnect(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE, "NotificationReceived", this, SIGNAL(notificationReceived(QString)));
-    QDBusConnection::sessionBus().disconnect(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE, "InitiateUSSDComplete", this, SIGNAL(initiateUSSDComplete(QString)));
-    QDBusConnection::sessionBus().disconnect(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE, "RespondComplete", this, SIGNAL(respondComplete(bool, QString)));
-    QDBusConnection::sessionBus().disconnect(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE, "BarringComplete", this, SIGNAL(barringComplete(QString, QString, QVariantMap)));
-    QDBusConnection::sessionBus().disconnect(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE, "ForwardingComplete", this, SIGNAL(forwardingComplete(QString, QString, QVariantMap)));
-    QDBusConnection::sessionBus().disconnect(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE, "WaitingComplete", this, SIGNAL(waitingComplete(QString, QVariantMap)));
-    QDBusConnection::sessionBus().disconnect(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE, "CallingLinePresentationComplete", this, SIGNAL(callingLinePresentationComplete(QString, QString)));
-    QDBusConnection::sessionBus().disconnect(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE, "CallingLineRestrictionComplete", this, SIGNAL(callingLineRestrictionComplete(QString, QString)));
-    QDBusConnection::sessionBus().disconnect(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE, "ConnectedLineRestrictionComplete", this, SIGNAL(connectedLineRestrictionComplete(QString, QString)));
-    QDBusConnection::sessionBus().disconnect(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE, "ConnectedLinePresentationComplete", this, SIGNAL(connectedLinePresentationComplete(QString, QString)));
-    QDBusConnection::sessionBus().disconnect(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE, "InitiateFailed", this, SIGNAL(initiateFailed()));
+    QDBusConnection::sessionBus().disconnect(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE, "StateChanged", this, SLOT(onStateChanged(QString)));
+    QDBusConnection::sessionBus().disconnect(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE, "RequestReceived", this, SIGNAL(requestReceived(QString)));
+    QDBusConnection::sessionBus().disconnect(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE, "NotificationReceived", this, SIGNAL(notificationReceived(QString)));
+    QDBusConnection::sessionBus().disconnect(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE, "InitiateUSSDComplete", this, SIGNAL(initiateUSSDComplete(QString)));
+    QDBusConnection::sessionBus().disconnect(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE, "RespondComplete", this, SIGNAL(respondComplete(bool, QString)));
+    QDBusConnection::sessionBus().disconnect(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE, "BarringComplete", this, SIGNAL(barringComplete(QString, QString, QVariantMap)));
+    QDBusConnection::sessionBus().disconnect(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE, "ForwardingComplete", this, SIGNAL(forwardingComplete(QString, QString, QVariantMap)));
+    QDBusConnection::sessionBus().disconnect(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE, "WaitingComplete", this, SIGNAL(waitingComplete(QString, QVariantMap)));
+    QDBusConnection::sessionBus().disconnect(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE, "CallingLinePresentationComplete", this, SIGNAL(callingLinePresentationComplete(QString, QString)));
+    QDBusConnection::sessionBus().disconnect(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE, "CallingLineRestrictionComplete", this, SIGNAL(callingLineRestrictionComplete(QString, QString)));
+    QDBusConnection::sessionBus().disconnect(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE, "ConnectedLineRestrictionComplete", this, SIGNAL(connectedLineRestrictionComplete(QString, QString)));
+    QDBusConnection::sessionBus().disconnect(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE, "ConnectedLinePresentationComplete", this, SIGNAL(connectedLinePresentationComplete(QString, QString)));
+    QDBusConnection::sessionBus().disconnect(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE, "InitiateFailed", this, SIGNAL(initiateFailed()));
 }
 
 void USSDManager::onConnectionChanged()
@@ -110,7 +110,7 @@ void USSDManager::onConnectionChanged()
     mBusName = mAccount->account()->connection()->busName();
     mObjectPath = mAccount->account()->connection()->objectPath();
 
-    QDBusInterface ussdIface(mBusName, mObjectPath, CANONICAL_TELEPHONY_USSD_IFACE);
+    QDBusInterface ussdIface(mBusName, mObjectPath, LOMIRI_TELEPHONY_USSD_IFACE);
     mState = ussdIface.property("State").toString();
 
     connectAllSignals();

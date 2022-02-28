@@ -31,7 +31,7 @@ class BaseConnectionEmergencyModeInterface;
 
 typedef Tp::SharedPtr<BaseConnectionEmergencyModeInterface> BaseConnectionEmergencyModeInterfacePtr;
 
-#define TP_QT_IFACE_CONNECTION_EMERGENCYMODE "com.canonical.Telephony.EmergencyMode"
+#define TP_QT_IFACE_CONNECTION_EMERGENCYMODE "com.lomiri.Telephony.EmergencyMode"
 
 class TP_QT_EXPORT BaseConnectionEmergencyModeInterface : public Tp::AbstractConnectionInterface
 {
@@ -77,7 +77,7 @@ class TP_QT_EXPORT ConnectionInterfaceEmergencyModeAdaptor : public Tp::Abstract
     Q_OBJECT
     Q_CLASSINFO("D-Bus Interface", TP_QT_IFACE_CONNECTION_EMERGENCYMODE)
     Q_CLASSINFO("D-Bus Introspection", ""
-"  <interface name=\"com.canonical.Telephony.EmergencyMode\">\n"
+"  <interface name=\"com.lomiri.Telephony.EmergencyMode\">\n"
 "    <method name=\"EmergencyNumbers\">\n"
 "      <arg direction=\"out\" type=\"as\" name=\"emergencyNumbers\"/>\n"
 "    </method>\n"

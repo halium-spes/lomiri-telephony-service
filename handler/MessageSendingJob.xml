@@ -5,7 +5,7 @@
 
       An interface to the asynchronous message sending job
     ]]></dox:d>
-    <interface name="com.canonical.TelephonyServiceHandler.MessageSendingJob" xmlns:dox="http://www.ayatana.org/dbus/dox.dtd">
+    <interface name="com.lomiri.TelephonyServiceHandler.MessageSendingJob" xmlns:dox="http://www.ayatana.org/dbus/dox.dtd">
         <dox:d>
           An interface to the phone handler helper application.
         </dox:d>
