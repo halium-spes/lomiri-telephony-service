@@ -75,7 +75,7 @@ if (WANT_UI_SERVICES)
     pkg_check_modules(MESSAGING_MENU REQUIRED messaging-menu)
     pkg_check_modules(UserMetrics REQUIRED libusermetricsinput-1)
     pkg_check_modules(HISTORY REQUIRED history-service)
-    pkg_check_modules(URL_DISPATCHER REQUIRED url-dispatcher-1)
+    pkg_check_modules(URL_DISPATCHER REQUIRED lomiri-url-dispatcher)
 
     add_definitions(-DWANT_UI_SERVICES)
     message("Building with UI services")
