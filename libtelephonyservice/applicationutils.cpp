@@ -56,7 +56,7 @@ bool ApplicationUtils::checkApplicationRunning(const QString &serviceName)
 
 #ifdef WANT_UI_SERVICES
 
-#include <url-dispatcher.h>
+#include <lomiri-url-dispatcher.h>
 
 static void
 urlDispatchCallback (const gchar * url, gboolean success, gpointer user_data)
@@ -69,7 +69,7 @@ urlDispatchCallback (const gchar * url, gboolean success, gpointer user_data)
 bool ApplicationUtils::openUrl(const QUrl &url)
 {
     if (qgetenv("TELEPHONY_SERVICE_TEST").isEmpty()) {
-        url_dispatch_send(url.toString().toUtf8().constData(), urlDispatchCallback, 0);
+        lomiri_url_dispatch_send(url.toString().toUtf8().constData(), urlDispatchCallback, 0);
     }
     return true;
 }
