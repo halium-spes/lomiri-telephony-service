@@ -27,6 +27,7 @@
 #include "metrics.h"
 #include "chatmanager.h"
 #include "callmanager.h"
+#include "include/cellbroadcast-types.h"
 #include "config.h"
 #include "contactutils.h"
 #include "ringtone.h"
@@ -125,6 +126,7 @@ void notification_closed(NotifyNotification *notification, QMap<NotifyNotificati
 {
     NotificationData *data = map->take(notification);
     if (data != NULL) {
+        Ringtone::instance()->stopSound();
         delete data;
     }
 }
@@ -447,6 +449,115 @@ void TextChannelObserver::triggerNotificationForMessage(const Tp::TextChannelPtr
     }
 }
 
+void TextChannelObserver::showNotificationForCellBroadcast(const Tp::TextChannelPtr channel, const Tp::ReceivedMessage &message, const QString &accountId)
+{
+    Tp::ContactPtr contact = message.sender();
+    if (!contact) {
+        return;
+    }
+
+    QString topic = message.header().value("subject").variant().toString();
+    CellBroadcast::Type type = (CellBroadcast::Type) message.header().value(CellBroadcast::CELLBROADCAST_IDENTIFIER_TYPE).variant().toInt();
+
+    qDebug() << "received cell broadcast from topic:" << topic;
+    QString title;
+    QString iconTheme;
+
+    // Display different icons according to severity
+    if (type == CellBroadcast::TYPE_LEVEL_1) {
+        title = QString::fromUtf8(C::gettext("Emergency Alert"));
+        iconTheme = "security-alert";
+    } else if (type == CellBroadcast::TYPE_LEVEL_2) {
+        title = QString::fromUtf8(C::gettext("Emergency Alert: Extreme"));
+        iconTheme = "dialog-warning-symbolic";
+    } else if (type == CellBroadcast::TYPE_LEVEL_3) {
+        title = QString::fromUtf8(C::gettext("Emergency Alert: Severe"));
+        iconTheme = "dialog-warning-symbolic";
+    }   else if (type == CellBroadcast::TYPE_LEVEL_4) {
+        title = QString::fromUtf8(C::gettext("Emergency Alert: Notice"));
+        iconTheme = "dialog-warning-symbolic";
+    } else {
+
+        if (type == CellBroadcast::TYPE_AMBER) {
+            title = QString::fromUtf8(C::gettext("AMBER Alert"));
+            iconTheme = "dialog-warning-symbolic";
+        } else {
+            title = QString::fromUtf8(C::gettext("Alert"));
+            iconTheme = "broadcast";
+        }
+    }
+
+    GIcon *icon = g_themed_icon_new(iconTheme.toStdString().c_str());
+    QString iconUrl = QUrl(QStringLiteral("image://theme/%1").arg(g_icon_to_string(icon))).toString();
+    g_object_unref(icon);
+
+    // add the message to the messaging menu (use hex format to avoid invalid characters)
+    QByteArray token(message.messageToken().toUtf8());
+
+    NotificationData *data = new NotificationData();
+    data->accountId = accountId;
+    data->senderId = contact->id();
+    data->alias = contact->alias();
+    data->timestamp = QDateTime::currentDateTime();
+    data->targetId = channel->targetId();
+    data->targetType = channel->targetHandleType();
+    data->encodedEventId = token.toHex();
+    data->notificationTitle = title;
+    data->messageText = message.text();
+    data->icon = iconUrl;
+    data->notificationList = &mNotifications;
+
+    NotificationData messagingMenuData = *data;
+
+    MessagingMenu::instance()->addCellBroadcastNotification(messagingMenuData);
+
+    NotifyNotification *notification = notify_notification_new(title.toStdString().c_str(),
+                                                               message.text().toStdString().c_str(),
+                                                               iconUrl.toStdString().c_str());
+
+    mNotifications.insert(notification, data);
+    // allow to display notification in more than 2 lines
+    notify_notification_set_hint(notification,
+                                        "x-lomiri-truncation",
+                                        g_variant_new_boolean(false));
+
+
+    if (type == CellBroadcast::TYPE_LEVEL_1 || type == CellBroadcast::TYPE_LEVEL_2 || type == CellBroadcast::TYPE_LEVEL_3) {
+        notify_notification_set_urgency(notification, NOTIFY_URGENCY_CRITICAL);
+    }
+
+    notify_notification_add_action (notification,
+                                    "notification_action",
+                                    C::gettext("Show alert"),
+                                    notification_action,
+                                    data,
+                                    NULL);
+    notify_notification_set_hint_string(notification,
+                                             "x-lomiri-switch-to-application",
+                                             "true");
+
+    g_signal_connect(notification, "closed", G_CALLBACK(notification_closed), &mNotifications);
+
+    GError *error = NULL;
+    if (!notify_notification_show(notification, &error)) {
+        qWarning() << "Failed to show message notification:" << error->message;
+        g_error_free (error);
+    }
+
+    // sound + vibrate
+    if (type == CellBroadcast::TYPE_LEVEL_1) {
+        Ringtone::instance()->playIncomingEmergencySound();
+    } else if (type == CellBroadcast::TYPE_LEVEL_2) {
+        Ringtone::instance()->playIncomingWarningSound();
+    } else if (type == CellBroadcast::TYPE_LEVEL_3) {
+        Ringtone::instance()->playIncomingWarningSound();
+    }   else if (type == CellBroadcast::TYPE_LEVEL_4) {
+        Ringtone::instance()->playIncomingMessageSound();
+    } else {
+        Ringtone::instance()->playIncomingMessageSound();
+    }
+}
+
 void TextChannelObserver::showNotificationForMessage(const Tp::TextChannelPtr channel, const Tp::ReceivedMessage &message, const QString &accountId, const QStringList &participantIds, const QContact &contact)
 {
     Tp::ContactPtr telepathyContact = message.sender();
@@ -715,6 +826,12 @@ void TextChannelObserver::processMessageReceived(const Tp::ReceivedMessage &mess
 
     AccountEntry *account = TelepathyHelper::instance()->accountForConnection(textChannel->connection());
     if (!account) {
+        return;
+    }
+
+    if (message.sender()->id() == CellBroadcast::CELLBROADCAST_IDENTIFIER) {
+        // CellBroadcast Notification
+        showNotificationForCellBroadcast(textChannel, message, account->accountId());
         return;
     }
 

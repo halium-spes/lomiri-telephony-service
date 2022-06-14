@@ -28,6 +28,7 @@
 #include <TelepathyQt/DBusError>
 
 #include "connection.h"
+#include "include/cellbroadcast-types.h"
 
 class MockConnection;
 
@@ -38,6 +39,7 @@ public:
     MockTextChannel(MockConnection *conn, QStringList recipients, uint targetHandle, QObject *parent = 0);
     QString sendMessage(const Tp::MessagePartList& message, uint flags, Tp::DBusError* error);
     void messageReceived(const QString & message, const QVariantMap &info);
+    void cellBroadcastReceived(const QString &message, CellBroadcast::Type type, quint16 topic);
     Tp::BaseChannelPtr baseChannel();
     void messageAcknowledged(const QString &id);
     void mmsReceived(const QString &id, const QVariantMap &properties);

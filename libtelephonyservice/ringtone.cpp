@@ -102,6 +102,21 @@ void RingtoneWorker::playIncomingMessageSound()
 
 void RingtoneWorker::stopIncomingMessageSound()
 {
+    stopSound();
+}
+
+void RingtoneWorker::playIncomingEmergencySound()
+{
+    playAlertSound(GreeterContacts::instance()->incomingEmergencySound());
+}
+
+void RingtoneWorker::playIncomingWarningSound()
+{
+    playAlertSound(GreeterContacts::instance()->incomingWarningSound());
+}
+
+void RingtoneWorker::stopSound()
+{
     if (mMessageAudioPlayer) {
         mMessageAudioPlayer->pause();
         mMessageAudioPlayer->deleteLater();
@@ -109,13 +124,47 @@ void RingtoneWorker::stopIncomingMessageSound()
     }
 }
 
+void RingtoneWorker::playAlertSound(const QString &soundFile)
+{
+    if (!qgetenv("PA_DISABLED").isEmpty()) {
+        return;
+    }
+
+    // Re-create if in error state. A typical case is when media-hub-server has
+    // crashed and we need to start from a clean slate.
+    if (mMessageAudioPlayer && mMessageAudioPlayer->error()) {
+        qDebug() << "mMessageAudioPlayer in error state ("
+                 << mMessageAudioPlayer->error() << "), recreating";
+
+        mMessageAudioPlayer->deleteLater();
+        mMessageAudioPlayer = NULL;
+    }
+
+    if (!mMessageAudioPlayer) {
+        mMessageAudioPlayer = new QMediaPlayer(this);
+        mMessageAudioPlayer->setAudioRole(QAudio::AlarmRole);
+    }
+
+    // WORKAROUND: there is a bug in qmediaplayer/(media-hub?) that never goes into Stopped mode.
+    if (mMessageAudioPlayer->duration() == mMessageAudioPlayer->position()) {
+        mMessageAudioPlayer->stop();
+    }
+
+    if (mMessageAudioPlayer->state() == QMediaPlayer::PlayingState) {
+        return;
+    }
+
+    mMessageAudioPlayer->setMedia(QUrl::fromLocalFile(soundFile));
+    mMessageAudioPlayer->play();
+}
+
 Ringtone::Ringtone(QObject *parent) :
-    QObject(parent)
+    QObject(parent), mNbVibrateCycle(0)
 {
     mWorker = new RingtoneWorker();
     mWorker->moveToThread(&mThread);
     mThread.start();
-    mVibrateEffect.setDuration(500);
+    connect(&mVibrateTimer, SIGNAL(timeout()), this, SLOT(vibrate()));
 }
 
 Ringtone::~Ringtone()
@@ -130,6 +179,32 @@ Ringtone *Ringtone::instance()
     return self;
 }
 
+
+void Ringtone::startVibrate(int nbCycle, int duration, int interval)
+{
+    mVibrateTimer.stop();
+    mVibrateEffect.stop();
+
+    mNbVibrateCycle = nbCycle;
+    mVibrateEffect.setDuration(duration);
+    mVibrateEffect.setIntensity(1);
+    //immediate vibrate
+    vibrate();
+    mVibrateTimer.start(interval);
+}
+
+void Ringtone::vibrate()
+{
+    if (mNbVibrateCycle <= 0) {
+        mVibrateTimer.stop();
+        return;
+    }
+
+    mVibrateEffect.stop();
+    mVibrateEffect.start();
+    mNbVibrateCycle--;
+}
+
 void Ringtone::playIncomingCallSound()
 {
     QMetaObject::invokeMethod(mWorker, "playIncomingCallSound", Qt::QueuedConnection);
@@ -142,8 +217,8 @@ void Ringtone::stopIncomingCallSound()
 
 void Ringtone::playIncomingMessageSound()
 {
-    if (GreeterContacts::instance()->incomingMessageVibrate()) {
-        mVibrateEffect.start();
+    if (GreeterContacts::instance()->incomingMessageVibrate() && !mVibrateTimer.isActive()) {
+        startVibrate(1, 500, 1);
     }
 
     QMetaObject::invokeMethod(mWorker, "playIncomingMessageSound", Qt::QueuedConnection);
@@ -152,4 +227,27 @@ void Ringtone::playIncomingMessageSound()
 void Ringtone::stopIncomingMessageSound()
 {
     QMetaObject::invokeMethod(mWorker, "stopIncomingMessageSound", Qt::QueuedConnection);
+}
+
+void Ringtone::playIncomingEmergencySound()
+{
+    startVibrate(10, 3000, 4000);
+
+    QMetaObject::invokeMethod(mWorker, "playIncomingEmergencySound", Qt::QueuedConnection);
+}
+
+void Ringtone::playIncomingWarningSound()
+{
+    if (!mVibrateTimer.isActive()) {
+        startVibrate(4, 3000, 4000);
+    }
+
+    QMetaObject::invokeMethod(mWorker, "playIncomingWarningSound", Qt::QueuedConnection);
+}
+
+void Ringtone::stopSound()
+{
+    mVibrateEffect.stop();
+    mVibrateTimer.stop();
+    QMetaObject::invokeMethod(mWorker, "stopSound", Qt::QueuedConnection);
 }

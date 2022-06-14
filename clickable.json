@@ -1,0 +1,11 @@
+{
+  "builder": "cmake",
+  "dependencies_host": [
+    "libhistoryservice-dev",
+    "libmessaging-menu-dev",
+    "libusermetricsinput1-dev",
+    "liburl-dispatcher1-dev",
+    "telepathy-mission-control-5",
+    "libqofono-dev"
+  ]
+}

@@ -31,6 +31,7 @@
 #include <QDBusReply>
 #include <QDBusServiceWatcher>
 #include <QtDBus/QDBusInterface>
+#include <QTimer>
 #include <unistd.h>
 #include <sys/types.h>
 
@@ -46,8 +47,12 @@ public Q_SLOTS:
     void stopIncomingCallSound();
     void playIncomingMessageSound();
     void stopIncomingMessageSound();
+    void playIncomingEmergencySound();
+    void playIncomingWarningSound();
+    void stopSound();
 
 private:
+    void playAlertSound(const QString &soundFile);
     QMediaPlayer *mCallAudioPlayer;
     QMediaPlaylist mCallAudioPlaylist;
 
@@ -68,9 +73,20 @@ public Q_SLOTS:
     void playIncomingMessageSound();
     void stopIncomingMessageSound();
 
+    void playIncomingEmergencySound();
+    void playIncomingWarningSound();
+
+    void stopSound();
+
+private Q_SLOTS:
+    void vibrate();
+
 private:
     explicit Ringtone(QObject *parent = 0);
+    void startVibrate(int nbCycle, int duration, int interval);
     QFeedbackHapticsEffect mVibrateEffect;
+    int mNbVibrateCycle;
+    QTimer mVibrateTimer;
     RingtoneWorker *mWorker;
     QThread mThread;
 };

@@ -48,6 +48,7 @@ public Q_SLOTS:
 protected:
     void showNotificationForFlashMessage(const Tp::ReceivedMessage &message, const QString &accountId);
     void triggerNotificationForMessage(const Tp::TextChannelPtr channel, const Tp::ReceivedMessage &message, const QString &accountId, const QStringList &participantIds = QStringList());
+    void showNotificationForCellBroadcast(const Tp::TextChannelPtr channel, const Tp::ReceivedMessage &message, const QString &accountId);
     void showNotificationForMessage(const Tp::TextChannelPtr channel, const Tp::ReceivedMessage &message, const QString &accountId, const QStringList &participantIds = QStringList(), const QContact &contact = QContact());
     void showNotificationForNewGroup(const History::Thread &thread);
 

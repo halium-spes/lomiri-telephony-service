@@ -52,6 +52,8 @@ public:
     bool silentMode();
     QString incomingCallSound();
     QString incomingMessageSound();
+    QString incomingEmergencySound();
+    QString incomingWarningSound();
     bool incomingMessageVibrate();
     bool incomingCallVibrate();
     bool dialpadSoundsEnabled();
@@ -109,6 +111,8 @@ private:
     QVariant mSilentMode;
     QVariant mIncomingCallSound;
     QVariant mIncomingMessageSound;
+    QVariant mIncomingEmergencySound;
+    QVariant mIncomingWarningSound;
     QVariant mIncomingCallVibrate;
     QVariant mIncomingMessageVibrate;
     QVariant mDialpadSoundsEnabled;

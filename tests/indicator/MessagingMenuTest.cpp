@@ -24,6 +24,7 @@
 #include "messagingmenumock.h"
 #include "telepathyhelper.h"
 #include "mockcontroller.h"
+#include "include/cellbroadcast-types.h"
 
 class MessagingMenuTest : public TelepathyTest
 {
@@ -37,6 +38,7 @@ private Q_SLOTS:
     void testCallNotificationRemoved();
     void testTextMessagesNotificationAdded();
     void testTextMessagesNotificationFromOwnNumber();
+    void testCellBroadcastMessagesNotificationAdded();
 private:
     Tp::AccountPtr mOfonoAccount;
     Tp::AccountPtr mMultimediaAccount;
@@ -144,6 +146,31 @@ void MessagingMenuTest::testTextMessagesNotificationFromOwnNumber()
     QCOMPARE(notificationSpy.count(), 0);
 }
 
+void MessagingMenuTest::testCellBroadcastMessagesNotificationAdded()
+{
+    QDBusInterface notificationsMock("org.freedesktop.Notifications", "/org/freedesktop/Notifications", "org.freedesktop.Notifications");
+    QSignalSpy notificationSpy(&notificationsMock, SIGNAL(MockNotificationReceived(QString, uint, QString, QString, QString, QStringList, QVariantMap, int)));
+
+    QList<int> topics = QList<int>() << CellBroadcast::ETWS_ALERT_EARTHQUAKE << CellBroadcast::CMAS_ALERT_PRESIDENTIAL_LEVEL << CellBroadcast::CMAS_ALERT_EXTREME_IMMEDIATE_OBSERVED << CellBroadcast::CMAS_ALERT_SEVERE_EXPECTED_OBSERVED << CellBroadcast::CMAS_ALERT_PUBLIC_SAFETY << CellBroadcast::CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY << CellBroadcast::CMAS_ALERT_STATE_LOCAL_TEST << 3562;
+    QList<CellBroadcast::Type> types = QList<CellBroadcast::Type>() << CellBroadcast::TYPE_LEVEL_1 << CellBroadcast::TYPE_LEVEL_1 << CellBroadcast::TYPE_LEVEL_2 << CellBroadcast::TYPE_LEVEL_3 << CellBroadcast::TYPE_LEVEL_4 << CellBroadcast::TYPE_AMBER << CellBroadcast::TYPE_TEST << CellBroadcast::TYPE_OTHER;
+    QStringList expectedTitle = QStringList() << "Emergency Alert" << "Emergency Alert" << "Emergency Alert: Extreme" << "Emergency Alert: Severe" << "Emergency Alert: Notice" << "AMBER Alert" << "Alert" << "Alert";
+    QStringList expectedIcons =  QStringList() << "security-alert" << "security-alert" << "dialog-warning-symbolic" << "dialog-warning-symbolic" << "dialog-warning-symbolic" << "dialog-warning-symbolic" << "broadcast" << "broadcast";
+    for(int i=0; i < topics.count(); i++) {
+        mMultimediaMockController->PlaceIncomingCellBroadcast("Alert Message", (int)types.at(i), topics.at(i) );
+    }
+
+    TRY_COMPARE(notificationSpy.count(), topics.count());
+
+    for(int i=0; i < notificationSpy.count(); i++) {
+        QString icon = notificationSpy.at(i)[2].toString();
+        QString title = notificationSpy.at(i)[3].toString();
+        QString text = notificationSpy.at(i)[4].toString();
+
+        QCOMPARE(expectedTitle.at(i), title);
+        QCOMPARE("image://theme/" + expectedIcons.at(i), icon);
+        QCOMPARE("Alert Message", text);
+    }
+}
 
 QTEST_MAIN(MessagingMenuTest)
 #include "MessagingMenuTest.moc"

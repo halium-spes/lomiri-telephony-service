@@ -127,6 +127,7 @@ Q_SIGNALS:
     void ussdCancelCalled();
 
 public Q_SLOTS:
+    void placeIncomingCellBroadcast(const QString &message, int type, quint16 topic);
     void placeIncomingMessage(const QString &message, const QVariantMap &info);
     void hangupCall(const QString &callerId);
     void setCallState(const QString &phoneNumber, const QString &state);

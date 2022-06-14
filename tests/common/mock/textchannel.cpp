@@ -19,6 +19,7 @@
 
 // telepathy-ofono
 #include "textchannel.h"
+#include "include/cellbroadcast-types.h"
 
 QDBusArgument &operator<<(QDBusArgument &argument, const AttachmentStruct &attachment)
 {
@@ -198,6 +199,28 @@ void MockTextChannel::messageReceived(const QString &message, const QVariantMap 
     header["message-sender"] = QDBusVariant(mTargetHandle);
     header["message-sender-id"] = QDBusVariant(mRecipients.first());
     header["message-type"] = QDBusVariant(Tp::ChannelTextMessageTypeNormal);
+    partList << header << body;
+
+    mTextChannel->addReceivedMessage(partList);
+}
+
+void MockTextChannel::cellBroadcastReceived(const QString &message, CellBroadcast::Type type, quint16 topic)
+{
+    Tp::MessagePartList partList;
+
+    Tp::MessagePart body;
+    body["content-type"] = QDBusVariant("text/plain");
+    body["content"] = QDBusVariant(message);
+
+    Tp::MessagePart header;
+    header["message-token"] = QDBusVariant(QDateTime::currentDateTime().toTime_t());
+    header["message-received"] = QDBusVariant(QDateTime::currentDateTime().toTime_t());
+    header["message-sent"] = QDBusVariant(QDateTime::currentDateTime().toTime_t());
+    header["message-sender"] = QDBusVariant(mTargetHandle);
+    header["message-sender-id"] = QDBusVariant(CellBroadcast::CELLBROADCAST_IDENTIFIER);
+    header[CellBroadcast::CELLBROADCAST_IDENTIFIER_TYPE] = QDBusVariant(type);
+    header["message-type"] = QDBusVariant(Tp::ChannelTextMessageTypeNotice);
+    header["subject"] = QDBusVariant(topic);
     partList << header << body;
 
     mTextChannel->addReceivedMessage(partList);
