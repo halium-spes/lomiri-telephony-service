@@ -1,0 +1,16 @@
+[Unit]
+Description=Telephony Service Indicator
+PartOf=graphical-session.target
+PartOf=indicators-pre.target
+After=indicators-pre.target
+Requires=ofono-setup.service
+After=ofono-setup.service
+
+[Service]
+Type=dbus
+ExecStart=/usr/bin/telephony-service-indicator
+BusName=org.freedesktop.Telepathy.Client.TelephonyServiceIndicator
+Restart=on-failure
+
+[Install]
+WantedBy=indicators-pre.target
