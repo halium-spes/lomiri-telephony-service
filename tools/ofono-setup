@@ -83,7 +83,7 @@ MODEM_COUNT=0
 
 # Do not run the legacy modem detection if newer ofono with binder interface is being used
 # Those accounts are created from there
-if [ "$(getprop ro.build.version.sdk 99)" -ge "27" ]; then
+if ! command -v getprop || [ "$(getprop ro.build.version.sdk 99)" -ge "27" ]; then
     echo "Android SDK version 27 or greater detected. No modem detection will be made."
     for account in $EXISTING_OFONO_ACCOUNTS; do
         # Remove an eventual account that got here before the fix
@@ -110,7 +110,7 @@ if [ "$MODEM_COUNT" != "$EXISTING_OFONO_ACCOUNTS_COUNT" ]; then
         MODEM_OBJPATH=/ril_$INDEX
 
         # get previous name from gsettings if any
-        EXISTING_NAME=$(python3 -c "array=$(gsettings get com.ubuntu.phone sim-names); print (array[\"$MODEM_OBJPATH\"])")
+        EXISTING_NAME=$(python3 -c "array=$(gsettings get com.lomiri.phone sim-names); print (array[\"$MODEM_OBJPATH\"])")
         if [ -n "$EXISTING_NAME" ]; then
             NAME=$EXISTING_NAME
         else
