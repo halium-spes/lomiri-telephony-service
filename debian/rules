@@ -33,3 +33,5 @@ override_dh_translations:
 	# Override dh_translations to work around http://pad.lv/1183262.
 	dh_auto_build -- telephony-service.pot
 
+override_dh_installsystemduser:
+	dh_installsystemduser --package=telephony-service --name=telephony-service-indicator
