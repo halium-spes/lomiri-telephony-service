@@ -98,8 +98,8 @@ void AuthHandler::processStatusChange(AccountEntry *account, Tp::ConnectionStatu
 
     // indicate to the notification-daemon, that we want to use snap-decisions
     QVariantMap notificationHints;
-    notificationHints["x-canonical-snap-decisions"] = "true";
-    notificationHints["x-canonical-private-button-tint"] = "true";
+    notificationHints["x-lomiri-snap-decisions"] = "true";
+    notificationHints["x-lomiri-private-affirmative-tint"] = "true";
 
     QVariantMap menuModelActions;
     menuModelActions["notifications"] = menu->actionPath();
@@ -109,7 +109,7 @@ void AuthHandler::processStatusChange(AccountEntry *account, Tp::ConnectionStatu
     menuModelPaths["menuPath"] = menu->menuPath();
     menuModelPaths["actions"] = menuModelActions;
 
-    notificationHints["x-canonical-private-menu-model"] = menuModelPaths;
+    notificationHints["x-lomiri-private-menu-model"] = menuModelPaths;
 
     uint notificationId = mNotifications.Notify("telephony-service-indicator",
                         0, "", title, message, actions, notificationHints, 0);

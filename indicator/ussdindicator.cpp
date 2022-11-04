@@ -121,9 +121,9 @@ void USSDIndicator::showUSSDNotification(const QString &message, bool replyRequi
 
     // indicate to the notification-daemon, that we want to use snap-decisions
     QVariantMap notificationHints;
-    notificationHints["x-canonical-snap-decisions"] = "true";
-    notificationHints["x-canonical-private-button-tint"] = "true";
-    notificationHints["x-canonical-snap-decisions-timeout"] = -1;
+    notificationHints["x-lomiri-snap-decisions"] = "true";
+    notificationHints["x-lomiri-private-affirmative-tint"] = "true";
+    notificationHints["x-lomiri-snap-decisions-timeout"] = -1;
 
     QVariantMap menuModelActions;
     menuModelActions["notifications"] = menu->actionPath();
@@ -133,7 +133,7 @@ void USSDIndicator::showUSSDNotification(const QString &message, bool replyRequi
     menuModelPaths["menuPath"] = menu->menuPath();
     menuModelPaths["actions"] = menuModelActions;
 
-    notificationHints["x-canonical-private-menu-model"] = menuModelPaths;
+    notificationHints["x-lomiri-private-menu-model"] = menuModelPaths;
 
     m_notificationId = m_notifications.Notify("telephony-service-indicator",
                         0, "",

@@ -78,8 +78,8 @@ void ApproverTest::testSnapDecisionTimeout()
     mMockController->placeCall(properties);
     TRY_COMPARE(notificationSpy.count(), 1);
     QVariantMap hints = notificationSpy.first()[6].toMap();
-    QVERIFY(hints.contains("x-canonical-snap-decisions-timeout"));
-    QCOMPARE(hints["x-canonical-snap-decisions-timeout"].toInt(), -1);
+    QVERIFY(hints.contains("x-lomiri-snap-decisions-timeout"));
+    QCOMPARE(hints["x-lomiri-snap-decisions-timeout"].toInt(), -1);
     mMockController->HangupCall(callerId);
 }
 

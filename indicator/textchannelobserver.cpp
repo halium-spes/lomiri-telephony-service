@@ -250,7 +250,7 @@ void TextChannelObserver::sendMessage(NotificationData notificationData)
                                         NULL /* will be deleted when closed */);
 
         notify_notification_set_hint_string(notification,
-                                            "x-canonical-switch-to-application",
+                                            "x-lomiri-switch-to-application",
                                             "true");
 
         g_signal_connect(notification, "closed", G_CALLBACK(notification_closed), &mNotifications);
@@ -375,10 +375,10 @@ void TextChannelObserver::showNotificationForFlashMessage(const Tp::ReceivedMess
     g_signal_connect(notification, "closed", G_CALLBACK(notification_closed), &mNotifications);
 
     notify_notification_set_hint_string(notification,
-                                        "x-canonical-snap-decisions",
+                                        "x-lomiri-snap-decisions",
                                         "true");
     notify_notification_set_hint_string(notification,
-                                        "x-canonical-private-button-tint",
+                                        "x-lomiri-private-affirmative-tint",
                                         "true");
 
 
@@ -605,7 +605,7 @@ void TextChannelObserver::showNotificationForMessage(const Tp::TextChannelPtr ch
                                     NULL /* will be deleted when closed */);
 
     notify_notification_set_hint_string(notification,
-                                        "x-canonical-switch-to-application",
+                                        "x-lomiri-switch-to-application",
                                         "true");
 
     g_signal_connect(notification, "closed", G_CALLBACK(notification_closed), &mNotifications);
@@ -809,7 +809,7 @@ void TextChannelObserver::onReplyReceived(NotificationData notificationData)
         g_signal_connect(notification, "closed", G_CALLBACK(notification_closed), &mNotifications);
 
         notify_notification_set_hint_string(notification,
-                                            "x-canonical-snap-decisions",
+                                            "x-lomiri-snap-decisions",
                                             "true");
 
         GError *error = NULL;
