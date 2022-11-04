@@ -504,19 +504,19 @@ bool Approver::showSnapDecision(const Tp::ChannelDispatchOperationPtr dispatchOp
                                             mCachedBody.toStdString().c_str(),
                                             icon.toStdString().c_str());
     notify_notification_set_hint_string(notification,
-                                        "x-canonical-snap-decisions",
+                                        "x-lomiri-snap-decisions",
                                         "true");
     notify_notification_set_hint_string(notification,
-                                        "x-canonical-snap-decisions-swipe",
+                                        "x-lomiri-snap-decisions-swipe",
                                         "true");
     notify_notification_set_hint_string(notification,
-                                        "x-canonical-private-button-tint",
+                                        "x-lomiri-private-affirmative-tint",
                                         "true");
     notify_notification_set_hint_string(notification,
-                                        "x-canonical-secondary-icon",
+                                        "x-lomiri-secondary-icon",
                                         "incoming-call");
     notify_notification_set_hint_int32(notification,
-                                        "x-canonical-snap-decisions-timeout",
+                                        "x-lomiri-snap-decisions-timeout",
                                         -1);
 
     QString acceptTitle = hasCalls ? C::gettext("Hold + Answer") :
