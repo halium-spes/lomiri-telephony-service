@@ -32,6 +32,10 @@
 #include <TelepathyQt/ContactManager>
 #include <TelepathyQt/PendingContacts>
 #include <TelepathyQt/PendingChannelRequest>
+#include <QDBusMessage>
+#include <QDBusConnection>
+#include <History/TextEvent>
+#include <History/Manager>
 
 TextHandler::TextHandler(QObject *parent)
 : QObject(parent)
@@ -123,6 +127,46 @@ void TextHandler::acknowledgeAllMessages(const QVariantMap &properties)
 
     Q_FOREACH(const Tp::TextChannelPtr &channel, channels) {
         channel->acknowledge(channel->messageQueue());
+    }
+}
+
+void TextHandler::redownloadMessage(const QString &accountId, const QString &threadId, const QString &eventId)
+{
+    qDebug() << "TextHandler::redownloadMessage with eventId: " << eventId;
+
+    History::TextEvent textEvent = History::Manager::instance()->getSingleEvent(History::EventTypeText, accountId, threadId, eventId);
+    if (textEvent.isNull()) {
+      qWarning() << "No message for re-download found under accountId: " << accountId << ", threadId: " << threadId << ", eventId: " << eventId;
+      return;
+    }
+
+    // Only re-download temporarily failed messages.
+    if (textEvent.messageStatus() != History::MessageStatusTemporarilyFailed) {
+      qWarning() << "Trying to re-download message with wrong status: " << textEvent.messageStatus();
+      return;
+    }
+
+    // Update status to pending.
+    // Note: Visually the message should be seen as pending now, because the messaging-app sets it as pending (to sort out lag after click), but that is not saved to db.
+    textEvent.setMessageStatus(History::MessageStatusPending);
+    History::Events events;
+    events.append(textEvent);
+    if (!History::Manager::instance()->writeEvents(events)) {
+      qWarning() << "Failed to save the re-downloaded message pending status!";
+    }
+
+    QDBusMessage request = QDBusMessage::createMethodCall("org.ofono.mms", eventId, "org.ofono.mms.Message", "Redownload");
+    QDBusReply<void> reply = QDBusConnection::sessionBus().call(request);
+    if (!reply.isValid()) {
+      qWarning() << "Re-download request failed with error: " << reply.error();
+
+      // Revert status back to temporarily failed.
+      textEvent.setMessageStatus(History::MessageStatusTemporarilyFailed);
+      History::Events events;
+      events.append(textEvent);
+      if (!History::Manager::instance()->writeEvents(events)) {
+        qWarning() << "Failed to save the re-downloaded message temporarily failed status!";
+      }
     }
 }
 
