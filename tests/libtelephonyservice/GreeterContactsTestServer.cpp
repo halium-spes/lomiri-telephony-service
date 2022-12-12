@@ -184,7 +184,7 @@ void ListInterface::SetActiveEntry(const QString &entry)
 
     // Now send out a manual changed signal, since Qt won't do it for us.
     QDBusMessage message;
-    message = QDBusMessage::createSignal("/list",
+    message = QDBusMessage::createSignal("/com/lomiri/LomiriGreeter/list",
                                          "org.freedesktop.DBus.Properties",
                                          "PropertiesChanged");
     message << "com.lomiri.LomiriGreeter.List";
@@ -221,10 +221,10 @@ int main(int argc, char *argv[])
     connection.registerObject(userPath, &telepathy, QDBusConnection::ExportScriptableContents);
 
     ListInterface list(&telepathy);
-    connection.registerObject("/list", &list, QDBusConnection::ExportScriptableContents);
+    connection.registerObject("/com/lomiri/LomiriGreeter/list", &list, QDBusConnection::ExportScriptableContents);
 
     GreeterInterface greeter;
-    connection.registerObject("/", &greeter, QDBusConnection::ExportScriptableContents);
+    connection.registerObject("/com/lomiri/LomiriGreeter", &greeter, QDBusConnection::ExportScriptableContents);
 
     connection.registerService("com.lomiri.LomiriGreeter");
     connection.registerService("org.freedesktop.Accounts");
@@ -250,7 +250,7 @@ void GreeterInterface::SetIsActive(bool active)
 {
     mIsActive = active;
     QDBusMessage message;
-    message = QDBusMessage::createSignal("/",
+    message = QDBusMessage::createSignal("/com/lomiri/LomiriGreeter",
                                          "org.freedesktop.DBus.Properties",
                                          "PropertiesChanged");
     message << "com.lomiri.LomiriGreeter";

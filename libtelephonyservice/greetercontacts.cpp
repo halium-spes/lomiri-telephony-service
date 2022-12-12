@@ -69,7 +69,7 @@ GreeterContacts::GreeterContacts(QObject *parent)
     if (isGreeterMode()) {
         connection = QDBusConnection::sessionBus();
         connection.connect("com.lomiri.LomiriGreeter",
-                           "/list",
+                           "/com/lomiri/LomiriGreeter/list",
                            "org.freedesktop.DBus.Properties",
                            "PropertiesChanged",
                            this,
@@ -93,12 +93,12 @@ GreeterContacts::GreeterContacts(QObject *parent)
     // get the current value of greeter's isActive property
     connection = QDBusConnection::sessionBus();
     QDBusInterface greeterPropsIface("com.lomiri.LomiriGreeter",
-                                     "/",
+                                     "/com/lomiri/LomiriGreeter",
                                      "org.freedesktop.DBus.Properties");
     QDBusReply<QVariant> reply = greeterPropsIface.call("Get", "com.lomiri.LomiriGreeter", "IsActive");
     mGreeterActive = reply.isValid() && reply.value().toBool();
     connection.connect("com.lomiri.LomiriGreeter",
-                       "/",
+                       "/com/lomiri/LomiriGreeter",
                        "org.freedesktop.DBus.Properties",
                        "PropertiesChanged",
                        this,
@@ -421,7 +421,7 @@ void GreeterContacts::accountsGetContactReply(QDBusPendingCallWatcher *watcher)
 void GreeterContacts::queryEntry()
 {
     QDBusInterface iface("com.lomiri.LomiriGreeter",
-                         "/list",
+                         "/com/lomiri/LomiriGreeter/list",
                          "org.freedesktop.DBus.Properties",
                          QDBusConnection::sessionBus());
     QDBusPendingCall call = iface.asyncCall("Get", "com.lomiri.LomiriGreeter.List", "ActiveEntry");
@@ -572,7 +572,7 @@ void GreeterContacts::showGreeter()
 {
     QMutexLocker locker(&mMutex);
     QDBusInterface iface("com.lomiri.LomiriGreeter",
-                         "/",
+                         "/com/lomiri/LomiriGreeter",
                          "com.lomiri.LomiriGreeter",
                          QDBusConnection::sessionBus());
     iface.call("ShowGreeter");

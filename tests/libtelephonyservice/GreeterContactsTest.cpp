@@ -111,7 +111,7 @@ void GreeterContactsTest::cleanup()
 
     setActiveEntry(false);
     setCurrentContact(QVariantMap());
-    setUseInvalidated("/list", "com.lomiri.LomiriGreeter.List", false);
+    setUseInvalidated("/com/lomiri/LomiriGreeter/list", "com.lomiri.LomiriGreeter.List", false);
     setUseInvalidated(mUserPath, "com.lomiri.TelephonyServiceApprover", false);
 }
 
@@ -165,7 +165,7 @@ void GreeterContactsTest::testSignalOnEntryInvalidated()
     makeGreeterContacts();
     setFilter();
     waitForInitialQuery();
-    setUseInvalidated("/list", "com.lomiri.LomiriGreeter.List", true);
+    setUseInvalidated("/com/lomiri/LomiriGreeter/list", "com.lomiri.LomiriGreeter.List", true);
     setActiveEntry(true);
     waitForUpdatedSignal();
 }
@@ -272,7 +272,7 @@ void GreeterContactsTest::setActiveEntry(bool currentUser)
         entry = getpwuid(getuid())->pw_name;
 
     QDBusInterface iface("com.lomiri.LomiriGreeter",
-                         "/list",
+                         "/com/lomiri/LomiriGreeter/list",
                          "org.freedesktop.DBus.Properties",
                          QDBusConnection::sessionBus());
     QDBusReply<void> reply = iface.call("Set", "com.lomiri.LomiriGreeter.List", "ActiveEntry", QVariant::fromValue(QDBusVariant(QVariant(entry))));
@@ -327,7 +327,7 @@ void GreeterContactsTest::setUseInvalidated(const QString &path, const QString &
 void GreeterContactsTest::setGreeterActive(bool active)
 {
     QDBusInterface iface("com.lomiri.LomiriGreeter",
-                         "/",
+                         "/com/lomiri/LomiriGreeter",
                          "org.freedesktop.DBus.Properties",
                          QDBusConnection::sessionBus());
     QDBusReply<void> reply = iface.call("Set", "com.lomiri.LomiriGreeter", "IsActive", QVariant::fromValue(QDBusVariant(QVariant(active))));
