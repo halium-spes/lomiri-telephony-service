@@ -35,3 +35,4 @@ override_dh_translations:
 
 override_dh_installsystemduser:
 	dh_installsystemduser --package=telephony-service --name=telephony-service-indicator
+	dh_installsystemduser --package=telephony-service --name=telephony-service-approver

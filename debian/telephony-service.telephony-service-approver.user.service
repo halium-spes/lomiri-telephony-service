@@ -1,0 +1,11 @@
+[Unit]
+Description=Telephony Service Approver
+Before=lomiri-full-greeter.service lomiri-full-shell.service lomiri-greeter.service lomiri-shell.service
+
+[Service]
+Type=dbus
+BusName=org.freedesktop.Telepathy.Client.TelephonyServiceApprover
+ExecStart=/usr/bin/telephony-service-approver
+
+[Install]
+WantedBy=graphical-session.target
