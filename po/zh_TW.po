@@ -217,7 +217,9 @@ msgid ""
 "Oops, there has been an error with the MMS system and this message could not "
 "be retrieved. Please ensure Cellular Data is ON and MMS settings are "
 "correct, then ask the sender to try again."
-msgstr "糟糕，媒體訊息系統出現錯誤，無法搜尋到這個訊息。 請確保基地台已打開並且媒體訊息的設定是正確的，然後請寄件者重試。"
+msgstr ""
+"糟糕，媒體訊息系統出現錯誤，無法搜尋到這個訊息。 請確保基地台已打開並且媒體訊"
+"息的設定是正確的，然後請寄件者重試。"
 
 #: indicator/telephony-service-call.desktop.in:3
 msgid "Phone Calls"

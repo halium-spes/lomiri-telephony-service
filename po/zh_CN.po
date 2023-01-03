@@ -217,7 +217,9 @@ msgid ""
 "Oops, there has been an error with the MMS system and this message could not "
 "be retrieved. Please ensure Cellular Data is ON and MMS settings are "
 "correct, then ask the sender to try again."
-msgstr "糟糕，MMS系统出现错误并且无法检索到此消息。 请确保蜂窝数据已打开并且MMS设置正确，然后请发件人再试一次。"
+msgstr ""
+"糟糕，MMS系统出现错误并且无法检索到此消息。 请确保蜂窝数据已打开并且MMS设置正"
+"确，然后请发件人再试一次。"
 
 #: indicator/telephony-service-call.desktop.in:3
 msgid "Phone Calls"
