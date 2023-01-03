@@ -8,14 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-11 20:39+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-01-04 00:37+0000\n"
+"Last-Translator: Muhammad <muhammad23012009@hotmail.com>\n"
+"Language-Team: Urdu <https://hosted.weblate.org/projects/lomiri/"
+"telephony-service/ur/>\n"
 "Language: ur\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.15.1-dev\n"
 
 #: indicator/messagingmenu.cpp:373
 #, qt-format
@@ -117,7 +119,7 @@ msgstr ""
 
 #: indicator/ussdindicator.cpp:142
 msgid "Cancel"
-msgstr ""
+msgstr "منسوخ کریں"
 
 #: indicator/textchannelobserver.cpp:225
 msgid "Deactivate flight mode and try again from the messaging application."
