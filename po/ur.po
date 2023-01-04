@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-11 20:39+0000\n"
-"PO-Revision-Date: 2023-01-04 00:37+0000\n"
+"PO-Revision-Date: 2023-01-05 11:07+0000\n"
 "Last-Translator: Muhammad <muhammad23012009@hotmail.com>\n"
 "Language-Team: Urdu <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/ur/>\n"
@@ -190,7 +190,7 @@ msgstr ""
 
 #: indicator/authhandler.cpp:94
 msgid "No"
-msgstr ""
+msgstr "نہیں"
 
 #: indicator/metrics.cpp:49 indicator/metrics.cpp:51
 msgid "No calls made today"
@@ -323,7 +323,7 @@ msgstr ""
 
 #: indicator/authhandler.cpp:91
 msgid "Yes"
-msgstr ""
+msgstr "ہاں"
 
 #: indicator/textchannelobserver.cpp:307
 msgid "You joined a new group"
