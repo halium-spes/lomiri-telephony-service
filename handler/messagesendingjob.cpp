@@ -29,6 +29,7 @@
 #include <TelepathyQt/ContactManager>
 #include <TelepathyQt/PendingContacts>
 #include <QImage>
+#include <QImageReader>
 
 #define SMIL_TEXT_REGION "<region id=\"Text\" width=\"100%\" height=\"100%\" fit=\"scroll\" />"
 #define SMIL_IMAGE_REGION "<region id=\"Image\" width=\"100%\" height=\"100%\" fit=\"meet\" />"
@@ -196,7 +197,7 @@ void MessageSendingJob::sendMessage()
         scheduleDeletion();
     });
 }
- 
+
 bool MessageSendingJob::canSendMultiPartMessages()
 {
     if (!mAccount) {
@@ -289,7 +290,13 @@ Tp::MessagePartList MessageSendingJob::buildMessage(const PendingMessage &pendin
                 // check if we need to reduce de image size in case it's bigger than 300k
                 // this check is only valid for MMS
                 if (attachmentFile.size() > 307200) {
-                    QImage scaledImage(newFilePath);
+                    QImage scaledImage;
+                    QImageReader imgReader(newFilePath);
+                    if (imgReader.canRead()) {
+                        imgReader.setAutoTransform(true); // to avoid rotation issue
+                        scaledImage = imgReader.read();
+                    }
+
                     if (!scaledImage.isNull()) {
                         QBuffer buffer(&fileData);
                         buffer.open(QIODevice::WriteOnly);
