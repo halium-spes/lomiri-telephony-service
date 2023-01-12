@@ -1,8 +1,8 @@
 [Unit]
 Description=Telephony Service Indicator
 PartOf=graphical-session.target
-PartOf=indicators-pre.target
-After=indicators-pre.target
+PartOf=ayatana-indicators.target
+After=ayatana-indicators.target
 Requires=ofono-setup.service
 After=ofono-setup.service
 
@@ -13,4 +13,4 @@ BusName=org.freedesktop.Telepathy.Client.TelephonyServiceIndicator
 Restart=on-failure
 
 [Install]
-WantedBy=indicators-pre.target
+WantedBy=ayatana-indicators.target
