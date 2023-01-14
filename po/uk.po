@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-11 20:39+0000\n"
-"PO-Revision-Date: 2023-01-11 15:55+0000\n"
+"PO-Revision-Date: 2023-01-16 02:52+0000\n"
 "Last-Translator: Dan <denqwerta@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/uk/>\n"
@@ -187,7 +187,7 @@ msgstr "Повідомлення від %1"
 #: indicator/textchannelobserver.cpp:564
 #, qt-format
 msgid "Message to %1 from %2"
-msgstr ""
+msgstr "Повідомлення %1 від %2"
 
 #. TRANSLATORS : %1 is the recipient name
 #: indicator/messagingmenu.cpp:229 indicator/messagingmenu.cpp:233
@@ -198,7 +198,7 @@ msgstr "Повідомлення до групи від %1"
 
 #: indicator/textchannelobserver.cpp:293
 msgid "New Group"
-msgstr ""
+msgstr "Нова група"
 
 #: indicator/authhandler.cpp:94
 msgid "No"
@@ -236,6 +236,9 @@ msgid ""
 "be retrieved. Please ensure Cellular Data is ON and MMS settings are "
 "correct, then ask the sender to try again."
 msgstr ""
+"На жаль, у системі MMS сталася помилка, і це повідомлення не вдалося "
+"отримати. Переконайтеся, що мобільні дані ввімкнено, а налаштування MMS "
+"правильні, а потім попросіть відправника повторити спробу."
 
 #: indicator/telephony-service-call.desktop.in:3
 msgid "Phone Calls"
@@ -321,7 +324,7 @@ msgstr ""
 
 #: indicator/textchannelobserver.cpp:326
 msgid "View Group"
-msgstr ""
+msgstr "Переглянути групу"
 
 #: indicator/textchannelobserver.cpp:247 indicator/textchannelobserver.cpp:602
 msgid "View message"
@@ -341,19 +344,19 @@ msgstr "Так"
 
 #: indicator/textchannelobserver.cpp:307
 msgid "You joined a new group"
-msgstr ""
+msgstr "Ви приєдналися до нової групи"
 
 #. TRANSLATORS : %1 is the group name
 #: indicator/textchannelobserver.cpp:304
 #, qt-format
 msgid "You joined group %1"
-msgstr ""
+msgstr "Ви приєдналися до групи %1"
 
 #. TRANSLATORS : %1 is the group name
 #: indicator/textchannelobserver.cpp:300
 #, qt-format
 msgid "You joined group %1 "
-msgstr ""
+msgstr "Ви приєдналися до групи %1 "
 
 #~ msgid "Unknown Number"
 #~ msgstr "Невідомий номер"
