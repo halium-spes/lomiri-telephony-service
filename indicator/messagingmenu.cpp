@@ -167,6 +167,42 @@ void MessagingMenu::addNotification(NotificationData notificationData)
     }
 }
 
+void MessagingMenu::addCellBroadcastNotification(NotificationData notificationData)
+{
+    AccountEntry *account = TelepathyHelper::instance()->accountForId(notificationData.accountId);
+    if (!account) {
+        return;
+    }
+
+    mMessages[notificationData.encodedEventId] = notificationData;
+
+    GFile *file = NULL;
+    GIcon *icon = NULL;
+    file = g_file_new_for_uri(notificationData.icon.toUtf8().data());
+    icon = g_file_icon_new(file);
+
+    MessagingMenuMessage *message = messaging_menu_message_new(notificationData.encodedEventId.toUtf8().data(),
+                                                               icon,
+                                                               notificationData.notificationTitle.toUtf8().data(),
+                                                               "",
+                                                               notificationData.messageText.toUtf8().data(),
+                                                               notificationData.timestamp.toMSecsSinceEpoch() * 1000); // the value is expected to be in microseconds
+
+    g_signal_connect(message, "activate", G_CALLBACK(&MessagingMenu::messageActivateCallback), this);
+
+    messaging_menu_app_append_message(mMessagesApp, message, SOURCE_ID, true);
+
+    if (file) {
+        g_object_unref(file);
+    }
+    if (icon) {
+        g_object_unref(icon);
+    }
+    if (message) {
+        g_object_unref(message);
+    }
+}
+
 void MessagingMenu::addMessage(NotificationData notificationData)
 {
     // try to get a contact for that phone number

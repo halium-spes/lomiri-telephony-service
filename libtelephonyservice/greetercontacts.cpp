@@ -153,6 +153,24 @@ QString GreeterContacts::incomingMessageSound()
     return mIncomingMessageSound.toString();
 }
 
+QString GreeterContacts::incomingEmergencySound()
+{
+    QMutexLocker locker(&mMutex);
+    if (!mIncomingEmergencySound.isValid()) {
+        mIncomingEmergencySound = getUserValue("com.lomiri.touch.AccountsService.Sound", "IncomingEmergencySound");
+    }
+    return mIncomingEmergencySound.toString();
+}
+
+QString GreeterContacts::incomingWarningSound()
+{
+    QMutexLocker locker(&mMutex);
+    if (!mIncomingWarningSound.isValid()) {
+        mIncomingWarningSound = getUserValue("com.lomiri.touch.AccountsService.Sound", "IncomingWarningSound");
+    }
+    return mIncomingWarningSound.toString();
+}
+
 bool GreeterContacts::incomingCallVibrate()
 {
     if (silentMode()) {

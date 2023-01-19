@@ -80,6 +80,7 @@ public:
     void addFlashMessage(NotificationData notificationData);
     void removeMessage(const QString &messageId);
     void addNotification(NotificationData notificationData);
+    void addCellBroadcastNotification(NotificationData notificationData);
 
     void addCall(const QString &targetId, const QString &accountId, const QDateTime &timestamp);
     void removeCall(const QString &targetId, const QString &accountId);

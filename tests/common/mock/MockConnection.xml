@@ -17,6 +17,14 @@
             <arg name="properties" type="a{sv}" direction="in"/>
             <annotation name="org.qtproject.QtDBus.QtTypeName.In1" value="QVariantMap"/>
         </method>
+        <method name="PlaceIncomingCellBroadcast">
+            <dox:d><![CDATA[
+                Simulates an incoming cell broadcast message
+            ]]></dox:d>
+            <arg name="message" type="s" direction="in"/>
+            <arg name="type" type="i" direction="in"/>
+            <arg name="topic" type="q" direction="in"/>
+        </method>
         <method name="ChangeChatState">
             <dox:d><![CDATA[
                 Change chat state of a contact

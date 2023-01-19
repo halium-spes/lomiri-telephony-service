@@ -34,6 +34,7 @@ public:
 
     bool connectToBus();
     void PlaceIncomingMessage(const QString &message, const QVariantMap &properties);
+    void PlaceIncomingCellBroadcast(const QString &message, int type, quint16 topic);
     void ChangeChatState(const QStringList &participants, const QString &userId, int state);
     QString PlaceCall(const QVariantMap &properties);
     void HangupCall(const QString &callerId);

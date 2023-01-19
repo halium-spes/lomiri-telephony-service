@@ -28,6 +28,7 @@
 #include "phoneutils.h"
 #include "protocol.h"
 #include "conferencecallchannel.h"
+#include "include/cellbroadcast-types.h"
 
 #include "mockconnectiondbus.h"
 
@@ -682,6 +683,38 @@ QString MockConnection::uniqueName() const
 {
     static int count = 0;
     return QString("connection%1%2").arg((quintptr) this, 0, 16).arg(count++, 0, 16);
+}
+
+void MockConnection::placeIncomingCellBroadcast(const QString &message, int type, quint16 topic)
+{
+
+    QString  sender = CellBroadcast::CELLBROADCAST_IDENTIFIER;
+    QStringList members = QStringList() << sender;
+
+    MockTextChannel *channel = textChannelForRecipients(members);
+    if (!channel) {
+        // request the channel
+        Tp::DBusError error;
+        QVariantMap request;
+        bool yours;
+        uint handle = ensureHandle(CellBroadcast::CELLBROADCAST_IDENTIFIER);
+        request[TP_QT_IFACE_CHANNEL + QLatin1String(".ChannelType")] = TP_QT_IFACE_CHANNEL_TYPE_TEXT;
+        request[TP_QT_IFACE_CHANNEL + QLatin1String(".InitiatorHandle")] = handle;
+        request[TP_QT_IFACE_CHANNEL + QLatin1String(".TargetHandleType")] = Tp::HandleTypeContact;
+        request[TP_QT_IFACE_CHANNEL + QLatin1String(".TargetHandle")] = handle;
+        ensureChannel(request, yours, false, &error);
+        if(error.isValid()) {
+            qWarning() << "Error creating channel for incoming message" << error.name() << error.message();
+            return;
+        }
+
+        channel = textChannelForRecipients(members);
+        if (!channel) {
+            return;
+        }
+    }
+
+    channel->cellBroadcastReceived(message, (CellBroadcast::Type) type, topic);
 }
 
 void MockConnection::hangupCall(const QString &callerId)
