@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-11 20:39+0000\n"
+"POT-Creation-Date: 2023-01-19 20:04+0000\n"
 "PO-Revision-Date: 2021-01-05 23:26+0000\n"
 "Last-Translator: GK <miscgk@pm.me>\n"
 "Language-Team: Tamil <https://translate.ubports.com/projects/ubports/"
@@ -20,14 +20,14 @@ msgstr ""
 "X-Generator: Weblate 3.11.3\n"
 "X-Launchpad-Export-Date: 2017-01-04 06:03+0000\n"
 
-#: indicator/messagingmenu.cpp:373
+#: indicator/messagingmenu.cpp:409
 #, qt-format
 msgid "%1 missed call"
 msgid_plural "%1 missed calls"
 msgstr[0] "%1 தவறிய அழைப்பு"
 msgstr[1] "%1 தவறிய அழைப்புக்கள்"
 
-#: indicator/messagingmenu.cpp:466
+#: indicator/messagingmenu.cpp:495
 #, qt-format
 msgid "%1 voicemail message"
 msgid_plural "%1 voicemail messages"
@@ -54,39 +54,47 @@ msgstr "இன்று பெறப்பட்ட குறுஞ்செய�
 msgid "<b>%1</b> text messages sent today"
 msgstr "இன்று அனுப்பியக் குறுஞ்செய்திகள் - <b>%1</b>"
 
+#: indicator/textchannelobserver.cpp:482
+msgid "AMBER Alert"
+msgstr ""
+
 #: approver/approver.cpp:523
 msgid "Accept"
 msgstr "ஒப்புதல்"
 
-#: indicator/textchannelobserver.cpp:499
+#: indicator/textchannelobserver.cpp:485
+msgid "Alert"
+msgstr ""
+
+#: indicator/textchannelobserver.cpp:610
 #, qt-format
 msgid "Attachment: %1 audio clip"
 msgid_plural "Attachments: %1 audio clips"
 msgstr[0] "உடனிணைப்பு: %1 குரல் பதிவு"
 msgstr[1] "உடனிணைப்புகள்: %1 குரல் பதிவுகள்"
 
-#: indicator/textchannelobserver.cpp:497
+#: indicator/textchannelobserver.cpp:608
 #, qt-format
 msgid "Attachment: %1 contact"
 msgid_plural "Attachments: %1 contacts"
 msgstr[0] "உடனிணைப்பு: %1 தொடர்பு"
 msgstr[1] "உடனிணைப்புகள்: %1 தொடர்புகள்"
 
-#: indicator/textchannelobserver.cpp:501
+#: indicator/textchannelobserver.cpp:612
 #, qt-format
 msgid "Attachment: %1 file"
 msgid_plural "Attachments: %1 files"
 msgstr[0] "உடனிணைப்பு: %1 கோப்பு"
 msgstr[1] "உடனிணைப்புகள்: %1 கோப்புகள்"
 
-#: indicator/textchannelobserver.cpp:493
+#: indicator/textchannelobserver.cpp:604
 #, qt-format
 msgid "Attachment: %1 image"
 msgid_plural "Attachments: %1 images"
 msgstr[0] "உடனிணைப்பு: %1 படிம்ம"
 msgstr[1] "உடனிணைப்புகள்: %1 படிமங்கள்"
 
-#: indicator/textchannelobserver.cpp:495
+#: indicator/textchannelobserver.cpp:606
 #, qt-format
 msgid "Attachment: %1 video"
 msgid_plural "Attachments: %1 videos"
@@ -99,7 +107,7 @@ msgstr ""
 "உறுதிப்பாடு தோல்வியுற்றது. தாங்கள் பதிவிட்ட உறிதிச் சான்றுகளை மீள்ப்பார்வை செய்ய "
 "விரும்புகுறீர்களா?"
 
-#: indicator/messagingmenu.cpp:309
+#: indicator/messagingmenu.cpp:345
 msgid "Call back"
 msgstr "பின்னர் அழைக்கவும்"
 
@@ -124,7 +132,7 @@ msgstr "எண் இல்லாத அழைப்பு"
 msgid "Cancel"
 msgstr "தவிர்க்க"
 
-#: indicator/textchannelobserver.cpp:225
+#: indicator/textchannelobserver.cpp:227
 msgid "Deactivate flight mode and try again from the messaging application."
 msgstr ""
 "விமான முறையிலிருந்து வெளியேறிவிட்டு, மீண்டும் குறுஞ்செய்தி செயலியிலிருந்து "
@@ -134,6 +142,22 @@ msgstr ""
 msgid "Decline"
 msgstr "மறுக்க"
 
+#: indicator/textchannelobserver.cpp:468
+msgid "Emergency Alert"
+msgstr ""
+
+#: indicator/textchannelobserver.cpp:471
+msgid "Emergency Alert: Extreme"
+msgstr ""
+
+#: indicator/textchannelobserver.cpp:477
+msgid "Emergency Alert: Notice"
+msgstr ""
+
+#: indicator/textchannelobserver.cpp:474
+msgid "Emergency Alert: Severe"
+msgstr ""
+
 #: approver/approver.cpp:536
 msgid "End + Answer"
 msgstr "முடி + அழைப்பை எடு"
@@ -142,11 +166,11 @@ msgstr "முடி + அழைப்பை எடு"
 msgid "Hold + Answer"
 msgstr "நிலுவையில் வைத்து + அழைப்பை எடு"
 
-#: indicator/messagingmenu.cpp:314
+#: indicator/messagingmenu.cpp:350
 msgid "I missed your call - can you call me now?"
 msgstr "நான் தங்களின் அழைப்பை தவறவிட்டுவிட்டேன். தங்களால் இப்பொழுது அழைக்க முடியுமா?"
 
-#: indicator/messagingmenu.cpp:317
+#: indicator/messagingmenu.cpp:353
 msgid "I'll be 20 minutes late."
 msgstr "எனக்கு 20 நிமிடங்கள் தாமதமாகும்."
 
@@ -154,7 +178,7 @@ msgstr "எனக்கு 20 நிமிடங்கள் தாமதமா�
 msgid "I'm busy at the moment. I'll call later."
 msgstr "நான் இப்பொழுது வேறொரு வேலையில் ஈடுபட்டுள்ளேன். பின்னர் அழைக்கிறேன்."
 
-#: indicator/messagingmenu.cpp:316
+#: indicator/messagingmenu.cpp:352
 msgid "I'm busy at the moment. I'll call you later."
 msgstr "நான் இப்பொழுது வேறொரு வேலையில் ஈடுபட்டுள்ளேன். தங்களுக்கு பின்னர் அழைக்கிறேன்."
 
@@ -162,7 +186,7 @@ msgstr "நான் இப்பொழுது வேறொரு வே
 msgid "I'm running late, on my way now."
 msgstr "சற்று தாமதமாகிவிட்டேன், வந்துகொண்டிருக்கிறேன்."
 
-#: indicator/messagingmenu.cpp:315
+#: indicator/messagingmenu.cpp:351
 msgid "I'm running late. I'm on my way."
 msgstr "நான் சற்று தாமதமாகிவிட்டேன். வந்துகொண்டிருக்கிறேன்."
 
@@ -170,28 +194,35 @@ msgstr "நான் சற்று தாமதமாகிவிட்டே�
 msgid "Message & decline"
 msgstr "அழைப்பை மறுத்து குறுஞ்செய்தி அனுப்பு"
 
-#: indicator/textchannelobserver.cpp:638
+#: indicator/textchannelobserver.cpp:749
 #, qt-format
 msgid "Message from %1"
 msgstr "%1 - டமிருந்து வந்த குறுஞ்செய்தி"
 
 #. TRANSLATORS : %1 is the group name and %2 is the recipient name
-#: indicator/messagingmenu.cpp:226 indicator/textchannelobserver.cpp:560
-#: indicator/textchannelobserver.cpp:564
+#: indicator/messagingmenu.cpp:262 indicator/textchannelobserver.cpp:671
+#: indicator/textchannelobserver.cpp:675
 #, qt-format
 msgid "Message to %1 from %2"
 msgstr "%1 என்ற குழுவிற்கு %2 - டமிருந்து வந்த குறுஞ்செய்தி"
 
 #. TRANSLATORS : %1 is the recipient name
-#: indicator/messagingmenu.cpp:229 indicator/messagingmenu.cpp:233
-#: indicator/textchannelobserver.cpp:568 indicator/textchannelobserver.cpp:572
+#: indicator/messagingmenu.cpp:265 indicator/messagingmenu.cpp:269
+#: indicator/textchannelobserver.cpp:679 indicator/textchannelobserver.cpp:683
 #, qt-format
 msgid "Message to group from %1"
 msgstr "குழுவிற்கு %1 - டமிருந்து வந்த குறுஞ்செய்தி"
 
-#: indicator/textchannelobserver.cpp:293
+#: indicator/textchannelobserver.cpp:295
 msgid "New Group"
 msgstr "புதிய குழு"
+
+#. TRANSLATORS : message displayed when any error occurred while receiving a MMS (case when cellular-data is off, or any downloading issue). Notify that there was a message, the user can find more about it in the messaging-app.
+#: indicator/textchannelobserver.cpp:615
+#, fuzzy
+#| msgid "View message"
+msgid "New MMS message"
+msgstr "குறுஞ்செய்தியைக்க காண்க"
 
 #: indicator/authhandler.cpp:94
 msgid "No"
@@ -213,7 +244,7 @@ msgstr "இன்று எவறிடமிருந்தும் குற�
 msgid "No text messages sent today"
 msgstr "இன்று எவறுக்கும் குறுஞ்செய்தி அனுப்பவில்லை"
 
-#: indicator/ussdindicator.cpp:116 indicator/textchannelobserver.cpp:365
+#: indicator/textchannelobserver.cpp:367 indicator/ussdindicator.cpp:116
 msgid "Ok"
 msgstr "சரி"
 
@@ -221,18 +252,6 @@ msgstr "சரி"
 #, qt-format
 msgid "On [%1]"
 msgstr "இயக்கத்தில் உள்ளது [%1]"
-
-#. TRANSLATORS : message displayed when any error occured while receiving a mms ( case when cellular-data is off, or any downloading issue). Note that mms is lost in that case
-#: indicator/textchannelobserver.cpp:504
-msgid ""
-"Oops, there has been an error with the MMS system and this message could not "
-"be retrieved. Please ensure Cellular Data is ON and MMS settings are "
-"correct, then ask the sender to try again."
-msgstr ""
-"பல்லூடகச் செய்திச் சேவையில் (MMS) சிக்கல் ஏற்பட்டுவிட்டதால் இந்தச் செய்தியை பெற இயலவில்லை. "
-"தஙகள் கைப்பேசி இணைப்பின் தரவு இயக்கத்தில் உள்ளதா என்பதையும், ப.செ.சே (MMS) - வின் "
-"அமைப்புக்கள் சரியாக உள்ளனவா என்பதையும் பார்த்துவிட்டு, அனுப்புனரை மீண்டுட் அனுப்பச் "
-"சொல்லவும்."
 
 #: indicator/telephony-service-call.desktop.in:3
 msgid "Phone Calls"
@@ -242,11 +261,11 @@ msgstr "தொலைப்பேசி அழைப்புகள்"
 msgid "Please call me back later."
 msgstr "எனக்கு பின்னர் அழைக்கவும்."
 
-#: indicator/textchannelobserver.cpp:793
+#: indicator/textchannelobserver.cpp:910
 msgid "Please, select a SIM card:"
 msgstr "செறிவட்டையைத்(SIM card) தேர்வு செய்க:"
 
-#: approver/approver.cpp:460 indicator/messagingmenu.cpp:378
+#: approver/approver.cpp:460 indicator/messagingmenu.cpp:414
 msgid "Private number"
 msgstr "தனியார் எண்"
 
@@ -263,16 +282,20 @@ msgstr "செறிவட்டை %1"
 msgid "SMS"
 msgstr "குறுஞ்செய்தி"
 
-#: indicator/textchannelobserver.cpp:371
+#: indicator/textchannelobserver.cpp:373
 msgid "Save"
 msgstr "சேமி"
 
-#: indicator/messagingmenu.cpp:151 indicator/messagingmenu.cpp:257
-#: indicator/messagingmenu.cpp:324
+#: indicator/messagingmenu.cpp:151 indicator/messagingmenu.cpp:293
+#: indicator/messagingmenu.cpp:360
 msgid "Send"
 msgstr "அனுப்பு"
 
-#: indicator/messagingmenu.cpp:318
+#: indicator/textchannelobserver.cpp:531
+msgid "Show alert"
+msgstr ""
+
+#: indicator/messagingmenu.cpp:354
 msgid "Sorry, I'm still busy. I'll call you later."
 msgstr "மன்னிக்கவும். இதுவரை வேலை முடியவில்லை. தங்களை பின்னர் அழைக்கிறேன்."
 
@@ -294,11 +317,11 @@ msgstr "தொலைப்பேசி சேவையை அனுமதி�
 msgid "Telephony Service Indicator"
 msgstr "தொலைப்பேசி சேவை சுட்டிக்காட்டி"
 
-#: indicator/textchannelobserver.cpp:234
+#: indicator/textchannelobserver.cpp:236
 msgid "The message could not be sent"
 msgstr "இந்தக் குறுஞ்செய்தியை அனுப்ப இயலபது"
 
-#: indicator/textchannelobserver.cpp:228
+#: indicator/textchannelobserver.cpp:230
 msgid "Try again from the messaging application."
 msgstr "குறுஞ்செய்திச் செயலியிலிருந்து மீண்டும் முயற்சிக்கவும்."
 
@@ -306,30 +329,30 @@ msgstr "குறுஞ்செய்திச் செயலியிலி�
 msgid "Unknown caller"
 msgstr "தெறியாத நபர்"
 
-#: approver/approver.cpp:463 indicator/messagingmenu.cpp:208
-#: indicator/messagingmenu.cpp:382 indicator/textchannelobserver.cpp:529
+#: approver/approver.cpp:463 indicator/messagingmenu.cpp:244
+#: indicator/messagingmenu.cpp:418 indicator/textchannelobserver.cpp:640
 msgid "Unknown number"
 msgstr "தெறியாத எண்"
 
-#: indicator/textchannelobserver.cpp:223
+#: indicator/textchannelobserver.cpp:225
 msgid "Unlock your sim card and try again from the messaging application."
 msgstr ""
 "செறிவட்டையின் (SIM) பூட்டை நீக்கிய பின்னர், குறுஞ்செய்திச் செயலியிலிருந்து மீண்டும் "
 "முயற்சிக்கவும்."
 
-#: indicator/textchannelobserver.cpp:326
+#: indicator/textchannelobserver.cpp:328
 msgid "View Group"
 msgstr "குழுவைக் காண்க"
 
-#: indicator/textchannelobserver.cpp:247 indicator/textchannelobserver.cpp:602
+#: indicator/textchannelobserver.cpp:249 indicator/textchannelobserver.cpp:713
 msgid "View message"
 msgstr "குறுஞ்செய்தியைக்க காண்க"
 
-#: indicator/messagingmenu.cpp:471
+#: indicator/messagingmenu.cpp:500
 msgid "Voicemail"
 msgstr "குரல் மடல்"
 
-#: indicator/messagingmenu.cpp:463
+#: indicator/messagingmenu.cpp:492
 msgid "Voicemail messages"
 msgstr "குரல் மடல் குறுஞ்செய்திகள்"
 
@@ -337,18 +360,28 @@ msgstr "குரல் மடல் குறுஞ்செய்திகள�
 msgid "Yes"
 msgstr "ஆம்"
 
-#: indicator/textchannelobserver.cpp:307
+#: indicator/textchannelobserver.cpp:309
 msgid "You joined a new group"
 msgstr "நீங்கள் புதியக் குழுவொன்றில் இணந்துள்ளீர்கள்"
 
 #. TRANSLATORS : %1 is the group name
-#: indicator/textchannelobserver.cpp:304
+#: indicator/textchannelobserver.cpp:306
 #, qt-format
 msgid "You joined group %1"
 msgstr "நீங்கள் %1 குழுவில் இணைந்துள்ளீர்கள்"
 
 #. TRANSLATORS : %1 is the group name
-#: indicator/textchannelobserver.cpp:300
+#: indicator/textchannelobserver.cpp:302
 #, qt-format
 msgid "You joined group %1 "
 msgstr "நீங்கள் %1 குழுவில் இணைந்துள்ளீர்கள் "
+
+#~ msgid ""
+#~ "Oops, there has been an error with the MMS system and this message could "
+#~ "not be retrieved. Please ensure Cellular Data is ON and MMS settings are "
+#~ "correct, then ask the sender to try again."
+#~ msgstr ""
+#~ "பல்லூடகச் செய்திச் சேவையில் (MMS) சிக்கல் ஏற்பட்டுவிட்டதால் இந்தச் செய்தியை பெற "
+#~ "இயலவில்லை. தஙகள் கைப்பேசி இணைப்பின் தரவு இயக்கத்தில் உள்ளதா என்பதையும், ப.செ.சே "
+#~ "(MMS) - வின் அமைப்புக்கள் சரியாக உள்ளனவா என்பதையும் பார்த்துவிட்டு, அனுப்புனரை மீண்டுட் "
+#~ "அனுப்பச் சொல்லவும்."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-11 20:39+0000\n"
+"POT-Creation-Date: 2023-01-19 20:04+0000\n"
 "PO-Revision-Date: 2015-07-19 22:43+0000\n"
 "Last-Translator: Owen Llywelyn <owen.llywelyn@gmail.com>\n"
 "Language-Team: Welsh <cy@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-01-04 06:03+0000\n"
 "X-Generator: Launchpad (build 18298)\n"
 
-#: indicator/messagingmenu.cpp:373
+#: indicator/messagingmenu.cpp:409
 #, qt-format
 msgid "%1 missed call"
 msgid_plural "%1 missed calls"
@@ -29,7 +29,7 @@ msgstr[1] "Methwyd %1 galwad"
 msgstr[2] "Methwyd %1 galwad"
 msgstr[3] "Methwyd %1 galwad"
 
-#: indicator/messagingmenu.cpp:466
+#: indicator/messagingmenu.cpp:495
 #, qt-format
 msgid "%1 voicemail message"
 msgid_plural "%1 voicemail messages"
@@ -58,39 +58,47 @@ msgstr "Derbyniwyd <b>%1</b> neges destun heddiw"
 msgid "<b>%1</b> text messages sent today"
 msgstr "Anfonwyd <b>%1</b> neges destun heddiw"
 
+#: indicator/textchannelobserver.cpp:482
+msgid "AMBER Alert"
+msgstr ""
+
 #: approver/approver.cpp:523
 msgid "Accept"
 msgstr "Derbyn"
 
-#: indicator/textchannelobserver.cpp:499
+#: indicator/textchannelobserver.cpp:485
+msgid "Alert"
+msgstr ""
+
+#: indicator/textchannelobserver.cpp:610
 #, qt-format
 msgid "Attachment: %1 audio clip"
 msgid_plural "Attachments: %1 audio clips"
 msgstr[0] ""
 msgstr[1] ""
 
-#: indicator/textchannelobserver.cpp:497
+#: indicator/textchannelobserver.cpp:608
 #, qt-format
 msgid "Attachment: %1 contact"
 msgid_plural "Attachments: %1 contacts"
 msgstr[0] ""
 msgstr[1] ""
 
-#: indicator/textchannelobserver.cpp:501
+#: indicator/textchannelobserver.cpp:612
 #, qt-format
 msgid "Attachment: %1 file"
 msgid_plural "Attachments: %1 files"
 msgstr[0] ""
 msgstr[1] ""
 
-#: indicator/textchannelobserver.cpp:493
+#: indicator/textchannelobserver.cpp:604
 #, qt-format
 msgid "Attachment: %1 image"
 msgid_plural "Attachments: %1 images"
 msgstr[0] ""
 msgstr[1] ""
 
-#: indicator/textchannelobserver.cpp:495
+#: indicator/textchannelobserver.cpp:606
 #, qt-format
 msgid "Attachment: %1 video"
 msgid_plural "Attachments: %1 videos"
@@ -101,7 +109,7 @@ msgstr[1] ""
 msgid "Authentication failed. Do you want to review your credentials?"
 msgstr ""
 
-#: indicator/messagingmenu.cpp:309
+#: indicator/messagingmenu.cpp:345
 msgid "Call back"
 msgstr "Galw nôl"
 
@@ -126,13 +134,29 @@ msgstr "Yn galw o rif anhysbys"
 msgid "Cancel"
 msgstr "Diddymu"
 
-#: indicator/textchannelobserver.cpp:225
+#: indicator/textchannelobserver.cpp:227
 msgid "Deactivate flight mode and try again from the messaging application."
 msgstr "Dadweithredu modd hedfan a cheisio eto o'r ap negeseuon."
 
 #: approver/approver.cpp:545
 msgid "Decline"
 msgstr "Gwrthod"
+
+#: indicator/textchannelobserver.cpp:468
+msgid "Emergency Alert"
+msgstr ""
+
+#: indicator/textchannelobserver.cpp:471
+msgid "Emergency Alert: Extreme"
+msgstr ""
+
+#: indicator/textchannelobserver.cpp:477
+msgid "Emergency Alert: Notice"
+msgstr ""
+
+#: indicator/textchannelobserver.cpp:474
+msgid "Emergency Alert: Severe"
+msgstr ""
 
 #: approver/approver.cpp:536
 msgid "End + Answer"
@@ -142,11 +166,11 @@ msgstr "Gorffen + Ateb"
 msgid "Hold + Answer"
 msgstr "Dal + Ateb"
 
-#: indicator/messagingmenu.cpp:314
+#: indicator/messagingmenu.cpp:350
 msgid "I missed your call - can you call me now?"
 msgstr "Methais eich galwad - allwch chi alw nawr?"
 
-#: indicator/messagingmenu.cpp:317
+#: indicator/messagingmenu.cpp:353
 msgid "I'll be 20 minutes late."
 msgstr "Byddaf 20 munud yn hwyr."
 
@@ -154,7 +178,7 @@ msgstr "Byddaf 20 munud yn hwyr."
 msgid "I'm busy at the moment. I'll call later."
 msgstr "Rwy'n brysur nawr. Ffonia i wedyn."
 
-#: indicator/messagingmenu.cpp:316
+#: indicator/messagingmenu.cpp:352
 msgid "I'm busy at the moment. I'll call you later."
 msgstr "Rwy'n brysur nawr. Ffonia i wedyn."
 
@@ -162,7 +186,7 @@ msgstr "Rwy'n brysur nawr. Ffonia i wedyn."
 msgid "I'm running late, on my way now."
 msgstr "Rwy'n hwyr ond ar fy ffordd nawr."
 
-#: indicator/messagingmenu.cpp:315
+#: indicator/messagingmenu.cpp:351
 msgid "I'm running late. I'm on my way."
 msgstr "Rwy'n hwyr ond ar fy ffordd."
 
@@ -170,28 +194,35 @@ msgstr "Rwy'n hwyr ond ar fy ffordd."
 msgid "Message & decline"
 msgstr "Anfon neges & gwrthod"
 
-#: indicator/textchannelobserver.cpp:638
+#: indicator/textchannelobserver.cpp:749
 #, qt-format
 msgid "Message from %1"
 msgstr "Anfon neges o %1"
 
 #. TRANSLATORS : %1 is the group name and %2 is the recipient name
-#: indicator/messagingmenu.cpp:226 indicator/textchannelobserver.cpp:560
-#: indicator/textchannelobserver.cpp:564
+#: indicator/messagingmenu.cpp:262 indicator/textchannelobserver.cpp:671
+#: indicator/textchannelobserver.cpp:675
 #, qt-format
 msgid "Message to %1 from %2"
 msgstr ""
 
 #. TRANSLATORS : %1 is the recipient name
-#: indicator/messagingmenu.cpp:229 indicator/messagingmenu.cpp:233
-#: indicator/textchannelobserver.cpp:568 indicator/textchannelobserver.cpp:572
+#: indicator/messagingmenu.cpp:265 indicator/messagingmenu.cpp:269
+#: indicator/textchannelobserver.cpp:679 indicator/textchannelobserver.cpp:683
 #, qt-format
 msgid "Message to group from %1"
 msgstr ""
 
-#: indicator/textchannelobserver.cpp:293
+#: indicator/textchannelobserver.cpp:295
 msgid "New Group"
 msgstr ""
+
+#. TRANSLATORS : message displayed when any error occurred while receiving a MMS (case when cellular-data is off, or any downloading issue). Notify that there was a message, the user can find more about it in the messaging-app.
+#: indicator/textchannelobserver.cpp:615
+#, fuzzy
+#| msgid "View message"
+msgid "New MMS message"
+msgstr "Gweld neges"
 
 #: indicator/authhandler.cpp:94
 msgid "No"
@@ -213,21 +244,13 @@ msgstr "Heb dderbyn neges destun heddiw."
 msgid "No text messages sent today"
 msgstr "Heb anfon neges destun heddiw."
 
-#: indicator/ussdindicator.cpp:116 indicator/textchannelobserver.cpp:365
+#: indicator/textchannelobserver.cpp:367 indicator/ussdindicator.cpp:116
 msgid "Ok"
 msgstr "Iawn"
 
 #: approver/approver.cpp:456
 #, qt-format
 msgid "On [%1]"
-msgstr ""
-
-#. TRANSLATORS : message displayed when any error occured while receiving a mms ( case when cellular-data is off, or any downloading issue). Note that mms is lost in that case
-#: indicator/textchannelobserver.cpp:504
-msgid ""
-"Oops, there has been an error with the MMS system and this message could not "
-"be retrieved. Please ensure Cellular Data is ON and MMS settings are "
-"correct, then ask the sender to try again."
 msgstr ""
 
 #: indicator/telephony-service-call.desktop.in:3
@@ -238,11 +261,11 @@ msgstr "Galwadau Ffôn"
 msgid "Please call me back later."
 msgstr "Ffoniwch fi wedyn."
 
-#: indicator/textchannelobserver.cpp:793
+#: indicator/textchannelobserver.cpp:910
 msgid "Please, select a SIM card:"
 msgstr "Dewiswch gerdyn SIM:"
 
-#: approver/approver.cpp:460 indicator/messagingmenu.cpp:378
+#: approver/approver.cpp:460 indicator/messagingmenu.cpp:414
 msgid "Private number"
 msgstr "Rhif preifat"
 
@@ -259,16 +282,20 @@ msgstr "SIM %1"
 msgid "SMS"
 msgstr "SMS"
 
-#: indicator/textchannelobserver.cpp:371
+#: indicator/textchannelobserver.cpp:373
 msgid "Save"
 msgstr "Cadw"
 
-#: indicator/messagingmenu.cpp:151 indicator/messagingmenu.cpp:257
-#: indicator/messagingmenu.cpp:324
+#: indicator/messagingmenu.cpp:151 indicator/messagingmenu.cpp:293
+#: indicator/messagingmenu.cpp:360
 msgid "Send"
 msgstr "Anfon"
 
-#: indicator/messagingmenu.cpp:318
+#: indicator/textchannelobserver.cpp:531
+msgid "Show alert"
+msgstr ""
+
+#: indicator/messagingmenu.cpp:354
 msgid "Sorry, I'm still busy. I'll call you later."
 msgstr "Rwy'n brysur ac fe ffonia i wedyn."
 
@@ -289,11 +316,11 @@ msgstr "Darparwr Gwasanaeth Teleffoni"
 msgid "Telephony Service Indicator"
 msgstr "Dangosydd Gwasanaeth Teleffoni"
 
-#: indicator/textchannelobserver.cpp:234
+#: indicator/textchannelobserver.cpp:236
 msgid "The message could not be sent"
 msgstr "Methwyd anfon y neges"
 
-#: indicator/textchannelobserver.cpp:228
+#: indicator/textchannelobserver.cpp:230
 msgid "Try again from the messaging application."
 msgstr "Ceisiwch eto o'r ap negeseuon."
 
@@ -301,28 +328,28 @@ msgstr "Ceisiwch eto o'r ap negeseuon."
 msgid "Unknown caller"
 msgstr "Galwr anhysbys"
 
-#: approver/approver.cpp:463 indicator/messagingmenu.cpp:208
-#: indicator/messagingmenu.cpp:382 indicator/textchannelobserver.cpp:529
+#: approver/approver.cpp:463 indicator/messagingmenu.cpp:244
+#: indicator/messagingmenu.cpp:418 indicator/textchannelobserver.cpp:640
 msgid "Unknown number"
 msgstr "Rhif anhysbys"
 
-#: indicator/textchannelobserver.cpp:223
+#: indicator/textchannelobserver.cpp:225
 msgid "Unlock your sim card and try again from the messaging application."
 msgstr "Datglowch eich cerdyn SIM a cheisiwch eto o'r ap negeseuon."
 
-#: indicator/textchannelobserver.cpp:326
+#: indicator/textchannelobserver.cpp:328
 msgid "View Group"
 msgstr ""
 
-#: indicator/textchannelobserver.cpp:247 indicator/textchannelobserver.cpp:602
+#: indicator/textchannelobserver.cpp:249 indicator/textchannelobserver.cpp:713
 msgid "View message"
 msgstr "Gweld neges"
 
-#: indicator/messagingmenu.cpp:471
+#: indicator/messagingmenu.cpp:500
 msgid "Voicemail"
 msgstr "Neges llais"
 
-#: indicator/messagingmenu.cpp:463
+#: indicator/messagingmenu.cpp:492
 msgid "Voicemail messages"
 msgstr "Negeseuon llais"
 
@@ -330,18 +357,18 @@ msgstr "Negeseuon llais"
 msgid "Yes"
 msgstr ""
 
-#: indicator/textchannelobserver.cpp:307
+#: indicator/textchannelobserver.cpp:309
 msgid "You joined a new group"
 msgstr ""
 
 #. TRANSLATORS : %1 is the group name
-#: indicator/textchannelobserver.cpp:304
+#: indicator/textchannelobserver.cpp:306
 #, qt-format
 msgid "You joined group %1"
 msgstr ""
 
 #. TRANSLATORS : %1 is the group name
-#: indicator/textchannelobserver.cpp:300
+#: indicator/textchannelobserver.cpp:302
 #, qt-format
 msgid "You joined group %1 "
 msgstr ""

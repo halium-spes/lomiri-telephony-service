@@ -7,21 +7,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-11 20:39+0000\n"
+"POT-Creation-Date: 2023-01-19 20:04+0000\n"
 "PO-Revision-Date: 2023-01-16 02:52+0000\n"
 "Last-Translator: Sergii Horichenko <m@sgg.im>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/lomiri/"
-"telephony-service/ru/>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/lomiri/telephony-"
+"service/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.15.1-dev\n"
 "X-Launchpad-Export-Date: 2017-01-04 06:03+0000\n"
 
-#: indicator/messagingmenu.cpp:373
+#: indicator/messagingmenu.cpp:409
 #, qt-format
 msgid "%1 missed call"
 msgid_plural "%1 missed calls"
@@ -29,7 +29,7 @@ msgstr[0] "%1 пропущенный вызов"
 msgstr[1] "%1 пропущенных вызова"
 msgstr[2] "%1 пропущенных вызовов"
 
-#: indicator/messagingmenu.cpp:466
+#: indicator/messagingmenu.cpp:495
 #, qt-format
 msgid "%1 voicemail message"
 msgid_plural "%1 voicemail messages"
@@ -57,11 +57,19 @@ msgstr "<b>%1</b> получено сообщений сегодня"
 msgid "<b>%1</b> text messages sent today"
 msgstr "<b>%1</b> отправлено сообщений сегодня"
 
+#: indicator/textchannelobserver.cpp:482
+msgid "AMBER Alert"
+msgstr ""
+
 #: approver/approver.cpp:523
 msgid "Accept"
 msgstr "Принять"
 
-#: indicator/textchannelobserver.cpp:499
+#: indicator/textchannelobserver.cpp:485
+msgid "Alert"
+msgstr ""
+
+#: indicator/textchannelobserver.cpp:610
 #, qt-format
 msgid "Attachment: %1 audio clip"
 msgid_plural "Attachments: %1 audio clips"
@@ -69,7 +77,7 @@ msgstr[0] "Вложение: %1 аудио файл"
 msgstr[1] "Вложения: %1 аудио файлов"
 msgstr[2] "Вложения: %1 аудио файлов"
 
-#: indicator/textchannelobserver.cpp:497
+#: indicator/textchannelobserver.cpp:608
 #, qt-format
 msgid "Attachment: %1 contact"
 msgid_plural "Attachments: %1 contacts"
@@ -77,7 +85,7 @@ msgstr[0] "Приложение: %1 контакт"
 msgstr[1] "Приложение: %1 контактов"
 msgstr[2] "Приложение: %1 контактов"
 
-#: indicator/textchannelobserver.cpp:501
+#: indicator/textchannelobserver.cpp:612
 #, qt-format
 msgid "Attachment: %1 file"
 msgid_plural "Attachments: %1 files"
@@ -85,7 +93,7 @@ msgstr[0] "Приложение: %1 файл"
 msgstr[1] "Приложение: %1 файла"
 msgstr[2] "Приложение: %1 файлов"
 
-#: indicator/textchannelobserver.cpp:493
+#: indicator/textchannelobserver.cpp:604
 #, qt-format
 msgid "Attachment: %1 image"
 msgid_plural "Attachments: %1 images"
@@ -93,7 +101,7 @@ msgstr[0] "Приложение: %1 изображение"
 msgstr[1] "Приложение: %1 изображения"
 msgstr[2] "Приложение: %1 изображений"
 
-#: indicator/textchannelobserver.cpp:495
+#: indicator/textchannelobserver.cpp:606
 #, qt-format
 msgid "Attachment: %1 video"
 msgid_plural "Attachments: %1 videos"
@@ -105,7 +113,7 @@ msgstr[2] "Вложения: %1 видео"
 msgid "Authentication failed. Do you want to review your credentials?"
 msgstr "Неудачная аутентификация. Хотите проверить учётные данные?"
 
-#: indicator/messagingmenu.cpp:309
+#: indicator/messagingmenu.cpp:345
 msgid "Call back"
 msgstr "Перезвонить"
 
@@ -130,13 +138,29 @@ msgstr "Звонок с неизвестного номера"
 msgid "Cancel"
 msgstr "Отменить"
 
-#: indicator/textchannelobserver.cpp:225
+#: indicator/textchannelobserver.cpp:227
 msgid "Deactivate flight mode and try again from the messaging application."
 msgstr "Отключите режим \"В полёте\" и попробуйте отправить сообщение снова."
 
 #: approver/approver.cpp:545
 msgid "Decline"
 msgstr "Отклонить"
+
+#: indicator/textchannelobserver.cpp:468
+msgid "Emergency Alert"
+msgstr ""
+
+#: indicator/textchannelobserver.cpp:471
+msgid "Emergency Alert: Extreme"
+msgstr ""
+
+#: indicator/textchannelobserver.cpp:477
+msgid "Emergency Alert: Notice"
+msgstr ""
+
+#: indicator/textchannelobserver.cpp:474
+msgid "Emergency Alert: Severe"
+msgstr ""
 
 #: approver/approver.cpp:536
 msgid "End + Answer"
@@ -146,11 +170,11 @@ msgstr "Завершить + Ответить"
 msgid "Hold + Answer"
 msgstr "Удерживать + Ответить"
 
-#: indicator/messagingmenu.cpp:314
+#: indicator/messagingmenu.cpp:350
 msgid "I missed your call - can you call me now?"
 msgstr "Я пропустил ваш звонок - вы можете позвонить мне сейчас?"
 
-#: indicator/messagingmenu.cpp:317
+#: indicator/messagingmenu.cpp:353
 msgid "I'll be 20 minutes late."
 msgstr "Я опоздаю на 20 минут."
 
@@ -158,7 +182,7 @@ msgstr "Я опоздаю на 20 минут."
 msgid "I'm busy at the moment. I'll call later."
 msgstr "В данный момент я занят. Перезвоню позже."
 
-#: indicator/messagingmenu.cpp:316
+#: indicator/messagingmenu.cpp:352
 msgid "I'm busy at the moment. I'll call you later."
 msgstr "В данный момент я занят. Я позвоню тебе позже."
 
@@ -166,7 +190,7 @@ msgstr "В данный момент я занят. Я позвоню тебе �
 msgid "I'm running late, on my way now."
 msgstr "Задерживаюсь, уже еду."
 
-#: indicator/messagingmenu.cpp:315
+#: indicator/messagingmenu.cpp:351
 msgid "I'm running late. I'm on my way."
 msgstr "Я опаздываю. Я уже в пути."
 
@@ -174,28 +198,35 @@ msgstr "Я опаздываю. Я уже в пути."
 msgid "Message & decline"
 msgstr "Сообщение и отклонить"
 
-#: indicator/textchannelobserver.cpp:638
+#: indicator/textchannelobserver.cpp:749
 #, qt-format
 msgid "Message from %1"
 msgstr "Сообщение от %1"
 
 #. TRANSLATORS : %1 is the group name and %2 is the recipient name
-#: indicator/messagingmenu.cpp:226 indicator/textchannelobserver.cpp:560
-#: indicator/textchannelobserver.cpp:564
+#: indicator/messagingmenu.cpp:262 indicator/textchannelobserver.cpp:671
+#: indicator/textchannelobserver.cpp:675
 #, qt-format
 msgid "Message to %1 from %2"
 msgstr "Сообщение в адрес %1 от %2"
 
 #. TRANSLATORS : %1 is the recipient name
-#: indicator/messagingmenu.cpp:229 indicator/messagingmenu.cpp:233
-#: indicator/textchannelobserver.cpp:568 indicator/textchannelobserver.cpp:572
+#: indicator/messagingmenu.cpp:265 indicator/messagingmenu.cpp:269
+#: indicator/textchannelobserver.cpp:679 indicator/textchannelobserver.cpp:683
 #, qt-format
 msgid "Message to group from %1"
 msgstr "Сообщение группе от %1"
 
-#: indicator/textchannelobserver.cpp:293
+#: indicator/textchannelobserver.cpp:295
 msgid "New Group"
 msgstr "Новая группа"
+
+#. TRANSLATORS : message displayed when any error occurred while receiving a MMS (case when cellular-data is off, or any downloading issue). Notify that there was a message, the user can find more about it in the messaging-app.
+#: indicator/textchannelobserver.cpp:615
+#, fuzzy
+#| msgid "View message"
+msgid "New MMS message"
+msgstr "Показать сообщение"
 
 #: indicator/authhandler.cpp:94
 msgid "No"
@@ -217,7 +248,7 @@ msgstr "Нет полученных сообщений сегодня"
 msgid "No text messages sent today"
 msgstr "Нет отправленных сообщений сегодня"
 
-#: indicator/ussdindicator.cpp:116 indicator/textchannelobserver.cpp:365
+#: indicator/textchannelobserver.cpp:367 indicator/ussdindicator.cpp:116
 msgid "Ok"
 msgstr "ОК"
 
@@ -225,17 +256,6 @@ msgstr "ОК"
 #, qt-format
 msgid "On [%1]"
 msgstr "На [%1]"
-
-#. TRANSLATORS : message displayed when any error occured while receiving a mms ( case when cellular-data is off, or any downloading issue). Note that mms is lost in that case
-#: indicator/textchannelobserver.cpp:504
-msgid ""
-"Oops, there has been an error with the MMS system and this message could not "
-"be retrieved. Please ensure Cellular Data is ON and MMS settings are "
-"correct, then ask the sender to try again."
-msgstr ""
-"К сожалению, в системе MMS произошла ошибка, и это сообщение не может быть "
-"получено. Убедитесь, что сотовые данные включены и настройки MMS верны, а "
-"затем попросите отправителя повторить попытку."
 
 #: indicator/telephony-service-call.desktop.in:3
 msgid "Phone Calls"
@@ -245,11 +265,11 @@ msgstr "Вызовы"
 msgid "Please call me back later."
 msgstr "Пожалуйста, перезвоните мне позже."
 
-#: indicator/textchannelobserver.cpp:793
+#: indicator/textchannelobserver.cpp:910
 msgid "Please, select a SIM card:"
 msgstr "Укажите SIM-карту:"
 
-#: approver/approver.cpp:460 indicator/messagingmenu.cpp:378
+#: approver/approver.cpp:460 indicator/messagingmenu.cpp:414
 msgid "Private number"
 msgstr "Скрытый номер"
 
@@ -266,16 +286,20 @@ msgstr "SIM %1"
 msgid "SMS"
 msgstr "СМС"
 
-#: indicator/textchannelobserver.cpp:371
+#: indicator/textchannelobserver.cpp:373
 msgid "Save"
 msgstr "Сохранить"
 
-#: indicator/messagingmenu.cpp:151 indicator/messagingmenu.cpp:257
-#: indicator/messagingmenu.cpp:324
+#: indicator/messagingmenu.cpp:151 indicator/messagingmenu.cpp:293
+#: indicator/messagingmenu.cpp:360
 msgid "Send"
 msgstr "Отправить"
 
-#: indicator/messagingmenu.cpp:318
+#: indicator/textchannelobserver.cpp:531
+msgid "Show alert"
+msgstr ""
+
+#: indicator/messagingmenu.cpp:354
 msgid "Sorry, I'm still busy. I'll call you later."
 msgstr "Извини, я всё еще занят. Я позвоню тебе позже."
 
@@ -296,11 +320,11 @@ msgstr "Учредитель службы телефонии"
 msgid "Telephony Service Indicator"
 msgstr "Индикатор службы телефонии"
 
-#: indicator/textchannelobserver.cpp:234
+#: indicator/textchannelobserver.cpp:236
 msgid "The message could not be sent"
 msgstr "Сообщение не может быть отправлено"
 
-#: indicator/textchannelobserver.cpp:228
+#: indicator/textchannelobserver.cpp:230
 msgid "Try again from the messaging application."
 msgstr "Попробуйте отправить сообщение снова."
 
@@ -308,28 +332,28 @@ msgstr "Попробуйте отправить сообщение снова."
 msgid "Unknown caller"
 msgstr "Неизвестный вызов"
 
-#: approver/approver.cpp:463 indicator/messagingmenu.cpp:208
-#: indicator/messagingmenu.cpp:382 indicator/textchannelobserver.cpp:529
+#: approver/approver.cpp:463 indicator/messagingmenu.cpp:244
+#: indicator/messagingmenu.cpp:418 indicator/textchannelobserver.cpp:640
 msgid "Unknown number"
 msgstr "Неизвестный номер"
 
-#: indicator/textchannelobserver.cpp:223
+#: indicator/textchannelobserver.cpp:225
 msgid "Unlock your sim card and try again from the messaging application."
 msgstr "Разблокируйте SIM-карту и попробуйте отправить сообщение снова."
 
-#: indicator/textchannelobserver.cpp:326
+#: indicator/textchannelobserver.cpp:328
 msgid "View Group"
 msgstr "Посмотреть группу"
 
-#: indicator/textchannelobserver.cpp:247 indicator/textchannelobserver.cpp:602
+#: indicator/textchannelobserver.cpp:249 indicator/textchannelobserver.cpp:713
 msgid "View message"
 msgstr "Показать сообщение"
 
-#: indicator/messagingmenu.cpp:471
+#: indicator/messagingmenu.cpp:500
 msgid "Voicemail"
 msgstr "Голосовая почта"
 
-#: indicator/messagingmenu.cpp:463
+#: indicator/messagingmenu.cpp:492
 msgid "Voicemail messages"
 msgstr "Голосовые сообщения"
 
@@ -337,21 +361,30 @@ msgstr "Голосовые сообщения"
 msgid "Yes"
 msgstr "Да"
 
-#: indicator/textchannelobserver.cpp:307
+#: indicator/textchannelobserver.cpp:309
 msgid "You joined a new group"
 msgstr "Вы присоединились к новой группе"
 
 #. TRANSLATORS : %1 is the group name
-#: indicator/textchannelobserver.cpp:304
+#: indicator/textchannelobserver.cpp:306
 #, qt-format
 msgid "You joined group %1"
 msgstr "Вы присоединились к группе %1"
 
 #. TRANSLATORS : %1 is the group name
-#: indicator/textchannelobserver.cpp:300
+#: indicator/textchannelobserver.cpp:302
 #, qt-format
 msgid "You joined group %1 "
 msgstr "Вы присоединились к группе %1 "
+
+#~ msgid ""
+#~ "Oops, there has been an error with the MMS system and this message could "
+#~ "not be retrieved. Please ensure Cellular Data is ON and MMS settings are "
+#~ "correct, then ask the sender to try again."
+#~ msgstr ""
+#~ "К сожалению, в системе MMS произошла ошибка, и это сообщение не может "
+#~ "быть получено. Убедитесь, что сотовые данные включены и настройки MMS "
+#~ "верны, а затем попросите отправителя повторить попытку."
 
 #~ msgid "Unknown Number"
 #~ msgstr "Неизвестный номер"
