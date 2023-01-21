@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-19 20:04+0000\n"
-"PO-Revision-Date: 2023-01-21 18:24+0000\n"
+"PO-Revision-Date: 2023-01-23 00:06+0000\n"
 "Last-Translator: Sergii Horichenko <m@sgg.im>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/uk/>\n"
@@ -105,9 +105,9 @@ msgstr[2] "Долучення: %1 зображень"
 #, qt-format
 msgid "Attachment: %1 video"
 msgid_plural "Attachments: %1 videos"
-msgstr[0] "Долучення: %1 відео"
-msgstr[1] "Долучення: %1 відео"
-msgstr[2] "Долучення: %1 відео"
+msgstr[0] "Вкладення: %1 відео"
+msgstr[1] "Вкладення: %1 відео"
+msgstr[2] "Вкладення: %1 відео"
 
 #: indicator/authhandler.cpp:72
 msgid "Authentication failed. Do you want to review your credentials?"
@@ -151,19 +151,19 @@ msgstr "Відхилити"
 
 #: indicator/textchannelobserver.cpp:468
 msgid "Emergency Alert"
-msgstr ""
+msgstr "Екстрене оповіщення"
 
 #: indicator/textchannelobserver.cpp:471
 msgid "Emergency Alert: Extreme"
-msgstr ""
+msgstr "Термінове оповіщення: Екстремальне"
 
 #: indicator/textchannelobserver.cpp:477
 msgid "Emergency Alert: Notice"
-msgstr ""
+msgstr "Термінове оповіщення: Повідомлення"
 
 #: indicator/textchannelobserver.cpp:474
 msgid "Emergency Alert: Severe"
-msgstr ""
+msgstr "Термінове оповіщення: Серйозне"
 
 #: approver/approver.cpp:536
 msgid "End + Answer"
@@ -226,10 +226,8 @@ msgstr "Нова група"
 
 #. TRANSLATORS : message displayed when any error occurred while receiving a MMS (case when cellular-data is off, or any downloading issue). Notify that there was a message, the user can find more about it in the messaging-app.
 #: indicator/textchannelobserver.cpp:615
-#, fuzzy
-#| msgid "View message"
 msgid "New MMS message"
-msgstr "Переглянути повідомлення"
+msgstr "Нове MMS-повідомлення"
 
 #: indicator/authhandler.cpp:94
 msgid "No"
@@ -300,7 +298,7 @@ msgstr "Надіслати"
 
 #: indicator/textchannelobserver.cpp:531
 msgid "Show alert"
-msgstr ""
+msgstr "Показати оповіщення"
 
 #: indicator/messagingmenu.cpp:354
 msgid "Sorry, I'm still busy. I'll call you later."
