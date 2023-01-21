@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-19 20:04+0000\n"
-"PO-Revision-Date: 2021-02-03 22:27+0000\n"
-"Last-Translator: Stefan Kalb <stefan.kalb@gmx.ch>\n"
-"Language-Team: German <https://translate.ubports.com/projects/ubports/"
+"PO-Revision-Date: 2023-01-23 00:06+0000\n"
+"Last-Translator: Daniel Frost <one@frostinfo.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.11.3\n"
+"X-Generator: Weblate 4.15.1\n"
 "X-Launchpad-Export-Date: 2017-01-04 06:02+0000\n"
 
 #: indicator/messagingmenu.cpp:409
@@ -64,7 +64,7 @@ msgstr "Annehmen"
 
 #: indicator/textchannelobserver.cpp:485
 msgid "Alert"
-msgstr ""
+msgstr "Alarm"
 
 #: indicator/textchannelobserver.cpp:610
 #, qt-format
@@ -143,19 +143,19 @@ msgstr "Ablehnen"
 
 #: indicator/textchannelobserver.cpp:468
 msgid "Emergency Alert"
-msgstr ""
+msgstr "Notfallalarm"
 
 #: indicator/textchannelobserver.cpp:471
 msgid "Emergency Alert: Extreme"
-msgstr ""
+msgstr "Notfallalarm: Extrem"
 
 #: indicator/textchannelobserver.cpp:477
 msgid "Emergency Alert: Notice"
-msgstr ""
+msgstr "Notfallalarm: Informierend"
 
 #: indicator/textchannelobserver.cpp:474
 msgid "Emergency Alert: Severe"
-msgstr ""
+msgstr "Notfallalarm: Gefährlich"
 
 #: approver/approver.cpp:536
 msgid "End + Answer"
@@ -218,10 +218,8 @@ msgstr "Neue Gruppe"
 
 #. TRANSLATORS : message displayed when any error occurred while receiving a MMS (case when cellular-data is off, or any downloading issue). Notify that there was a message, the user can find more about it in the messaging-app.
 #: indicator/textchannelobserver.cpp:615
-#, fuzzy
-#| msgid "View message"
 msgid "New MMS message"
-msgstr "Nachricht anzeigen"
+msgstr "Neue MMS Nachricht"
 
 #: indicator/authhandler.cpp:94
 msgid "No"
@@ -292,7 +290,7 @@ msgstr "Senden"
 
 #: indicator/textchannelobserver.cpp:531
 msgid "Show alert"
-msgstr ""
+msgstr "Alarm zeigen"
 
 #: indicator/messagingmenu.cpp:354
 msgid "Sorry, I'm still busy. I'll call you later."
