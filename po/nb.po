@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-19 20:04+0000\n"
-"PO-Revision-Date: 2021-03-11 21:27+0000\n"
-"Last-Translator: Jan Christian Sherdahl <jan@sherdahl.no>\n"
-"Language-Team: Norwegian Bokmål <https://translate.ubports.com/projects/"
-"ubports/telephony-service/nb/>\n"
+"PO-Revision-Date: 2023-01-25 22:51+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/lomiri/"
+"telephony-service/nb_NO/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.11.3\n"
+"X-Generator: Weblate 4.16-dev\n"
 "X-Launchpad-Export-Date: 2017-01-04 06:03+0000\n"
 
 #: indicator/messagingmenu.cpp:409
@@ -64,7 +64,7 @@ msgstr "Godta"
 
 #: indicator/textchannelobserver.cpp:485
 msgid "Alert"
-msgstr ""
+msgstr "Alarm"
 
 #: indicator/textchannelobserver.cpp:610
 #, qt-format
@@ -140,7 +140,7 @@ msgstr "Avslå"
 
 #: indicator/textchannelobserver.cpp:468
 msgid "Emergency Alert"
-msgstr ""
+msgstr "Nødalarm"
 
 #: indicator/textchannelobserver.cpp:471
 msgid "Emergency Alert: Extreme"
@@ -289,7 +289,7 @@ msgstr "Send"
 
 #: indicator/textchannelobserver.cpp:531
 msgid "Show alert"
-msgstr ""
+msgstr "Vis alarm"
 
 #: indicator/messagingmenu.cpp:354
 msgid "Sorry, I'm still busy. I'll call you later."
