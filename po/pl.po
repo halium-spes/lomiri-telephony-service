@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-19 20:04+0000\n"
-"PO-Revision-Date: 2020-11-27 00:05+0000\n"
-"Last-Translator: Daniel Frańczak <danielfranczak5@wp.pl>\n"
-"Language-Team: Polish <https://translate.ubports.com/projects/ubports/"
+"PO-Revision-Date: 2023-01-25 22:51+0000\n"
+"Last-Translator: gnu-ewm <gnu.ewm@protonmail.com>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.11.3\n"
+"X-Generator: Weblate 4.16-dev\n"
 "X-Launchpad-Export-Date: 2017-01-04 06:03+0000\n"
 
 #: indicator/messagingmenu.cpp:409
@@ -59,7 +59,7 @@ msgstr "Wysłanych wiadomości: <b>%1</b>"
 
 #: indicator/textchannelobserver.cpp:482
 msgid "AMBER Alert"
-msgstr ""
+msgstr "Ostrzeżenie AMBER"
 
 #: approver/approver.cpp:523
 msgid "Accept"
@@ -67,7 +67,7 @@ msgstr "Akceptuj"
 
 #: indicator/textchannelobserver.cpp:485
 msgid "Alert"
-msgstr ""
+msgstr "Ostrzeżenie"
 
 #: indicator/textchannelobserver.cpp:610
 #, qt-format
@@ -151,19 +151,19 @@ msgstr "Odrzuć"
 
 #: indicator/textchannelobserver.cpp:468
 msgid "Emergency Alert"
-msgstr ""
+msgstr "Ostrzeżenie awaryjne"
 
 #: indicator/textchannelobserver.cpp:471
 msgid "Emergency Alert: Extreme"
-msgstr ""
+msgstr "Ostrzeżenie awaryjne: ekstremalne"
 
 #: indicator/textchannelobserver.cpp:477
 msgid "Emergency Alert: Notice"
-msgstr ""
+msgstr "Ostrzeżenie awaryjne: powiadominie"
 
 #: indicator/textchannelobserver.cpp:474
 msgid "Emergency Alert: Severe"
-msgstr ""
+msgstr "Ostrzeżenie awaryjne: poważne"
 
 #: approver/approver.cpp:536
 msgid "End + Answer"
@@ -226,10 +226,8 @@ msgstr "Nowa grupa"
 
 #. TRANSLATORS : message displayed when any error occurred while receiving a MMS (case when cellular-data is off, or any downloading issue). Notify that there was a message, the user can find more about it in the messaging-app.
 #: indicator/textchannelobserver.cpp:615
-#, fuzzy
-#| msgid "View message"
 msgid "New MMS message"
-msgstr "Pokaż wiadomość"
+msgstr "Mowa wiadomość MMS"
 
 #: indicator/authhandler.cpp:94
 msgid "No"
@@ -300,7 +298,7 @@ msgstr "Wyślij"
 
 #: indicator/textchannelobserver.cpp:531
 msgid "Show alert"
-msgstr ""
+msgstr "Pokaż ostrzeżenie"
 
 #: indicator/messagingmenu.cpp:354
 msgid "Sorry, I'm still busy. I'll call you later."
