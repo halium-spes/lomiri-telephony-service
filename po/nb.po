@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-19 20:04+0000\n"
-"PO-Revision-Date: 2023-01-25 22:51+0000\n"
+"PO-Revision-Date: 2023-01-27 14:47+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/nb_NO/>\n"
@@ -55,8 +55,9 @@ msgid "<b>%1</b> text messages sent today"
 msgstr "Sendt <b>%1</b> tekstmeldinger i dag"
 
 #: indicator/textchannelobserver.cpp:482
+#, fuzzy
 msgid "AMBER Alert"
-msgstr ""
+msgstr "Savnet person"
 
 #: approver/approver.cpp:523
 msgid "Accept"
@@ -143,8 +144,9 @@ msgid "Emergency Alert"
 msgstr "Nødalarm"
 
 #: indicator/textchannelobserver.cpp:471
+#, fuzzy
 msgid "Emergency Alert: Extreme"
-msgstr ""
+msgstr "Nødalarm: Ekstrem"
 
 #: indicator/textchannelobserver.cpp:477
 msgid "Emergency Alert: Notice"
