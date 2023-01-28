@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-19 20:04+0000\n"
-"PO-Revision-Date: 2023-01-27 14:47+0000\n"
+"PO-Revision-Date: 2023-01-29 14:17+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/nb_NO/>\n"
@@ -150,11 +150,11 @@ msgstr "Nødalarm: Ekstrem"
 
 #: indicator/textchannelobserver.cpp:477
 msgid "Emergency Alert: Notice"
-msgstr ""
+msgstr "Nødalarm: Merknad"
 
 #: indicator/textchannelobserver.cpp:474
 msgid "Emergency Alert: Severe"
-msgstr ""
+msgstr "Nødalarm: Alvorlig"
 
 #: approver/approver.cpp:536
 msgid "End + Answer"
@@ -162,11 +162,11 @@ msgstr "Avslutt + svar"
 
 #: approver/approver.cpp:522
 msgid "Hold + Answer"
-msgstr "Hold + Svar"
+msgstr "Hold + svar"
 
 #: indicator/messagingmenu.cpp:350
 msgid "I missed your call - can you call me now?"
-msgstr "Jeg gikk glipp av anropet ditt. Kan du ringe meg nå?"
+msgstr "Fikk ikke tatt telefonen. Kan du ringe meg nå?"
 
 #: indicator/messagingmenu.cpp:353
 msgid "I'll be 20 minutes late."
