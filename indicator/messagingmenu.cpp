@@ -262,11 +262,11 @@ void MessagingMenu::addMessage(NotificationData notificationData)
                     displayLabel = QString::fromUtf8(C::gettext("Message to %1 from %2")).arg(notificationData.roomName).arg(displayLabel);
                 } else {
                     // TRANSLATORS : %1 is the recipient name
-                    displayLabel = QString::fromUtf8(C::gettext("Message to group from %1")).arg(displayLabel);
+                    displayLabel = QString::fromUtf8(C::gettext("Message to the group from %1")).arg(displayLabel);
                 }
             } else {
                 // TRANSLATORS : %1 is the recipient name
-                displayLabel = QString::fromUtf8(C::gettext("Message to group from %1")).arg(displayLabel);
+                displayLabel = QString::fromUtf8(C::gettext("Message to the group from %1")).arg(displayLabel);
             }
         }
 
@@ -347,11 +347,11 @@ void MessagingMenu::addCallToMessagingMenu(Call call, const QString &text, bool 
                                           NULL // predefined values
                                           );
         const char *predefinedMessages[] = {
-                C::gettext("I missed your call - can you call me now?"),
-                C::gettext("I'm running late. I'm on my way."),
-                C::gettext("I'm busy at the moment. I'll call you later."),
-                C::gettext("I'll be 20 minutes late."),
-                C::gettext("Sorry, I'm still busy. I'll call you later."),
+                C::gettext("Missed your call — can you call me now?"),
+                C::gettext("Running late. On my way."),
+                C::gettext("Busy at the moment. Will call you later."),
+                C::gettext("I am 20 minutes late."),
+                C::gettext("Still busy. Will call you later."),
                 0
                 };
         messages = g_variant_new_strv(predefinedMessages, -1);
