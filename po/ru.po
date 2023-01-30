@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-19 20:04+0000\n"
-"PO-Revision-Date: 2023-01-21 12:24+0000\n"
+"PO-Revision-Date: 2023-01-31 14:42+0000\n"
 "Last-Translator: Sergii Horichenko <m@sgg.im>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/ru/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.15.1\n"
+"X-Generator: Weblate 4.16-dev\n"
 "X-Launchpad-Export-Date: 2017-01-04 06:03+0000\n"
 
 #: indicator/messagingmenu.cpp:409
@@ -136,7 +136,7 @@ msgstr "Звонок с неизвестного номера"
 
 #: indicator/ussdindicator.cpp:142
 msgid "Cancel"
-msgstr "Отменить"
+msgstr "Отмена"
 
 #: indicator/textchannelobserver.cpp:227
 msgid "Deactivate flight mode and try again from the messaging application."
