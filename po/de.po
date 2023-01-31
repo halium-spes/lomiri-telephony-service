@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-19 20:04+0000\n"
-"PO-Revision-Date: 2023-01-23 00:06+0000\n"
-"Last-Translator: Daniel Frost <one@frostinfo.de>\n"
+"PO-Revision-Date: 2023-02-01 20:50+0000\n"
+"Last-Translator: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/de/>\n"
 "Language: de\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15.1\n"
+"X-Generator: Weblate 4.16-dev\n"
 "X-Launchpad-Export-Date: 2017-01-04 06:02+0000\n"
 
 #: indicator/messagingmenu.cpp:409
@@ -56,7 +56,7 @@ msgstr "Gesendete SMS heute: <b>%1</b>"
 
 #: indicator/textchannelobserver.cpp:482
 msgid "AMBER Alert"
-msgstr ""
+msgstr "AMBER Alarm"
 
 #: approver/approver.cpp:523
 msgid "Accept"
