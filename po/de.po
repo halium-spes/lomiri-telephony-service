@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-19 20:04+0000\n"
-"PO-Revision-Date: 2023-02-01 20:50+0000\n"
+"PO-Revision-Date: 2023-02-05 19:36+0000\n"
 "Last-Translator: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/de/>\n"
@@ -60,7 +60,7 @@ msgstr "AMBER Alarm"
 
 #: approver/approver.cpp:523
 msgid "Accept"
-msgstr "Annehmen"
+msgstr "Akzeptieren"
 
 #: indicator/textchannelobserver.cpp:485
 msgid "Alert"
