@@ -1,3 +1,4 @@
+include(FindGettext)
 
 set(qt_SRCS
     authhandler.cpp
@@ -67,16 +68,22 @@ install(FILES TelephonyServiceIndicator.client DESTINATION share/telepathy/clien
 # Handle i18n in desktop files
 set(desktop_FILES telephony-service-sms.desktop telephony-service-call.desktop)
 
-foreach(DESKTOP_FILE ${desktop_FILES})
-    file(REMOVE ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE})
-    file(STRINGS ${DESKTOP_FILE}.in DESKTOP_FILE_CONTENTS)
-    foreach(LINE ${DESKTOP_FILE_CONTENTS})
-        string(REGEX REPLACE "tr\\\(\"(.*)\"\\\)" "\\1" LINE "${LINE}")
-        file(APPEND ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE} "${LINE}\n")
-    endforeach(LINE)
-endforeach(DESKTOP_FILE)
+function(merge_desktop_translations DESKTOP_FILES)
+    foreach(DESKTOP_FILE ${DESKTOP_FILES})
+        add_custom_target(${DESKTOP_FILE} ALL
+            COMMENT "Merging translations into ${DESKTOP_FILE}..."
+            COMMAND ${GETTEXT_MSGFMT_EXECUTABLE}
+                    -d ${CMAKE_SOURCE_DIR}/po
+                    --desktop
+                    --template=${CMAKE_CURRENT_SOURCE_DIR}/${DESKTOP_FILE}.in
+                    -o ${DESKTOP_FILE}
+        )
 
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/telephony-service-sms.desktop ${CMAKE_CURRENT_BINARY_DIR}/telephony-service-call.desktop
-        DESTINATION ${CMAKE_INSTALL_DATADIR}/applications)
+        install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE}
+                DESTINATION ${CMAKE_INSTALL_DATADIR}/applications)
+    endforeach()
+endfunction()
+
+merge_desktop_translations(${desktop_FILES})
 
 add_subdirectory(icons)

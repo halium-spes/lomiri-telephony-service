@@ -1,45 +1,54 @@
-project(telephony-service-translations)
-
-# for dh_translations to extract the domain
-# (regarding syntax consistency, see http://pad.lv/1181187)
-set (GETTEXT_PACKAGE "telephony-service")
-
 include(FindGettext)
 
-set(DOMAIN telephony-service)
-set(POT_FILE ${DOMAIN}.pot)
-file(GLOB PO_FILES *.po)
-file(GLOB_RECURSE I18N_SRCS RELATIVE ${CMAKE_SOURCE_DIR}
-    ${CMAKE_SOURCE_DIR}/approver/*.cpp
-    ${CMAKE_SOURCE_DIR}/handler/*.cpp
-    ${CMAKE_SOURCE_DIR}/indicator/*.desktop.in
-    ${CMAKE_SOURCE_DIR}/indicator/*.cpp
-    ${CMAKE_SOURCE_DIR}/Ubuntu/*.cpp
-)
-
-foreach(PO_FILE ${PO_FILES})
-    get_filename_component(LANG ${PO_FILE} NAME_WE)
-    gettext_process_po_files(${LANG} ALL PO_FILES ${PO_FILE})
-    set(INSTALL_DIR ${CMAKE_INSTALL_LOCALEDIR}/${LANG}/LC_MESSAGES)
-    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${LANG}.gmo
-            DESTINATION ${INSTALL_DIR}
-            RENAME ${DOMAIN}.mo)
-endforeach(PO_FILE)
-
-find_program(XGETTEXT_EXECUTABLE xgettext)
-if(XGETTEXT_EXECUTABLE)
-    add_custom_target(${POT_FILE}
-        COMMENT "Generating translation template"
-        COMMAND ${XGETTEXT_EXECUTABLE} --c++ --qt --add-comments=TRANSLATORS --keyword=GettextMarkExtraction --keyword=tr --keyword=tr:1,2 -D ${CMAKE_SOURCE_DIR} -s -p ${CMAKE_CURRENT_SOURCE_DIR} -o ${POT_FILE} ${I18N_SRCS}
-    )
-
-    add_custom_target(translations
-        COMMENT "Updating translation files"
-    )
-    add_dependencies(translations ${POT_FILE})
-    foreach(PO_FILE ${PO_FILES})
-       add_custom_command(TARGET translations
-            COMMAND ${GETTEXT_MSGMERGE_EXECUTABLE} ${PO_FILE} ${CMAKE_CURRENT_SOURCE_DIR}/${POT_FILE} -o ${PO_FILE}
-       )
-    endforeach(PO_FILE)
+find_program(GETTEXT_XGETTEXT_EXECUTABLE xgettext)
+if("${GETTEXT_XGETTEXT_EXECUTABLE}" STREQUAL "GETTEXT_XGETTEXT_EXECUTABLE-NOTFOUND")
+    message(FATAL_ERROR "Could not find xgettext")
 endif()
+
+set(DOMAIN ${PROJECT_NAME})
+set(POT_FILE ${DOMAIN}.pot)
+set(DESKTOP_IN_FILES
+    indicator/telephony-service-call.desktop.in
+    indicator/telephony-service-sms.desktop.in)
+
+file(STRINGS ${CMAKE_CURRENT_SOURCE_DIR}/LINGUAS LINGUAS
+     REGEX "^[^#].*")
+string(REGEX MATCHALL "[^ \t]+" LANGS "${LINGUAS}")
+
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/POTFILES.in
+               ${CMAKE_CURRENT_BINARY_DIR}/POTFILES COPYONLY)
+
+add_custom_target(${POT_FILE} ALL
+                  COMMENT "Generating translation template"
+                  COMMENT "Generating translation template"
+                  # Extract the translatable messages from the desktop file
+                  COMMAND ${GETTEXT_XGETTEXT_EXECUTABLE} -o ${POT_FILE}
+                          --from-code=UTF-8
+                          --language=Desktop
+                          --package-name='${PROJECT_NAME}'
+                          --copyright-holder='Canonical Ltd.'
+                          -D ${CMAKE_SOURCE_DIR}
+                          ${DESKTOP_IN_FILES}
+                  COMMAND ${GETTEXT_XGETTEXT_EXECUTABLE} -o ${POT_FILE}
+                          -D ${CMAKE_SOURCE_DIR}
+                          -D ${CMAKE_CURRENT_SOURCE_DIR}
+                          -D ${CMAKE_CURRENT_BINARY_DIR}
+                          --from-code=UTF-8
+                          --c++
+                          --qt
+                          --add-comments=TRANSLATORS
+                          --keyword=tr
+                          --keyword=tr:1,2
+                          --keyword=GettextMarkExtraction
+                          --package-name='${PROJECT_NAME}'
+                          --copyright-holder='Canonical Ltd.'
+                          --files-from=${CMAKE_CURRENT_BINARY_DIR}/POTFILES)
+
+foreach(LANG ${LANGS})
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/${LANG}.po
+                   ${CMAKE_CURRENT_BINARY_DIR}/${LANG}.po
+                   COPYONLY)
+endforeach(LANG)
+gettext_process_pot_file(${POT_FILE} ALL
+                         INSTALL_DESTINATION ${CMAKE_INSTALL_LOCALEDIR}
+                         LANGUAGES ${LANGS})
