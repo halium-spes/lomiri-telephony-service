@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-06 09:21+0000\n"
-"PO-Revision-Date: 2023-01-23 00:06+0000\n"
+"PO-Revision-Date: 2023-02-06 17:51+0000\n"
 "Last-Translator: Sergii Horichenko <m@sgg.im>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/uk/>\n"
@@ -16,9 +16,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.15.1\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.16-dev\n"
 "X-Launchpad-Export-Date: 2017-01-04 06:03+0000\n"
 
 #: indicator/telephony-service-call.desktop.in:4
@@ -26,20 +26,16 @@ msgid "Phone Calls"
 msgstr "Телефонні дзвінки"
 
 #: indicator/telephony-service-call.desktop.in:6
-#, fuzzy
-#| msgid "Telephony Service"
 msgid "telephony-service-call"
-msgstr "Служба телефонії"
+msgstr "telephony-service-call"
 
 #: indicator/telephony-service-sms.desktop.in:4
 msgid "SMS"
 msgstr "СМС"
 
 #: indicator/telephony-service-sms.desktop.in:6
-#, fuzzy
-#| msgid "Telephony Service"
 msgid "telephony-service-message"
-msgstr "Служба телефонії"
+msgstr "telephony-service-message"
 
 #: approver/approver.cpp:65
 msgid "Unknown caller"
@@ -152,8 +148,7 @@ msgstr "Повідомлення %1 від %2"
 
 #. TRANSLATORS : %1 is the recipient name
 #: indicator/messagingmenu.cpp:265 indicator/messagingmenu.cpp:269
-#, fuzzy, qt-format
-#| msgid "Message to group from %1"
+#, qt-format
 msgid "Message to the group from %1"
 msgstr "Повідомлення до групи від %1"
 
@@ -162,34 +157,24 @@ msgid "Call back"
 msgstr "Зворотній виклик"
 
 #: indicator/messagingmenu.cpp:352
-#, fuzzy
-#| msgid "I missed your call - can you call me now?"
 msgid "Missed your call — can you call me now?"
-msgstr "Мною пропущено Ваш дзвінок. Можете передзвонити?"
+msgstr "У мене пропущений дзвінок від Вас. Не могли б Ви зателефонувати зараз?"
 
 #: indicator/messagingmenu.cpp:353
-#, fuzzy
-#| msgid "I'm running late. I'm on my way."
 msgid "Running late. On my way."
-msgstr "Запізнююся. У дорозі."
+msgstr "Запізнююся. Вже скоро буду."
 
 #: indicator/messagingmenu.cpp:354
-#, fuzzy
-#| msgid "I'm busy at the moment. I'll call you later."
 msgid "Busy at the moment. Will call you later."
-msgstr "Зараз не можу поговорити. Передзвоню пізніше."
+msgstr "Зараз не можу розмовляти. Зателефоную Вам пізніше."
 
 #: indicator/messagingmenu.cpp:355
-#, fuzzy
-#| msgid "I'll be 20 minutes late."
 msgid "I am 20 minutes late."
-msgstr "Буду за 20 хвилин."
+msgstr "Я запізнююсь на 20 хвилин."
 
 #: indicator/messagingmenu.cpp:356
-#, fuzzy
-#| msgid "Sorry, I'm still busy. I'll call you later."
 msgid "Still busy. Will call you later."
-msgstr "Вибачте, не можу звільнитися. Передзвоню пізніше."
+msgstr "Досі у справах. Зателефоную Вам пізніше."
 
 #: indicator/messagingmenu.cpp:411
 #, qt-format
@@ -410,26 +395,26 @@ msgstr "Скасувати"
 
 #: libtelephonyservice/callnotification.cpp:53
 msgid "Conf call on hold"
-msgstr ""
+msgstr "Конференц-виклик на утриманні"
 
 #: libtelephonyservice/callnotification.cpp:53
 #, qt-format
 msgid "%1 call on hold"
-msgstr ""
+msgstr "Виклик %1 на утриманні"
 
 #: libtelephonyservice/callnotification.cpp:56
 msgid "Conf call ended"
-msgstr ""
+msgstr "Конференц-виклик завершений"
 
 #: libtelephonyservice/callnotification.cpp:56
 #, qt-format
 msgid "%1 call ended"
-msgstr ""
+msgstr "Виклик %1 завершений"
 
 #: libtelephonyservice/callnotification.cpp:59
 #, qt-format
 msgid "%1 call declined"
-msgstr ""
+msgstr "Виклик %1 відхилений"
 
 #: libtelephonyservice/contactwatcher.cpp:157
 msgid "Private Number"
