@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-19 20:04+0000\n"
+"POT-Creation-Date: 2023-02-06 09:21+0000\n"
 "PO-Revision-Date: 2021-01-28 19:27+0000\n"
 "Last-Translator: Adam <padamyno@gmail.com>\n"
 "Language-Team: Hungarian <https://translate.ubports.com/projects/ubports/"
@@ -20,72 +20,319 @@ msgstr ""
 "X-Generator: Weblate 3.11.3\n"
 "X-Launchpad-Export-Date: 2017-01-04 06:02+0000\n"
 
-#: indicator/messagingmenu.cpp:409
+#: indicator/telephony-service-call.desktop.in:4
+msgid "Phone Calls"
+msgstr "Telefonhívások"
+
+#: indicator/telephony-service-call.desktop.in:6
+#, fuzzy
+#| msgid "Telephony Service"
+msgid "telephony-service-call"
+msgstr "Telefonszolgáltatás"
+
+#: indicator/telephony-service-sms.desktop.in:4
+msgid "SMS"
+msgstr "SMS"
+
+#: indicator/telephony-service-sms.desktop.in:6
+#, fuzzy
+#| msgid "Telephony Service"
+msgid "telephony-service-message"
+msgstr "Telefonszolgáltatás"
+
+#: approver/approver.cpp:65
+msgid "Unknown caller"
+msgstr "Ismeretlen hívó"
+
+#: approver/approver.cpp:93
+msgid "I'm busy at the moment. I'll call later."
+msgstr "Elfoglalt vagyok, később visszahívom."
+
+#: approver/approver.cpp:94
+msgid "I'm running late, on my way now."
+msgstr "Már úton vagyok, de késni fogok."
+
+#: approver/approver.cpp:95
+msgid "Please call me back later."
+msgstr "Kérem hívjon vissza később."
+
+#: approver/approver.cpp:456
+#, qt-format
+msgid "On [%1]"
+msgstr "Ezen: [%1]"
+
+#: approver/approver.cpp:460 indicator/messagingmenu.cpp:416
+msgid "Private number"
+msgstr "Rejtett szám"
+
+#: approver/approver.cpp:463 indicator/messagingmenu.cpp:244
+#: indicator/messagingmenu.cpp:420 indicator/textchannelobserver.cpp:640
+msgid "Unknown number"
+msgstr "Ismeretlen szám"
+
+#: approver/approver.cpp:469 approver/approver.cpp:484
+msgid "Caller number is not available"
+msgstr "A hívó száma nem érhető el"
+
+#: approver/approver.cpp:475
+msgid "Calling from private number"
+msgstr "Hívás rejtett számról"
+
+#: approver/approver.cpp:478
+msgid "Calling from unknown number"
+msgstr "Hívás ismeretlen számról"
+
+#: approver/approver.cpp:481
+#, qt-format
+msgid "Calling from %1"
+msgstr "Hívás innen: %1"
+
+#: approver/approver.cpp:522
+msgid "Hold + Answer"
+msgstr "Várakoztat és válaszol"
+
+#: approver/approver.cpp:523
+msgid "Accept"
+msgstr "Elfogadás"
+
+#: approver/approver.cpp:536
+msgid "End + Answer"
+msgstr "Befejez és válaszol"
+
+#: approver/approver.cpp:545
+msgid "Decline"
+msgstr "Elutasítás"
+
+#: approver/approver.cpp:553
+msgid "Message & decline"
+msgstr "Üzenet és elutasítás"
+
+#: approver/main.cpp:46
+msgid "Telephony Service Approver"
+msgstr "Telefonszolgáltatás jóváhagyó"
+
+#: indicator/authhandler.cpp:72
+msgid "Authentication failed. Do you want to review your credentials?"
+msgstr "Sikertelen hitelesítés. Szeretné átnézni a megadott adatokat?"
+
+#: indicator/authhandler.cpp:91
+msgid "Yes"
+msgstr "Igen"
+
+#: indicator/authhandler.cpp:94
+msgid "No"
+msgstr "Nem"
+
+#: indicator/displaynamesettings.cpp:35
+#, qt-format
+msgid "SIM %1"
+msgstr "SIM %1"
+
+#: indicator/main.cpp:53
+msgid "Telephony Service Indicator"
+msgstr "Telefonszolgáltatás indikátor"
+
+#: indicator/messagingmenu.cpp:83 indicator/messagingmenu.cpp:87
+msgid "Telephony Service"
+msgstr "Telefonszolgáltatás"
+
+#: indicator/messagingmenu.cpp:151 indicator/messagingmenu.cpp:293
+#: indicator/messagingmenu.cpp:362
+msgid "Send"
+msgstr "Küldés"
+
+#. TRANSLATORS : %1 is the group name and %2 is the recipient name
+#: indicator/messagingmenu.cpp:262 indicator/textchannelobserver.cpp:671
+#: indicator/textchannelobserver.cpp:675
+#, qt-format
+msgid "Message to %1 from %2"
+msgstr "Üzenet a(z) %1 csoportban tőle: %2"
+
+#. TRANSLATORS : %1 is the recipient name
+#: indicator/messagingmenu.cpp:265 indicator/messagingmenu.cpp:269
+#, fuzzy, qt-format
+#| msgid "Message to group from %1"
+msgid "Message to the group from %1"
+msgstr "Csoportos üzenet innen: %1"
+
+#: indicator/messagingmenu.cpp:345
+msgid "Call back"
+msgstr "Visszahívás"
+
+#: indicator/messagingmenu.cpp:352
+#, fuzzy
+#| msgid "I missed your call - can you call me now?"
+msgid "Missed your call — can you call me now?"
+msgstr "Elmulasztottam a hívását. Vissza tudna hívni?"
+
+#: indicator/messagingmenu.cpp:353
+#, fuzzy
+#| msgid "I'm running late. I'm on my way."
+msgid "Running late. On my way."
+msgstr "Már úton vagyok, de késni fogok."
+
+#: indicator/messagingmenu.cpp:354
+#, fuzzy
+#| msgid "I'm busy at the moment. I'll call you later."
+msgid "Busy at the moment. Will call you later."
+msgstr "Fontos dolgom van, később visszahívom."
+
+#: indicator/messagingmenu.cpp:355
+#, fuzzy
+#| msgid "I'll be 20 minutes late."
+msgid "I am 20 minutes late."
+msgstr "20 percet kések."
+
+#: indicator/messagingmenu.cpp:356
+#, fuzzy
+#| msgid "Sorry, I'm still busy. I'll call you later."
+msgid "Still busy. Will call you later."
+msgstr "Még elfoglalt vagyok. Később visszahívom."
+
+#: indicator/messagingmenu.cpp:411
 #, qt-format
 msgid "%1 missed call"
 msgid_plural "%1 missed calls"
 msgstr[0] "%1 nem fogadott hívás"
 msgstr[1] "%1 nem fogadott hívás"
 
-#: indicator/messagingmenu.cpp:495
+#: indicator/messagingmenu.cpp:494
+msgid "Voicemail messages"
+msgstr "Hangposta üzenetek"
+
+#: indicator/messagingmenu.cpp:497
 #, qt-format
 msgid "%1 voicemail message"
 msgid_plural "%1 voicemail messages"
 msgstr[0] "%1 hangposta üzenet"
 msgstr[1] "%1 hangposta üzenet"
 
-#: indicator/metrics.cpp:48
-#, qt-format
-msgid "<b>%1</b> calls made today"
-msgstr "<b>%1</b> hívást indított ma"
-
-#: indicator/metrics.cpp:46
-#, qt-format
-msgid "<b>%1</b> calls received today"
-msgstr "<b>%1</b> hívást fogadott ma"
-
-#: indicator/metrics.cpp:44
-#, qt-format
-msgid "<b>%1</b> text messages received today"
-msgstr "<b>%1</b> szöveges üzenetet fogadott ma"
+#: indicator/messagingmenu.cpp:502
+msgid "Voicemail"
+msgstr "Hangposta"
 
 #: indicator/metrics.cpp:42
 #, qt-format
 msgid "<b>%1</b> text messages sent today"
 msgstr "<b>%1</b> szöveges üzenetet küldött ma"
 
+#: indicator/metrics.cpp:43
+msgid "No text messages sent today"
+msgstr "Nem küldött szöveges üzenetet ma"
+
+#: indicator/metrics.cpp:44
+#, qt-format
+msgid "<b>%1</b> text messages received today"
+msgstr "<b>%1</b> szöveges üzenetet fogadott ma"
+
+#: indicator/metrics.cpp:45
+msgid "No text messages received today"
+msgstr "Nem kapott szöveges üzenetet ma"
+
+#: indicator/metrics.cpp:46
+#, qt-format
+msgid "<b>%1</b> calls received today"
+msgstr "<b>%1</b> hívást fogadott ma"
+
+#: indicator/metrics.cpp:47
+msgid "No calls received today"
+msgstr "Nem fogadott hívást ma"
+
+#: indicator/metrics.cpp:48
+#, qt-format
+msgid "<b>%1</b> calls made today"
+msgstr "<b>%1</b> hívást indított ma"
+
+#: indicator/metrics.cpp:49 indicator/metrics.cpp:51
+msgid "No calls made today"
+msgstr "Nem indított hívást ma"
+
+#: indicator/metrics.cpp:50
+#, qt-format
+msgid "Spent <b>%1</b> minutes in calls today"
+msgstr "<b>%1</b> percet telefonált ma"
+
+#: indicator/textchannelobserver.cpp:225
+msgid "Unlock your sim card and try again from the messaging application."
+msgstr "Oldja fel a SIM kártyáját és próbálja újra az üzenetek alkalmazásból."
+
+#: indicator/textchannelobserver.cpp:227
+msgid "Deactivate flight mode and try again from the messaging application."
+msgstr ""
+"Kapcsolja ki a repülőgépes módot , és próbálja újra az üzenetek "
+"alkalmazásból."
+
+#: indicator/textchannelobserver.cpp:230
+msgid "Try again from the messaging application."
+msgstr "Próbálja űjra az üzenetek alkalmazásból."
+
+#: indicator/textchannelobserver.cpp:236
+msgid "The message could not be sent"
+msgstr "Az üzenetet nem sikerült elküldeni"
+
+#: indicator/textchannelobserver.cpp:249 indicator/textchannelobserver.cpp:713
+msgid "View message"
+msgstr "Üzenet megtekintése"
+
+#: indicator/textchannelobserver.cpp:295
+msgid "New Group"
+msgstr "Új csoport"
+
+#. TRANSLATORS : %1 is the group name
+#: indicator/textchannelobserver.cpp:302
+#, qt-format
+msgid "You joined group %1 "
+msgstr "Csatlakozott a(z) %1 csoporthoz "
+
+#. TRANSLATORS : %1 is the group name
+#: indicator/textchannelobserver.cpp:306
+#, qt-format
+msgid "You joined group %1"
+msgstr "Csatlakozott a(z) %1 csoporthoz"
+
+#: indicator/textchannelobserver.cpp:309
+msgid "You joined a new group"
+msgstr "Csatlakozott egy új csoporthoz"
+
+#: indicator/textchannelobserver.cpp:328
+msgid "View Group"
+msgstr "Csoport megtekintése"
+
+#: indicator/textchannelobserver.cpp:367 indicator/ussdindicator.cpp:116
+msgid "Ok"
+msgstr "OK"
+
+#: indicator/textchannelobserver.cpp:373
+msgid "Save"
+msgstr "Mentés"
+
+#: indicator/textchannelobserver.cpp:468
+msgid "Emergency Alert"
+msgstr ""
+
+#: indicator/textchannelobserver.cpp:471
+msgid "Emergency Alert: Extreme"
+msgstr ""
+
+#: indicator/textchannelobserver.cpp:474
+msgid "Emergency Alert: Severe"
+msgstr ""
+
+#: indicator/textchannelobserver.cpp:477
+msgid "Emergency Alert: Notice"
+msgstr ""
+
 #: indicator/textchannelobserver.cpp:482
 msgid "AMBER Alert"
 msgstr ""
-
-#: approver/approver.cpp:523
-msgid "Accept"
-msgstr "Elfogadás"
 
 #: indicator/textchannelobserver.cpp:485
 msgid "Alert"
 msgstr ""
 
-#: indicator/textchannelobserver.cpp:610
-#, qt-format
-msgid "Attachment: %1 audio clip"
-msgid_plural "Attachments: %1 audio clips"
-msgstr[0] "Melléklet: %1 audiofájl"
-msgstr[1] "Melléklet: %1 audiofájl"
-
-#: indicator/textchannelobserver.cpp:608
-#, qt-format
-msgid "Attachment: %1 contact"
-msgid_plural "Attachments: %1 contacts"
-msgstr[0] "Melléklet: %1 névjegy"
-msgstr[1] "Melléklet: %1 névjegy"
-
-#: indicator/textchannelobserver.cpp:612
-#, qt-format
-msgid "Attachment: %1 file"
-msgid_plural "Attachments: %1 files"
-msgstr[0] "Melléklet: %1 fájl"
-msgstr[1] "Melléklet: %1 fájl"
+#: indicator/textchannelobserver.cpp:531
+msgid "Show alert"
+msgstr ""
 
 #: indicator/textchannelobserver.cpp:604
 #, qt-format
@@ -101,119 +348,26 @@ msgid_plural "Attachments: %1 videos"
 msgstr[0] "Melléklet: %1 videó"
 msgstr[1] "Melléklet: %1 videó"
 
-#: indicator/authhandler.cpp:72
-msgid "Authentication failed. Do you want to review your credentials?"
-msgstr "Sikertelen hitelesítés. Szeretné átnézni a megadott adatokat?"
-
-#: indicator/messagingmenu.cpp:345
-msgid "Call back"
-msgstr "Visszahívás"
-
-#: approver/approver.cpp:469 approver/approver.cpp:484
-msgid "Caller number is not available"
-msgstr "A hívó száma nem érhető el"
-
-#: approver/approver.cpp:481
+#: indicator/textchannelobserver.cpp:608
 #, qt-format
-msgid "Calling from %1"
-msgstr "Hívás innen: %1"
+msgid "Attachment: %1 contact"
+msgid_plural "Attachments: %1 contacts"
+msgstr[0] "Melléklet: %1 névjegy"
+msgstr[1] "Melléklet: %1 névjegy"
 
-#: approver/approver.cpp:475
-msgid "Calling from private number"
-msgstr "Hívás rejtett számról"
-
-#: approver/approver.cpp:478
-msgid "Calling from unknown number"
-msgstr "Hívás ismeretlen számról"
-
-#: indicator/ussdindicator.cpp:142
-msgid "Cancel"
-msgstr "Mégsem"
-
-#: indicator/textchannelobserver.cpp:227
-msgid "Deactivate flight mode and try again from the messaging application."
-msgstr ""
-"Kapcsolja ki a repülőgépes módot , és próbálja újra az üzenetek "
-"alkalmazásból."
-
-#: approver/approver.cpp:545
-msgid "Decline"
-msgstr "Elutasítás"
-
-#: indicator/textchannelobserver.cpp:468
-msgid "Emergency Alert"
-msgstr ""
-
-#: indicator/textchannelobserver.cpp:471
-msgid "Emergency Alert: Extreme"
-msgstr ""
-
-#: indicator/textchannelobserver.cpp:477
-msgid "Emergency Alert: Notice"
-msgstr ""
-
-#: indicator/textchannelobserver.cpp:474
-msgid "Emergency Alert: Severe"
-msgstr ""
-
-#: approver/approver.cpp:536
-msgid "End + Answer"
-msgstr "Befejez és válaszol"
-
-#: approver/approver.cpp:522
-msgid "Hold + Answer"
-msgstr "Várakoztat és válaszol"
-
-#: indicator/messagingmenu.cpp:350
-msgid "I missed your call - can you call me now?"
-msgstr "Elmulasztottam a hívását. Vissza tudna hívni?"
-
-#: indicator/messagingmenu.cpp:353
-msgid "I'll be 20 minutes late."
-msgstr "20 percet kések."
-
-#: approver/approver.cpp:93
-msgid "I'm busy at the moment. I'll call later."
-msgstr "Elfoglalt vagyok, később visszahívom."
-
-#: indicator/messagingmenu.cpp:352
-msgid "I'm busy at the moment. I'll call you later."
-msgstr "Fontos dolgom van, később visszahívom."
-
-#: approver/approver.cpp:94
-msgid "I'm running late, on my way now."
-msgstr "Már úton vagyok, de késni fogok."
-
-#: indicator/messagingmenu.cpp:351
-msgid "I'm running late. I'm on my way."
-msgstr "Már úton vagyok, de késni fogok."
-
-#: approver/approver.cpp:553
-msgid "Message & decline"
-msgstr "Üzenet és elutasítás"
-
-#: indicator/textchannelobserver.cpp:749
+#: indicator/textchannelobserver.cpp:610
 #, qt-format
-msgid "Message from %1"
-msgstr "Üzenet tőle: %1"
+msgid "Attachment: %1 audio clip"
+msgid_plural "Attachments: %1 audio clips"
+msgstr[0] "Melléklet: %1 audiofájl"
+msgstr[1] "Melléklet: %1 audiofájl"
 
-#. TRANSLATORS : %1 is the group name and %2 is the recipient name
-#: indicator/messagingmenu.cpp:262 indicator/textchannelobserver.cpp:671
-#: indicator/textchannelobserver.cpp:675
+#: indicator/textchannelobserver.cpp:612
 #, qt-format
-msgid "Message to %1 from %2"
-msgstr "Üzenet a(z) %1 csoportban tőle: %2"
-
-#. TRANSLATORS : %1 is the recipient name
-#: indicator/messagingmenu.cpp:265 indicator/messagingmenu.cpp:269
-#: indicator/textchannelobserver.cpp:679 indicator/textchannelobserver.cpp:683
-#, qt-format
-msgid "Message to group from %1"
-msgstr "Csoportos üzenet innen: %1"
-
-#: indicator/textchannelobserver.cpp:295
-msgid "New Group"
-msgstr "Új csoport"
+msgid "Attachment: %1 file"
+msgid_plural "Attachments: %1 files"
+msgstr[0] "Melléklet: %1 fájl"
+msgstr[1] "Melléklet: %1 fájl"
 
 #. TRANSLATORS : message displayed when any error occurred while receiving a MMS (case when cellular-data is off, or any downloading issue). Notify that there was a message, the user can find more about it in the messaging-app.
 #: indicator/textchannelobserver.cpp:615
@@ -222,157 +376,56 @@ msgstr "Új csoport"
 msgid "New MMS message"
 msgstr "Üzenet megtekintése"
 
-#: indicator/authhandler.cpp:94
-msgid "No"
-msgstr "Nem"
-
-#: indicator/metrics.cpp:49 indicator/metrics.cpp:51
-msgid "No calls made today"
-msgstr "Nem indított hívást ma"
-
-#: indicator/metrics.cpp:47
-msgid "No calls received today"
-msgstr "Nem fogadott hívást ma"
-
-#: indicator/metrics.cpp:45
-msgid "No text messages received today"
-msgstr "Nem kapott szöveges üzenetet ma"
-
-#: indicator/metrics.cpp:43
-msgid "No text messages sent today"
-msgstr "Nem küldött szöveges üzenetet ma"
-
-#: indicator/textchannelobserver.cpp:367 indicator/ussdindicator.cpp:116
-msgid "Ok"
-msgstr "OK"
-
-#: approver/approver.cpp:456
+#. TRANSLATORS : %1 is the recipient name
+#: indicator/textchannelobserver.cpp:679 indicator/textchannelobserver.cpp:683
 #, qt-format
-msgid "On [%1]"
-msgstr "Ezen: [%1]"
+msgid "Message to group from %1"
+msgstr "Csoportos üzenet innen: %1"
 
-#: indicator/telephony-service-call.desktop.in:3
-msgid "Phone Calls"
-msgstr "Telefonhívások"
-
-#: approver/approver.cpp:95
-msgid "Please call me back later."
-msgstr "Kérem hívjon vissza később."
+#: indicator/textchannelobserver.cpp:749
+#, qt-format
+msgid "Message from %1"
+msgstr "Üzenet tőle: %1"
 
 #: indicator/textchannelobserver.cpp:910
 msgid "Please, select a SIM card:"
 msgstr "Válasszon SIM kártyát:"
 
-#: approver/approver.cpp:460 indicator/messagingmenu.cpp:414
-msgid "Private number"
-msgstr "Rejtett szám"
-
 #: indicator/ussdindicator.cpp:119
 msgid "Reply"
 msgstr "Válasz"
 
-#: indicator/displaynamesettings.cpp:35
-#, qt-format
-msgid "SIM %1"
-msgstr "SIM %1"
+#: indicator/ussdindicator.cpp:142
+msgid "Cancel"
+msgstr "Mégsem"
 
-#: indicator/telephony-service-sms.desktop.in:3
-msgid "SMS"
-msgstr "SMS"
-
-#: indicator/textchannelobserver.cpp:373
-msgid "Save"
-msgstr "Mentés"
-
-#: indicator/messagingmenu.cpp:151 indicator/messagingmenu.cpp:293
-#: indicator/messagingmenu.cpp:360
-msgid "Send"
-msgstr "Küldés"
-
-#: indicator/textchannelobserver.cpp:531
-msgid "Show alert"
+#: libtelephonyservice/callnotification.cpp:53
+msgid "Conf call on hold"
 msgstr ""
 
-#: indicator/messagingmenu.cpp:354
-msgid "Sorry, I'm still busy. I'll call you later."
-msgstr "Még elfoglalt vagyok. Később visszahívom."
-
-#: indicator/metrics.cpp:50
+#: libtelephonyservice/callnotification.cpp:53
 #, qt-format
-msgid "Spent <b>%1</b> minutes in calls today"
-msgstr "<b>%1</b> percet telefonált ma"
+msgid "%1 call on hold"
+msgstr ""
 
-#: indicator/messagingmenu.cpp:83 indicator/messagingmenu.cpp:87
-msgid "Telephony Service"
-msgstr "Telefonszolgáltatás"
+#: libtelephonyservice/callnotification.cpp:56
+msgid "Conf call ended"
+msgstr ""
 
-#: approver/main.cpp:46
-msgid "Telephony Service Approver"
-msgstr "Telefonszolgáltatás jóváhagyó"
+#: libtelephonyservice/callnotification.cpp:56
+#, qt-format
+msgid "%1 call ended"
+msgstr ""
 
-#: indicator/main.cpp:53
-msgid "Telephony Service Indicator"
-msgstr "Telefonszolgáltatás indikátor"
+#: libtelephonyservice/callnotification.cpp:59
+#, qt-format
+msgid "%1 call declined"
+msgstr ""
 
-#: indicator/textchannelobserver.cpp:236
-msgid "The message could not be sent"
-msgstr "Az üzenetet nem sikerült elküldeni"
+#: libtelephonyservice/contactwatcher.cpp:157
+msgid "Private Number"
+msgstr "Rejtett szám"
 
-#: indicator/textchannelobserver.cpp:230
-msgid "Try again from the messaging application."
-msgstr "Próbálja űjra az üzenetek alkalmazásból."
-
-#: approver/approver.cpp:65
-msgid "Unknown caller"
-msgstr "Ismeretlen hívó"
-
-#: approver/approver.cpp:463 indicator/messagingmenu.cpp:244
-#: indicator/messagingmenu.cpp:418 indicator/textchannelobserver.cpp:640
-msgid "Unknown number"
+#: libtelephonyservice/contactwatcher.cpp:159
+msgid "Unknown Number"
 msgstr "Ismeretlen szám"
-
-#: indicator/textchannelobserver.cpp:225
-msgid "Unlock your sim card and try again from the messaging application."
-msgstr "Oldja fel a SIM kártyáját és próbálja újra az üzenetek alkalmazásból."
-
-#: indicator/textchannelobserver.cpp:328
-msgid "View Group"
-msgstr "Csoport megtekintése"
-
-#: indicator/textchannelobserver.cpp:249 indicator/textchannelobserver.cpp:713
-msgid "View message"
-msgstr "Üzenet megtekintése"
-
-#: indicator/messagingmenu.cpp:500
-msgid "Voicemail"
-msgstr "Hangposta"
-
-#: indicator/messagingmenu.cpp:492
-msgid "Voicemail messages"
-msgstr "Hangposta üzenetek"
-
-#: indicator/authhandler.cpp:91
-msgid "Yes"
-msgstr "Igen"
-
-#: indicator/textchannelobserver.cpp:309
-msgid "You joined a new group"
-msgstr "Csatlakozott egy új csoporthoz"
-
-#. TRANSLATORS : %1 is the group name
-#: indicator/textchannelobserver.cpp:306
-#, qt-format
-msgid "You joined group %1"
-msgstr "Csatlakozott a(z) %1 csoporthoz"
-
-#. TRANSLATORS : %1 is the group name
-#: indicator/textchannelobserver.cpp:302
-#, qt-format
-msgid "You joined group %1 "
-msgstr "Csatlakozott a(z) %1 csoporthoz "
-
-#~ msgid "Private Number"
-#~ msgstr "Rejtett szám"
-
-#~ msgid "Unknown Number"
-#~ msgstr "Ismeretlen szám"

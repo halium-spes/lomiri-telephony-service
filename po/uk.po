@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-19 20:04+0000\n"
+"POT-Creation-Date: 2023-02-06 09:21+0000\n"
 "PO-Revision-Date: 2023-01-23 00:06+0000\n"
 "Last-Translator: Sergii Horichenko <m@sgg.im>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/lomiri/"
@@ -16,12 +16,182 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.15.1\n"
 "X-Launchpad-Export-Date: 2017-01-04 06:03+0000\n"
 
-#: indicator/messagingmenu.cpp:409
+#: indicator/telephony-service-call.desktop.in:4
+msgid "Phone Calls"
+msgstr "Телефонні дзвінки"
+
+#: indicator/telephony-service-call.desktop.in:6
+#, fuzzy
+#| msgid "Telephony Service"
+msgid "telephony-service-call"
+msgstr "Служба телефонії"
+
+#: indicator/telephony-service-sms.desktop.in:4
+msgid "SMS"
+msgstr "СМС"
+
+#: indicator/telephony-service-sms.desktop.in:6
+#, fuzzy
+#| msgid "Telephony Service"
+msgid "telephony-service-message"
+msgstr "Служба телефонії"
+
+#: approver/approver.cpp:65
+msgid "Unknown caller"
+msgstr "Невідома особа"
+
+#: approver/approver.cpp:93
+msgid "I'm busy at the moment. I'll call later."
+msgstr "Зараз немає часу. Відповім пізніше."
+
+#: approver/approver.cpp:94
+msgid "I'm running late, on my way now."
+msgstr "Запізнююся, зараз у дорозі."
+
+#: approver/approver.cpp:95
+msgid "Please call me back later."
+msgstr "Будь ласка, передзвоніть пізніше."
+
+#: approver/approver.cpp:456
+#, qt-format
+msgid "On [%1]"
+msgstr "На [%1]"
+
+#: approver/approver.cpp:460 indicator/messagingmenu.cpp:416
+msgid "Private number"
+msgstr "Особистий номер"
+
+#: approver/approver.cpp:463 indicator/messagingmenu.cpp:244
+#: indicator/messagingmenu.cpp:420 indicator/textchannelobserver.cpp:640
+msgid "Unknown number"
+msgstr "Невідомий номер"
+
+#: approver/approver.cpp:469 approver/approver.cpp:484
+msgid "Caller number is not available"
+msgstr "Номер вхідного дзвінка недоступний"
+
+#: approver/approver.cpp:475
+msgid "Calling from private number"
+msgstr "Дзвінок з приватного номера"
+
+#: approver/approver.cpp:478
+msgid "Calling from unknown number"
+msgstr "Дзвінок з невідомого номера"
+
+#: approver/approver.cpp:481
+#, qt-format
+msgid "Calling from %1"
+msgstr "Дзвінок від %1"
+
+#: approver/approver.cpp:522
+msgid "Hold + Answer"
+msgstr "Утримання + Відповідь"
+
+#: approver/approver.cpp:523
+msgid "Accept"
+msgstr "Прийняти"
+
+#: approver/approver.cpp:536
+msgid "End + Answer"
+msgstr "Завершити + Відповісти"
+
+#: approver/approver.cpp:545
+msgid "Decline"
+msgstr "Відхилити"
+
+#: approver/approver.cpp:553
+msgid "Message & decline"
+msgstr "Повідомити і відхилити"
+
+#: approver/main.cpp:46
+msgid "Telephony Service Approver"
+msgstr "Підтверджувач служби телефонії"
+
+#: indicator/authhandler.cpp:72
+msgid "Authentication failed. Do you want to review your credentials?"
+msgstr ""
+"Не вдалося пройти розпізнавання. Хочете змінити ваші реєстраційні дані?"
+
+#: indicator/authhandler.cpp:91
+msgid "Yes"
+msgstr "Так"
+
+#: indicator/authhandler.cpp:94
+msgid "No"
+msgstr "Ні"
+
+#: indicator/displaynamesettings.cpp:35
+#, qt-format
+msgid "SIM %1"
+msgstr "SIM %1"
+
+#: indicator/main.cpp:53
+msgid "Telephony Service Indicator"
+msgstr "Індикатор служби телефонії"
+
+#: indicator/messagingmenu.cpp:83 indicator/messagingmenu.cpp:87
+msgid "Telephony Service"
+msgstr "Служба телефонії"
+
+#: indicator/messagingmenu.cpp:151 indicator/messagingmenu.cpp:293
+#: indicator/messagingmenu.cpp:362
+msgid "Send"
+msgstr "Надіслати"
+
+#. TRANSLATORS : %1 is the group name and %2 is the recipient name
+#: indicator/messagingmenu.cpp:262 indicator/textchannelobserver.cpp:671
+#: indicator/textchannelobserver.cpp:675
+#, qt-format
+msgid "Message to %1 from %2"
+msgstr "Повідомлення %1 від %2"
+
+#. TRANSLATORS : %1 is the recipient name
+#: indicator/messagingmenu.cpp:265 indicator/messagingmenu.cpp:269
+#, fuzzy, qt-format
+#| msgid "Message to group from %1"
+msgid "Message to the group from %1"
+msgstr "Повідомлення до групи від %1"
+
+#: indicator/messagingmenu.cpp:345
+msgid "Call back"
+msgstr "Зворотній виклик"
+
+#: indicator/messagingmenu.cpp:352
+#, fuzzy
+#| msgid "I missed your call - can you call me now?"
+msgid "Missed your call — can you call me now?"
+msgstr "Мною пропущено Ваш дзвінок. Можете передзвонити?"
+
+#: indicator/messagingmenu.cpp:353
+#, fuzzy
+#| msgid "I'm running late. I'm on my way."
+msgid "Running late. On my way."
+msgstr "Запізнююся. У дорозі."
+
+#: indicator/messagingmenu.cpp:354
+#, fuzzy
+#| msgid "I'm busy at the moment. I'll call you later."
+msgid "Busy at the moment. Will call you later."
+msgstr "Зараз не можу поговорити. Передзвоню пізніше."
+
+#: indicator/messagingmenu.cpp:355
+#, fuzzy
+#| msgid "I'll be 20 minutes late."
+msgid "I am 20 minutes late."
+msgstr "Буду за 20 хвилин."
+
+#: indicator/messagingmenu.cpp:356
+#, fuzzy
+#| msgid "Sorry, I'm still busy. I'll call you later."
+msgid "Still busy. Will call you later."
+msgstr "Вибачте, не можу звільнитися. Передзвоню пізніше."
+
+#: indicator/messagingmenu.cpp:411
 #, qt-format
 msgid "%1 missed call"
 msgid_plural "%1 missed calls"
@@ -29,7 +199,11 @@ msgstr[0] "%1 пропущений дзвінок"
 msgstr[1] "%1 пропущені дзвінки"
 msgstr[2] "%1 пропущених дзвінків"
 
-#: indicator/messagingmenu.cpp:495
+#: indicator/messagingmenu.cpp:494
+msgid "Voicemail messages"
+msgstr "Повідомлення голосової пошти"
+
+#: indicator/messagingmenu.cpp:497
 #, qt-format
 msgid "%1 voicemail message"
 msgid_plural "%1 voicemail messages"
@@ -37,61 +211,134 @@ msgstr[0] "%1 голосове повідомлення"
 msgstr[1] "%1 голосових повідомлення"
 msgstr[2] "%1 голосових повідомлень"
 
-#: indicator/metrics.cpp:48
-#, qt-format
-msgid "<b>%1</b> calls made today"
-msgstr "Сьогодні здійснено <b>%1</b> дзвінки"
-
-#: indicator/metrics.cpp:46
-#, qt-format
-msgid "<b>%1</b> calls received today"
-msgstr "Сьогодні отримано <b>%1</b> дзвінки"
-
-#: indicator/metrics.cpp:44
-#, qt-format
-msgid "<b>%1</b> text messages received today"
-msgstr "Сьогодні отримано <b>%1</b> текстових повідомлень"
+#: indicator/messagingmenu.cpp:502
+msgid "Voicemail"
+msgstr "Голосова пошта"
 
 #: indicator/metrics.cpp:42
 #, qt-format
 msgid "<b>%1</b> text messages sent today"
 msgstr "Сьогодні надіслано <b>%1</b> текстових повідомлень"
 
+#: indicator/metrics.cpp:43
+msgid "No text messages sent today"
+msgstr "Сьогодні текстових повідомлень не надсилалося"
+
+#: indicator/metrics.cpp:44
+#, qt-format
+msgid "<b>%1</b> text messages received today"
+msgstr "Сьогодні отримано <b>%1</b> текстових повідомлень"
+
+#: indicator/metrics.cpp:45
+msgid "No text messages received today"
+msgstr "Сьогодні текстових повідомлень не надходило"
+
+#: indicator/metrics.cpp:46
+#, qt-format
+msgid "<b>%1</b> calls received today"
+msgstr "Сьогодні отримано <b>%1</b> дзвінки"
+
+#: indicator/metrics.cpp:47
+msgid "No calls received today"
+msgstr "Сьогодні вхідних дзвінків не було"
+
+#: indicator/metrics.cpp:48
+#, qt-format
+msgid "<b>%1</b> calls made today"
+msgstr "Сьогодні здійснено <b>%1</b> дзвінки"
+
+#: indicator/metrics.cpp:49 indicator/metrics.cpp:51
+msgid "No calls made today"
+msgstr "Сьогодні вихідних дзвінків не було"
+
+#: indicator/metrics.cpp:50
+#, qt-format
+msgid "Spent <b>%1</b> minutes in calls today"
+msgstr "Сьогодні загальна тривалість дзвінків - <b>%1</b> хвилин"
+
+#: indicator/textchannelobserver.cpp:225
+msgid "Unlock your sim card and try again from the messaging application."
+msgstr ""
+"Розблокуйте SIM-картку і повторіть спробу за допомогою застосунку для роботи "
+"з повідомленнями."
+
+#: indicator/textchannelobserver.cpp:227
+msgid "Deactivate flight mode and try again from the messaging application."
+msgstr ""
+"Вимкніть режим польоту і повторіть спробу за допомогою застосунку для роботи "
+"з повідомленнями."
+
+#: indicator/textchannelobserver.cpp:230
+msgid "Try again from the messaging application."
+msgstr "Повторіть спробу за допомогою застосунку для роботи з повідомленнями."
+
+#: indicator/textchannelobserver.cpp:236
+msgid "The message could not be sent"
+msgstr "Не вдалося надіслати повідомлення"
+
+#: indicator/textchannelobserver.cpp:249 indicator/textchannelobserver.cpp:713
+msgid "View message"
+msgstr "Переглянути повідомлення"
+
+#: indicator/textchannelobserver.cpp:295
+msgid "New Group"
+msgstr "Нова група"
+
+#. TRANSLATORS : %1 is the group name
+#: indicator/textchannelobserver.cpp:302
+#, qt-format
+msgid "You joined group %1 "
+msgstr "Ви приєдналися до групи %1 "
+
+#. TRANSLATORS : %1 is the group name
+#: indicator/textchannelobserver.cpp:306
+#, qt-format
+msgid "You joined group %1"
+msgstr "Ви приєдналися до групи %1"
+
+#: indicator/textchannelobserver.cpp:309
+msgid "You joined a new group"
+msgstr "Ви приєдналися до нової групи"
+
+#: indicator/textchannelobserver.cpp:328
+msgid "View Group"
+msgstr "Переглянути групу"
+
+#: indicator/textchannelobserver.cpp:367 indicator/ussdindicator.cpp:116
+msgid "Ok"
+msgstr "Гаразд"
+
+#: indicator/textchannelobserver.cpp:373
+msgid "Save"
+msgstr "Зберегти"
+
+#: indicator/textchannelobserver.cpp:468
+msgid "Emergency Alert"
+msgstr "Екстрене оповіщення"
+
+#: indicator/textchannelobserver.cpp:471
+msgid "Emergency Alert: Extreme"
+msgstr "Термінове оповіщення: Екстремальне"
+
+#: indicator/textchannelobserver.cpp:474
+msgid "Emergency Alert: Severe"
+msgstr "Термінове оповіщення: Серйозне"
+
+#: indicator/textchannelobserver.cpp:477
+msgid "Emergency Alert: Notice"
+msgstr "Термінове оповіщення: Повідомлення"
+
 #: indicator/textchannelobserver.cpp:482
 msgid "AMBER Alert"
 msgstr "AMBER-сповіщення"
-
-#: approver/approver.cpp:523
-msgid "Accept"
-msgstr "Прийняти"
 
 #: indicator/textchannelobserver.cpp:485
 msgid "Alert"
 msgstr "Сповіщення"
 
-#: indicator/textchannelobserver.cpp:610
-#, qt-format
-msgid "Attachment: %1 audio clip"
-msgid_plural "Attachments: %1 audio clips"
-msgstr[0] "Долучення: %1 аудіо кліп"
-msgstr[1] "Долучення: %1 аудіо кліпи"
-msgstr[2] "Долучення: %1 аудіо кліпів"
-
-#: indicator/textchannelobserver.cpp:608
-#, qt-format
-msgid "Attachment: %1 contact"
-msgid_plural "Attachments: %1 contacts"
-msgstr[0] "Долучення: %1 запис контакту"
-msgstr[1] "Долучення: %1 записи контактів"
-msgstr[2] "Долучення: %1 записів контактів"
-
-#: indicator/textchannelobserver.cpp:612
-#, qt-format
-msgid "Attachment: %1 file"
-msgid_plural "Attachments: %1 files"
-msgstr[0] "Долучення: %1 файл"
-msgstr[1] "Долучення: %1 файли"
-msgstr[2] "Долучення: %1 файлів"
+#: indicator/textchannelobserver.cpp:531
+msgid "Show alert"
+msgstr "Показати оповіщення"
 
 #: indicator/textchannelobserver.cpp:604
 #, qt-format
@@ -109,276 +356,88 @@ msgstr[0] "Вкладення: %1 відео"
 msgstr[1] "Вкладення: %1 відео"
 msgstr[2] "Вкладення: %1 відео"
 
-#: indicator/authhandler.cpp:72
-msgid "Authentication failed. Do you want to review your credentials?"
-msgstr ""
-"Не вдалося пройти розпізнавання. Хочете змінити ваші реєстраційні дані?"
-
-#: indicator/messagingmenu.cpp:345
-msgid "Call back"
-msgstr "Зворотній виклик"
-
-#: approver/approver.cpp:469 approver/approver.cpp:484
-msgid "Caller number is not available"
-msgstr "Номер вхідного дзвінка недоступний"
-
-#: approver/approver.cpp:481
+#: indicator/textchannelobserver.cpp:608
 #, qt-format
-msgid "Calling from %1"
-msgstr "Дзвінок від %1"
+msgid "Attachment: %1 contact"
+msgid_plural "Attachments: %1 contacts"
+msgstr[0] "Долучення: %1 запис контакту"
+msgstr[1] "Долучення: %1 записи контактів"
+msgstr[2] "Долучення: %1 записів контактів"
 
-#: approver/approver.cpp:475
-msgid "Calling from private number"
-msgstr "Дзвінок з приватного номера"
-
-#: approver/approver.cpp:478
-msgid "Calling from unknown number"
-msgstr "Дзвінок з невідомого номера"
-
-#: indicator/ussdindicator.cpp:142
-msgid "Cancel"
-msgstr "Скасувати"
-
-#: indicator/textchannelobserver.cpp:227
-msgid "Deactivate flight mode and try again from the messaging application."
-msgstr ""
-"Вимкніть режим польоту і повторіть спробу за допомогою застосунку для роботи "
-"з повідомленнями."
-
-#: approver/approver.cpp:545
-msgid "Decline"
-msgstr "Відхилити"
-
-#: indicator/textchannelobserver.cpp:468
-msgid "Emergency Alert"
-msgstr "Екстрене оповіщення"
-
-#: indicator/textchannelobserver.cpp:471
-msgid "Emergency Alert: Extreme"
-msgstr "Термінове оповіщення: Екстремальне"
-
-#: indicator/textchannelobserver.cpp:477
-msgid "Emergency Alert: Notice"
-msgstr "Термінове оповіщення: Повідомлення"
-
-#: indicator/textchannelobserver.cpp:474
-msgid "Emergency Alert: Severe"
-msgstr "Термінове оповіщення: Серйозне"
-
-#: approver/approver.cpp:536
-msgid "End + Answer"
-msgstr "Завершити + Відповісти"
-
-#: approver/approver.cpp:522
-msgid "Hold + Answer"
-msgstr "Утримання + Відповідь"
-
-#: indicator/messagingmenu.cpp:350
-msgid "I missed your call - can you call me now?"
-msgstr "Мною пропущено Ваш дзвінок. Можете передзвонити?"
-
-#: indicator/messagingmenu.cpp:353
-msgid "I'll be 20 minutes late."
-msgstr "Буду за 20 хвилин."
-
-#: approver/approver.cpp:93
-msgid "I'm busy at the moment. I'll call later."
-msgstr "Зараз немає часу. Відповім пізніше."
-
-#: indicator/messagingmenu.cpp:352
-msgid "I'm busy at the moment. I'll call you later."
-msgstr "Зараз не можу поговорити. Передзвоню пізніше."
-
-#: approver/approver.cpp:94
-msgid "I'm running late, on my way now."
-msgstr "Запізнююся, зараз у дорозі."
-
-#: indicator/messagingmenu.cpp:351
-msgid "I'm running late. I'm on my way."
-msgstr "Запізнююся. У дорозі."
-
-#: approver/approver.cpp:553
-msgid "Message & decline"
-msgstr "Повідомити і відхилити"
-
-#: indicator/textchannelobserver.cpp:749
+#: indicator/textchannelobserver.cpp:610
 #, qt-format
-msgid "Message from %1"
-msgstr "Повідомлення від %1"
+msgid "Attachment: %1 audio clip"
+msgid_plural "Attachments: %1 audio clips"
+msgstr[0] "Долучення: %1 аудіо кліп"
+msgstr[1] "Долучення: %1 аудіо кліпи"
+msgstr[2] "Долучення: %1 аудіо кліпів"
 
-#. TRANSLATORS : %1 is the group name and %2 is the recipient name
-#: indicator/messagingmenu.cpp:262 indicator/textchannelobserver.cpp:671
-#: indicator/textchannelobserver.cpp:675
+#: indicator/textchannelobserver.cpp:612
 #, qt-format
-msgid "Message to %1 from %2"
-msgstr "Повідомлення %1 від %2"
-
-#. TRANSLATORS : %1 is the recipient name
-#: indicator/messagingmenu.cpp:265 indicator/messagingmenu.cpp:269
-#: indicator/textchannelobserver.cpp:679 indicator/textchannelobserver.cpp:683
-#, qt-format
-msgid "Message to group from %1"
-msgstr "Повідомлення до групи від %1"
-
-#: indicator/textchannelobserver.cpp:295
-msgid "New Group"
-msgstr "Нова група"
+msgid "Attachment: %1 file"
+msgid_plural "Attachments: %1 files"
+msgstr[0] "Долучення: %1 файл"
+msgstr[1] "Долучення: %1 файли"
+msgstr[2] "Долучення: %1 файлів"
 
 #. TRANSLATORS : message displayed when any error occurred while receiving a MMS (case when cellular-data is off, or any downloading issue). Notify that there was a message, the user can find more about it in the messaging-app.
 #: indicator/textchannelobserver.cpp:615
 msgid "New MMS message"
 msgstr "Нове MMS-повідомлення"
 
-#: indicator/authhandler.cpp:94
-msgid "No"
-msgstr "Ні"
-
-#: indicator/metrics.cpp:49 indicator/metrics.cpp:51
-msgid "No calls made today"
-msgstr "Сьогодні вихідних дзвінків не було"
-
-#: indicator/metrics.cpp:47
-msgid "No calls received today"
-msgstr "Сьогодні вхідних дзвінків не було"
-
-#: indicator/metrics.cpp:45
-msgid "No text messages received today"
-msgstr "Сьогодні текстових повідомлень не надходило"
-
-#: indicator/metrics.cpp:43
-msgid "No text messages sent today"
-msgstr "Сьогодні текстових повідомлень не надсилалося"
-
-#: indicator/textchannelobserver.cpp:367 indicator/ussdindicator.cpp:116
-msgid "Ok"
-msgstr "Гаразд"
-
-#: approver/approver.cpp:456
+#. TRANSLATORS : %1 is the recipient name
+#: indicator/textchannelobserver.cpp:679 indicator/textchannelobserver.cpp:683
 #, qt-format
-msgid "On [%1]"
-msgstr "На [%1]"
+msgid "Message to group from %1"
+msgstr "Повідомлення до групи від %1"
 
-#: indicator/telephony-service-call.desktop.in:3
-msgid "Phone Calls"
-msgstr "Телефонні дзвінки"
-
-#: approver/approver.cpp:95
-msgid "Please call me back later."
-msgstr "Будь ласка, передзвоніть пізніше."
+#: indicator/textchannelobserver.cpp:749
+#, qt-format
+msgid "Message from %1"
+msgstr "Повідомлення від %1"
 
 #: indicator/textchannelobserver.cpp:910
 msgid "Please, select a SIM card:"
 msgstr "Будь ласка, виберіть SIM-картку:"
 
-#: approver/approver.cpp:460 indicator/messagingmenu.cpp:414
-msgid "Private number"
-msgstr "Особистий номер"
-
 #: indicator/ussdindicator.cpp:119
 msgid "Reply"
 msgstr "Відповісти"
 
-#: indicator/displaynamesettings.cpp:35
-#, qt-format
-msgid "SIM %1"
-msgstr "SIM %1"
+#: indicator/ussdindicator.cpp:142
+msgid "Cancel"
+msgstr "Скасувати"
 
-#: indicator/telephony-service-sms.desktop.in:3
-msgid "SMS"
-msgstr "СМС"
-
-#: indicator/textchannelobserver.cpp:373
-msgid "Save"
-msgstr "Зберегти"
-
-#: indicator/messagingmenu.cpp:151 indicator/messagingmenu.cpp:293
-#: indicator/messagingmenu.cpp:360
-msgid "Send"
-msgstr "Надіслати"
-
-#: indicator/textchannelobserver.cpp:531
-msgid "Show alert"
-msgstr "Показати оповіщення"
-
-#: indicator/messagingmenu.cpp:354
-msgid "Sorry, I'm still busy. I'll call you later."
-msgstr "Вибачте, не можу звільнитися. Передзвоню пізніше."
-
-#: indicator/metrics.cpp:50
-#, qt-format
-msgid "Spent <b>%1</b> minutes in calls today"
-msgstr "Сьогодні загальна тривалість дзвінків - <b>%1</b> хвилин"
-
-#: indicator/messagingmenu.cpp:83 indicator/messagingmenu.cpp:87
-msgid "Telephony Service"
-msgstr "Служба телефонії"
-
-#: approver/main.cpp:46
-msgid "Telephony Service Approver"
-msgstr "Підтверджувач служби телефонії"
-
-#: indicator/main.cpp:53
-msgid "Telephony Service Indicator"
-msgstr "Індикатор служби телефонії"
-
-#: indicator/textchannelobserver.cpp:236
-msgid "The message could not be sent"
-msgstr "Не вдалося надіслати повідомлення"
-
-#: indicator/textchannelobserver.cpp:230
-msgid "Try again from the messaging application."
-msgstr "Повторіть спробу за допомогою застосунку для роботи з повідомленнями."
-
-#: approver/approver.cpp:65
-msgid "Unknown caller"
-msgstr "Невідома особа"
-
-#: approver/approver.cpp:463 indicator/messagingmenu.cpp:244
-#: indicator/messagingmenu.cpp:418 indicator/textchannelobserver.cpp:640
-msgid "Unknown number"
-msgstr "Невідомий номер"
-
-#: indicator/textchannelobserver.cpp:225
-msgid "Unlock your sim card and try again from the messaging application."
+#: libtelephonyservice/callnotification.cpp:53
+msgid "Conf call on hold"
 msgstr ""
-"Розблокуйте SIM-картку і повторіть спробу за допомогою застосунку для роботи "
-"з повідомленнями."
 
-#: indicator/textchannelobserver.cpp:328
-msgid "View Group"
-msgstr "Переглянути групу"
-
-#: indicator/textchannelobserver.cpp:249 indicator/textchannelobserver.cpp:713
-msgid "View message"
-msgstr "Переглянути повідомлення"
-
-#: indicator/messagingmenu.cpp:500
-msgid "Voicemail"
-msgstr "Голосова пошта"
-
-#: indicator/messagingmenu.cpp:492
-msgid "Voicemail messages"
-msgstr "Повідомлення голосової пошти"
-
-#: indicator/authhandler.cpp:91
-msgid "Yes"
-msgstr "Так"
-
-#: indicator/textchannelobserver.cpp:309
-msgid "You joined a new group"
-msgstr "Ви приєдналися до нової групи"
-
-#. TRANSLATORS : %1 is the group name
-#: indicator/textchannelobserver.cpp:306
+#: libtelephonyservice/callnotification.cpp:53
 #, qt-format
-msgid "You joined group %1"
-msgstr "Ви приєдналися до групи %1"
+msgid "%1 call on hold"
+msgstr ""
 
-#. TRANSLATORS : %1 is the group name
-#: indicator/textchannelobserver.cpp:302
+#: libtelephonyservice/callnotification.cpp:56
+msgid "Conf call ended"
+msgstr ""
+
+#: libtelephonyservice/callnotification.cpp:56
 #, qt-format
-msgid "You joined group %1 "
-msgstr "Ви приєдналися до групи %1 "
+msgid "%1 call ended"
+msgstr ""
+
+#: libtelephonyservice/callnotification.cpp:59
+#, qt-format
+msgid "%1 call declined"
+msgstr ""
+
+#: libtelephonyservice/contactwatcher.cpp:157
+msgid "Private Number"
+msgstr "Особистий номер"
+
+#: libtelephonyservice/contactwatcher.cpp:159
+msgid "Unknown Number"
+msgstr "Невідомий номер"
 
 #~ msgid ""
 #~ "Oops, there has been an error with the MMS system and this message could "
@@ -388,9 +447,3 @@ msgstr "Ви приєдналися до групи %1 "
 #~ "На жаль, у системі MMS сталася помилка, і це повідомлення не вдалося "
 #~ "отримати. Переконайтеся, що мобільні дані ввімкнено, а налаштування MMS "
 #~ "правильні, а потім попросіть відправника повторити спробу."
-
-#~ msgid "Unknown Number"
-#~ msgstr "Невідомий номер"
-
-#~ msgid "Private Number"
-#~ msgstr "Особистий номер"

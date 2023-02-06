@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-19 20:04+0000\n"
+"POT-Creation-Date: 2023-02-06 09:21+0000\n"
 "PO-Revision-Date: 2021-04-22 10:44+0000\n"
 "Last-Translator: Adria <adriamartinmor@gmail.com>\n"
 "Language-Team: Sardinian <https://translate.ubports.com/projects/ubports/"
@@ -19,72 +19,320 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 3.11.3\n"
 
-#: indicator/messagingmenu.cpp:409
+#: indicator/telephony-service-call.desktop.in:4
+msgid "Phone Calls"
+msgstr "Mutidas de telèfonu"
+
+#: indicator/telephony-service-call.desktop.in:6
+#, fuzzy
+#| msgid "Telephony Service"
+msgid "telephony-service-call"
+msgstr "Servìtziu de telefonia"
+
+#: indicator/telephony-service-sms.desktop.in:4
+msgid "SMS"
+msgstr "SMS"
+
+#: indicator/telephony-service-sms.desktop.in:6
+#, fuzzy
+#| msgid "Telephony Service"
+msgid "telephony-service-message"
+msgstr "Servìtziu de telefonia"
+
+#: approver/approver.cpp:65
+msgid "Unknown caller"
+msgstr "Nùmeru in intrada disconnotu"
+
+#: approver/approver.cpp:93
+msgid "I'm busy at the moment. I'll call later."
+msgstr "Non potzo rispòndere immoe. Ti muto a pustis."
+
+#: approver/approver.cpp:94
+msgid "I'm running late, on my way now."
+msgstr "So arribende, so in ritardu."
+
+#: approver/approver.cpp:95
+msgid "Please call me back later."
+msgstr "Muti·mi a pustis."
+
+#: approver/approver.cpp:456
+#, qt-format
+msgid "On [%1]"
+msgstr "In [%1]"
+
+#: approver/approver.cpp:460 indicator/messagingmenu.cpp:416
+msgid "Private number"
+msgstr "Nùmeru privadu"
+
+#: approver/approver.cpp:463 indicator/messagingmenu.cpp:244
+#: indicator/messagingmenu.cpp:420 indicator/textchannelobserver.cpp:640
+msgid "Unknown number"
+msgstr "Nùmeru disconnotu"
+
+#: approver/approver.cpp:469 approver/approver.cpp:484
+msgid "Caller number is not available"
+msgstr "Su nùmeru de sa mutida in intrada no est a disponimentu"
+
+#: approver/approver.cpp:475
+msgid "Calling from private number"
+msgstr "Mutida dae unu nùmeru privadu"
+
+#: approver/approver.cpp:478
+msgid "Calling from unknown number"
+msgstr "Mutida dae unu nùmeru disconnotu"
+
+#: approver/approver.cpp:481
+#, qt-format
+msgid "Calling from %1"
+msgstr "Mutida dae %1"
+
+#: approver/approver.cpp:522
+msgid "Hold + Answer"
+msgstr "Pone in ispera e risponde"
+
+#: approver/approver.cpp:523
+msgid "Accept"
+msgstr "Atzeta"
+
+#: approver/approver.cpp:536
+msgid "End + Answer"
+msgstr "Acabba e risponde"
+
+#: approver/approver.cpp:545
+msgid "Decline"
+msgstr "Refuda"
+
+#: approver/approver.cpp:553
+msgid "Message & decline"
+msgstr "Imbia unu messàgiu e refuda"
+
+#: approver/main.cpp:46
+msgid "Telephony Service Approver"
+msgstr "Aprovatzione de su servìtziu de telefonia"
+
+#: indicator/authhandler.cpp:72
+msgid "Authentication failed. Do you want to review your credentials?"
+msgstr "Autenticatzione faddida. Boles verificare is credentziales?"
+
+#: indicator/authhandler.cpp:91
+msgid "Yes"
+msgstr "Eja"
+
+#: indicator/authhandler.cpp:94
+msgid "No"
+msgstr "Nono"
+
+#: indicator/displaynamesettings.cpp:35
+#, qt-format
+msgid "SIM %1"
+msgstr "SIM %1"
+
+#: indicator/main.cpp:53
+msgid "Telephony Service Indicator"
+msgstr "Indicadore de servìtziu de telefonia"
+
+#: indicator/messagingmenu.cpp:83 indicator/messagingmenu.cpp:87
+msgid "Telephony Service"
+msgstr "Servìtziu de telefonia"
+
+#: indicator/messagingmenu.cpp:151 indicator/messagingmenu.cpp:293
+#: indicator/messagingmenu.cpp:362
+msgid "Send"
+msgstr "Imbia"
+
+#. TRANSLATORS : %1 is the group name and %2 is the recipient name
+#: indicator/messagingmenu.cpp:262 indicator/textchannelobserver.cpp:671
+#: indicator/textchannelobserver.cpp:675
+#, qt-format
+msgid "Message to %1 from %2"
+msgstr "Messàgiu a %1 dae %2"
+
+#. TRANSLATORS : %1 is the recipient name
+#: indicator/messagingmenu.cpp:265 indicator/messagingmenu.cpp:269
+#, fuzzy, qt-format
+#| msgid "Message to group from %1"
+msgid "Message to the group from %1"
+msgstr "Messàgiu a su grupu dae %1"
+
+#: indicator/messagingmenu.cpp:345
+msgid "Call back"
+msgstr "Torra sa mutida"
+
+#: indicator/messagingmenu.cpp:352
+#, fuzzy
+#| msgid "I missed your call - can you call me now?"
+msgid "Missed your call — can you call me now?"
+msgstr "Apo pèrdidu sa mutida. Mi podes mutire immoe?"
+
+#: indicator/messagingmenu.cpp:353
+#, fuzzy
+#| msgid "I'm running late. I'm on my way."
+msgid "Running late. On my way."
+msgstr "So arribende. So in ritardu."
+
+#: indicator/messagingmenu.cpp:354
+#, fuzzy
+#| msgid "I'm busy at the moment. I'll call you later."
+msgid "Busy at the moment. Will call you later."
+msgstr "Non potzo rispòndere immoe. Ti muto a pustis."
+
+#: indicator/messagingmenu.cpp:355
+#, fuzzy
+#| msgid "I'll be 20 minutes late."
+msgid "I am 20 minutes late."
+msgstr "So in ritardu de 20 minutos."
+
+#: indicator/messagingmenu.cpp:356
+#, fuzzy
+#| msgid "Sorry, I'm still busy. I'll call you later."
+msgid "Still busy. Will call you later."
+msgstr "Non potzo rispòndere; ti muto a pustis."
+
+#: indicator/messagingmenu.cpp:411
 #, qt-format
 msgid "%1 missed call"
 msgid_plural "%1 missed calls"
 msgstr[0] "%1 mutida pèrdida"
 msgstr[1] "%1 mutidas pèrdidas"
 
-#: indicator/messagingmenu.cpp:495
+#: indicator/messagingmenu.cpp:494
+msgid "Voicemail messages"
+msgstr "Messàgios in segreteria"
+
+#: indicator/messagingmenu.cpp:497
 #, qt-format
 msgid "%1 voicemail message"
 msgid_plural "%1 voicemail messages"
 msgstr[0] "%1 messàgiu de boghe"
 msgstr[1] "%1 messàgios de boghe"
 
-#: indicator/metrics.cpp:48
-#, qt-format
-msgid "<b>%1</b> calls made today"
-msgstr "<b>%1</b> mutidas fatas oe"
-
-#: indicator/metrics.cpp:46
-#, qt-format
-msgid "<b>%1</b> calls received today"
-msgstr "<b>%1</b> mutidas retzidas oe"
-
-#: indicator/metrics.cpp:44
-#, qt-format
-msgid "<b>%1</b> text messages received today"
-msgstr "<b>%1</b> messàgios de testu retzidos oe"
+#: indicator/messagingmenu.cpp:502
+msgid "Voicemail"
+msgstr "Segreteria"
 
 #: indicator/metrics.cpp:42
 #, qt-format
 msgid "<b>%1</b> text messages sent today"
 msgstr "<b>%1</b> messàgios de testu imbiados oe"
 
+#: indicator/metrics.cpp:43
+msgid "No text messages sent today"
+msgstr "Oe no as imbiadu perunu messàgiu"
+
+#: indicator/metrics.cpp:44
+#, qt-format
+msgid "<b>%1</b> text messages received today"
+msgstr "<b>%1</b> messàgios de testu retzidos oe"
+
+#: indicator/metrics.cpp:45
+msgid "No text messages received today"
+msgstr "Oe no as retzidu perunu messàgiu"
+
+#: indicator/metrics.cpp:46
+#, qt-format
+msgid "<b>%1</b> calls received today"
+msgstr "<b>%1</b> mutidas retzidas oe"
+
+#: indicator/metrics.cpp:47
+msgid "No calls received today"
+msgstr "Oe no as retzidu peruna mutida"
+
+#: indicator/metrics.cpp:48
+#, qt-format
+msgid "<b>%1</b> calls made today"
+msgstr "<b>%1</b> mutidas fatas oe"
+
+#: indicator/metrics.cpp:49 indicator/metrics.cpp:51
+msgid "No calls made today"
+msgstr "Oe no as fatu peruna mutida"
+
+#: indicator/metrics.cpp:50
+#, qt-format
+msgid "Spent <b>%1</b> minutes in calls today"
+msgstr "<b>%1</b> minutos in mutidas oe"
+
+#: indicator/textchannelobserver.cpp:225
+msgid "Unlock your sim card and try again from the messaging application."
+msgstr ""
+"Isbloca sa carta SIM e torra·bi a proare dae s'aplicatzione de messagìstica."
+
+#: indicator/textchannelobserver.cpp:227
+msgid "Deactivate flight mode and try again from the messaging application."
+msgstr ""
+"Disativa sa modalidade aèreu e torra·bi a proare dae s'aplicatzione de "
+"messagìstica."
+
+#: indicator/textchannelobserver.cpp:230
+msgid "Try again from the messaging application."
+msgstr "Torra·bi a proare dae s'aplicatzione de messagìstica."
+
+#: indicator/textchannelobserver.cpp:236
+msgid "The message could not be sent"
+msgstr "Impossìbile imbiare su messàgiu"
+
+#: indicator/textchannelobserver.cpp:249 indicator/textchannelobserver.cpp:713
+msgid "View message"
+msgstr "Ammustra su messàgiu"
+
+#: indicator/textchannelobserver.cpp:295
+msgid "New Group"
+msgstr "Grupu nou"
+
+#. TRANSLATORS : %1 is the group name
+#: indicator/textchannelobserver.cpp:302
+#, qt-format
+msgid "You joined group %1 "
+msgstr "As aderidu a su grupu %1 "
+
+#. TRANSLATORS : %1 is the group name
+#: indicator/textchannelobserver.cpp:306
+#, qt-format
+msgid "You joined group %1"
+msgstr "As aderidu a su grupu %1"
+
+#: indicator/textchannelobserver.cpp:309
+msgid "You joined a new group"
+msgstr "As aderidu a unu grupu nou"
+
+#: indicator/textchannelobserver.cpp:328
+msgid "View Group"
+msgstr "Ammustra su grupu"
+
+#: indicator/textchannelobserver.cpp:367 indicator/ussdindicator.cpp:116
+msgid "Ok"
+msgstr "AB"
+
+#: indicator/textchannelobserver.cpp:373
+msgid "Save"
+msgstr "Sarva"
+
+#: indicator/textchannelobserver.cpp:468
+msgid "Emergency Alert"
+msgstr ""
+
+#: indicator/textchannelobserver.cpp:471
+msgid "Emergency Alert: Extreme"
+msgstr ""
+
+#: indicator/textchannelobserver.cpp:474
+msgid "Emergency Alert: Severe"
+msgstr ""
+
+#: indicator/textchannelobserver.cpp:477
+msgid "Emergency Alert: Notice"
+msgstr ""
+
 #: indicator/textchannelobserver.cpp:482
 msgid "AMBER Alert"
 msgstr ""
-
-#: approver/approver.cpp:523
-msgid "Accept"
-msgstr "Atzeta"
 
 #: indicator/textchannelobserver.cpp:485
 msgid "Alert"
 msgstr ""
 
-#: indicator/textchannelobserver.cpp:610
-#, qt-format
-msgid "Attachment: %1 audio clip"
-msgid_plural "Attachments: %1 audio clips"
-msgstr[0] "Allegadu: %1 clip de àudio"
-msgstr[1] "Allegados: %1 clips de àudio"
-
-#: indicator/textchannelobserver.cpp:608
-#, qt-format
-msgid "Attachment: %1 contact"
-msgid_plural "Attachments: %1 contacts"
-msgstr[0] "Allegadu: %1 cuntatu"
-msgstr[1] "Allegados: %1 cuntatos"
-
-#: indicator/textchannelobserver.cpp:612
-#, qt-format
-msgid "Attachment: %1 file"
-msgid_plural "Attachments: %1 files"
-msgstr[0] "Allegadu: %1 archìviu"
-msgstr[1] "Allegados: %1 archìvios"
+#: indicator/textchannelobserver.cpp:531
+msgid "Show alert"
+msgstr ""
 
 #: indicator/textchannelobserver.cpp:604
 #, qt-format
@@ -100,119 +348,26 @@ msgid_plural "Attachments: %1 videos"
 msgstr[0] "Allegadu: %1 vìdeu"
 msgstr[1] "Allegados: %1 vìdeos"
 
-#: indicator/authhandler.cpp:72
-msgid "Authentication failed. Do you want to review your credentials?"
-msgstr "Autenticatzione faddida. Boles verificare is credentziales?"
-
-#: indicator/messagingmenu.cpp:345
-msgid "Call back"
-msgstr "Torra sa mutida"
-
-#: approver/approver.cpp:469 approver/approver.cpp:484
-msgid "Caller number is not available"
-msgstr "Su nùmeru de sa mutida in intrada no est a disponimentu"
-
-#: approver/approver.cpp:481
+#: indicator/textchannelobserver.cpp:608
 #, qt-format
-msgid "Calling from %1"
-msgstr "Mutida dae %1"
+msgid "Attachment: %1 contact"
+msgid_plural "Attachments: %1 contacts"
+msgstr[0] "Allegadu: %1 cuntatu"
+msgstr[1] "Allegados: %1 cuntatos"
 
-#: approver/approver.cpp:475
-msgid "Calling from private number"
-msgstr "Mutida dae unu nùmeru privadu"
-
-#: approver/approver.cpp:478
-msgid "Calling from unknown number"
-msgstr "Mutida dae unu nùmeru disconnotu"
-
-#: indicator/ussdindicator.cpp:142
-msgid "Cancel"
-msgstr "Annulla"
-
-#: indicator/textchannelobserver.cpp:227
-msgid "Deactivate flight mode and try again from the messaging application."
-msgstr ""
-"Disativa sa modalidade aèreu e torra·bi a proare dae s'aplicatzione de "
-"messagìstica."
-
-#: approver/approver.cpp:545
-msgid "Decline"
-msgstr "Refuda"
-
-#: indicator/textchannelobserver.cpp:468
-msgid "Emergency Alert"
-msgstr ""
-
-#: indicator/textchannelobserver.cpp:471
-msgid "Emergency Alert: Extreme"
-msgstr ""
-
-#: indicator/textchannelobserver.cpp:477
-msgid "Emergency Alert: Notice"
-msgstr ""
-
-#: indicator/textchannelobserver.cpp:474
-msgid "Emergency Alert: Severe"
-msgstr ""
-
-#: approver/approver.cpp:536
-msgid "End + Answer"
-msgstr "Acabba e risponde"
-
-#: approver/approver.cpp:522
-msgid "Hold + Answer"
-msgstr "Pone in ispera e risponde"
-
-#: indicator/messagingmenu.cpp:350
-msgid "I missed your call - can you call me now?"
-msgstr "Apo pèrdidu sa mutida. Mi podes mutire immoe?"
-
-#: indicator/messagingmenu.cpp:353
-msgid "I'll be 20 minutes late."
-msgstr "So in ritardu de 20 minutos."
-
-#: approver/approver.cpp:93
-msgid "I'm busy at the moment. I'll call later."
-msgstr "Non potzo rispòndere immoe. Ti muto a pustis."
-
-#: indicator/messagingmenu.cpp:352
-msgid "I'm busy at the moment. I'll call you later."
-msgstr "Non potzo rispòndere immoe. Ti muto a pustis."
-
-#: approver/approver.cpp:94
-msgid "I'm running late, on my way now."
-msgstr "So arribende, so in ritardu."
-
-#: indicator/messagingmenu.cpp:351
-msgid "I'm running late. I'm on my way."
-msgstr "So arribende. So in ritardu."
-
-#: approver/approver.cpp:553
-msgid "Message & decline"
-msgstr "Imbia unu messàgiu e refuda"
-
-#: indicator/textchannelobserver.cpp:749
+#: indicator/textchannelobserver.cpp:610
 #, qt-format
-msgid "Message from %1"
-msgstr "Messàgiu dae %1"
+msgid "Attachment: %1 audio clip"
+msgid_plural "Attachments: %1 audio clips"
+msgstr[0] "Allegadu: %1 clip de àudio"
+msgstr[1] "Allegados: %1 clips de àudio"
 
-#. TRANSLATORS : %1 is the group name and %2 is the recipient name
-#: indicator/messagingmenu.cpp:262 indicator/textchannelobserver.cpp:671
-#: indicator/textchannelobserver.cpp:675
+#: indicator/textchannelobserver.cpp:612
 #, qt-format
-msgid "Message to %1 from %2"
-msgstr "Messàgiu a %1 dae %2"
-
-#. TRANSLATORS : %1 is the recipient name
-#: indicator/messagingmenu.cpp:265 indicator/messagingmenu.cpp:269
-#: indicator/textchannelobserver.cpp:679 indicator/textchannelobserver.cpp:683
-#, qt-format
-msgid "Message to group from %1"
-msgstr "Messàgiu a su grupu dae %1"
-
-#: indicator/textchannelobserver.cpp:295
-msgid "New Group"
-msgstr "Grupu nou"
+msgid "Attachment: %1 file"
+msgid_plural "Attachments: %1 files"
+msgstr[0] "Allegadu: %1 archìviu"
+msgstr[1] "Allegados: %1 archìvios"
 
 #. TRANSLATORS : message displayed when any error occurred while receiving a MMS (case when cellular-data is off, or any downloading issue). Notify that there was a message, the user can find more about it in the messaging-app.
 #: indicator/textchannelobserver.cpp:615
@@ -221,155 +376,63 @@ msgstr "Grupu nou"
 msgid "New MMS message"
 msgstr "Ammustra su messàgiu"
 
-#: indicator/authhandler.cpp:94
-msgid "No"
-msgstr "Nono"
-
-#: indicator/metrics.cpp:49 indicator/metrics.cpp:51
-msgid "No calls made today"
-msgstr "Oe no as fatu peruna mutida"
-
-#: indicator/metrics.cpp:47
-msgid "No calls received today"
-msgstr "Oe no as retzidu peruna mutida"
-
-#: indicator/metrics.cpp:45
-msgid "No text messages received today"
-msgstr "Oe no as retzidu perunu messàgiu"
-
-#: indicator/metrics.cpp:43
-msgid "No text messages sent today"
-msgstr "Oe no as imbiadu perunu messàgiu"
-
-#: indicator/textchannelobserver.cpp:367 indicator/ussdindicator.cpp:116
-msgid "Ok"
-msgstr "AB"
-
-#: approver/approver.cpp:456
+#. TRANSLATORS : %1 is the recipient name
+#: indicator/textchannelobserver.cpp:679 indicator/textchannelobserver.cpp:683
 #, qt-format
-msgid "On [%1]"
-msgstr "In [%1]"
+msgid "Message to group from %1"
+msgstr "Messàgiu a su grupu dae %1"
 
-#: indicator/telephony-service-call.desktop.in:3
-msgid "Phone Calls"
-msgstr "Mutidas de telèfonu"
-
-#: approver/approver.cpp:95
-msgid "Please call me back later."
-msgstr "Muti·mi a pustis."
+#: indicator/textchannelobserver.cpp:749
+#, qt-format
+msgid "Message from %1"
+msgstr "Messàgiu dae %1"
 
 #: indicator/textchannelobserver.cpp:910
 msgid "Please, select a SIM card:"
 msgstr "Sèbera una carta SIM:"
 
-#: approver/approver.cpp:460 indicator/messagingmenu.cpp:414
-msgid "Private number"
-msgstr "Nùmeru privadu"
-
 #: indicator/ussdindicator.cpp:119
 msgid "Reply"
 msgstr "Risponde"
 
-#: indicator/displaynamesettings.cpp:35
-#, qt-format
-msgid "SIM %1"
-msgstr "SIM %1"
+#: indicator/ussdindicator.cpp:142
+msgid "Cancel"
+msgstr "Annulla"
 
-#: indicator/telephony-service-sms.desktop.in:3
-msgid "SMS"
-msgstr "SMS"
-
-#: indicator/textchannelobserver.cpp:373
-msgid "Save"
-msgstr "Sarva"
-
-#: indicator/messagingmenu.cpp:151 indicator/messagingmenu.cpp:293
-#: indicator/messagingmenu.cpp:360
-msgid "Send"
-msgstr "Imbia"
-
-#: indicator/textchannelobserver.cpp:531
-msgid "Show alert"
+#: libtelephonyservice/callnotification.cpp:53
+msgid "Conf call on hold"
 msgstr ""
 
-#: indicator/messagingmenu.cpp:354
-msgid "Sorry, I'm still busy. I'll call you later."
-msgstr "Non potzo rispòndere; ti muto a pustis."
-
-#: indicator/metrics.cpp:50
+#: libtelephonyservice/callnotification.cpp:53
 #, qt-format
-msgid "Spent <b>%1</b> minutes in calls today"
-msgstr "<b>%1</b> minutos in mutidas oe"
+msgid "%1 call on hold"
+msgstr ""
 
-#: indicator/messagingmenu.cpp:83 indicator/messagingmenu.cpp:87
-msgid "Telephony Service"
-msgstr "Servìtziu de telefonia"
+#: libtelephonyservice/callnotification.cpp:56
+msgid "Conf call ended"
+msgstr ""
 
-#: approver/main.cpp:46
-msgid "Telephony Service Approver"
-msgstr "Aprovatzione de su servìtziu de telefonia"
+#: libtelephonyservice/callnotification.cpp:56
+#, qt-format
+msgid "%1 call ended"
+msgstr ""
 
-#: indicator/main.cpp:53
-msgid "Telephony Service Indicator"
-msgstr "Indicadore de servìtziu de telefonia"
+#: libtelephonyservice/callnotification.cpp:59
+#, qt-format
+msgid "%1 call declined"
+msgstr ""
 
-#: indicator/textchannelobserver.cpp:236
-msgid "The message could not be sent"
-msgstr "Impossìbile imbiare su messàgiu"
+#: libtelephonyservice/contactwatcher.cpp:157
+#, fuzzy
+#| msgid "Private number"
+msgid "Private Number"
+msgstr "Nùmeru privadu"
 
-#: indicator/textchannelobserver.cpp:230
-msgid "Try again from the messaging application."
-msgstr "Torra·bi a proare dae s'aplicatzione de messagìstica."
-
-#: approver/approver.cpp:65
-msgid "Unknown caller"
-msgstr "Nùmeru in intrada disconnotu"
-
-#: approver/approver.cpp:463 indicator/messagingmenu.cpp:244
-#: indicator/messagingmenu.cpp:418 indicator/textchannelobserver.cpp:640
-msgid "Unknown number"
+#: libtelephonyservice/contactwatcher.cpp:159
+#, fuzzy
+#| msgid "Unknown number"
+msgid "Unknown Number"
 msgstr "Nùmeru disconnotu"
-
-#: indicator/textchannelobserver.cpp:225
-msgid "Unlock your sim card and try again from the messaging application."
-msgstr ""
-"Isbloca sa carta SIM e torra·bi a proare dae s'aplicatzione de messagìstica."
-
-#: indicator/textchannelobserver.cpp:328
-msgid "View Group"
-msgstr "Ammustra su grupu"
-
-#: indicator/textchannelobserver.cpp:249 indicator/textchannelobserver.cpp:713
-msgid "View message"
-msgstr "Ammustra su messàgiu"
-
-#: indicator/messagingmenu.cpp:500
-msgid "Voicemail"
-msgstr "Segreteria"
-
-#: indicator/messagingmenu.cpp:492
-msgid "Voicemail messages"
-msgstr "Messàgios in segreteria"
-
-#: indicator/authhandler.cpp:91
-msgid "Yes"
-msgstr "Eja"
-
-#: indicator/textchannelobserver.cpp:309
-msgid "You joined a new group"
-msgstr "As aderidu a unu grupu nou"
-
-#. TRANSLATORS : %1 is the group name
-#: indicator/textchannelobserver.cpp:306
-#, qt-format
-msgid "You joined group %1"
-msgstr "As aderidu a su grupu %1"
-
-#. TRANSLATORS : %1 is the group name
-#: indicator/textchannelobserver.cpp:302
-#, qt-format
-msgid "You joined group %1 "
-msgstr "As aderidu a su grupu %1 "
 
 #~ msgid ""
 #~ "Oops, there has been an error with the MMS system and this message could "

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-19 20:04+0000\n"
+"POT-Creation-Date: 2023-02-06 09:21+0000\n"
 "PO-Revision-Date: 2020-12-23 10:26+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://translate.ubports.com/projects/ubports/"
@@ -20,72 +20,317 @@ msgstr ""
 "X-Generator: Weblate 3.11.3\n"
 "X-Launchpad-Export-Date: 2017-01-04 06:02+0000\n"
 
-#: indicator/messagingmenu.cpp:409
+#: indicator/telephony-service-call.desktop.in:4
+msgid "Phone Calls"
+msgstr "שיחות טלפון"
+
+#: indicator/telephony-service-call.desktop.in:6
+#, fuzzy
+#| msgid "Telephony Service"
+msgid "telephony-service-call"
+msgstr "שירות טלפוניה"
+
+#: indicator/telephony-service-sms.desktop.in:4
+msgid "SMS"
+msgstr "SMS"
+
+#: indicator/telephony-service-sms.desktop.in:6
+#, fuzzy
+#| msgid "Telephony Service"
+msgid "telephony-service-message"
+msgstr "שירות טלפוניה"
+
+#: approver/approver.cpp:65
+msgid "Unknown caller"
+msgstr "מתקשר לא ידוע"
+
+#: approver/approver.cpp:93
+msgid "I'm busy at the moment. I'll call later."
+msgstr "אין לי אפשרות לענות, אתקשר מאוחר יותר."
+
+#: approver/approver.cpp:94
+msgid "I'm running late, on my way now."
+msgstr "באיחור, בדרך."
+
+#: approver/approver.cpp:95
+msgid "Please call me back later."
+msgstr "נא להתקשר אלי מאוחר יותר."
+
+#: approver/approver.cpp:456
+#, qt-format
+msgid "On [%1]"
+msgstr "פעיל [%1]"
+
+#: approver/approver.cpp:460 indicator/messagingmenu.cpp:416
+msgid "Private number"
+msgstr "מספר פרטי"
+
+#: approver/approver.cpp:463 indicator/messagingmenu.cpp:244
+#: indicator/messagingmenu.cpp:420 indicator/textchannelobserver.cpp:640
+msgid "Unknown number"
+msgstr "מספר לא ידוע"
+
+#: approver/approver.cpp:469 approver/approver.cpp:484
+msgid "Caller number is not available"
+msgstr "מספר המען אינו זמין"
+
+#: approver/approver.cpp:475
+msgid "Calling from private number"
+msgstr "שיחה ממספר פרטי"
+
+#: approver/approver.cpp:478
+msgid "Calling from unknown number"
+msgstr "שיחה ממספר לא ידוע"
+
+#: approver/approver.cpp:481
+#, qt-format
+msgid "Calling from %1"
+msgstr "שיחה מ%1"
+
+#: approver/approver.cpp:522
+msgid "Hold + Answer"
+msgstr "החזקה + מענה"
+
+#: approver/approver.cpp:523
+msgid "Accept"
+msgstr "קבלה"
+
+#: approver/approver.cpp:536
+msgid "End + Answer"
+msgstr "ניתוק + מענה"
+
+#: approver/approver.cpp:545
+msgid "Decline"
+msgstr "דחיה"
+
+#: approver/approver.cpp:553
+msgid "Message & decline"
+msgstr "הודעה ודחייה"
+
+#: approver/main.cpp:46
+msgid "Telephony Service Approver"
+msgstr "מאשר שירות טלפוניה"
+
+#: indicator/authhandler.cpp:72
+msgid "Authentication failed. Do you want to review your credentials?"
+msgstr "האימות נכשל. לסקור את פרטי הגישה שלך?"
+
+#: indicator/authhandler.cpp:91
+msgid "Yes"
+msgstr "כן"
+
+#: indicator/authhandler.cpp:94
+msgid "No"
+msgstr "לא"
+
+#: indicator/displaynamesettings.cpp:35
+#, qt-format
+msgid "SIM %1"
+msgstr "SIM %1"
+
+#: indicator/main.cpp:53
+msgid "Telephony Service Indicator"
+msgstr "מחוון שירות טלפוניה"
+
+#: indicator/messagingmenu.cpp:83 indicator/messagingmenu.cpp:87
+msgid "Telephony Service"
+msgstr "שירות טלפוניה"
+
+#: indicator/messagingmenu.cpp:151 indicator/messagingmenu.cpp:293
+#: indicator/messagingmenu.cpp:362
+msgid "Send"
+msgstr "שליחה"
+
+#. TRANSLATORS : %1 is the group name and %2 is the recipient name
+#: indicator/messagingmenu.cpp:262 indicator/textchannelobserver.cpp:671
+#: indicator/textchannelobserver.cpp:675
+#, qt-format
+msgid "Message to %1 from %2"
+msgstr "הודעה אל %1 מאת %2"
+
+#. TRANSLATORS : %1 is the recipient name
+#: indicator/messagingmenu.cpp:265 indicator/messagingmenu.cpp:269
+#, fuzzy, qt-format
+#| msgid "Message to group from %1"
+msgid "Message to the group from %1"
+msgstr "הודעה לקבוצה מאת %1"
+
+#: indicator/messagingmenu.cpp:345
+msgid "Call back"
+msgstr "להתקשר בחזרה"
+
+#: indicator/messagingmenu.cpp:352
+#, fuzzy
+#| msgid "I missed your call - can you call me now?"
+msgid "Missed your call — can you call me now?"
+msgstr "פספסתי את שיחתך - אפשר להתקשר אלי בחזרה?"
+
+#: indicator/messagingmenu.cpp:353
+#, fuzzy
+#| msgid "I'm running late. I'm on my way."
+msgid "Running late. On my way."
+msgstr "אאחר. אני בדרך."
+
+#: indicator/messagingmenu.cpp:354
+#, fuzzy
+#| msgid "I'm busy at the moment. I'll call you later."
+msgid "Busy at the moment. Will call you later."
+msgstr "אין לי אפשרות לענות כרגע. אתקשר מאוחר יותר."
+
+#: indicator/messagingmenu.cpp:355
+#, fuzzy
+#| msgid "I'll be 20 minutes late."
+msgid "I am 20 minutes late."
+msgstr "אאחר ב־20 דקות."
+
+#: indicator/messagingmenu.cpp:356
+#, fuzzy
+#| msgid "Sorry, I'm still busy. I'll call you later."
+msgid "Still busy. Will call you later."
+msgstr "עדיין עסוק. אתקשר מאוחר יותר. סליחה."
+
+#: indicator/messagingmenu.cpp:411
 #, qt-format
 msgid "%1 missed call"
 msgid_plural "%1 missed calls"
 msgstr[0] "שיחה %1 שלא נענתה"
 msgstr[1] "%1 שיחות שלא נענו"
 
-#: indicator/messagingmenu.cpp:495
+#: indicator/messagingmenu.cpp:494
+msgid "Voicemail messages"
+msgstr "הודעות בתא הקולי"
+
+#: indicator/messagingmenu.cpp:497
 #, qt-format
 msgid "%1 voicemail message"
 msgid_plural "%1 voicemail messages"
 msgstr[0] "הודעה %1 בתא הקולי"
 msgstr[1] "%1 הודעות בתא הקולי"
 
-#: indicator/metrics.cpp:48
-#, qt-format
-msgid "<b>%1</b> calls made today"
-msgstr "<b>%1</b> שיחות בוצעו היום"
-
-#: indicator/metrics.cpp:46
-#, qt-format
-msgid "<b>%1</b> calls received today"
-msgstr "<b>%1</b> שיחות התקבלו היום"
-
-#: indicator/metrics.cpp:44
-#, qt-format
-msgid "<b>%1</b> text messages received today"
-msgstr "<b>%1</b> הודעות התקבלו היום"
+#: indicator/messagingmenu.cpp:502
+msgid "Voicemail"
+msgstr "תא קולי"
 
 #: indicator/metrics.cpp:42
 #, qt-format
 msgid "<b>%1</b> text messages sent today"
 msgstr "<b>%1</b> הודעות נשלחו היום"
 
+#: indicator/metrics.cpp:43
+msgid "No text messages sent today"
+msgstr "לא נשלחו הודעות היום"
+
+#: indicator/metrics.cpp:44
+#, qt-format
+msgid "<b>%1</b> text messages received today"
+msgstr "<b>%1</b> הודעות התקבלו היום"
+
+#: indicator/metrics.cpp:45
+msgid "No text messages received today"
+msgstr "לא התקבלו הודעות היום"
+
+#: indicator/metrics.cpp:46
+#, qt-format
+msgid "<b>%1</b> calls received today"
+msgstr "<b>%1</b> שיחות התקבלו היום"
+
+#: indicator/metrics.cpp:47
+msgid "No calls received today"
+msgstr "לא התקבלו שיחות היום"
+
+#: indicator/metrics.cpp:48
+#, qt-format
+msgid "<b>%1</b> calls made today"
+msgstr "<b>%1</b> שיחות בוצעו היום"
+
+#: indicator/metrics.cpp:49 indicator/metrics.cpp:51
+msgid "No calls made today"
+msgstr "לא בוצעו שיחות היום"
+
+#: indicator/metrics.cpp:50
+#, qt-format
+msgid "Spent <b>%1</b> minutes in calls today"
+msgstr "בזבזת <b>%1</b> דקות בשיחות היום"
+
+#: indicator/textchannelobserver.cpp:225
+msgid "Unlock your sim card and try again from the messaging application."
+msgstr "ניתן לשחרר את נעילת ה־SIM שלך ולנסות שוב דרך יישום ההודעות."
+
+#: indicator/textchannelobserver.cpp:227
+msgid "Deactivate flight mode and try again from the messaging application."
+msgstr "מוטב לנטרל את מצב הטיסה ולנסות שוב מיישום ההודעות."
+
+#: indicator/textchannelobserver.cpp:230
+msgid "Try again from the messaging application."
+msgstr "כדאי לנסות שוב מיישום ההודעות."
+
+#: indicator/textchannelobserver.cpp:236
+msgid "The message could not be sent"
+msgstr "לא ניתן לשלוח את ההודעה"
+
+#: indicator/textchannelobserver.cpp:249 indicator/textchannelobserver.cpp:713
+msgid "View message"
+msgstr "צפייה בהודעה"
+
+#: indicator/textchannelobserver.cpp:295
+msgid "New Group"
+msgstr "קבוצה חדשה"
+
+#. TRANSLATORS : %1 is the group name
+#: indicator/textchannelobserver.cpp:302
+#, qt-format
+msgid "You joined group %1 "
+msgstr "הצטרפת לקבוצה %1 "
+
+#. TRANSLATORS : %1 is the group name
+#: indicator/textchannelobserver.cpp:306
+#, qt-format
+msgid "You joined group %1"
+msgstr "הצטרפת לקבוצה %1"
+
+#: indicator/textchannelobserver.cpp:309
+msgid "You joined a new group"
+msgstr "הצטרפת לקבוצה חדשה"
+
+#: indicator/textchannelobserver.cpp:328
+msgid "View Group"
+msgstr "הצגת קבוצה"
+
+#: indicator/textchannelobserver.cpp:367 indicator/ussdindicator.cpp:116
+msgid "Ok"
+msgstr "אישור"
+
+#: indicator/textchannelobserver.cpp:373
+msgid "Save"
+msgstr "שמירה"
+
+#: indicator/textchannelobserver.cpp:468
+msgid "Emergency Alert"
+msgstr ""
+
+#: indicator/textchannelobserver.cpp:471
+msgid "Emergency Alert: Extreme"
+msgstr ""
+
+#: indicator/textchannelobserver.cpp:474
+msgid "Emergency Alert: Severe"
+msgstr ""
+
+#: indicator/textchannelobserver.cpp:477
+msgid "Emergency Alert: Notice"
+msgstr ""
+
 #: indicator/textchannelobserver.cpp:482
 msgid "AMBER Alert"
 msgstr ""
-
-#: approver/approver.cpp:523
-msgid "Accept"
-msgstr "קבלה"
 
 #: indicator/textchannelobserver.cpp:485
 msgid "Alert"
 msgstr ""
 
-#: indicator/textchannelobserver.cpp:610
-#, qt-format
-msgid "Attachment: %1 audio clip"
-msgid_plural "Attachments: %1 audio clips"
-msgstr[0] "מצורף: מקטע שמע אחד"
-msgstr[1] "מצורפים: %1 מקטעי שמע"
-
-#: indicator/textchannelobserver.cpp:608
-#, qt-format
-msgid "Attachment: %1 contact"
-msgid_plural "Attachments: %1 contacts"
-msgstr[0] "מצורף: איש קשר אחד"
-msgstr[1] "מצורפים: %1 אנשי קשר"
-
-#: indicator/textchannelobserver.cpp:612
-#, qt-format
-msgid "Attachment: %1 file"
-msgid_plural "Attachments: %1 files"
-msgstr[0] "מצורף: קובץ אחד"
-msgstr[1] "מצורפים: %1 קבצים"
+#: indicator/textchannelobserver.cpp:531
+msgid "Show alert"
+msgstr ""
 
 #: indicator/textchannelobserver.cpp:604
 #, qt-format
@@ -101,117 +346,26 @@ msgid_plural "Attachments: %1 videos"
 msgstr[0] "מצורף: סרטון אחד"
 msgstr[1] "מצורפים: %1 סרטונים"
 
-#: indicator/authhandler.cpp:72
-msgid "Authentication failed. Do you want to review your credentials?"
-msgstr "האימות נכשל. לסקור את פרטי הגישה שלך?"
-
-#: indicator/messagingmenu.cpp:345
-msgid "Call back"
-msgstr "להתקשר בחזרה"
-
-#: approver/approver.cpp:469 approver/approver.cpp:484
-msgid "Caller number is not available"
-msgstr "מספר המען אינו זמין"
-
-#: approver/approver.cpp:481
+#: indicator/textchannelobserver.cpp:608
 #, qt-format
-msgid "Calling from %1"
-msgstr "שיחה מ%1"
+msgid "Attachment: %1 contact"
+msgid_plural "Attachments: %1 contacts"
+msgstr[0] "מצורף: איש קשר אחד"
+msgstr[1] "מצורפים: %1 אנשי קשר"
 
-#: approver/approver.cpp:475
-msgid "Calling from private number"
-msgstr "שיחה ממספר פרטי"
-
-#: approver/approver.cpp:478
-msgid "Calling from unknown number"
-msgstr "שיחה ממספר לא ידוע"
-
-#: indicator/ussdindicator.cpp:142
-msgid "Cancel"
-msgstr "ביטול"
-
-#: indicator/textchannelobserver.cpp:227
-msgid "Deactivate flight mode and try again from the messaging application."
-msgstr "מוטב לנטרל את מצב הטיסה ולנסות שוב מיישום ההודעות."
-
-#: approver/approver.cpp:545
-msgid "Decline"
-msgstr "דחיה"
-
-#: indicator/textchannelobserver.cpp:468
-msgid "Emergency Alert"
-msgstr ""
-
-#: indicator/textchannelobserver.cpp:471
-msgid "Emergency Alert: Extreme"
-msgstr ""
-
-#: indicator/textchannelobserver.cpp:477
-msgid "Emergency Alert: Notice"
-msgstr ""
-
-#: indicator/textchannelobserver.cpp:474
-msgid "Emergency Alert: Severe"
-msgstr ""
-
-#: approver/approver.cpp:536
-msgid "End + Answer"
-msgstr "ניתוק + מענה"
-
-#: approver/approver.cpp:522
-msgid "Hold + Answer"
-msgstr "החזקה + מענה"
-
-#: indicator/messagingmenu.cpp:350
-msgid "I missed your call - can you call me now?"
-msgstr "פספסתי את שיחתך - אפשר להתקשר אלי בחזרה?"
-
-#: indicator/messagingmenu.cpp:353
-msgid "I'll be 20 minutes late."
-msgstr "אאחר ב־20 דקות."
-
-#: approver/approver.cpp:93
-msgid "I'm busy at the moment. I'll call later."
-msgstr "אין לי אפשרות לענות, אתקשר מאוחר יותר."
-
-#: indicator/messagingmenu.cpp:352
-msgid "I'm busy at the moment. I'll call you later."
-msgstr "אין לי אפשרות לענות כרגע. אתקשר מאוחר יותר."
-
-#: approver/approver.cpp:94
-msgid "I'm running late, on my way now."
-msgstr "באיחור, בדרך."
-
-#: indicator/messagingmenu.cpp:351
-msgid "I'm running late. I'm on my way."
-msgstr "אאחר. אני בדרך."
-
-#: approver/approver.cpp:553
-msgid "Message & decline"
-msgstr "הודעה ודחייה"
-
-#: indicator/textchannelobserver.cpp:749
+#: indicator/textchannelobserver.cpp:610
 #, qt-format
-msgid "Message from %1"
-msgstr "הודעת מאת %1"
+msgid "Attachment: %1 audio clip"
+msgid_plural "Attachments: %1 audio clips"
+msgstr[0] "מצורף: מקטע שמע אחד"
+msgstr[1] "מצורפים: %1 מקטעי שמע"
 
-#. TRANSLATORS : %1 is the group name and %2 is the recipient name
-#: indicator/messagingmenu.cpp:262 indicator/textchannelobserver.cpp:671
-#: indicator/textchannelobserver.cpp:675
+#: indicator/textchannelobserver.cpp:612
 #, qt-format
-msgid "Message to %1 from %2"
-msgstr "הודעה אל %1 מאת %2"
-
-#. TRANSLATORS : %1 is the recipient name
-#: indicator/messagingmenu.cpp:265 indicator/messagingmenu.cpp:269
-#: indicator/textchannelobserver.cpp:679 indicator/textchannelobserver.cpp:683
-#, qt-format
-msgid "Message to group from %1"
-msgstr "הודעה לקבוצה מאת %1"
-
-#: indicator/textchannelobserver.cpp:295
-msgid "New Group"
-msgstr "קבוצה חדשה"
+msgid "Attachment: %1 file"
+msgid_plural "Attachments: %1 files"
+msgstr[0] "מצורף: קובץ אחד"
+msgstr[1] "מצורפים: %1 קבצים"
 
 #. TRANSLATORS : message displayed when any error occurred while receiving a MMS (case when cellular-data is off, or any downloading issue). Notify that there was a message, the user can find more about it in the messaging-app.
 #: indicator/textchannelobserver.cpp:615
@@ -220,154 +374,59 @@ msgstr "קבוצה חדשה"
 msgid "New MMS message"
 msgstr "צפייה בהודעה"
 
-#: indicator/authhandler.cpp:94
-msgid "No"
-msgstr "לא"
-
-#: indicator/metrics.cpp:49 indicator/metrics.cpp:51
-msgid "No calls made today"
-msgstr "לא בוצעו שיחות היום"
-
-#: indicator/metrics.cpp:47
-msgid "No calls received today"
-msgstr "לא התקבלו שיחות היום"
-
-#: indicator/metrics.cpp:45
-msgid "No text messages received today"
-msgstr "לא התקבלו הודעות היום"
-
-#: indicator/metrics.cpp:43
-msgid "No text messages sent today"
-msgstr "לא נשלחו הודעות היום"
-
-#: indicator/textchannelobserver.cpp:367 indicator/ussdindicator.cpp:116
-msgid "Ok"
-msgstr "אישור"
-
-#: approver/approver.cpp:456
+#. TRANSLATORS : %1 is the recipient name
+#: indicator/textchannelobserver.cpp:679 indicator/textchannelobserver.cpp:683
 #, qt-format
-msgid "On [%1]"
-msgstr "פעיל [%1]"
+msgid "Message to group from %1"
+msgstr "הודעה לקבוצה מאת %1"
 
-#: indicator/telephony-service-call.desktop.in:3
-msgid "Phone Calls"
-msgstr "שיחות טלפון"
-
-#: approver/approver.cpp:95
-msgid "Please call me back later."
-msgstr "נא להתקשר אלי מאוחר יותר."
+#: indicator/textchannelobserver.cpp:749
+#, qt-format
+msgid "Message from %1"
+msgstr "הודעת מאת %1"
 
 #: indicator/textchannelobserver.cpp:910
 msgid "Please, select a SIM card:"
 msgstr "נא לבחור כרטיס SIM:"
 
-#: approver/approver.cpp:460 indicator/messagingmenu.cpp:414
-msgid "Private number"
-msgstr "מספר פרטי"
-
 #: indicator/ussdindicator.cpp:119
 msgid "Reply"
 msgstr "מענה"
 
-#: indicator/displaynamesettings.cpp:35
-#, qt-format
-msgid "SIM %1"
-msgstr "SIM %1"
+#: indicator/ussdindicator.cpp:142
+msgid "Cancel"
+msgstr "ביטול"
 
-#: indicator/telephony-service-sms.desktop.in:3
-msgid "SMS"
-msgstr "SMS"
-
-#: indicator/textchannelobserver.cpp:373
-msgid "Save"
-msgstr "שמירה"
-
-#: indicator/messagingmenu.cpp:151 indicator/messagingmenu.cpp:293
-#: indicator/messagingmenu.cpp:360
-msgid "Send"
-msgstr "שליחה"
-
-#: indicator/textchannelobserver.cpp:531
-msgid "Show alert"
+#: libtelephonyservice/callnotification.cpp:53
+msgid "Conf call on hold"
 msgstr ""
 
-#: indicator/messagingmenu.cpp:354
-msgid "Sorry, I'm still busy. I'll call you later."
-msgstr "עדיין עסוק. אתקשר מאוחר יותר. סליחה."
-
-#: indicator/metrics.cpp:50
+#: libtelephonyservice/callnotification.cpp:53
 #, qt-format
-msgid "Spent <b>%1</b> minutes in calls today"
-msgstr "בזבזת <b>%1</b> דקות בשיחות היום"
+msgid "%1 call on hold"
+msgstr ""
 
-#: indicator/messagingmenu.cpp:83 indicator/messagingmenu.cpp:87
-msgid "Telephony Service"
-msgstr "שירות טלפוניה"
+#: libtelephonyservice/callnotification.cpp:56
+msgid "Conf call ended"
+msgstr ""
 
-#: approver/main.cpp:46
-msgid "Telephony Service Approver"
-msgstr "מאשר שירות טלפוניה"
+#: libtelephonyservice/callnotification.cpp:56
+#, qt-format
+msgid "%1 call ended"
+msgstr ""
 
-#: indicator/main.cpp:53
-msgid "Telephony Service Indicator"
-msgstr "מחוון שירות טלפוניה"
+#: libtelephonyservice/callnotification.cpp:59
+#, qt-format
+msgid "%1 call declined"
+msgstr ""
 
-#: indicator/textchannelobserver.cpp:236
-msgid "The message could not be sent"
-msgstr "לא ניתן לשלוח את ההודעה"
+#: libtelephonyservice/contactwatcher.cpp:157
+msgid "Private Number"
+msgstr "מספר חסוי"
 
-#: indicator/textchannelobserver.cpp:230
-msgid "Try again from the messaging application."
-msgstr "כדאי לנסות שוב מיישום ההודעות."
-
-#: approver/approver.cpp:65
-msgid "Unknown caller"
-msgstr "מתקשר לא ידוע"
-
-#: approver/approver.cpp:463 indicator/messagingmenu.cpp:244
-#: indicator/messagingmenu.cpp:418 indicator/textchannelobserver.cpp:640
-msgid "Unknown number"
+#: libtelephonyservice/contactwatcher.cpp:159
+msgid "Unknown Number"
 msgstr "מספר לא ידוע"
-
-#: indicator/textchannelobserver.cpp:225
-msgid "Unlock your sim card and try again from the messaging application."
-msgstr "ניתן לשחרר את נעילת ה־SIM שלך ולנסות שוב דרך יישום ההודעות."
-
-#: indicator/textchannelobserver.cpp:328
-msgid "View Group"
-msgstr "הצגת קבוצה"
-
-#: indicator/textchannelobserver.cpp:249 indicator/textchannelobserver.cpp:713
-msgid "View message"
-msgstr "צפייה בהודעה"
-
-#: indicator/messagingmenu.cpp:500
-msgid "Voicemail"
-msgstr "תא קולי"
-
-#: indicator/messagingmenu.cpp:492
-msgid "Voicemail messages"
-msgstr "הודעות בתא הקולי"
-
-#: indicator/authhandler.cpp:91
-msgid "Yes"
-msgstr "כן"
-
-#: indicator/textchannelobserver.cpp:309
-msgid "You joined a new group"
-msgstr "הצטרפת לקבוצה חדשה"
-
-#. TRANSLATORS : %1 is the group name
-#: indicator/textchannelobserver.cpp:306
-#, qt-format
-msgid "You joined group %1"
-msgstr "הצטרפת לקבוצה %1"
-
-#. TRANSLATORS : %1 is the group name
-#: indicator/textchannelobserver.cpp:302
-#, qt-format
-msgid "You joined group %1 "
-msgstr "הצטרפת לקבוצה %1 "
 
 #~ msgid ""
 #~ "Oops, there has been an error with the MMS system and this message could "
@@ -376,9 +435,3 @@ msgstr "הצטרפת לקבוצה %1 "
 #~ msgstr ""
 #~ "אופס, הייתה איזו תקלה עם מערכת ה־MMS וקבלת ההודעה נכשלה. נא לוודא שתקשורת "
 #~ "הנתונים הסלולרית פעילה ושהגדרות ה־MMS נכונות ואז לבקש ממי ששלח לשלוח שוב."
-
-#~ msgid "Unknown Number"
-#~ msgstr "מספר לא ידוע"
-
-#~ msgid "Private Number"
-#~ msgstr "מספר חסוי"
