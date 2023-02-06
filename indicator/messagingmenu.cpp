@@ -347,7 +347,7 @@ void MessagingMenu::addCallToMessagingMenu(Call call, const QString &text, bool 
                                           NULL // predefined values
                                           );
         const char *predefinedMessages[] = {
-                C::gettext("Missed your call — can you call me now?"),
+                C::gettext("Missed your call \342\200\224 can you call me now?"),
                 C::gettext("Running late. On my way."),
                 C::gettext("Busy at the moment. Will call you later."),
                 C::gettext("I am 20 minutes late."),
