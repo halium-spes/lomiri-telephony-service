@@ -42,6 +42,7 @@ add_custom_target(${POT_FILE} ALL
                           --keyword=GettextMarkExtraction
                           --package-name='${PROJECT_NAME}'
                           --copyright-holder='Canonical Ltd.'
+                          --join-existing
                           --files-from=${CMAKE_CURRENT_BINARY_DIR}/POTFILES)
 
 foreach(LANG ${LANGS})
