@@ -84,6 +84,6 @@ function(merge_desktop_translations DESKTOP_FILES)
     endforeach()
 endfunction()
 
-merge_desktop_translations(${desktop_FILES})
+merge_desktop_translations("${desktop_FILES}")
 
 add_subdirectory(icons)
