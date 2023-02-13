@@ -28,6 +28,11 @@
 #include "tonegenerator.h"
 #include "greetercontacts.h"
 #include "phoneutils.h"
+
+#ifdef USE_PULSEAUDIO
+#include "qpulseaudioengine.h"
+#endif
+
 #include <TelepathyQt/ContactManager>
 #include <TelepathyQt/PendingContacts>
 #include <TelepathyQt/PendingChannelRequest>
@@ -177,6 +182,18 @@ void CallHandler::setMuted(const QString &objectPath, bool muted)
         // FIXME: replace by a proper TpQt implementation of mute
         QDBusInterface muteInterface(channel->busName(), channel->objectPath(), TELEPATHY_MUTE_IFACE);
         muteInterface.call("RequestMuted", muted);
+
+        /*
+         * On some devices, muting via telepathy-ofono -> oFono -> RIL doesn't
+         * work well. Thus, also additionally mute via PulseAudio.
+         * AudioRouteManager will reset this value on hangup, so we shouldn't have
+         * to worry about it here.
+         *
+         * https://gitlab.com/ubports/development/core/telephony-service/-/issues/58
+         */
+#ifdef USE_PULSEAUDIO
+        QPulseAudioEngine::instance()->setMicMute(muted);
+#endif
     }
 }
 
