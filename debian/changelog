@@ -1,3 +1,10 @@
+telephony-service (0.5.1) unstable; urgency=medium
+
+  * Upstream-provided Debian package for telephony-service. See upstream
+    ChangeLog for recent changes.
+
+ -- UBports developers <developers@ubports.com>  Tue, 14 Feb 2023 11:50:04 +0100
+
 telephony-service (0.5) unstable; urgency=medium
 
   [ Guido Berhoerster ]

@@ -1,6 +1,155 @@
+2023-02-14 Mike Gabriel
+
+        * Release 0.5.1 (HEAD -> main, tag: 0.5.1)
+
+2023-02-13 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/58-micmute-on-telephony-service'
+          into 'main' (99d672f6)
+
+2023-02-14 Ratchanan Srirattanamet
+
+        * handler/callhandler: also mute microphone via Pulseaudio (b0d4fa76)
+
+2023-02-13 Guido Berhoerster
+
+        * Merge branch 'personal/lduboeuf/fix_missing_desktop_file' into
+          'main' (a2d21d24)
+
+2023-02-13 Lionel Duboeuf
+
+        * fix telephony-service-call.desktop not installed fixes
+          https://gitlab.com/ubports/development/core/telephony-service/-/issues/66
+          (4b1e14f1)
+
+2023-02-08 gnu-ewm
+
+        * Translated using Weblate (Polish) (c28b6064)
+
+2023-02-07 Ivo Xavier
+
+        * Translated using Weblate (Portuguese) (d2b304c3)
+
+2023-02-07 Allan Nordhøy
+
+        * Translated using Weblate (Norwegian Bokmål) (9c8136b7)
+
+2023-02-06 Sergii Horichenko
+
+        * Translated using Weblate (Ukrainian) (3b095657)
+
+2023-02-06 Hosted Weblate
+
+        * Update translation files (4d9bac98)
+
+2023-02-06 Mike Gabriel
+
+        * Merge branch 'personal/gber/modernize-i18n' into 'main' (9ea93375)
+
+2023-02-06 Guido Berhoerster
+
+        * Update .pot file (48fe52a3)
+        * Replace literal UTF-8 encoded em dash with octal escape sequence
+          (7049577f)
+        * Modernize i18n (36e26777)
+        * Use CMake >= 3.5 (5cca9b86)
+
+2023-02-04 Mike Gabriel
+
+        * Translated using Weblate (German) (1c1f6ec5)
+
+2023-01-31 Mike Gabriel
+
+        * Translated using Weblate (German) (c116f400)
+
+2023-01-30 Sergii Horichenko
+
+        * Translated using Weblate (Russian) (315640ed)
+
+2023-01-30 Ivo Xavier
+
+        * Translated using Weblate (Portuguese) (421d6b63)
+
+2023-01-28 Allan Nordhøy
+
+        * Translated using Weblate (Norwegian Bokmål) (add16fe5)
+
+2023-01-29 Mike Gabriel
+
+        * Merge branch 'kingu-main-patch-66488' into 'main' (bfe07db1)
+
+2023-01-28 Allan Nordhøy
+
+        * Messagingmenu language reworked (f46d5909)
+
+2023-01-26 Allan Nordhøy
+
+        * Translated using Weblate (Norwegian Bokmål) (4187c057)
+
+2023-01-24 gnu-ewm
+
+        * Translated using Weblate (Polish) (c9ccee1e)
+
+2023-01-24 Allan Nordhøy
+
+        * Translated using Weblate (Norwegian Bokmål) (92221b79)
+
+2023-01-21 Sergii Horichenko
+
+        * Translated using Weblate (Ukrainian) (a00bf479)
+
+2023-01-21 Daniel Frost
+
+        * Translated using Weblate (German) (e30affc8)
+
+2023-01-21 Sergii Horichenko
+
+        * Translated using Weblate (Ukrainian) (06360c84)
+
+2023-01-20 Sergii Horichenko
+
+        * Translated using Weblate (Russian) (809335fc)
+
+2023-01-19 Hosted Weblate
+
+        * Update translation files (364439d2)
+
+2023-01-19 Mike Gabriel
+
+        * po/: Update .pot file. (331bc247)
+        * Merge branch 'main_-_cellbroadcast' into 'main' (950da3e2)
+
+2022-06-14 Lionel Duboeuf
+
+        * Support Cell Broadcast (655bc6f0)
+
+2023-01-17 Mike Gabriel
+
+        * Merge branch 'personal/gber/fix-icon-size' into 'main' (5cc6e077)
+
+2023-01-16 Guido Berhoerster
+
+        * Edit icons so they have the correct size (e7c31503)
+        * Merge branch 'personal/sunweaver/ayatana-indicators' into 'main'
+          (7a56a186)
+
 2023-01-13 Mike Gabriel
 
-        * Release 0.5 (HEAD -> main, tag: 0.5)
+        * debian/telephony-service.telephony-service-indicator.user.service:
+          s/indicators-pre.target/ayatana-indicators.target/g.
+          (44a7cf09)
+
+2023-01-14 Dan
+
+        * Translated using Weblate (Ukrainian) (c01417e7)
+
+2023-01-15 Sergii Horichenko
+
+        * Translated using Weblate (Russian) (22637308)
+
+2023-01-13 Mike Gabriel
+
+        * Release 0.5 (5463d0f5) (tag: 0.5)
         * README -> README.md (convert to markdown and add i18n contribution
           hint). (42ccd56b)
 
