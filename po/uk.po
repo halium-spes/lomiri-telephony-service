@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-06 09:21+0000\n"
-"PO-Revision-Date: 2023-02-06 17:51+0000\n"
+"PO-Revision-Date: 2023-02-22 19:39+0000\n"
 "Last-Translator: Sergii Horichenko <m@sgg.im>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/uk/>\n"
@@ -244,18 +244,18 @@ msgstr "Сьогодні загальна тривалість дзвінків 
 #: indicator/textchannelobserver.cpp:225
 msgid "Unlock your sim card and try again from the messaging application."
 msgstr ""
-"Розблокуйте SIM-картку і повторіть спробу за допомогою застосунку для роботи "
-"з повідомленнями."
+"Розблокуйте SIM-картку і повторіть спробу за допомогою програми для "
+"повідомлень."
 
 #: indicator/textchannelobserver.cpp:227
 msgid "Deactivate flight mode and try again from the messaging application."
 msgstr ""
-"Вимкніть режим польоту і повторіть спробу за допомогою застосунку для роботи "
-"з повідомленнями."
+"Вимкніть режим польоту і повторіть спробу за допомогою програми для "
+"повідомлень."
 
 #: indicator/textchannelobserver.cpp:230
 msgid "Try again from the messaging application."
-msgstr "Повторіть спробу за допомогою застосунку для роботи з повідомленнями."
+msgstr "Повторіть спробу за допомогою програми для повідомлень."
 
 #: indicator/textchannelobserver.cpp:236
 msgid "The message could not be sent"
