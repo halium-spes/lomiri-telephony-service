@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-06 09:21+0000\n"
-"PO-Revision-Date: 2023-02-27 18:37+0000\n"
+"PO-Revision-Date: 2023-03-01 09:37+0000\n"
 "Last-Translator: Luna Jernberg <droidbittin@gmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/sv/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 4.16-rc\n"
 "X-Launchpad-Export-Date: 2017-01-04 06:03+0000\n"
 
 #: indicator/telephony-service-call.desktop.in:4
@@ -143,48 +143,37 @@ msgstr "Skicka"
 #: indicator/textchannelobserver.cpp:675
 #, qt-format
 msgid "Message to %1 from %2"
-msgstr ""
+msgstr "Meddelande till %1 från %2"
 
 #. TRANSLATORS : %1 is the recipient name
 #: indicator/messagingmenu.cpp:265 indicator/messagingmenu.cpp:269
-#, fuzzy, qt-format
-#| msgid "Message to group from %1"
+#, qt-format
 msgid "Message to the group from %1"
-msgstr "Meddelande till grupp från %1"
+msgstr "Meddelande till en grupp från %1"
 
 #: indicator/messagingmenu.cpp:345
 msgid "Call back"
-msgstr "Ring upp"
+msgstr "Ring tillbaka"
 
 #: indicator/messagingmenu.cpp:352
-#, fuzzy
-#| msgid "I missed your call - can you call me now?"
 msgid "Missed your call — can you call me now?"
-msgstr "Jag missade ditt samtal. Kan du ringa mig nu?"
+msgstr "Missade ditt samtal - kan du ringa mig nu?"
 
 #: indicator/messagingmenu.cpp:353
-#, fuzzy
-#| msgid "I'm running late. I'm on my way."
 msgid "Running late. On my way."
-msgstr "Jag är försenad, men jag är på väg."
+msgstr "Försenad, men jag är på väg."
 
 #: indicator/messagingmenu.cpp:354
-#, fuzzy
-#| msgid "I'm busy at the moment. I'll call you later."
 msgid "Busy at the moment. Will call you later."
-msgstr "Just nu är jag upptagen. Jag ringer dig lite senare."
+msgstr "Upptagen just nu. Kommer att ringa dig senare."
 
 #: indicator/messagingmenu.cpp:355
-#, fuzzy
-#| msgid "I'll be 20 minutes late."
 msgid "I am 20 minutes late."
-msgstr "Jag kommer 20 minuter försent."
+msgstr "Jag är 20 minuter sen."
 
 #: indicator/messagingmenu.cpp:356
-#, fuzzy
-#| msgid "Sorry, I'm still busy. I'll call you later."
 msgid "Still busy. Will call you later."
-msgstr "Jag är fortfarande upptagen. Ringer dig senare."
+msgstr "Fortfarande upptagen. Kommer att ringa dig senare."
 
 #: indicator/messagingmenu.cpp:411
 #, qt-format
@@ -271,27 +260,27 @@ msgstr "Visa meddelande"
 
 #: indicator/textchannelobserver.cpp:295
 msgid "New Group"
-msgstr ""
+msgstr "Ny grupp"
 
 #. TRANSLATORS : %1 is the group name
 #: indicator/textchannelobserver.cpp:302
 #, qt-format
 msgid "You joined group %1 "
-msgstr ""
+msgstr "Du gick med i grupp %1 "
 
 #. TRANSLATORS : %1 is the group name
 #: indicator/textchannelobserver.cpp:306
 #, qt-format
 msgid "You joined group %1"
-msgstr ""
+msgstr "Du gick med i grupp %1"
 
 #: indicator/textchannelobserver.cpp:309
 msgid "You joined a new group"
-msgstr ""
+msgstr "Du gick med i en ny grupp"
 
 #: indicator/textchannelobserver.cpp:328
 msgid "View Group"
-msgstr ""
+msgstr "Visa grupp"
 
 #: indicator/textchannelobserver.cpp:367 indicator/ussdindicator.cpp:116
 msgid "Ok"
@@ -303,31 +292,31 @@ msgstr "Spara"
 
 #: indicator/textchannelobserver.cpp:468
 msgid "Emergency Alert"
-msgstr ""
+msgstr "Akutvarning"
 
 #: indicator/textchannelobserver.cpp:471
 msgid "Emergency Alert: Extreme"
-msgstr ""
+msgstr "Akutvarning: Extrem"
 
 #: indicator/textchannelobserver.cpp:474
 msgid "Emergency Alert: Severe"
-msgstr ""
+msgstr "Akutvarning: Svår"
 
 #: indicator/textchannelobserver.cpp:477
 msgid "Emergency Alert: Notice"
-msgstr ""
+msgstr "Akutvarning: Notis"
 
 #: indicator/textchannelobserver.cpp:482
 msgid "AMBER Alert"
-msgstr ""
+msgstr "AMBER Varning"
 
 #: indicator/textchannelobserver.cpp:485
 msgid "Alert"
-msgstr ""
+msgstr "Varning"
 
 #: indicator/textchannelobserver.cpp:531
 msgid "Show alert"
-msgstr ""
+msgstr "Visa varning"
 
 #: indicator/textchannelobserver.cpp:604
 #, qt-format
@@ -366,10 +355,8 @@ msgstr[1] "Bilagor: %1 filer"
 
 #. TRANSLATORS : message displayed when any error occurred while receiving a MMS (case when cellular-data is off, or any downloading issue). Notify that there was a message, the user can find more about it in the messaging-app.
 #: indicator/textchannelobserver.cpp:615
-#, fuzzy
-#| msgid "View message"
 msgid "New MMS message"
-msgstr "Visa meddelande"
+msgstr "Nytt MMS-meddelande"
 
 #. TRANSLATORS : %1 is the recipient name
 #: indicator/textchannelobserver.cpp:679 indicator/textchannelobserver.cpp:683
@@ -396,26 +383,26 @@ msgstr "Avbryt"
 
 #: libtelephonyservice/callnotification.cpp:53
 msgid "Conf call on hold"
-msgstr ""
+msgstr "Konferans samtal placerat i kö"
 
 #: libtelephonyservice/callnotification.cpp:53
 #, qt-format
 msgid "%1 call on hold"
-msgstr ""
+msgstr "%1 samtal placerat i kö"
 
 #: libtelephonyservice/callnotification.cpp:56
 msgid "Conf call ended"
-msgstr ""
+msgstr "Konferans samtal avslutat"
 
 #: libtelephonyservice/callnotification.cpp:56
 #, qt-format
 msgid "%1 call ended"
-msgstr ""
+msgstr "%1 samtal avslutat"
 
 #: libtelephonyservice/callnotification.cpp:59
 #, qt-format
 msgid "%1 call declined"
-msgstr ""
+msgstr "%1 samtal avvisat"
 
 #: libtelephonyservice/contactwatcher.cpp:157
 msgid "Private Number"
