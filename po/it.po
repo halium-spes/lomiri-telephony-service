@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-06 09:21+0000\n"
-"PO-Revision-Date: 2023-03-30 13:46+0000\n"
+"PO-Revision-Date: 2023-04-02 03:46+0000\n"
 "Last-Translator: Sylke Vicious <silkevicious@tuta.io>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/it/>\n"
@@ -25,20 +25,16 @@ msgid "Phone Calls"
 msgstr "Chiamate telefoniche"
 
 #: indicator/telephony-service-call.desktop.in:6
-#, fuzzy
-#| msgid "Telephony Service"
 msgid "telephony-service-call"
-msgstr "Servizio di telefonia"
+msgstr "Servizio di Telefonia Chiamate"
 
 #: indicator/telephony-service-sms.desktop.in:4
 msgid "SMS"
 msgstr "SMS"
 
 #: indicator/telephony-service-sms.desktop.in:6
-#, fuzzy
-#| msgid "Telephony Service"
 msgid "telephony-service-message"
-msgstr "Servizio di telefonia"
+msgstr "Servizio di Telefonia Messaggi"
 
 #: approver/approver.cpp:65
 msgid "Unknown caller"
@@ -50,7 +46,7 @@ msgstr "Sono momentaneamente occupato/a. Richiamerò più tardi."
 
 #: approver/approver.cpp:94
 msgid "I'm running late, on my way now."
-msgstr "Sono in ritardo, sto arrivando!"
+msgstr "Sono in ritardo, sto arrivando."
 
 #: approver/approver.cpp:95
 msgid "Please call me back later."
@@ -117,7 +113,7 @@ msgstr "Autenticazione non riuscita. Verificare le proprie credenziali?"
 
 #: indicator/authhandler.cpp:91
 msgid "Yes"
-msgstr "Sì"
+msgstr "Si"
 
 #: indicator/authhandler.cpp:94
 msgid "No"
@@ -150,8 +146,7 @@ msgstr "Messaggio in %1 da %2"
 
 #. TRANSLATORS : %1 is the recipient name
 #: indicator/messagingmenu.cpp:265 indicator/messagingmenu.cpp:269
-#, fuzzy, qt-format
-#| msgid "Message to group from %1"
+#, qt-format
 msgid "Message to the group from %1"
 msgstr "Messaggio al gruppo da %1"
 
@@ -160,34 +155,24 @@ msgid "Call back"
 msgstr "Richiama"
 
 #: indicator/messagingmenu.cpp:352
-#, fuzzy
-#| msgid "I missed your call - can you call me now?"
 msgid "Missed your call — can you call me now?"
-msgstr "Ho perso la tua chiamata. Puoi richiamarmi ora?"
+msgstr "Ho perso la tua chiamata — Puoi richiamarmi ora?"
 
 #: indicator/messagingmenu.cpp:353
-#, fuzzy
-#| msgid "I'm running late. I'm on my way."
 msgid "Running late. On my way."
 msgstr "Sono in ritardo. Sto per arrivare."
 
 #: indicator/messagingmenu.cpp:354
-#, fuzzy
-#| msgid "I'm busy at the moment. I'll call you later."
 msgid "Busy at the moment. Will call you later."
 msgstr "Sono momentaneamente occupato/a. Ti richiamerò più tardi."
 
 #: indicator/messagingmenu.cpp:355
-#, fuzzy
-#| msgid "I'll be 20 minutes late."
 msgid "I am 20 minutes late."
-msgstr "Sarò in ritardo di 20 minuti."
+msgstr "Sono in ritardo di 20 minuti."
 
 #: indicator/messagingmenu.cpp:356
-#, fuzzy
-#| msgid "Sorry, I'm still busy. I'll call you later."
 msgid "Still busy. Will call you later."
-msgstr "Mi dispiace, sono ancora occupato/a. Ti richiamerò più tardi."
+msgstr "Sono ancora occupato/a. Ti richiamerò più tardi."
 
 #: indicator/messagingmenu.cpp:411
 #, qt-format
@@ -306,31 +291,31 @@ msgstr "Salva"
 
 #: indicator/textchannelobserver.cpp:468
 msgid "Emergency Alert"
-msgstr ""
+msgstr "Allerta di Emergenza"
 
 #: indicator/textchannelobserver.cpp:471
 msgid "Emergency Alert: Extreme"
-msgstr ""
+msgstr "Allerta di Emergenza: Estrema"
 
 #: indicator/textchannelobserver.cpp:474
 msgid "Emergency Alert: Severe"
-msgstr ""
+msgstr "Allerta di Emergenza: Importante"
 
 #: indicator/textchannelobserver.cpp:477
 msgid "Emergency Alert: Notice"
-msgstr ""
+msgstr "Allerta di Emergenza: Notifica"
 
 #: indicator/textchannelobserver.cpp:482
 msgid "AMBER Alert"
-msgstr ""
+msgstr "Allerta AMBER"
 
 #: indicator/textchannelobserver.cpp:485
 msgid "Alert"
-msgstr ""
+msgstr "Allerta"
 
 #: indicator/textchannelobserver.cpp:531
 msgid "Show alert"
-msgstr ""
+msgstr "Mostra allerta"
 
 #: indicator/textchannelobserver.cpp:604
 #, qt-format
@@ -369,10 +354,8 @@ msgstr[1] "Allegati: %1 file"
 
 #. TRANSLATORS : message displayed when any error occurred while receiving a MMS (case when cellular-data is off, or any downloading issue). Notify that there was a message, the user can find more about it in the messaging-app.
 #: indicator/textchannelobserver.cpp:615
-#, fuzzy
-#| msgid "View message"
 msgid "New MMS message"
-msgstr "Vedi messaggio"
+msgstr "Nuovo messaggio MMS"
 
 #. TRANSLATORS : %1 is the recipient name
 #: indicator/textchannelobserver.cpp:679 indicator/textchannelobserver.cpp:683
@@ -399,26 +382,26 @@ msgstr "Annulla"
 
 #: libtelephonyservice/callnotification.cpp:53
 msgid "Conf call on hold"
-msgstr ""
+msgstr "Chiamata conferenza in attesa"
 
 #: libtelephonyservice/callnotification.cpp:53
 #, qt-format
 msgid "%1 call on hold"
-msgstr ""
+msgstr "%1 chiamata in attesa"
 
 #: libtelephonyservice/callnotification.cpp:56
 msgid "Conf call ended"
-msgstr ""
+msgstr "Chiamata conferenza terminata"
 
 #: libtelephonyservice/callnotification.cpp:56
 #, qt-format
 msgid "%1 call ended"
-msgstr ""
+msgstr "%1 chiamata terminata"
 
 #: libtelephonyservice/callnotification.cpp:59
 #, qt-format
 msgid "%1 call declined"
-msgstr ""
+msgstr "%1 chiamata rifiutata"
 
 #: libtelephonyservice/contactwatcher.cpp:157
 msgid "Private Number"
