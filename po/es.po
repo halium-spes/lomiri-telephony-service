@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-06 09:21+0000\n"
-"PO-Revision-Date: 2023-02-16 22:38+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2023-04-06 21:55+0000\n"
+"Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/es/>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 4.17-dev\n"
 "X-Launchpad-Export-Date: 2017-01-04 06:03+0000\n"
 
 #: indicator/telephony-service-call.desktop.in:4
@@ -150,10 +150,9 @@ msgstr "Mensaje para %1 de %2"
 
 #. TRANSLATORS : %1 is the recipient name
 #: indicator/messagingmenu.cpp:265 indicator/messagingmenu.cpp:269
-#, fuzzy, qt-format
-#| msgid "Message to group from %1"
+#, qt-format
 msgid "Message to the group from %1"
-msgstr "Mensajear a grupo desde %1"
+msgstr "Mensaje al grupo de %1"
 
 #: indicator/messagingmenu.cpp:345
 msgid "Call back"
@@ -172,10 +171,8 @@ msgid "Busy at the moment. Will call you later."
 msgstr "Estoy ocupado/a en este momento. Te llamaré luego."
 
 #: indicator/messagingmenu.cpp:355
-#, fuzzy
-#| msgid "I'll be 20 minutes late."
 msgid "I am 20 minutes late."
-msgstr "Tardaré 20 minutos."
+msgstr "Llego 20 minutos tarde."
 
 #: indicator/messagingmenu.cpp:356
 msgid "Still busy. Will call you later."
@@ -393,26 +390,26 @@ msgstr "Cancelar"
 
 #: libtelephonyservice/callnotification.cpp:53
 msgid "Conf call on hold"
-msgstr ""
+msgstr "Llamada en espera"
 
 #: libtelephonyservice/callnotification.cpp:53
 #, qt-format
 msgid "%1 call on hold"
-msgstr ""
+msgstr "%1 llamada en espera"
 
 #: libtelephonyservice/callnotification.cpp:56
 msgid "Conf call ended"
-msgstr ""
+msgstr "Llamada de conferencia finalizada"
 
 #: libtelephonyservice/callnotification.cpp:56
 #, qt-format
 msgid "%1 call ended"
-msgstr ""
+msgstr "%1 llamada finalizada"
 
 #: libtelephonyservice/callnotification.cpp:59
 #, qt-format
 msgid "%1 call declined"
-msgstr ""
+msgstr "%1 llamada rechazada"
 
 #: libtelephonyservice/contactwatcher.cpp:157
 msgid "Private Number"
