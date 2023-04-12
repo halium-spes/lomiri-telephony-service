@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-06 09:21+0000\n"
-"PO-Revision-Date: 2023-04-11 20:27+0000\n"
+"PO-Revision-Date: 2023-04-13 05:14+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/ka/>\n"
@@ -88,7 +88,7 @@ msgstr ""
 
 #: approver/approver.cpp:523
 msgid "Accept"
-msgstr ""
+msgstr "დასტური"
 
 #: approver/approver.cpp:536
 msgid "End + Answer"
@@ -134,7 +134,7 @@ msgstr ""
 #: indicator/messagingmenu.cpp:151 indicator/messagingmenu.cpp:293
 #: indicator/messagingmenu.cpp:362
 msgid "Send"
-msgstr ""
+msgstr "გაგზავნა"
 
 #. TRANSLATORS : %1 is the group name and %2 is the recipient name
 #: indicator/messagingmenu.cpp:262 indicator/textchannelobserver.cpp:671
@@ -151,7 +151,7 @@ msgstr ""
 
 #: indicator/messagingmenu.cpp:345
 msgid "Call back"
-msgstr ""
+msgstr "გადარეკვა"
 
 #: indicator/messagingmenu.cpp:352
 msgid "Missed your call — can you call me now?"
