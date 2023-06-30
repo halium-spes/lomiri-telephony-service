@@ -8,14 +8,16 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-06 09:21+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-07-07 11:52+0000\n"
+"Last-Translator: \"Rudra Harsh V.Singh\" <rudraHarsh45@proton.me>\n"
+"Language-Team: Sanskrit <https://hosted.weblate.org/projects/lomiri/"
+"telephony-service/sa/>\n"
 "Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n==2 ? 1 : 2;\n"
+"X-Generator: Weblate 5.0-dev\n"
 
 #: indicator/telephony-service-call.desktop.in:4
 msgid "Phone Calls"
@@ -375,7 +377,7 @@ msgstr ""
 
 #: indicator/ussdindicator.cpp:142
 msgid "Cancel"
-msgstr ""
+msgstr "निरसयतु"
 
 #: libtelephonyservice/callnotification.cpp:53
 msgid "Conf call on hold"
