@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-06 09:21+0000\n"
-"PO-Revision-Date: 2021-03-22 23:17+0000\n"
-"Last-Translator: abidin <abidin24@tutanota.com>\n"
-"Language-Team: Arabic <https://translate.ubports.com/projects/ubports/"
+"PO-Revision-Date: 2023-07-17 18:05+0000\n"
+"Last-Translator: abidin toumi <abidin24@disroot.org>\n"
+"Language-Team: Arabic <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 3.11.3\n"
+"X-Generator: Weblate 5.0-dev\n"
 "X-Launchpad-Export-Date: 2017-01-04 06:02+0000\n"
 
 #: indicator/telephony-service-call.desktop.in:4
@@ -114,11 +114,11 @@ msgstr ""
 
 #: indicator/authhandler.cpp:91
 msgid "Yes"
-msgstr ""
+msgstr "نعم"
 
 #: indicator/authhandler.cpp:94
 msgid "No"
-msgstr ""
+msgstr "لا"
 
 #: indicator/displaynamesettings.cpp:35
 #, qt-format
