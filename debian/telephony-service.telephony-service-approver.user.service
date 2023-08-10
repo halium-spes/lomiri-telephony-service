@@ -7,5 +7,8 @@ Type=dbus
 BusName=org.freedesktop.Telepathy.Client.TelephonyServiceApprover
 ExecStart=/usr/bin/telephony-service-approver
 
+# Allow phone call & message vibrations to bypass "Other vibrations" settings
+Environment=HFD_USE_PRIVILEGED_INTERFACE=1
+
 [Install]
 WantedBy=graphical-session.target
