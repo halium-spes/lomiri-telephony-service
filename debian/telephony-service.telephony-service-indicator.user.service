@@ -12,5 +12,8 @@ ExecStart=/usr/bin/telephony-service-indicator
 BusName=org.freedesktop.Telepathy.Client.TelephonyServiceIndicator
 Restart=on-failure
 
+# Allow phone call & message vibrations to bypass "Other vibrations" settings
+Environment=HFD_USE_PRIVILEGED_INTERFACE=1
+
 [Install]
 WantedBy=ayatana-indicators.target
