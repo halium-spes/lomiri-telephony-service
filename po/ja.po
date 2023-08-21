@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-06 09:21+0000\n"
-"PO-Revision-Date: 2023-08-19 16:03+0000\n"
+"PO-Revision-Date: 2023-08-28 00:55+0000\n"
 "Last-Translator: NPL <alterlinuxer@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.0-dev\n"
+"X-Generator: Weblate 5.0.1-dev\n"
 "X-Launchpad-Export-Date: 2017-01-04 06:02+0000\n"
 
 #: indicator/telephony-service-call.desktop.in:4
@@ -117,11 +117,11 @@ msgstr ""
 
 #: indicator/authhandler.cpp:91
 msgid "Yes"
-msgstr "Yes"
+msgstr "はい"
 
 #: indicator/authhandler.cpp:94
 msgid "No"
-msgstr "No"
+msgstr "いいえ"
 
 #: indicator/displaynamesettings.cpp:35
 #, qt-format
