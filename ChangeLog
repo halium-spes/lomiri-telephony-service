@@ -1,6 +1,130 @@
+2023-10-15 Mike Gabriel
+
+        * Release 0.5.2 (HEAD -> main, tag: 0.5.2)
+
+2023-08-21 NPL
+
+        * Translated using Weblate (Japanese) (b12ec1d0)
+
+2023-08-12 NPL
+
+        * Translated using Weblate (Japanese) (d70a0ff8)
+
+2023-08-18 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/hfd-othervibrate' into 'main'
+          (83348a7e)
+
+2023-08-10 Ratchanan Srirattanamet
+
+        * debian/*.user.service: allow telephony to bypass "Other vibration"
+          (d301ba6a)
+
+2023-07-08 Rudra Harsh V.Singh
+
+        * Translated using Weblate (English (Canada)) (f9b2eea0)
+
+2023-07-10 abidin toumi
+
+        * Translated using Weblate (Arabic) (7383c43c)
+
+2023-06-30 Rudra Harsh V.Singh
+
+        * Translated using Weblate (Sanskrit) (49e18d9b)
+
+2023-06-30 Weblate
+
+        * Added translation using Weblate (Sanskrit) (ea27a415)
+
+2023-06-27 Rudra Harsh V.Singh
+
+        * Translated using Weblate (English (Canada)) (3e678657)
+        * Translated using Weblate (Hindi) (80024b4c)
+
+2023-06-22 Lionel Duboeuf
+
+        * Translated using Weblate (French) (ce924a79)
+
+2023-04-15 Lundrin
+
+        * Translated using Weblate (Hungarian) (2889cf07)
+
+2023-04-12 Temuri Doghonadze
+
+        * Translated using Weblate (Georgian) (99331bf7)
+
+2023-04-11 Temuri Doghonadze
+
+        * Translated using Weblate (Georgian) (119ea55c)
+        * Translated using Weblate (Georgian) (d44d4827)
+
+2023-04-04 gallegonovato
+
+        * Translated using Weblate (Spanish) (6c57480d)
+
+2023-03-31 Sylke Vicious
+
+        * Translated using Weblate (Italian) (bf235eb1)
+
+2023-03-30 Sylke Vicious
+
+        * Translated using Weblate (Italian) (7130be92)
+
+2023-03-30 Jozef Mlich
+
+        * Translated using Weblate (Czech) (6b8fe09d)
+
+2023-03-27 Jozef Mlich
+
+        * Translated using Weblate (Czech) (c1c976d1)
+
+2023-03-03 Taisei Washington
+
+        * Translated using Weblate (Japanese) (5b34b0ae)
+
+2023-03-01 Allan Nordhøy
+
+        * Translated using Weblate (Icelandic) (27b4e649)
+
+2023-02-28 Luna Jernberg
+
+        * Translated using Weblate (Swedish) (d7f4f4a9)
+
+2023-02-26 Luna Jernberg
+
+        * Translated using Weblate (Swedish) (6a7ee6f9)
+
+2023-02-20 Sergii Horichenko
+
+        * Translated using Weblate (Ukrainian) (3bafce99)
+
+2023-02-21 Heimen Stoffels
+
+        * Translated using Weblate (Dutch) (78fca8f0)
+
+2023-02-19 Sergii Horichenko
+
+        * Translated using Weblate (Russian) (867d6416)
+
+2023-02-18 Sergii Horichenko
+
+        * Translated using Weblate (Russian) (7509e969)
+
+2023-02-16 phlostically
+
+        * Translated using Weblate (Esperanto) (8374ba86)
+
+2023-02-15 Adolfo Jayme Barrientos
+
+        * Translated using Weblate (Spanish) (c19a8be1)
+
+2023-02-15 Mike Gabriel
+
+        * Translated using Weblate (German) (5ae52eb3)
+
 2023-02-14 Mike Gabriel
 
-        * Release 0.5.1 (HEAD -> main, tag: 0.5.1)
+        * Release 0.5.1 (f5e61833) (tag: 0.5.1)
 
 2023-02-13 Mike Gabriel
 
