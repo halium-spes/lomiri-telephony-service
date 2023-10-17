@@ -143,7 +143,7 @@ Tp::TextChannelPtr ChatStartingJob::textChannel() const
 QString ChatStartingJob::channelObjectPath() const
 {
     if (mTextChannel.isNull()) {
-        return QString::null;
+        return QString();
     }
     return mTextChannel->objectPath();
 }

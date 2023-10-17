@@ -142,7 +142,7 @@ Q_SIGNALS:
     void dialpadSoundsEnabledChanged();
 
 public Q_SLOTS:
-    Q_INVOKABLE void registerChannelObserver(const QString &observerName = QString::null);
+    Q_INVOKABLE void registerChannelObserver(const QString &observerName = QString());
     Q_INVOKABLE void unregisterChannelObserver();
 
 protected:

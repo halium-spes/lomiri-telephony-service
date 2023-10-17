@@ -125,7 +125,7 @@ QString HandlerDBus::registerObject(QObject *object, const QString &path)
     if (QDBusConnection::sessionBus().registerObject(fullPath, object)) {
         return fullPath;
     }
-    return QString::null;
+    return QString();
 }
 
 void HandlerDBus::unregisterObject(const QString &path)
