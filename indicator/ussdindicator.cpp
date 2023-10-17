@@ -19,16 +19,16 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace C {
-#include <libintl.h>
-}
-
 #include <QDebug>
 #include <libnotify/notify.h>
 #include "ringtone.h"
 #include "ussdindicator.h"
 #include "ofonoaccountentry.h"
 #include "telepathyhelper.h"
+
+namespace C {
+#include <libintl.h>
+}
 
 USSDIndicator::USSDIndicator(QObject *parent)
 : QObject(parent),
