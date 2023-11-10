@@ -19,15 +19,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace C {
-#include <libintl.h>
-}
-
 #include <QDebug>
 #include <libnotify/notify.h>
 #include "applicationutils.h"
 #include "authhandler.h"
 #include "telepathyhelper.h"
+
+namespace C {
+#include <libintl.h>
+}
 
 // FIXME: port to libqmenumodel if possible
 AuthHandler::AuthHandler(QObject *parent)
