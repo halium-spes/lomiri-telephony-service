@@ -57,7 +57,7 @@ class CallManager : public QObject
 
 public:
     static CallManager *instance();
-    Q_INVOKABLE void startCall(const QString &phoneNumber, const QString &accountId = QString::null);
+    Q_INVOKABLE void startCall(const QString &phoneNumber, const QString &accountId = QString());
     Q_INVOKABLE void mergeCalls(CallEntry *firstCall, CallEntry *secondCall);
     Q_INVOKABLE void splitCall(CallEntry *callEntry);
     Q_INVOKABLE void playTone(const QString &key);

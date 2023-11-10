@@ -35,7 +35,7 @@ class AccountList : public QObject
     Q_PROPERTY(QQmlListProperty<AccountEntry> active READ qmlActiveAccounts NOTIFY activeAccountsChanged)
     Q_PROPERTY(QQmlListProperty<AccountEntry> displayed READ qmlDisplayedAccounts NOTIFY displayedAccountsChanged)
 public:
-    AccountList(Protocol::Features features = Protocol::AllFeatures, const QString &protocol = QString::null, QObject *parent = 0);
+    AccountList(Protocol::Features features = Protocol::AllFeatures, const QString &protocol = QString(), QObject *parent = 0);
     QQmlListProperty<AccountEntry> qmlAllAccounts();
     QQmlListProperty<AccountEntry> qmlActiveAccounts();
     QQmlListProperty<AccountEntry> qmlDisplayedAccounts();

@@ -35,7 +35,7 @@ QString MockController::placeCall(const QVariantMap &properties)
     QDBusPendingReply<QString> reply = PlaceCall(properties);
     reply.waitForFinished();
     if (!reply.isValid()) {
-        return QString::null;
+        return QString();
     }
     return reply.value();
 }
@@ -45,7 +45,7 @@ QString MockController::serial()
     QDBusPendingReply<QString> reply = Serial();
     reply.waitForFinished();
     if (!reply.isValid()) {
-        return QString::null;
+        return QString();
     }
 
     return reply.value();

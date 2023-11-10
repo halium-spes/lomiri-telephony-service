@@ -143,16 +143,16 @@ void ContactWatcher::startSearching()
 
 void ContactWatcher::clear()
 {
-    setAlias(QString::null);
-    setContactId(QString::null);
-    setAvatar(QString::null);
+    setAlias(QString());
+    setContactId(QString());
+    setAvatar(QString());
     setDetailProperties(QVariantMap());
 }
 
 void ContactWatcher::updateAlias()
 {
     if (mIdentifier.isEmpty()) {
-        setAlias(QString::null);
+        setAlias(QString());
     } else if (mIdentifier.startsWith(OFONO_PRIVATE_NUMBER)) {
         setAlias(C::dgettext("telephony-service", "Private Number"));
     } else if (mIdentifier.startsWith(OFONO_UNKNOWN_NUMBER)) {
@@ -190,7 +190,7 @@ void ContactWatcher::setContactId(const QString &id)
     }
 
     if (id == QStringLiteral("qtcontacts:::")) {
-        mContactId = QString::null;
+        mContactId = QString();
     } else {
         mContactId = id;
     }
@@ -253,8 +253,8 @@ void ContactWatcher::setIdentifier(const QString &identifier)
 
     if (mIdentifier.isEmpty() || isPrivate || isUnknown) {
         updateAlias();
-        setContactId(QString::null);
-        setAvatar(QString::null);
+        setContactId(QString());
+        setAvatar(QString());
         setDetailProperties(QVariantMap());
     } else {
         startSearching();

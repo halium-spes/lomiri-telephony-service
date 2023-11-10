@@ -61,9 +61,9 @@ TelepathyHelper::TelepathyHelper(QObject *parent)
                            "org.freedesktop.URfkill",
                            QDBusConnection::systemBus())
 {
-    mQmlAccounts = new AccountList(Protocol::AllFeatures, QString::null, this);
-    mQmlVoiceAccounts = new AccountList(Protocol::VoiceCalls, QString::null, this);
-    mQmlTextAccounts = new AccountList(Protocol::TextChats, QString::null, this);
+    mQmlAccounts = new AccountList(Protocol::AllFeatures, QString(), this);
+    mQmlVoiceAccounts = new AccountList(Protocol::VoiceCalls, QString(), this);
+    mQmlTextAccounts = new AccountList(Protocol::TextChats, QString(), this);
     mQmlPhoneAccounts = new AccountList(Protocol::AllFeatures, "ofono", this);
 
     qRegisterMetaType<QList<AccountEntry*> >();

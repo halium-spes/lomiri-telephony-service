@@ -48,7 +48,7 @@ inline QString telephonyServiceDir() {
 
 inline QString ubuntuPhonePluginPath() {
     if (isRunningInstalled() || qEnvironmentVariableIsSet("SNAP")) {
-        return QString::null;
+        return QString();
     } else {
         return QString("@CMAKE_SOURCE_DIR@/");
     }

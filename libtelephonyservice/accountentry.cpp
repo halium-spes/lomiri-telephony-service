@@ -47,7 +47,7 @@ bool AccountEntry::ready() const
 QString AccountEntry::accountId() const
 {
     if (mAccount.isNull()) {
-        return QString::null;
+        return QString();
     }
 
     return mAccount->uniqueIdentifier();
@@ -73,7 +73,7 @@ bool AccountEntry::active() const
 QString AccountEntry::displayName() const
 {
     if (mAccount.isNull()) {
-        return QString::null;
+        return QString();
     }
 
     return mAccount->displayName();
@@ -82,7 +82,7 @@ QString AccountEntry::displayName() const
 QString AccountEntry::status() const
 {
     if (mAccount.isNull() || mAccount->connection().isNull() || mAccount->connection()->selfContact().isNull()) {
-        return QString::null;
+        return QString();
     }
     Tp::Presence presence = mAccount->connection()->selfContact()->presence();
     return presence.status();
@@ -91,7 +91,7 @@ QString AccountEntry::status() const
 QString AccountEntry::statusMessage() const
 {
     if (mAccount.isNull() || mAccount->connection().isNull() || mAccount->connection()->selfContact().isNull()) {
-        return QString::null;
+        return QString();
     }
     Tp::Presence presence = mAccount->connection()->selfContact()->presence();
     return presence.statusMessage();
