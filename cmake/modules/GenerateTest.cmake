@@ -67,7 +67,7 @@ function(generate_test TESTNAME)
         add_executable(${TESTNAME} ${ARG_SOURCES})
 
         if (${ARG_USE_DBUS})
-            execute_process(COMMAND mktemp -d /tmp/${TESTNAME}.XXXXX OUTPUT_VARIABLE TMPDIR)
+            execute_process(COMMAND mktemp -d /tmp/${TESTNAME}.XXXXXX OUTPUT_VARIABLE TMPDIR)
             string(REPLACE "\n" "" TMPDIR ${TMPDIR})
 
             if (NOT DEFINED ARG_ENVIRONMENT)
