@@ -21,6 +21,11 @@
 
 #include "greetercontacts.h"
 #include "ringtone.h"
+#include <QFileInfo>
+#include <QMimeDatabase>
+#include <QMimeType>
+
+#define CUSTOM_RINGTONE_SUBDIR "sounds/ringtones"
 
 RingtoneWorker::RingtoneWorker(QObject *parent) :
     QObject(parent), mCallAudioPlayer(NULL), mCallAudioPlaylist(this),
@@ -30,7 +35,7 @@ RingtoneWorker::RingtoneWorker(QObject *parent) :
     mCallAudioPlaylist.setCurrentIndex(0);
 }
 
-void RingtoneWorker::playIncomingCallSound()
+void RingtoneWorker::playIncomingCallSound(const QString &customSound)
 {
     if (!qgetenv("PA_DISABLED").isEmpty()) {
         return;
@@ -43,8 +48,25 @@ void RingtoneWorker::playIncomingCallSound()
     // force delete all media player instances
     stopIncomingCallSound();
 
-    // pick up the new ringtone in case it changed in the meantime
-    mCallAudioPlaylist.addMedia(QUrl::fromLocalFile(GreeterContacts::instance()->incomingCallSound()));
+    QString callSound  = GreeterContacts::instance()->incomingCallSound();
+    if (!customSound.isEmpty()) {
+        QFileInfo file(customSound);
+        if (file.exists() && file.isFile()) {
+
+            // mime database to detect file type
+            QMimeDatabase db;
+
+            // the mime type (to test if it is an audio file
+            QMimeType type = db.mimeTypeForFile(customSound);
+
+            if(type.name().startsWith("audio")){
+                callSound = customSound;
+            }
+        }
+    }
+    qDebug() << "playIncomingCallSound" << callSound;
+
+    mCallAudioPlaylist.addMedia(QUrl::fromLocalFile(callSound));
     mCallAudioPlayer = new QMediaPlayer(this);
     mCallAudioPlayer->setAudioRole(QAudio::RingtoneRole);
     mCallAudioPlayer->setPlaylist(&mCallAudioPlaylist);
@@ -62,7 +84,7 @@ void RingtoneWorker::stopIncomingCallSound()
     mCallAudioPlaylist.clear();
 }
 
-void RingtoneWorker::playIncomingMessageSound()
+void RingtoneWorker::playIncomingMessageSound(const QString &customSound)
 {
     if (!qgetenv("PA_DISABLED").isEmpty()) {
         return;
@@ -96,7 +118,25 @@ void RingtoneWorker::playIncomingMessageSound()
         return;
     }
 
-    mMessageAudioPlayer->setMedia(QUrl::fromLocalFile(GreeterContacts::instance()->incomingMessageSound()));
+    QString messageSound  = GreeterContacts::instance()->incomingMessageSound();
+    if (!customSound.isEmpty()) {
+        QFileInfo file(customSound);
+        if (file.exists() && file.isFile()) {
+
+            // mime database to detect file type
+            QMimeDatabase db;
+
+            // the mime type (to test if it is an audio file
+            QMimeType type = db.mimeTypeForFile(customSound);
+
+            if(type.name().startsWith("audio")){
+                messageSound = customSound;
+            }
+        }
+    }
+    qDebug() << "playIncomingMessageSound" << messageSound;
+
+    mMessageAudioPlayer->setMedia(QUrl::fromLocalFile(messageSound));
     mMessageAudioPlayer->play();
 }
 
@@ -205,9 +245,9 @@ void Ringtone::vibrate()
     mNbVibrateCycle--;
 }
 
-void Ringtone::playIncomingCallSound()
+void Ringtone::playIncomingCallSound(const QString &customSound)
 {
-    QMetaObject::invokeMethod(mWorker, "playIncomingCallSound", Qt::QueuedConnection);
+    QMetaObject::invokeMethod(mWorker, "playIncomingCallSound", Qt::QueuedConnection, Q_ARG(QString, customSound));
 }
 
 void Ringtone::stopIncomingCallSound()
@@ -215,13 +255,13 @@ void Ringtone::stopIncomingCallSound()
     QMetaObject::invokeMethod(mWorker, "stopIncomingCallSound", Qt::QueuedConnection);
 }
 
-void Ringtone::playIncomingMessageSound()
+void Ringtone::playIncomingMessageSound(const QString &customSound)
 {
     if (GreeterContacts::instance()->incomingMessageVibrate() && !mVibrateTimer.isActive()) {
         startVibrate(1, 500, 1);
     }
 
-    QMetaObject::invokeMethod(mWorker, "playIncomingMessageSound", Qt::QueuedConnection);
+    QMetaObject::invokeMethod(mWorker, "playIncomingMessageSound", Qt::QueuedConnection, Q_ARG(QString, customSound));
 }
 
 void Ringtone::stopIncomingMessageSound()

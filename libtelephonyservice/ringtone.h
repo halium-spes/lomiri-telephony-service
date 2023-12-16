@@ -23,6 +23,7 @@
 #define RINGTONE_H
 
 #include <QObject>
+#include <QString>
 #include <QThread>
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
@@ -43,9 +44,9 @@ public:
     RingtoneWorker(QObject *parent = 0);
 
 public Q_SLOTS:
-    void playIncomingCallSound();
+    void playIncomingCallSound(const QString &customSound = QString());
     void stopIncomingCallSound();
-    void playIncomingMessageSound();
+    void playIncomingMessageSound(const QString &customSound = QString());
     void stopIncomingMessageSound();
     void playIncomingEmergencySound();
     void playIncomingWarningSound();
@@ -67,10 +68,10 @@ public:
     static Ringtone *instance();
 
 public Q_SLOTS:
-    void playIncomingCallSound();
+    void playIncomingCallSound(const QString &customSound = QString());
     void stopIncomingCallSound();
 
-    void playIncomingMessageSound();
+    void playIncomingMessageSound(const QString &customSound = QString());
     void stopIncomingMessageSound();
 
     void playIncomingEmergencySound();

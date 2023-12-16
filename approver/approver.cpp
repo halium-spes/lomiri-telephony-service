@@ -39,6 +39,7 @@
 #include "accountentry.h"
 
 #include <QContactAvatar>
+#include <QContactRingtone>
 #include <QContactDisplayLabel>
 #include <QContactFetchRequest>
 #include <QContactPhoneNumber>
@@ -488,9 +489,15 @@ bool Approver::showSnapDecision(const Tp::ChannelDispatchOperationPtr dispatchOp
 
     QString displayLabel;
     QString icon;
+    QString ringTone;
     if (!contact.isEmpty()) {
         displayLabel = contact.detail<QContactDisplayLabel>().label();
         icon = contact.detail<QContactAvatar>().imageUrl().toEncoded();
+        QUrl path = contact.detail<QContactRingtone>().audioRingtoneUrl();
+        if (path.isValid()) {
+            ringTone = path.toString();
+        }
+        qDebug() << "contact ringTone:" << ringTone;
     }
 
     if (displayLabel.isEmpty()) {
@@ -580,7 +587,7 @@ bool Approver::showSnapDecision(const Tp::ChannelDispatchOperationPtr dispatchOp
         ToneGenerator::instance()->playWaitingTone();
     } else {
         // play a ringtone
-        Ringtone::instance()->playIncomingCallSound();
+        Ringtone::instance()->playIncomingCallSound(ringTone);
     }
 
     if (!hasCalls && GreeterContacts::instance()->incomingCallVibrate()) {
@@ -784,7 +791,7 @@ bool Approver::handleMediaKey(bool doubleClick)
     // if the event will be handled later
     bool accepted = mPendingSnapDecision || CallManager::instance()->hasCalls();
 
-    // FIXME: Telepathy-qt does not let us know if existing channels are being recovered, 
+    // FIXME: Telepathy-qt does not let us know if existing channels are being recovered,
     // so if this is the first run, call this method again when mSettleTimer is done
     if (mSettleTimer) {
         QObject::connect(mSettleTimer, &QTimer::timeout, [=]() {
