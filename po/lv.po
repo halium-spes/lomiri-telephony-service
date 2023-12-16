@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-06 09:21+0000\n"
+"POT-Creation-Date: 2023-12-16 17:03+0100\n"
 "PO-Revision-Date: 2015-03-01 07:38+0000\n"
 "Last-Translator: Rūdolfs Mazurs <Unknown>\n"
 "Language-Team: Latvian <lv@li.org>\n"
@@ -24,86 +24,74 @@ msgstr ""
 msgid "Phone Calls"
 msgstr "Tālruņa zvani"
 
-#: indicator/telephony-service-call.desktop.in:6
-#, fuzzy
-#| msgid "Telephony Service"
-msgid "telephony-service-call"
-msgstr "Telefonijas pakalpojumi"
-
 #: indicator/telephony-service-sms.desktop.in:4
 msgid "SMS"
 msgstr "SMS"
 
-#: indicator/telephony-service-sms.desktop.in:6
-#, fuzzy
-#| msgid "Telephony Service"
-msgid "telephony-service-message"
-msgstr "Telefonijas pakalpojumi"
-
-#: approver/approver.cpp:65
+#: approver/approver.cpp:66
 msgid "Unknown caller"
 msgstr "Nezināms zvanītājs"
 
-#: approver/approver.cpp:93
+#: approver/approver.cpp:94
 msgid "I'm busy at the moment. I'll call later."
 msgstr "Pašlaik esmu aizņemts. Piezvanīšu vēlāk."
 
-#: approver/approver.cpp:94
+#: approver/approver.cpp:95
 msgid "I'm running late, on my way now."
 msgstr "Esmu aizkavējies, jau esmu ceļā."
 
-#: approver/approver.cpp:95
+#: approver/approver.cpp:96
 msgid "Please call me back later."
 msgstr "Lūdzu, atzvaniet man vēlāk."
 
-#: approver/approver.cpp:456
+#: approver/approver.cpp:457
 #, qt-format
 msgid "On [%1]"
 msgstr ""
 
-#: approver/approver.cpp:460 indicator/messagingmenu.cpp:416
+#: approver/approver.cpp:461 indicator/messagingmenu.cpp:414
 msgid "Private number"
 msgstr "Privāts numurs"
 
-#: approver/approver.cpp:463 indicator/messagingmenu.cpp:244
-#: indicator/messagingmenu.cpp:420 indicator/textchannelobserver.cpp:640
+#: approver/approver.cpp:464 indicator/messagingmenu.cpp:244
+#: indicator/messagingmenu.cpp:418 indicator/textchannelobserver.cpp:640
 msgid "Unknown number"
 msgstr "Nezināms numurs"
 
-#: approver/approver.cpp:469 approver/approver.cpp:484
+#: approver/approver.cpp:470 approver/approver.cpp:485
 msgid "Caller number is not available"
 msgstr "Zvanītāja numurs nav pieejams"
 
-#: approver/approver.cpp:475
+#: approver/approver.cpp:476
 msgid "Calling from private number"
 msgstr "Zvanīšana no privātā numura"
 
-#: approver/approver.cpp:478
+#: approver/approver.cpp:479
 msgid "Calling from unknown number"
 msgstr "Zvanīšana no nezināma numura"
 
-#: approver/approver.cpp:481
+#: approver/approver.cpp:482
 #, qt-format
 msgid "Calling from %1"
 msgstr "Zvana no %1"
 
-#: approver/approver.cpp:522
+#: approver/approver.cpp:529
 msgid "Hold + Answer"
 msgstr "Aizturēt + atbildēt"
 
-#: approver/approver.cpp:523
+#: approver/approver.cpp:530
 msgid "Accept"
 msgstr "Piekrist"
 
-#: approver/approver.cpp:536
+#: approver/approver.cpp:543
 msgid "End + Answer"
 msgstr "Beigt + atbildēt"
 
-#: approver/approver.cpp:545
+#: approver/approver.cpp:552
 msgid "Decline"
 msgstr "Noraidīt"
 
-#: approver/approver.cpp:553
+#: approver/approver.cpp:560
 msgid "Message & decline"
 msgstr "Sūtīt īsziņu un noraidīt"
 
@@ -137,7 +125,7 @@ msgid "Telephony Service"
 msgstr "Telefonijas pakalpojumi"
 
 #: indicator/messagingmenu.cpp:151 indicator/messagingmenu.cpp:293
-#: indicator/messagingmenu.cpp:362
+#: indicator/messagingmenu.cpp:360
 msgid "Send"
 msgstr "Sūtīt"
 
@@ -159,37 +147,37 @@ msgstr "Īsziņa no %1"
 msgid "Call back"
 msgstr "Atzvans"
 
-#: indicator/messagingmenu.cpp:352
+#: indicator/messagingmenu.cpp:350
 #, fuzzy
 #| msgid "I missed your call - can you call me now?"
 msgid "Missed your call — can you call me now?"
 msgstr "Es palaidu garām tavu zvanu - vai vari man piezvanīt tagad?"
 
-#: indicator/messagingmenu.cpp:353
+#: indicator/messagingmenu.cpp:351
 #, fuzzy
 #| msgid "I'm running late. I'm on my way."
 msgid "Running late. On my way."
 msgstr "Es esmu aizkavējies. Es tūlīt būšu."
 
-#: indicator/messagingmenu.cpp:354
+#: indicator/messagingmenu.cpp:352
 #, fuzzy
 #| msgid "I'm busy at the moment. I'll call you later."
 msgid "Busy at the moment. Will call you later."
 msgstr "Pašlaik esmu aizņemts. Piezvanīšu jums vēlāk."
 
-#: indicator/messagingmenu.cpp:355
+#: indicator/messagingmenu.cpp:353
 #, fuzzy
 #| msgid "I'll be 20 minutes late."
 msgid "I am 20 minutes late."
 msgstr "Es nokavēšu 20 minūtes."
 
-#: indicator/messagingmenu.cpp:356
+#: indicator/messagingmenu.cpp:354
 #, fuzzy
 #| msgid "Sorry, I'm still busy. I'll call you later."
 msgid "Still busy. Will call you later."
 msgstr "Piedod, es vēl esmu aizņemts. Es tev piezvanīšu vēlāk."
 
-#: indicator/messagingmenu.cpp:411
+#: indicator/messagingmenu.cpp:409
 #, qt-format
 msgid "%1 missed call"
 msgid_plural "%1 missed calls"
@@ -197,11 +185,11 @@ msgstr[0] "%1 neatbildēts zvans"
 msgstr[1] "%1 neatbildēti zvanu"
 msgstr[2] "%1 neatbildētu zvanu"
 
-#: indicator/messagingmenu.cpp:494
+#: indicator/messagingmenu.cpp:492
 msgid "Voicemail messages"
 msgstr "Balss pasta ziņojumi"
 
-#: indicator/messagingmenu.cpp:497
+#: indicator/messagingmenu.cpp:495
 #, qt-format
 msgid "%1 voicemail message"
 msgid_plural "%1 voicemail messages"
@@ -209,7 +197,7 @@ msgstr[0] "%1 balss pasta ziņa"
 msgstr[1] "%1 balss pasta ziņas"
 msgstr[2] "%1 balss pasta ziņu"
 
-#: indicator/messagingmenu.cpp:502
+#: indicator/messagingmenu.cpp:500
 msgid "Voicemail"
 msgstr "Balss pasts"
 
@@ -429,3 +417,13 @@ msgstr "Privāts numurs"
 #: libtelephonyservice/contactwatcher.cpp:159
 msgid "Unknown Number"
 msgstr "Nezināms numurs"
+
+#, fuzzy
+#~| msgid "Telephony Service"
+#~ msgid "telephony-service-call"
+#~ msgstr "Telefonijas pakalpojumi"
+
+#, fuzzy
+#~| msgid "Telephony Service"
+#~ msgid "telephony-service-message"
+#~ msgstr "Telefonijas pakalpojumi"

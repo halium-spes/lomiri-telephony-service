@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-06 09:21+0000\n"
+"POT-Creation-Date: 2023-12-16 17:03+0100\n"
 "PO-Revision-Date: 2021-01-05 23:26+0000\n"
 "Last-Translator: GK <miscgk@pm.me>\n"
 "Language-Team: Tamil <https://translate.ubports.com/projects/ubports/"
@@ -24,86 +24,74 @@ msgstr ""
 msgid "Phone Calls"
 msgstr "தொலைப்பேசி அழைப்புகள்"
 
-#: indicator/telephony-service-call.desktop.in:6
-#, fuzzy
-#| msgid "Telephony Service"
-msgid "telephony-service-call"
-msgstr "தொலைப்பேசி சேவை"
-
 #: indicator/telephony-service-sms.desktop.in:4
 msgid "SMS"
 msgstr "குறுஞ்செய்தி"
 
-#: indicator/telephony-service-sms.desktop.in:6
-#, fuzzy
-#| msgid "Telephony Service"
-msgid "telephony-service-message"
-msgstr "தொலைப்பேசி சேவை"
-
-#: approver/approver.cpp:65
+#: approver/approver.cpp:66
 msgid "Unknown caller"
 msgstr "தெறியாத நபர்"
 
-#: approver/approver.cpp:93
+#: approver/approver.cpp:94
 msgid "I'm busy at the moment. I'll call later."
 msgstr "நான் இப்பொழுது வேறொரு வேலையில் ஈடுபட்டுள்ளேன். பின்னர் அழைக்கிறேன்."
 
-#: approver/approver.cpp:94
+#: approver/approver.cpp:95
 msgid "I'm running late, on my way now."
 msgstr "சற்று தாமதமாகிவிட்டேன், வந்துகொண்டிருக்கிறேன்."
 
-#: approver/approver.cpp:95
+#: approver/approver.cpp:96
 msgid "Please call me back later."
 msgstr "எனக்கு பின்னர் அழைக்கவும்."
 
-#: approver/approver.cpp:456
+#: approver/approver.cpp:457
 #, qt-format
 msgid "On [%1]"
 msgstr "இயக்கத்தில் உள்ளது [%1]"
 
-#: approver/approver.cpp:460 indicator/messagingmenu.cpp:416
+#: approver/approver.cpp:461 indicator/messagingmenu.cpp:414
 msgid "Private number"
 msgstr "தனியார் எண்"
 
-#: approver/approver.cpp:463 indicator/messagingmenu.cpp:244
-#: indicator/messagingmenu.cpp:420 indicator/textchannelobserver.cpp:640
+#: approver/approver.cpp:464 indicator/messagingmenu.cpp:244
+#: indicator/messagingmenu.cpp:418 indicator/textchannelobserver.cpp:640
 msgid "Unknown number"
 msgstr "தெறியாத எண்"
 
-#: approver/approver.cpp:469 approver/approver.cpp:484
+#: approver/approver.cpp:470 approver/approver.cpp:485
 msgid "Caller number is not available"
 msgstr "அழைப்பவர் எண்ணிற்கு இணைப்பு கிடைக்கவில்லை"
 
-#: approver/approver.cpp:475
+#: approver/approver.cpp:476
 msgid "Calling from private number"
 msgstr "தனியார் எண்ணிலிருந்து வரும் அழைப்பு"
 
-#: approver/approver.cpp:478
+#: approver/approver.cpp:479
 msgid "Calling from unknown number"
 msgstr "எண் இல்லாத அழைப்பு"
 
-#: approver/approver.cpp:481
+#: approver/approver.cpp:482
 #, qt-format
 msgid "Calling from %1"
 msgstr "%1 என்பவரிடமிருந்து வரும் அழைப்பு"
 
-#: approver/approver.cpp:522
+#: approver/approver.cpp:529
 msgid "Hold + Answer"
 msgstr "நிலுவையில் வைத்து + அழைப்பை எடு"
 
-#: approver/approver.cpp:523
+#: approver/approver.cpp:530
 msgid "Accept"
 msgstr "ஒப்புதல்"
 
-#: approver/approver.cpp:536
+#: approver/approver.cpp:543
 msgid "End + Answer"
 msgstr "முடி + அழைப்பை எடு"
 
-#: approver/approver.cpp:545
+#: approver/approver.cpp:552
 msgid "Decline"
 msgstr "மறுக்க"
 
-#: approver/approver.cpp:553
+#: approver/approver.cpp:560
 msgid "Message & decline"
 msgstr "அழைப்பை மறுத்து குறுஞ்செய்தி அனுப்பு"
 
@@ -139,7 +127,7 @@ msgid "Telephony Service"
 msgstr "தொலைப்பேசி சேவை"
 
 #: indicator/messagingmenu.cpp:151 indicator/messagingmenu.cpp:293
-#: indicator/messagingmenu.cpp:362
+#: indicator/messagingmenu.cpp:360
 msgid "Send"
 msgstr "அனுப்பு"
 
@@ -161,55 +149,55 @@ msgstr "குழுவிற்கு %1 - டமிருந்து வந�
 msgid "Call back"
 msgstr "பின்னர் அழைக்கவும்"
 
-#: indicator/messagingmenu.cpp:352
+#: indicator/messagingmenu.cpp:350
 #, fuzzy
 #| msgid "I missed your call - can you call me now?"
 msgid "Missed your call — can you call me now?"
 msgstr "நான் தங்களின் அழைப்பை தவறவிட்டுவிட்டேன். தங்களால் இப்பொழுது அழைக்க முடியுமா?"
 
-#: indicator/messagingmenu.cpp:353
+#: indicator/messagingmenu.cpp:351
 #, fuzzy
 #| msgid "I'm running late. I'm on my way."
 msgid "Running late. On my way."
 msgstr "நான் சற்று தாமதமாகிவிட்டேன். வந்துகொண்டிருக்கிறேன்."
 
-#: indicator/messagingmenu.cpp:354
+#: indicator/messagingmenu.cpp:352
 #, fuzzy
 #| msgid "I'm busy at the moment. I'll call you later."
 msgid "Busy at the moment. Will call you later."
 msgstr "நான் இப்பொழுது வேறொரு வேலையில் ஈடுபட்டுள்ளேன். தங்களுக்கு பின்னர் அழைக்கிறேன்."
 
-#: indicator/messagingmenu.cpp:355
+#: indicator/messagingmenu.cpp:353
 #, fuzzy
 #| msgid "I'll be 20 minutes late."
 msgid "I am 20 minutes late."
 msgstr "எனக்கு 20 நிமிடங்கள் தாமதமாகும்."
 
-#: indicator/messagingmenu.cpp:356
+#: indicator/messagingmenu.cpp:354
 #, fuzzy
 #| msgid "Sorry, I'm still busy. I'll call you later."
 msgid "Still busy. Will call you later."
 msgstr "மன்னிக்கவும். இதுவரை வேலை முடியவில்லை. தங்களை பின்னர் அழைக்கிறேன்."
 
-#: indicator/messagingmenu.cpp:411
+#: indicator/messagingmenu.cpp:409
 #, qt-format
 msgid "%1 missed call"
 msgid_plural "%1 missed calls"
 msgstr[0] "%1 தவறிய அழைப்பு"
 msgstr[1] "%1 தவறிய அழைப்புக்கள்"
 
-#: indicator/messagingmenu.cpp:494
+#: indicator/messagingmenu.cpp:492
 msgid "Voicemail messages"
 msgstr "குரல் மடல் குறுஞ்செய்திகள்"
 
-#: indicator/messagingmenu.cpp:497
+#: indicator/messagingmenu.cpp:495
 #, qt-format
 msgid "%1 voicemail message"
 msgid_plural "%1 voicemail messages"
 msgstr[0] "%1 குரல் மடல் செய்தி"
 msgstr[1] "%1 குரல் மடல் செய்திகள்"
 
-#: indicator/messagingmenu.cpp:502
+#: indicator/messagingmenu.cpp:500
 msgid "Voicemail"
 msgstr "குரல் மடல்"
 
@@ -438,6 +426,16 @@ msgstr "தனியார் எண்"
 #| msgid "Unknown number"
 msgid "Unknown Number"
 msgstr "தெறியாத எண்"
+
+#, fuzzy
+#~| msgid "Telephony Service"
+#~ msgid "telephony-service-call"
+#~ msgstr "தொலைப்பேசி சேவை"
+
+#, fuzzy
+#~| msgid "Telephony Service"
+#~ msgid "telephony-service-message"
+#~ msgstr "தொலைப்பேசி சேவை"
 
 #~ msgid ""
 #~ "Oops, there has been an error with the MMS system and this message could "

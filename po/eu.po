@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-06 09:21+0000\n"
+"POT-Creation-Date: 2023-12-16 17:03+0100\n"
 "PO-Revision-Date: 2015-01-22 21:45+0000\n"
 "Last-Translator: Ibai Oihanguren Sala <Unknown>\n"
 "Language-Team: Basque <eu@li.org>\n"
@@ -23,86 +23,74 @@ msgstr ""
 msgid "Phone Calls"
 msgstr "Telefono-deiak"
 
-#: indicator/telephony-service-call.desktop.in:6
-#, fuzzy
-#| msgid "Telephony Service"
-msgid "telephony-service-call"
-msgstr "Telefonia-zerbitzua"
-
 #: indicator/telephony-service-sms.desktop.in:4
 msgid "SMS"
 msgstr "SMSa"
 
-#: indicator/telephony-service-sms.desktop.in:6
-#, fuzzy
-#| msgid "Telephony Service"
-msgid "telephony-service-message"
-msgstr "Telefonia-zerbitzua"
-
-#: approver/approver.cpp:65
+#: approver/approver.cpp:66
 msgid "Unknown caller"
 msgstr "Deitzaile ezezaguna"
 
-#: approver/approver.cpp:93
+#: approver/approver.cpp:94
 msgid "I'm busy at the moment. I'll call later."
 msgstr "Orain lanpetuta nago. Deituko dizut geroago."
 
-#: approver/approver.cpp:94
+#: approver/approver.cpp:95
 msgid "I'm running late, on my way now."
 msgstr "Berandutu egin zait, bidean naiz."
 
-#: approver/approver.cpp:95
+#: approver/approver.cpp:96
 msgid "Please call me back later."
 msgstr "Dei nazazu berriro geroago, mesedez."
 
-#: approver/approver.cpp:456
+#: approver/approver.cpp:457
 #, qt-format
 msgid "On [%1]"
 msgstr ""
 
-#: approver/approver.cpp:460 indicator/messagingmenu.cpp:416
+#: approver/approver.cpp:461 indicator/messagingmenu.cpp:414
 msgid "Private number"
 msgstr "Zenbaki pribatua"
 
-#: approver/approver.cpp:463 indicator/messagingmenu.cpp:244
-#: indicator/messagingmenu.cpp:420 indicator/textchannelobserver.cpp:640
+#: approver/approver.cpp:464 indicator/messagingmenu.cpp:244
+#: indicator/messagingmenu.cpp:418 indicator/textchannelobserver.cpp:640
 msgid "Unknown number"
 msgstr "Zenbaki ezezaguna"
 
-#: approver/approver.cpp:469 approver/approver.cpp:484
+#: approver/approver.cpp:470 approver/approver.cpp:485
 msgid "Caller number is not available"
 msgstr "Deitzailearen zenbakia ez dago eskuragarri"
 
-#: approver/approver.cpp:475
+#: approver/approver.cpp:476
 msgid "Calling from private number"
 msgstr "Zenbaki pribatutik deika"
 
-#: approver/approver.cpp:478
+#: approver/approver.cpp:479
 msgid "Calling from unknown number"
 msgstr "Zenbaki ezezagunetik deika"
 
-#: approver/approver.cpp:481
+#: approver/approver.cpp:482
 #, qt-format
 msgid "Calling from %1"
 msgstr "%1 zenbakitik deika"
 
-#: approver/approver.cpp:522
+#: approver/approver.cpp:529
 msgid "Hold + Answer"
 msgstr "Itxaron + Erantzun"
 
-#: approver/approver.cpp:523
+#: approver/approver.cpp:530
 msgid "Accept"
 msgstr "Onartu"
 
-#: approver/approver.cpp:536
+#: approver/approver.cpp:543
 msgid "End + Answer"
 msgstr "Amaitu + Erantzun"
 
-#: approver/approver.cpp:545
+#: approver/approver.cpp:552
 msgid "Decline"
 msgstr "Baztertu"
 
-#: approver/approver.cpp:553
+#: approver/approver.cpp:560
 msgid "Message & decline"
 msgstr "Mezua bidali eta baztertu"
 
@@ -136,7 +124,7 @@ msgid "Telephony Service"
 msgstr "Telefonia-zerbitzua"
 
 #: indicator/messagingmenu.cpp:151 indicator/messagingmenu.cpp:293
-#: indicator/messagingmenu.cpp:362
+#: indicator/messagingmenu.cpp:360
 msgid "Send"
 msgstr "Bidali"
 
@@ -158,55 +146,55 @@ msgstr "%1(r)en mezua taldearentzat"
 msgid "Call back"
 msgstr "Itzuli deia"
 
-#: indicator/messagingmenu.cpp:352
+#: indicator/messagingmenu.cpp:350
 #, fuzzy
 #| msgid "I missed your call - can you call me now?"
 msgid "Missed your call — can you call me now?"
 msgstr "Zure deia galdu dut - orain berriro deitzerik bai?"
 
-#: indicator/messagingmenu.cpp:353
+#: indicator/messagingmenu.cpp:351
 #, fuzzy
 #| msgid "I'm running late. I'm on my way."
 msgid "Running late. On my way."
 msgstr "Berandutu egin zait. Bidean naiz."
 
-#: indicator/messagingmenu.cpp:354
+#: indicator/messagingmenu.cpp:352
 #, fuzzy
 #| msgid "I'm busy at the moment. I'll call you later."
 msgid "Busy at the moment. Will call you later."
 msgstr "Une honetan lanpetuta nago. Gero deituko dizut."
 
-#: indicator/messagingmenu.cpp:355
+#: indicator/messagingmenu.cpp:353
 #, fuzzy
 #| msgid "I'll be 20 minutes late."
 msgid "I am 20 minutes late."
 msgstr "20 minutu berandu iritsiko naiz."
 
-#: indicator/messagingmenu.cpp:356
+#: indicator/messagingmenu.cpp:354
 #, fuzzy
 #| msgid "Sorry, I'm still busy. I'll call you later."
 msgid "Still busy. Will call you later."
 msgstr "Sentitzen dut, oraindik lanpetuta nago. Gero deituko dizut."
 
-#: indicator/messagingmenu.cpp:411
+#: indicator/messagingmenu.cpp:409
 #, qt-format
 msgid "%1 missed call"
 msgid_plural "%1 missed calls"
 msgstr[0] "dei galdu %1"
 msgstr[1] "%1 dei galdu"
 
-#: indicator/messagingmenu.cpp:494
+#: indicator/messagingmenu.cpp:492
 msgid "Voicemail messages"
 msgstr "Ahots-mezuak"
 
-#: indicator/messagingmenu.cpp:497
+#: indicator/messagingmenu.cpp:495
 #, qt-format
 msgid "%1 voicemail message"
 msgid_plural "%1 voicemail messages"
 msgstr[0] "ahots-mezu %1"
 msgstr[1] "%1 ahots-mezu"
 
-#: indicator/messagingmenu.cpp:502
+#: indicator/messagingmenu.cpp:500
 msgid "Voicemail"
 msgstr "Ahots-posta"
 
@@ -426,3 +414,13 @@ msgstr "Zenbaki pribatua"
 #: libtelephonyservice/contactwatcher.cpp:159
 msgid "Unknown Number"
 msgstr "Zenbaki ezezaguna"
+
+#, fuzzy
+#~| msgid "Telephony Service"
+#~ msgid "telephony-service-call"
+#~ msgstr "Telefonia-zerbitzua"
+
+#, fuzzy
+#~| msgid "Telephony Service"
+#~ msgid "telephony-service-message"
+#~ msgstr "Telefonia-zerbitzua"

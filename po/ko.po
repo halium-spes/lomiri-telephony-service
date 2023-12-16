@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-06 09:21+0000\n"
+"POT-Creation-Date: 2023-12-16 17:03+0100\n"
 "PO-Revision-Date: 2014-08-20 04:06+0000\n"
 "Last-Translator: MinSik CHO <Unknown>\n"
 "Language-Team: Korean <ko@li.org>\n"
@@ -23,86 +23,74 @@ msgstr ""
 msgid "Phone Calls"
 msgstr "전화 통화"
 
-#: indicator/telephony-service-call.desktop.in:6
-#, fuzzy
-#| msgid "Telephony Service"
-msgid "telephony-service-call"
-msgstr "전화 서비스"
-
 #: indicator/telephony-service-sms.desktop.in:4
 msgid "SMS"
 msgstr "문자 메세지"
 
-#: indicator/telephony-service-sms.desktop.in:6
-#, fuzzy
-#| msgid "Telephony Service"
-msgid "telephony-service-message"
-msgstr "전화 서비스"
-
-#: approver/approver.cpp:65
+#: approver/approver.cpp:66
 msgid "Unknown caller"
 msgstr "알 수 없는 발신자"
 
-#: approver/approver.cpp:93
+#: approver/approver.cpp:94
 msgid "I'm busy at the moment. I'll call later."
 msgstr "지금은 바쁘니 나중에 다시 걸겠습니다."
 
-#: approver/approver.cpp:94
+#: approver/approver.cpp:95
 msgid "I'm running late, on my way now."
 msgstr "지금 가고 있지만 늦을 것 같습니다."
 
-#: approver/approver.cpp:95
+#: approver/approver.cpp:96
 msgid "Please call me back later."
 msgstr "나중에 다시 걸어주십시오."
 
-#: approver/approver.cpp:456
+#: approver/approver.cpp:457
 #, qt-format
 msgid "On [%1]"
 msgstr "[%1]에"
 
-#: approver/approver.cpp:460 indicator/messagingmenu.cpp:416
+#: approver/approver.cpp:461 indicator/messagingmenu.cpp:414
 msgid "Private number"
 msgstr "개인 전용 번호"
 
-#: approver/approver.cpp:463 indicator/messagingmenu.cpp:244
-#: indicator/messagingmenu.cpp:420 indicator/textchannelobserver.cpp:640
+#: approver/approver.cpp:464 indicator/messagingmenu.cpp:244
+#: indicator/messagingmenu.cpp:418 indicator/textchannelobserver.cpp:640
 msgid "Unknown number"
 msgstr "알 수 없는 번호"
 
-#: approver/approver.cpp:469 approver/approver.cpp:484
+#: approver/approver.cpp:470 approver/approver.cpp:485
 msgid "Caller number is not available"
 msgstr "발신자 번호를 표시할 수 없습니다"
 
-#: approver/approver.cpp:475
+#: approver/approver.cpp:476
 msgid "Calling from private number"
 msgstr "개인 전용 번호로 전화가 걸려오는 중"
 
-#: approver/approver.cpp:478
+#: approver/approver.cpp:479
 msgid "Calling from unknown number"
 msgstr "알 수 없는 번호로 전화가 왔습니다."
 
-#: approver/approver.cpp:481
+#: approver/approver.cpp:482
 #, qt-format
 msgid "Calling from %1"
 msgstr "%1에서 전화가 걸러오는 중"
 
-#: approver/approver.cpp:522
+#: approver/approver.cpp:529
 msgid "Hold + Answer"
 msgstr "대기 + 받기"
 
-#: approver/approver.cpp:523
+#: approver/approver.cpp:530
 msgid "Accept"
 msgstr "승인"
 
-#: approver/approver.cpp:536
+#: approver/approver.cpp:543
 msgid "End + Answer"
 msgstr "끝내기 + 받기"
 
-#: approver/approver.cpp:545
+#: approver/approver.cpp:552
 msgid "Decline"
 msgstr "거부"
 
-#: approver/approver.cpp:553
+#: approver/approver.cpp:560
 msgid "Message & decline"
 msgstr "메시지 & 거절"
 
@@ -136,7 +124,7 @@ msgid "Telephony Service"
 msgstr "전화 서비스"
 
 #: indicator/messagingmenu.cpp:151 indicator/messagingmenu.cpp:293
-#: indicator/messagingmenu.cpp:362
+#: indicator/messagingmenu.cpp:360
 msgid "Send"
 msgstr "보내기"
 
@@ -158,53 +146,53 @@ msgstr "%1의 그룹에 메시지"
 msgid "Call back"
 msgstr "부재중 번호로 전화"
 
-#: indicator/messagingmenu.cpp:352
+#: indicator/messagingmenu.cpp:350
 #, fuzzy
 #| msgid "I missed your call - can you call me now?"
 msgid "Missed your call — can you call me now?"
 msgstr "전화를 받지 못했습니다. 지금 전화드려도 괜찮으십니까?"
 
-#: indicator/messagingmenu.cpp:353
+#: indicator/messagingmenu.cpp:351
 #, fuzzy
 #| msgid "I'm running late. I'm on my way."
 msgid "Running late. On my way."
 msgstr "조금 늦어서 지금 가고 있습니다."
 
-#: indicator/messagingmenu.cpp:354
+#: indicator/messagingmenu.cpp:352
 #, fuzzy
 #| msgid "I'm busy at the moment. I'll call you later."
 msgid "Busy at the moment. Will call you later."
 msgstr "지금 전화를 받을 수 없습니다. 곧 연락드리겠습니다."
 
-#: indicator/messagingmenu.cpp:355
+#: indicator/messagingmenu.cpp:353
 #, fuzzy
 #| msgid "I'll be 20 minutes late."
 msgid "I am 20 minutes late."
 msgstr "20분 정도 늦을 것 같습니다."
 
-#: indicator/messagingmenu.cpp:356
+#: indicator/messagingmenu.cpp:354
 #, fuzzy
 #| msgid "Sorry, I'm still busy. I'll call you later."
 msgid "Still busy. Will call you later."
 msgstr "죄송합니다. 지금 전화를 받을 수 없습니다. 조금 뒤 전화드리겠습니다."
 
-#: indicator/messagingmenu.cpp:411
+#: indicator/messagingmenu.cpp:409
 #, qt-format
 msgid "%1 missed call"
 msgid_plural "%1 missed calls"
 msgstr[0] "%1개의 부재중 전화"
 
-#: indicator/messagingmenu.cpp:494
+#: indicator/messagingmenu.cpp:492
 msgid "Voicemail messages"
 msgstr "음성 메세지"
 
-#: indicator/messagingmenu.cpp:497
+#: indicator/messagingmenu.cpp:495
 #, qt-format
 msgid "%1 voicemail message"
 msgid_plural "%1 voicemail messages"
 msgstr[0] "%1개의 음성 메세지"
 
-#: indicator/messagingmenu.cpp:502
+#: indicator/messagingmenu.cpp:500
 msgid "Voicemail"
 msgstr "음성 메일"
 
@@ -420,3 +408,13 @@ msgstr "개인 전용 번호"
 #: libtelephonyservice/contactwatcher.cpp:159
 msgid "Unknown Number"
 msgstr "알 수 없는 번호"
+
+#, fuzzy
+#~| msgid "Telephony Service"
+#~ msgid "telephony-service-call"
+#~ msgstr "전화 서비스"
+
+#, fuzzy
+#~| msgid "Telephony Service"
+#~ msgid "telephony-service-message"
+#~ msgstr "전화 서비스"

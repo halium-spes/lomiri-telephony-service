@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-06 09:21+0000\n"
+"POT-Creation-Date: 2023-12-16 17:03+0100\n"
 "PO-Revision-Date: 2015-02-15 05:43+0000\n"
 "Last-Translator: Gursharnjit_Singh <ubuntuser13@gmail.com>\n"
 "Language-Team: Punjabi <pa@li.org>\n"
@@ -23,86 +23,74 @@ msgstr ""
 msgid "Phone Calls"
 msgstr "ਫ਼ੋਨ ਕਾਲਾਂ"
 
-#: indicator/telephony-service-call.desktop.in:6
-#, fuzzy
-#| msgid "Telephony Service"
-msgid "telephony-service-call"
-msgstr "ਟੈਲੀਫ਼ੋਨੀ ਸੇਵਾ"
-
 #: indicator/telephony-service-sms.desktop.in:4
 msgid "SMS"
 msgstr "SMS"
 
-#: indicator/telephony-service-sms.desktop.in:6
-#, fuzzy
-#| msgid "Telephony Service"
-msgid "telephony-service-message"
-msgstr "ਟੈਲੀਫ਼ੋਨੀ ਸੇਵਾ"
-
-#: approver/approver.cpp:65
+#: approver/approver.cpp:66
 msgid "Unknown caller"
 msgstr "ਅਣਪਛਾਤਾ ਕਾਲਰ"
 
-#: approver/approver.cpp:93
+#: approver/approver.cpp:94
 msgid "I'm busy at the moment. I'll call later."
 msgstr "ਇਸ ਵੇਲੇ ਮੈਂ ਰੁਝਿਆ ਹਾਂ। ਮੈਂ ਬਾਅਦ ਵਿੱਚ ਕਾਲ ਕਰਾਂਗਾ।"
 
-#: approver/approver.cpp:94
+#: approver/approver.cpp:95
 msgid "I'm running late, on my way now."
 msgstr "ਮੈਨੂੰ ਦੇਰੀ ਹੋ ਰਹੀ ਹੈ, ਮੈਂ ਹਾਲੇ ਰਾਹ ਵਿੱਚ ਹਾਂ।"
 
-#: approver/approver.cpp:95
+#: approver/approver.cpp:96
 msgid "Please call me back later."
 msgstr "ਕਿਰਪਾ ਕਰਕੇ ਮੈਨੂੰ ਬਾਅਦ ਵਿੱਚ ਕਾਲ ਕਰੋ।"
 
-#: approver/approver.cpp:456
+#: approver/approver.cpp:457
 #, qt-format
 msgid "On [%1]"
 msgstr ""
 
-#: approver/approver.cpp:460 indicator/messagingmenu.cpp:416
+#: approver/approver.cpp:461 indicator/messagingmenu.cpp:414
 msgid "Private number"
 msgstr "ਨਿੱਜੀ ਨੰਬਰ"
 
-#: approver/approver.cpp:463 indicator/messagingmenu.cpp:244
-#: indicator/messagingmenu.cpp:420 indicator/textchannelobserver.cpp:640
+#: approver/approver.cpp:464 indicator/messagingmenu.cpp:244
+#: indicator/messagingmenu.cpp:418 indicator/textchannelobserver.cpp:640
 msgid "Unknown number"
 msgstr "ਅਣਜਾਣ ਨੰਬਰ"
 
-#: approver/approver.cpp:469 approver/approver.cpp:484
+#: approver/approver.cpp:470 approver/approver.cpp:485
 msgid "Caller number is not available"
 msgstr "ਕਾਲਰ ਨੰਬਰ ਮੌਜੂਦ ਨਹੀਂ"
 
-#: approver/approver.cpp:475
+#: approver/approver.cpp:476
 msgid "Calling from private number"
 msgstr "ਨਿੱਜੀ ਨੰਬਰ ਤੋਂ ਕਾਲ ਕਰ ਰਿਹਾ"
 
-#: approver/approver.cpp:478
+#: approver/approver.cpp:479
 msgid "Calling from unknown number"
 msgstr "ਅਣਪਛਾਤੇ ਨੰਬਰ ਤੋਂ ਕਾਲ ਕਰ ਰਿਹਾ"
 
-#: approver/approver.cpp:481
+#: approver/approver.cpp:482
 #, qt-format
 msgid "Calling from %1"
 msgstr "%1 ਤੋਂ ਕਾਲ ਕਰ ਰਿਹਾ"
 
-#: approver/approver.cpp:522
+#: approver/approver.cpp:529
 msgid "Hold + Answer"
 msgstr "ਰੱਖੋ + ਜਵਾਬ"
 
-#: approver/approver.cpp:523
+#: approver/approver.cpp:530
 msgid "Accept"
 msgstr "ਮਨਜ਼ੂਰ"
 
-#: approver/approver.cpp:536
+#: approver/approver.cpp:543
 msgid "End + Answer"
 msgstr "ਅੰਤ + ਜਵਾਬ"
 
-#: approver/approver.cpp:545
+#: approver/approver.cpp:552
 msgid "Decline"
 msgstr "ਇਨਕਾਰ"
 
-#: approver/approver.cpp:553
+#: approver/approver.cpp:560
 msgid "Message & decline"
 msgstr "ਸੁਨੇਹਾ ਅਤੇ ਇਨਕਾਰ"
 
@@ -136,7 +124,7 @@ msgid "Telephony Service"
 msgstr "ਟੈਲੀਫ਼ੋਨੀ ਸੇਵਾ"
 
 #: indicator/messagingmenu.cpp:151 indicator/messagingmenu.cpp:293
-#: indicator/messagingmenu.cpp:362
+#: indicator/messagingmenu.cpp:360
 msgid "Send"
 msgstr "ਭੇਜੋ"
 
@@ -158,55 +146,55 @@ msgstr "%1 ਤੋਂ ਸੁਨੇਹਾ"
 msgid "Call back"
 msgstr "ਮੁੜ ਕਾਲ ਕਰੋ"
 
-#: indicator/messagingmenu.cpp:352
+#: indicator/messagingmenu.cpp:350
 #, fuzzy
 #| msgid "I missed your call - can you call me now?"
 msgid "Missed your call — can you call me now?"
 msgstr "ਮੈਂ ਤੁਹਾਡੀ ਕਾਲ ਤੋਂ ਖੁੰਝ ਗਿਆ - ਕੀ ਤੁਸੀਂ ਮੈਨੂੰ ਹੁਣ ਕਾਲ ਕਰ ਸਕਦੇ ਹੋ?"
 
-#: indicator/messagingmenu.cpp:353
+#: indicator/messagingmenu.cpp:351
 #, fuzzy
 #| msgid "I'm running late. I'm on my way."
 msgid "Running late. On my way."
 msgstr "ਮੈਨੂੰ ਦੇਰੀ ਹੋ ਰਹੀ ਹੈ, ਮੈਂ ਰਾਹ ਵਿੱਚ ਹਾਂ।"
 
-#: indicator/messagingmenu.cpp:354
+#: indicator/messagingmenu.cpp:352
 #, fuzzy
 #| msgid "I'm busy at the moment. I'll call you later."
 msgid "Busy at the moment. Will call you later."
 msgstr "ਮੈਂ ਇਸ ਵੇਲੇ ਰੁਝਿਆ ਹਾਂ। ਮੈਂ ਤੁਹਾਨੂੰ ਬਾਅਦ ਵਿੱਚ ਕਾਲ ਕਰਾਂਗਾ।"
 
-#: indicator/messagingmenu.cpp:355
+#: indicator/messagingmenu.cpp:353
 #, fuzzy
 #| msgid "I'll be 20 minutes late."
 msgid "I am 20 minutes late."
 msgstr "ਮੈਨੂੰ 20 ਮਿੰਟਾਂ ਦੀ ਦੇਰੀ ਹੋਵੇਗੀ।"
 
-#: indicator/messagingmenu.cpp:356
+#: indicator/messagingmenu.cpp:354
 #, fuzzy
 #| msgid "Sorry, I'm still busy. I'll call you later."
 msgid "Still busy. Will call you later."
 msgstr "ਮੁਆਫ਼ੀ, ਮੈਂ ਹਾਲੇ ਵੀ ਰੁਝਿਆ ਹਾਂ। ਮੈਂ ਤੁਹਾਨੂੰ ਬਾਅਦ ਵਿੱਚ ਕਾਲ ਕਰਾਂਗਾ।"
 
-#: indicator/messagingmenu.cpp:411
+#: indicator/messagingmenu.cpp:409
 #, qt-format
 msgid "%1 missed call"
 msgid_plural "%1 missed calls"
 msgstr[0] "%1 ਮਿਸ ਕਾਲ"
 msgstr[1] "%1 ਮਿਸ ਕਾਲਾਂ"
 
-#: indicator/messagingmenu.cpp:494
+#: indicator/messagingmenu.cpp:492
 msgid "Voicemail messages"
 msgstr "ਵੋਆਇਸਮੇਲ ਸੁਨੇਹੇ"
 
-#: indicator/messagingmenu.cpp:497
+#: indicator/messagingmenu.cpp:495
 #, qt-format
 msgid "%1 voicemail message"
 msgid_plural "%1 voicemail messages"
 msgstr[0] "%1 ਵੋਆਇਸਮੇਲ ਸੁਨੇਹਾ"
 msgstr[1] "%1 ਵੋਆਇਸਮੇਲ ਸੁਨੇਹੇ"
 
-#: indicator/messagingmenu.cpp:502
+#: indicator/messagingmenu.cpp:500
 msgid "Voicemail"
 msgstr "ਵੋਆਇਸਮੇਲ"
 
@@ -426,3 +414,13 @@ msgstr "ਨਿੱਜੀ ਨੰਬਰ"
 #: libtelephonyservice/contactwatcher.cpp:159
 msgid "Unknown Number"
 msgstr "ਅਣਪਛਾਤਾ ਨੰਬਰ"
+
+#, fuzzy
+#~| msgid "Telephony Service"
+#~ msgid "telephony-service-call"
+#~ msgstr "ਟੈਲੀਫ਼ੋਨੀ ਸੇਵਾ"
+
+#, fuzzy
+#~| msgid "Telephony Service"
+#~ msgid "telephony-service-message"
+#~ msgstr "ਟੈਲੀਫ਼ੋਨੀ ਸੇਵਾ"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-06 09:21+0000\n"
+"POT-Creation-Date: 2023-12-16 17:03+0100\n"
 "PO-Revision-Date: 2023-02-22 19:39+0000\n"
 "Last-Translator: Sergii Horichenko <m@sgg.im>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/lomiri/"
@@ -25,82 +25,74 @@ msgstr ""
 msgid "Phone Calls"
 msgstr "Телефонні дзвінки"
 
-#: indicator/telephony-service-call.desktop.in:6
-msgid "telephony-service-call"
-msgstr "telephony-service-call"
-
 #: indicator/telephony-service-sms.desktop.in:4
 msgid "SMS"
 msgstr "СМС"
 
-#: indicator/telephony-service-sms.desktop.in:6
-msgid "telephony-service-message"
-msgstr "telephony-service-message"
-
-#: approver/approver.cpp:65
+#: approver/approver.cpp:66
 msgid "Unknown caller"
 msgstr "Невідома особа"
 
-#: approver/approver.cpp:93
+#: approver/approver.cpp:94
 msgid "I'm busy at the moment. I'll call later."
 msgstr "Зараз немає часу. Відповім пізніше."
 
-#: approver/approver.cpp:94
+#: approver/approver.cpp:95
 msgid "I'm running late, on my way now."
 msgstr "Запізнююся, зараз у дорозі."
 
-#: approver/approver.cpp:95
+#: approver/approver.cpp:96
 msgid "Please call me back later."
 msgstr "Будь ласка, передзвоніть пізніше."
 
-#: approver/approver.cpp:456
+#: approver/approver.cpp:457
 #, qt-format
 msgid "On [%1]"
 msgstr "На [%1]"
 
-#: approver/approver.cpp:460 indicator/messagingmenu.cpp:416
+#: approver/approver.cpp:461 indicator/messagingmenu.cpp:414
 msgid "Private number"
 msgstr "Особистий номер"
 
-#: approver/approver.cpp:463 indicator/messagingmenu.cpp:244
-#: indicator/messagingmenu.cpp:420 indicator/textchannelobserver.cpp:640
+#: approver/approver.cpp:464 indicator/messagingmenu.cpp:244
+#: indicator/messagingmenu.cpp:418 indicator/textchannelobserver.cpp:640
 msgid "Unknown number"
 msgstr "Невідомий номер"
 
-#: approver/approver.cpp:469 approver/approver.cpp:484
+#: approver/approver.cpp:470 approver/approver.cpp:485
 msgid "Caller number is not available"
 msgstr "Номер вхідного дзвінка недоступний"
 
-#: approver/approver.cpp:475
+#: approver/approver.cpp:476
 msgid "Calling from private number"
 msgstr "Дзвінок з приватного номера"
 
-#: approver/approver.cpp:478
+#: approver/approver.cpp:479
 msgid "Calling from unknown number"
 msgstr "Дзвінок з невідомого номера"
 
-#: approver/approver.cpp:481
+#: approver/approver.cpp:482
 #, qt-format
 msgid "Calling from %1"
 msgstr "Дзвінок від %1"
 
-#: approver/approver.cpp:522
+#: approver/approver.cpp:529
 msgid "Hold + Answer"
 msgstr "Утримання + Відповідь"
 
-#: approver/approver.cpp:523
+#: approver/approver.cpp:530
 msgid "Accept"
 msgstr "Прийняти"
 
-#: approver/approver.cpp:536
+#: approver/approver.cpp:543
 msgid "End + Answer"
 msgstr "Завершити + Відповісти"
 
-#: approver/approver.cpp:545
+#: approver/approver.cpp:552
 msgid "Decline"
 msgstr "Відхилити"
 
-#: approver/approver.cpp:553
+#: approver/approver.cpp:560
 msgid "Message & decline"
 msgstr "Повідомити і відхилити"
 
@@ -135,7 +127,7 @@ msgid "Telephony Service"
 msgstr "Служба телефонії"
 
 #: indicator/messagingmenu.cpp:151 indicator/messagingmenu.cpp:293
-#: indicator/messagingmenu.cpp:362
+#: indicator/messagingmenu.cpp:360
 msgid "Send"
 msgstr "Надіслати"
 
@@ -156,27 +148,27 @@ msgstr "Повідомлення до групи від %1"
 msgid "Call back"
 msgstr "Зворотній виклик"
 
-#: indicator/messagingmenu.cpp:352
+#: indicator/messagingmenu.cpp:350
 msgid "Missed your call — can you call me now?"
 msgstr "У мене пропущений дзвінок від Вас. Не могли б Ви зателефонувати зараз?"
 
-#: indicator/messagingmenu.cpp:353
+#: indicator/messagingmenu.cpp:351
 msgid "Running late. On my way."
 msgstr "Запізнююся. Вже скоро буду."
 
-#: indicator/messagingmenu.cpp:354
+#: indicator/messagingmenu.cpp:352
 msgid "Busy at the moment. Will call you later."
 msgstr "Зараз не можу розмовляти. Зателефоную Вам пізніше."
 
-#: indicator/messagingmenu.cpp:355
+#: indicator/messagingmenu.cpp:353
 msgid "I am 20 minutes late."
 msgstr "Я запізнююсь на 20 хвилин."
 
-#: indicator/messagingmenu.cpp:356
+#: indicator/messagingmenu.cpp:354
 msgid "Still busy. Will call you later."
 msgstr "Досі у справах. Зателефоную Вам пізніше."
 
-#: indicator/messagingmenu.cpp:411
+#: indicator/messagingmenu.cpp:409
 #, qt-format
 msgid "%1 missed call"
 msgid_plural "%1 missed calls"
@@ -184,11 +176,11 @@ msgstr[0] "%1 пропущений дзвінок"
 msgstr[1] "%1 пропущені дзвінки"
 msgstr[2] "%1 пропущених дзвінків"
 
-#: indicator/messagingmenu.cpp:494
+#: indicator/messagingmenu.cpp:492
 msgid "Voicemail messages"
 msgstr "Повідомлення голосової пошти"
 
-#: indicator/messagingmenu.cpp:497
+#: indicator/messagingmenu.cpp:495
 #, qt-format
 msgid "%1 voicemail message"
 msgid_plural "%1 voicemail messages"
@@ -196,7 +188,7 @@ msgstr[0] "%1 голосове повідомлення"
 msgstr[1] "%1 голосових повідомлення"
 msgstr[2] "%1 голосових повідомлень"
 
-#: indicator/messagingmenu.cpp:502
+#: indicator/messagingmenu.cpp:500
 msgid "Voicemail"
 msgstr "Голосова пошта"
 
@@ -423,6 +415,12 @@ msgstr "Особистий номер"
 #: libtelephonyservice/contactwatcher.cpp:159
 msgid "Unknown Number"
 msgstr "Невідомий номер"
+
+#~ msgid "telephony-service-call"
+#~ msgstr "telephony-service-call"
+
+#~ msgid "telephony-service-message"
+#~ msgstr "telephony-service-message"
 
 #~ msgid ""
 #~ "Oops, there has been an error with the MMS system and this message could "
