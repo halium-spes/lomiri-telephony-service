@@ -1,9 +1,9 @@
-# Telephony Service
+# Lomiri Telephony Service
 
-Telephony Service is a backend dispatcher service for various mobile
+Lomiri Telephony Service is a backend dispatcher service for various mobile
 phone related operations.
 
-## i18n: Translating Telephony Service into your Language
+## i18n: Translating Lomiri Telephony Service into your Language
 
 You can easily contribute to the localization of this project (i.e. the
 translation into your language) by visiting (and signing up with) the

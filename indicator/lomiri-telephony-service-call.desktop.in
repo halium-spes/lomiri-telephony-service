@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Phone Calls
+Exec=lomiri-indicator-telephony-service
+Icon=lomiri-telephony-service-call
+NoDisplay=true

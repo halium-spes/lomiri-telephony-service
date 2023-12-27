@@ -1,4 +1,4 @@
 [D-BUS Service]
 Name=org.freedesktop.Telepathy.Client.TelephonyServiceIndicator
-Exec=@CMAKE_INSTALL_FULL_BINDIR@/telephony-service-indicator
-SystemdService=telephony-service-indicator.service
+Exec=@CMAKE_INSTALL_FULL_BINDIR@/lomiri-telephony-service-indicator
+SystemdService=lomiri-indicator-telephony-service.service

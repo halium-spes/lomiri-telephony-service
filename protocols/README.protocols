@@ -1,7 +1,7 @@
-The protocol description file instructs telephony-service how to properly load
+The protocol description file instructs lomiri-telephony-service how to properly load
 the accounts, display and fallback or replace accounts by others.
 
-It is also a way to filter accounts that are not meant to be handle by the telephony-service stack.
+It is also a way to filter accounts that are not meant to be handle by the lomiri-telephony-service stack.
 
 The file format is based on freedesktop's desktop file specification, but restricted to a few keys.
 All keys should be under the [Protocol] group, and here are the supported keys:

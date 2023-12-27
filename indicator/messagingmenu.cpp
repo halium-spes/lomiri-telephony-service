@@ -5,13 +5,13 @@
  *  Gustavo Pichorim Boiko <gustavo.boiko@canonical.com>
  *  Tiago Salem Herrmann <tiago.herrmann@canonical.com>
  *
- * This file is part of telephony-service.
+ * This file is part of lomiri-telephony-service.
  *
- * telephony-service is free software; you can redistribute it and/or modify
+ * lomiri-telephony-service is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; version 3.
  *
- * telephony-service is distributed in the hope that it will be useful,
+ * lomiri-telephony-service is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -40,7 +40,7 @@
 #include <messaging-menu-message.h>
 #include <History/Manager>
 #include <History/TextEvent>
-#define SOURCE_ID "telephony-service-indicator"
+#define SOURCE_ID "lomiri-indicator-telephony-service"
 
 QTCONTACTS_USE_NAMESPACE
 
@@ -73,14 +73,14 @@ void openMessage(NotificationData *notificationData)
 MessagingMenu::MessagingMenu(QObject *parent) :
     QObject(parent)
 {
-    GIcon *icon = g_icon_new_for_string("telephony-service-indicator", NULL);
-    mMessagesApp = messaging_menu_app_new("telephony-service-sms.desktop");
+    GIcon *icon = g_icon_new_for_string("lomiri-indicator-telephony-service", NULL);
+    mMessagesApp = messaging_menu_app_new("lomiri-telephony-service-sms.desktop");
     messaging_menu_app_register(mMessagesApp);
-    messaging_menu_app_append_source(mMessagesApp, SOURCE_ID, icon, gettext("Telephony Service"));
+    messaging_menu_app_append_source(mMessagesApp, SOURCE_ID, icon, gettext("Lomiri Telephony Service"));
 
-    mCallsApp = messaging_menu_app_new("telephony-service-call.desktop");
+    mCallsApp = messaging_menu_app_new("lomiri-telephony-service-call.desktop");
     messaging_menu_app_register(mCallsApp);
-    messaging_menu_app_append_source(mCallsApp, SOURCE_ID, icon, gettext("Telephony Service"));
+    messaging_menu_app_append_source(mCallsApp, SOURCE_ID, icon, gettext("Lomiri Telephony Service"));
 
     g_object_unref(icon);
 }

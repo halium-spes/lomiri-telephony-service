@@ -1,4 +1,4 @@
-Source: telephony-service
+Source: lomiri-telephony-service
 Section: libs
 Priority: optional
 Maintainer: UBports developers <devs@ubports.com>
@@ -34,16 +34,19 @@ Build-Depends: cmake,
                telepathy-mission-control-5,
                xvfb <!nocheck>,
 Standards-Version: 3.9.4
-Homepage: https://gitlab.com/ubports/core/telephony-service/
-Vcs-Git: https://gitlab.com/ubports/core/telephony-service.git
-Vcs-Browser: https://gitlab.com/ubports/core/telephony-service/
+Homepage: https://gitlab.com/ubports/development/core/lomiri-telephony-service
+Vcs-Git: https://gitlab.com/ubports/development/core/lomiri-telephony-service.git
+Vcs-Browser: https://gitlab.com/ubports/development/core/lomiri-telephony-service
 X-Ubuntu-Use-Langpack: yes
 
-Package: telephony-service
+Package: lomiri-telephony-service
 Architecture: any
 Multi-Arch: foreign
 Conflicts: phone-app
-Replaces: phone-app
+Replaces: phone-app,
+          telephony-service (<< 0.6.0~)
+Breaks: telephony-service (<< 0.6.0~)
+Provides: telephony-service (= ${binary:Version})
 Depends: lomiri-schemas,
          history-service,
          libnotify4,
@@ -64,12 +67,20 @@ Description: Telephony service components for Lomiri - backend
  This package contains the backend components providing the telephony 
  features such as calling and texting.
 
+Package: telephony-service
+Depends: lomiri-telephony-service, ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: oldlibs
+Description: transitional package
+ This is a transitional package. It can safely be removed.
+
 Package: qml-module-lomiri-telephony0.1
 Architecture: any
 Multi-Arch: same
 Depends: lomiri-schemas,
          qtcontact5-galera[!s390x],
-         telephony-service (>= ${binary:Version}),
+         lomiri-telephony-service (>= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
 Suggests: telepathy-ofono

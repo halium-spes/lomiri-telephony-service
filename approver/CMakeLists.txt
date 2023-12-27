@@ -10,18 +10,18 @@ qt5_add_dbus_adaptor(approver_SRCS Approver.xml approver/approverdbus.h Approver
 include_directories(
     ${TP_QT5_INCLUDE_DIRS}
     ${NOTIFY_INCLUDE_DIRS}
-    ${CMAKE_SOURCE_DIR}/libtelephonyservice
+    ${CMAKE_SOURCE_DIR}/liblomiritelephonyservice
     ${CMAKE_CURRENT_BINARY_DIR}
     )
 
 link_directories(${MESSAGING_MENU_LIBRARY_DIRS})
 
-add_executable(telephony-service-approver ${approver_SRCS} ${approver_HDRS})
+add_executable(lomiri-telephony-service-approver ${approver_SRCS} ${approver_HDRS})
 
-target_link_libraries(telephony-service-approver
+target_link_libraries(lomiri-telephony-service-approver
     ${TP_QT5_LIBRARIES}
     ${NOTIFY_LIBRARIES}
-    telephonyservice
+    lomiritelephonyservice
     Qt5::Contacts
     Qt5::Core
     Qt5::DBus
@@ -31,12 +31,12 @@ target_link_libraries(telephony-service-approver
     Qt5::Feedback
     )
 
-enable_coverage(telephony-service-approver)
+enable_coverage(lomiri-telephony-service-approver)
 
 configure_file(org.freedesktop.Telepathy.Client.TelephonyServiceApprover.service.in org.freedesktop.Telepathy.Client.TelephonyServiceApprover.service)
-install(TARGETS telephony-service-approver RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+install(TARGETS lomiri-telephony-service-approver RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.freedesktop.Telepathy.Client.TelephonyServiceApprover.service DESTINATION share/dbus-1/services)
-install(FILES TelephonyServiceApprover.client DESTINATION share/telepathy/clients)
+install(FILES LomiriTelephonyServiceApprover.client DESTINATION share/telepathy/clients)
 install(FILES 50-com.lomiri.TelephonyServiceApprover.pkla DESTINATION "${CMAKE_INSTALL_FULL_LOCALSTATEDIR}/lib/polkit-1/localauthority/10-vendor.d")
 install(FILES com.lomiri.TelephonyServiceApprover.policy DESTINATION share/polkit-1/actions)
 install(FILES com.lomiri.TelephonyServiceApprover.xml DESTINATION share/dbus-1/interfaces)

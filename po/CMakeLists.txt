@@ -8,8 +8,8 @@ endif()
 set(DOMAIN ${PROJECT_NAME})
 set(POT_FILE ${DOMAIN}.pot)
 set(DESKTOP_IN_FILES
-    indicator/telephony-service-call.desktop.in
-    indicator/telephony-service-sms.desktop.in)
+    indicator/lomiri-telephony-service-call.desktop.in
+    indicator/lomiri-telephony-service-sms.desktop.in)
 
 file(STRINGS ${CMAKE_CURRENT_SOURCE_DIR}/LINGUAS LINGUAS
      REGEX "^[^#].*")

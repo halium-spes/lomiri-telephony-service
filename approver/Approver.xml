@@ -11,13 +11,13 @@
         </dox:d>
         <method name="AcceptCall">
             <dox:d><![CDATA[
-                Accept any incoming call and launches the telephony-service.
+                Accept any incoming call and launches the lomiri-telephony-service.
                 If there is no incoming call, this method does nothing.
             ]]></dox:d>
         </method>
         <method name="HangUpAndAcceptCall">
             <dox:d><![CDATA[
-                Hang up an existing call, accept any incoming call and launches the telephony-service.
+                Hang up an existing call, accept any incoming call and launches the lomiri-telephony-service.
                 If there is no incoming call, this method does nothing.
             ]]></dox:d>
         </method>

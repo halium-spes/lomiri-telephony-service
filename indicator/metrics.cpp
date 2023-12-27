@@ -5,13 +5,13 @@
  *  Gustavo Pichorim Boiko <gustavo.boiko@canonical.com>
  *  Ugo Riboni <ugo.riboni@canonical.com>
  *
- * This file is part of telephony-service.
+ * This file is part of lomiri-telephony-service.
  *
- * telephony-service is free software; you can redistribute it and/or modify
+ * lomiri-telephony-service is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; version 3.
  *
- * telephony-service is distributed in the hope that it will be useful,
+ * lomiri-telephony-service is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -23,7 +23,7 @@
 #include "metrics.h"
 #include <QDebug>
 
-const QString APP_ID = QString("telephony-service");
+const QString APP_ID = QString("lomiri-telephony-service");
 const QString MESSAGES_RECEIVED_STATISTICS_ID = QString("text-messages-received");
 const QString MESSAGES_SENT_STATISTICS_ID = QString("text-messages-sent");
 const QString DIALER_INCOMING_STATISTICS_ID = QString("dialer-calls-incoming");

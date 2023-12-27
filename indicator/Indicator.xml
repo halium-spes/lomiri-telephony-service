@@ -3,7 +3,7 @@
     <dox:d><![CDATA[
       @mainpage
 
-      An interface to the telephony service indicator.
+      An interface to the Lomiri telephony service indicator.
     ]]></dox:d>
     <interface name="com.lomiri.TelephonyServiceIndicator" xmlns:dox="http://www.ayatana.org/dbus/dox.dtd">
         <dox:d>

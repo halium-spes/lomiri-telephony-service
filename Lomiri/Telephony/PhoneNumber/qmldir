@@ -1,5 +1,5 @@
 module Lomiri.Telephony.PhoneNumber
-plugin telephonyservice-phonenumber-qml
+plugin lomiritelephonyservice-phonenumber-qml
 
 PhoneNumberField 0.1 PhoneNumberField.qml
 PhoneNumberInput 0.1 PhoneNumberInput.qml

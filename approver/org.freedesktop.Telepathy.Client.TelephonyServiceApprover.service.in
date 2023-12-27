@@ -1,4 +1,4 @@
 [D-BUS Service]
 Name=org.freedesktop.Telepathy.Client.TelephonyServiceApprover
-Exec=@CMAKE_INSTALL_FULL_BINDIR@/telephony-service-approver
-SystemdService=telephony-service-approver.service
+Exec=@CMAKE_INSTALL_FULL_BINDIR@/lomiri-telephony-service-approver
+SystemdService=lomiri-telephony-service-approver.service

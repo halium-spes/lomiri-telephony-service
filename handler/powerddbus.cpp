@@ -34,10 +34,10 @@ PowerDDBus::PowerDDBus()
 
 void PowerDDBus::enableProximityHandling()
 {
-    mPowerDIface->call("enableProximityHandling", "telephony-service-handler");
+    mPowerDIface->call("enableProximityHandling", "lomiri-telephony-service-handler");
 }
 
 void PowerDDBus::disableProximityHandling()
 {
-    mPowerDIface->call("disableProximityHandling", "telephony-service-handler");
+    mPowerDIface->call("disableProximityHandling", "lomiri-telephony-service-handler");
 }

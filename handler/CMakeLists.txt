@@ -31,21 +31,21 @@ include_directories(
     ${TPFS_INCLUDE_DIRS}
     ${FS_INCLUDE_DIRS}
     ${GST_INCLUDE_DIRS}
-    ${CMAKE_SOURCE_DIR}/libtelephonyservice
+    ${CMAKE_SOURCE_DIR}/liblomiritelephonyservice
     ${CMAKE_CURRENT_BINARY_DIR}
     ${PULSEAUDIO_INCLUDE_DIRS}
     ${HISTORY_INCLUDE_DIRS}
     )
 
-add_executable(telephony-service-handler ${handler_SRCS} ${handler_HDRS})
+add_executable(lomiri-telephony-service-handler ${handler_SRCS} ${handler_HDRS})
 
-target_link_libraries(telephony-service-handler
+target_link_libraries(lomiri-telephony-service-handler
     ${TP_QT5_LIBRARIES}
     ${TP_QT5_FS_LIBRARIES}
     ${TPFS_LIBRARIES}
     ${FS_LIBRARIES}
     ${HISTORY_LIBRARIES}
-    telephonyservice
+    lomiritelephonyservice
     ${PULSEAUDIO_LIBRARIES}
     Qt5::Contacts
     Qt5::Core
@@ -53,12 +53,12 @@ target_link_libraries(telephony-service-handler
     Qt5::Qml
     )
 
-enable_coverage(telephony-service-handler)
+enable_coverage(lomiri-telephony-service-handler)
 
 configure_file(com.lomiri.TelephonyServiceHandler.service.in com.lomiri.TelephonyServiceHandler.service)
 configure_file(org.freedesktop.Telepathy.Client.TelephonyServiceHandler.service.in org.freedesktop.Telepathy.Client.TelephonyServiceHandler.service)
 
-install(TARGETS telephony-service-handler RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+install(TARGETS lomiri-telephony-service-handler RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.freedesktop.Telepathy.Client.TelephonyServiceHandler.service DESTINATION share/dbus-1/services)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/com.lomiri.TelephonyServiceHandler.service DESTINATION share/dbus-1/services)
-install(FILES TelephonyServiceHandler.client DESTINATION share/telepathy/clients)
+install(FILES LomiriTelephonyServiceHandler.client DESTINATION share/telepathy/clients)
