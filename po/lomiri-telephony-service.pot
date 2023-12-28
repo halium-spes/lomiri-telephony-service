@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Canonical Ltd.
-# This file is distributed under the same license as the telephony-service package.
+# This file is distributed under the same license as the lomiri-telephony-service package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: telephony-service\n"
+"Project-Id-Version: lomiri-telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-16 17:03+0100\n"
+"POT-Creation-Date: 2023-12-28 12:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,12 +18,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: indicator/telephony-service-call.desktop.in:4
+#: indicator/lomiri-telephony-service-call.desktop.in:4
 msgid "Phone Calls"
 msgstr ""
 
-#: indicator/telephony-service-sms.desktop.in:4
+#: indicator/lomiri-telephony-service-call.desktop.in:6
+msgid "lomiri-telephony-service-call"
+msgstr ""
+
+#: indicator/lomiri-telephony-service-sms.desktop.in:4
 msgid "SMS"
+msgstr ""
+
+#: indicator/lomiri-telephony-service-sms.desktop.in:6
+msgid "lomiri-telephony-service-message"
 msgstr ""
 
 #: approver/approver.cpp:66
@@ -94,7 +102,7 @@ msgid "Message & decline"
 msgstr ""
 
 #: approver/main.cpp:46
-msgid "Telephony Service Approver"
+msgid "Lomiri Telephony Service Approver"
 msgstr ""
 
 #: indicator/authhandler.cpp:72
@@ -115,11 +123,11 @@ msgid "SIM %1"
 msgstr ""
 
 #: indicator/main.cpp:53
-msgid "Telephony Service Indicator"
+msgid "Lomiri Telephony Service Indicator"
 msgstr ""
 
 #: indicator/messagingmenu.cpp:83 indicator/messagingmenu.cpp:87
-msgid "Telephony Service"
+msgid "Lomiri Telephony Service"
 msgstr ""
 
 #: indicator/messagingmenu.cpp:151 indicator/messagingmenu.cpp:293
@@ -370,33 +378,33 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: libtelephonyservice/callnotification.cpp:53
+#: liblomiritelephonyservice/callnotification.cpp:53
 msgid "Conf call on hold"
 msgstr ""
 
-#: libtelephonyservice/callnotification.cpp:53
+#: liblomiritelephonyservice/callnotification.cpp:53
 #, qt-format
 msgid "%1 call on hold"
 msgstr ""
 
-#: libtelephonyservice/callnotification.cpp:56
+#: liblomiritelephonyservice/callnotification.cpp:56
 msgid "Conf call ended"
 msgstr ""
 
-#: libtelephonyservice/callnotification.cpp:56
+#: liblomiritelephonyservice/callnotification.cpp:56
 #, qt-format
 msgid "%1 call ended"
 msgstr ""
 
-#: libtelephonyservice/callnotification.cpp:59
+#: liblomiritelephonyservice/callnotification.cpp:59
 #, qt-format
 msgid "%1 call declined"
 msgstr ""
 
-#: libtelephonyservice/contactwatcher.cpp:157
+#: liblomiritelephonyservice/contactwatcher.cpp:157
 msgid "Private Number"
 msgstr ""
 
-#: libtelephonyservice/contactwatcher.cpp:159
+#: liblomiritelephonyservice/contactwatcher.cpp:159
 msgid "Unknown Number"
 msgstr ""
