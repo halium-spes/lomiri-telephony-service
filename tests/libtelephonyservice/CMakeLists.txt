@@ -52,7 +52,7 @@ generate_test(ContactUtilsTest SOURCES ContactUtilsTest.cpp LIBRARIES Qt5::Conta
 generate_test(PhoneUtilsTest SOURCES PhoneUtilsTest.cpp LIBRARIES telephonyservice Qt5::Core Qt5::Test USE_UI)
 generate_test(ProtocolTest
               SOURCES ProtocolTest.cpp ${LIBTELEPHONYSERVICE_DIR}/protocol.cpp
-              LIBRARIES Qt5::Core Qt5::Test
+              LIBRARIES Qt5::Core Qt5::Test Qt5::DBus
               ENVIRONMENT TELEPHONY_SERVICE_PROTOCOLS_DIR=${CMAKE_CURRENT_SOURCE_DIR}/testProtocols)
 generate_test(ProtocolManagerTest
               SOURCES ProtocolManagerTest.cpp
