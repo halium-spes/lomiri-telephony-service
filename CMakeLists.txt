@@ -15,7 +15,7 @@ set(CMAKE_AUTOMOC ON)
 # just to make debug easier, print the system processor
 message(STATUS "System processor: ${CMAKE_SYSTEM_PROCESSOR}")
 
-set(TELEPHONY_SERVICE_DIR ${CMAKE_INSTALL_DATADIR}/telephony-service)
+set(TELEPHONY_SERVICE_DIR ${CMAKE_INSTALL_FULL_DATADIR}/telephony-service)
 
 configure_file(config.h.in ${CMAKE_CURRENT_BINARY_DIR}/config.h @ONLY)
 
