@@ -41,7 +41,7 @@ include(qt5)
 option(SKIP_QML_TESTS "Skip QML tests" OFF)
 option(WANT_UI_SERVICES "Enable build of UI services" ON)
 
-if(CMAKE_CROSSCOMPILING)
+if(NOT CMAKE_CROSSCOMPILING)
     find_program(QMAKE_EXECUTABLE qmake)
     if(QMAKE_EXECUTABLE STREQUAL "QMAKE_EXECUTABLE-NOTFOUND")
         message(FATAL_ERROR "qmake not found")
