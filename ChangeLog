@@ -1,6 +1,145 @@
+2024-01-28 Mike Gabriel
+
+        * Release 0.5.3 (HEAD -> main, tag: 0.5.3)
+
+2024-01-04 Mike Gabriel
+
+        * Merge branch 'fix/protocoltestBuilding' into 'main' (f94266a6)
+
+2024-01-01 OPNA2608
+
+        * tests/libtelephonyservice/CMakeLists: Fix ProtocolTest build
+          (d8f0f38f)
+
+2024-01-04 Mike Gabriel
+
+        * Merge branch 'fix/qmldirCrossCondition' into 'main' (c3fabd0f)
+
+2024-01-01 OPNA2608
+
+        * CMakeLists: Fix cross-conditional for QT_INSTALL_QML determining
+          (c1946344)
+
+2024-01-04 Mike Gabriel
+
+        * Merge branch 'fix/gnuinstalldirsUsage' into 'main' (f9881e9e)
+
+2024-01-02 OPNA2608
+
+        * Add more/better GNUInstallDirs variables usage (9a35a50c)
+
+2023-12-27 Weblate
+
+        * Added translation using Weblate (Tamil (Sri Lanka)) (186d2c68)
+        * Added translation using Weblate (Meadow Mari) (bd9783b9)
+        * Added translation using Weblate (Crimean Tatar) (26599f2c)
+        * Added translation using Weblate (Chuvash) (60c51eb9)
+        * Added translation using Weblate (Silesian) (47a81dcb)
+        * Added translation using Weblate (Venetian) (7c183421)
+        * Added translation using Weblate (Ossetian) (20a0430e)
+        * Added translation using Weblate (Sami (Northern)) (08464b84)
+        * Added translation using Weblate (Greenlandic) (bd4da9cd)
+        * Added translation using Weblate (Assamese) (cbbf2743)
+        * Added translation using Weblate (Haitian) (7e74ec48)
+        * Added translation using Weblate (Cornish) (75de726d)
+        * Added translation using Weblate (Frisian) (dada2907)
+        * Added translation using Weblate (Kashubian) (fdec127d)
+        * Added translation using Weblate (Aragonese) (5f503036)
+        * Added translation using Weblate (Tibetan) (bbb481a8)
+        * Added translation using Weblate (Tigrinya) (72f336a9)
+
+2023-12-26 Weblate
+
+        * Added translation using Weblate (German (Walser)) (4dc76745)
+        * Added translation using Weblate (Italian (it_CARES)) (0deffc9e)
+        * Added translation using Weblate (Latin) (bc9ee1bf)
+        * Added translation using Weblate (Tatar) (d76a7c12)
+        * Added translation using Weblate (Chinese (Simplified)
+          (zh_LATN@pinyin)) (11dc1d41)
+        * Added translation using Weblate (Filipino) (f146c4a2)
+
+2023-12-16 Hosted Weblate
+
+        * Update translation files (1f12de50)
+
+2023-12-16 Mike Gabriel
+
+        * po/telephony-service.pot: Update translation template. (c2697f6e)
+        * Merge branch 'ubports/focal_-_custom_ringtone' into 'main'
+          (3f476ef4)
+
+2023-12-02 Lionel Duboeuf
+
+        * Contact Ringtone (520bdbb0)
+
+2023-12-04 Reza Almanda
+
+        * Translated using Weblate (Indonesian) (5fbd7285)
+
+2023-12-05 gallegonovato
+
+        * Translated using Weblate (Spanish) (494df9ba)
+
+2023-12-05 Ratchanan Srirattanamet
+
+        * Merge branch 'c++17' into 'main' (64d2c990)
+
+2023-11-25 Luca Weiss
+
+        * Upgrade C++ standard to C++17 (b77349ac)
+
+2023-12-05 Ratchanan Srirattanamet
+
+        * Merge branch 'mktemp-busybox' into 'main' (3aec786d)
+
+2023-11-25 Luca Weiss
+
+        * Make mktemp call compatible with busybox (10a40474)
+
+2023-11-10 Marius Gripsgard
+
+        * Merge branch 'libintl-include' into 'main' (5dbc2704)
+
+2023-10-18 Luca Weiss
+
+        * Fix compile error in some setups (7d586fb6)
+
+2023-11-10 Marius Gripsgard
+
+        * Merge branch 'qstring-null' into 'main' (19423a0e)
+
+2023-10-18 Luca Weiss
+
+        * Replace deprecated QString::null (e9b02ed4)
+
+2023-10-17 Weblate
+
+        * Added translation using Weblate (Xhosa) (2ba8803a)
+        * Added translation using Weblate (Manx) (0c7d60bc)
+        * Added translation using Weblate (Corsican) (57b83279)
+        * Added translation using Weblate (Chechen) (654a491e)
+        * Added translation using Weblate (Wolof) (36b8456d)
+        * Added translation using Weblate (Kurdish (Central)) (e7e23fa6)
+        * Added translation using Weblate (Uzbek) (b445cdc0)
+        * Added translation using Weblate (Kyrgyz) (fd2259a1)
+        * Added translation using Weblate (Kurdish) (6f9332cf)
+        * Added translation using Weblate (Sotho (Southern)) (7d7879e0)
+        * Added translation using Weblate (Kannada) (1f46b2c9)
+        * Added translation using Weblate (Kazakh) (d005a893)
+        * Added translation using Weblate (Faroese) (9cbf5318)
+        * Added translation using Weblate (Norwegian Nynorsk) (37345af3)
+        * Added translation using Weblate (Swahili) (82eb97d9)
+        * Added translation using Weblate (Afrikaans) (6f6f1f72)
+        * Added translation using Weblate (Marathi) (6cff9bba)
+        * Added translation using Weblate (Vietnamese) (81c53ced)
+        * Added translation using Weblate (Odia) (ca2ca845)
+        * Added translation using Weblate (Bengali) (065c8c48)
+        * Added translation using Weblate (Estonian) (6b17ea6c)
+        * Added translation using Weblate (Irish) (56684954)
+
 2023-10-15 Mike Gabriel
 
-        * Release 0.5.2 (HEAD -> main, tag: 0.5.2)
+        * Release 0.5.2 (0419d2a8) (tag: 0.5.2)
 
 2023-08-21 NPL
 
