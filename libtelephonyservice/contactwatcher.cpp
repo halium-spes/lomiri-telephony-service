@@ -25,6 +25,7 @@
 #include "phoneutils.h"
 #include "accountentry.h"
 #include "telepathyhelper.h"
+#include <libintl.h>
 #include <QContactManager>
 #include <QContactFetchByIdRequest>
 #include <QContactFetchRequest>
@@ -35,10 +36,6 @@
 #include <QContactIntersectionFilter>
 #include <QContactUnionFilter>
 #include <QContactOnlineAccount>
-
-namespace C {
-#include <libintl.h>
-}
 
 ContactWatcher::ContactWatcher(QObject *parent) :
     QObject(parent), mRequest(0), mInteractive(false), mCompleted(false)
@@ -154,9 +151,9 @@ void ContactWatcher::updateAlias()
     if (mIdentifier.isEmpty()) {
         setAlias(QString());
     } else if (mIdentifier.startsWith(OFONO_PRIVATE_NUMBER)) {
-        setAlias(C::dgettext("telephony-service", "Private Number"));
+        setAlias(dgettext("telephony-service", "Private Number"));
     } else if (mIdentifier.startsWith(OFONO_UNKNOWN_NUMBER)) {
-        setAlias(C::dgettext("telephony-service", "Unknown Number"));
+        setAlias(dgettext("telephony-service", "Unknown Number"));
     }
 }
 

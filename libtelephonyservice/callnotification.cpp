@@ -22,9 +22,7 @@
 #include "callnotification.h"
 #include "config.h"
 
-namespace C {
 #include <libintl.h>
-}
 
 CallNotification::CallNotification(QObject *parent) :
     QObject(parent), mIndicatorIface("com.lomiri.TelephonyServiceIndicator",
@@ -50,13 +48,13 @@ void CallNotification::showNotificationForCall(const QStringList &participants, 
 
     switch (reason) {
     case CallHeld:
-        title = isConference? C::gettext("Conf call on hold") : C::gettext("%1 call on hold");
+        title = isConference? gettext("Conf call on hold") : gettext("%1 call on hold");
         break;
     case CallEnded:
-        title = isConference? C::gettext("Conf call ended") : C::gettext("%1 call ended");
+        title = isConference? gettext("Conf call ended") : gettext("%1 call ended");
         break;
     case CallRejected:
-        title = C::gettext("%1 call declined");
+        title = gettext("%1 call declined");
         break;
     }
 

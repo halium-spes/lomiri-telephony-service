@@ -38,6 +38,8 @@
 #include "telepathyhelper.h"
 #include "accountentry.h"
 
+#include <libintl.h>
+
 #include <QContactAvatar>
 #include <QContactRingtone>
 #include <QContactDisplayLabel>
@@ -52,10 +54,6 @@
 #include <TelepathyQt/CallChannel>
 #include <TelepathyQt/TextChannel>
 
-namespace C {
-#include <libintl.h>
-}
-
 #define TELEPHONY_SERVICE_HANDLER TP_QT_IFACE_CLIENT + ".TelephonyServiceHandler"
 
 Approver::Approver()
@@ -63,7 +61,7 @@ Approver::Approver()
   mPendingSnapDecision(NULL),
   mSettleTimer(new QTimer(this))
 {
-    mDefaultTitle = C::gettext("Unknown caller");
+    mDefaultTitle = gettext("Unknown caller");
     mDefaultIcon = QUrl(telephonyServiceDir() + "assets/avatar-default@18.png").toEncoded();
 
     ApproverDBus *dbus = new ApproverDBus(this);
@@ -91,9 +89,9 @@ Approver::Approver()
     mVibrateTimer.setInterval(4000);
     connect(&mVibrateTimer, SIGNAL(timeout()), &mVibrateEffect, SLOT(start()));
 
-    mRejectActions["rejectMessage1"] = C::gettext("I'm busy at the moment. I'll call later.");
-    mRejectActions["rejectMessage2"] = C::gettext("I'm running late, on my way now.");
-    mRejectActions["rejectMessage3"] = C::gettext("Please call me back later.");
+    mRejectActions["rejectMessage1"] = gettext("I'm busy at the moment. I'll call later.");
+    mRejectActions["rejectMessage2"] = gettext("I'm running late, on my way now.");
+    mRejectActions["rejectMessage3"] = gettext("Please call me back later.");
 
     mSettleTimer->setInterval(500);
     mSettleTimer->setSingleShot(true);
@@ -454,35 +452,35 @@ bool Approver::showSnapDecision(const Tp::ChannelDispatchOperationPtr dispatchOp
 
     if (account->type() == AccountEntry::PhoneAccount &&
             TelepathyHelper::instance()->multiplePhoneAccounts()) {
-        mCachedBody = QString::fromUtf8(C::gettext("On [%1]")).arg(account->displayName());
+        mCachedBody = QString::fromUtf8(gettext("On [%1]")).arg(account->displayName());
         mCachedBody += "\n";
         if (!id.isEmpty()) {
             if (id.startsWith(OFONO_PRIVATE_NUMBER)) {
-                mCachedBody += QString::fromUtf8(C::gettext("Private number"));
+                mCachedBody += QString::fromUtf8(gettext("Private number"));
                 unknownNumber = true;
             } else if (id.startsWith(OFONO_UNKNOWN_NUMBER)) {
-                mCachedBody += QString::fromUtf8(C::gettext("Unknown number"));
+                mCachedBody += QString::fromUtf8(gettext("Unknown number"));
                 unknownNumber = true;
             } else {
                 mCachedBody += id;
             }
         } else {
-            mCachedBody += C::gettext("Caller number is not available");
+            mCachedBody += gettext("Caller number is not available");
             unknownNumber = true;
         }
     } else {
         if (!id.isEmpty()) {
             if (id.startsWith(OFONO_PRIVATE_NUMBER)) {
-                mCachedBody = QString::fromUtf8(C::gettext("Calling from private number"));
+                mCachedBody = QString::fromUtf8(gettext("Calling from private number"));
                 unknownNumber = true;
             } else if (id.startsWith(OFONO_UNKNOWN_NUMBER)) {
-                mCachedBody = QString::fromUtf8(C::gettext("Calling from unknown number"));
+                mCachedBody = QString::fromUtf8(gettext("Calling from unknown number"));
                 unknownNumber = true;
             } else {
-                mCachedBody = QString::fromUtf8(C::gettext("Calling from %1")).arg(id);
+                mCachedBody = QString::fromUtf8(gettext("Calling from %1")).arg(id);
             }
         } else {
-            mCachedBody = C::gettext("Caller number is not available");
+            mCachedBody = gettext("Caller number is not available");
             unknownNumber = true;
         }
     }
@@ -526,8 +524,8 @@ bool Approver::showSnapDecision(const Tp::ChannelDispatchOperationPtr dispatchOp
                                         "x-lomiri-snap-decisions-timeout",
                                         -1);
 
-    QString acceptTitle = hasCalls ? C::gettext("Hold + Answer") :
-                                     C::gettext("Accept");
+    QString acceptTitle = hasCalls ? gettext("Hold + Answer") :
+                                     gettext("Accept");
     notify_notification_add_action (notification,
                                     "action_accept",
                                     acceptTitle.toLocal8Bit().data(),
@@ -540,7 +538,7 @@ bool Approver::showSnapDecision(const Tp::ChannelDispatchOperationPtr dispatchOp
     if (hasCalls) {
         notify_notification_add_action (notification,
                                         "action_hangup_and_accept",
-                                        C::gettext("End + Answer"),
+                                        gettext("End + Answer"),
                                         action_hangup_and_accept,
                                         data,
                                         delete_event_data);
@@ -549,7 +547,7 @@ bool Approver::showSnapDecision(const Tp::ChannelDispatchOperationPtr dispatchOp
 
     notify_notification_add_action (notification,
                                     "action_decline_1",
-                                    C::gettext("Decline"),
+                                    gettext("Decline"),
                                     action_reject,
                                     data,
                                     delete_event_data);
@@ -557,7 +555,7 @@ bool Approver::showSnapDecision(const Tp::ChannelDispatchOperationPtr dispatchOp
     if (!unknownNumber && supportsText) {
         notify_notification_add_action(notification,
                                        "action_decline_expansion",
-                                       C::gettext("Message & decline"),
+                                       gettext("Message & decline"),
                                        action_reject,
                                        data,
                                        delete_event_data);

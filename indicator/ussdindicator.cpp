@@ -20,15 +20,12 @@
  */
 
 #include <QDebug>
+#include <libintl.h>
 #include <libnotify/notify.h>
 #include "ringtone.h"
 #include "ussdindicator.h"
 #include "ofonoaccountentry.h"
 #include "telepathyhelper.h"
-
-namespace C {
-#include <libintl.h>
-}
 
 USSDIndicator::USSDIndicator(QObject *parent)
 : QObject(parent),
@@ -113,10 +110,10 @@ void USSDIndicator::showUSSDNotification(const QString &message, bool replyRequi
 {
     NotificationMenu *menu = replyRequired ? &m_menuRequest : &m_menuNotification;
     QString actionId = "ok_id";
-    QString actionLabel = C::gettext("Ok");
+    QString actionLabel = gettext("Ok");
     if (replyRequired) {
         actionId = "reply_id";
-        actionLabel = C::gettext("Reply");
+        actionLabel = gettext("Reply");
     }
 
     // indicate to the notification-daemon, that we want to use snap-decisions
@@ -139,7 +136,7 @@ void USSDIndicator::showUSSDNotification(const QString &message, bool replyRequi
                         0, "",
                         "", message,
                         QStringList() << actionId << actionLabel << "cancel_id"
-                                        << C::gettext("Cancel"), notificationHints, 0);
+                                        << gettext("Cancel"), notificationHints, 0);
     mUSSDRequests[m_notificationId] = ussdManager;
 
     Ringtone::instance()->playIncomingMessageSound();
