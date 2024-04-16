@@ -30,7 +30,7 @@ Build-Depends: cmake,
                qml-module-lomiri-test,
                qtmultimedia5-dev (>= 5.0),
                qtpim5-dev (>= 5),
-               libusermetricsinput1-dev,
+               libusermetricsinput-dev,
                telepathy-mission-control-5,
                xvfb <!nocheck>,
 Standards-Version: 3.9.4
