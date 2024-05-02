@@ -20,14 +20,11 @@
  */
 
 #include <QDebug>
+#include <libintl.h>
 #include <libnotify/notify.h>
 #include "applicationutils.h"
 #include "authhandler.h"
 #include "telepathyhelper.h"
-
-namespace C {
-#include <libintl.h>
-}
 
 // FIXME: port to libqmenumodel if possible
 AuthHandler::AuthHandler(QObject *parent)
@@ -69,7 +66,7 @@ void AuthHandler::onConnectionStatusChanged(Tp::ConnectionStatus status)
 void AuthHandler::processStatusChange(AccountEntry *account, Tp::ConnectionStatus status)
 {    
     QString title;
-    QString message = QString::fromUtf8(C::gettext("Authentication failed. Do you want to review your credentials?"));
+    QString message = QString::fromUtf8(gettext("Authentication failed. Do you want to review your credentials?"));
 
     if (status == Tp::ConnectionStatusDisconnected && 
             account->account()->connectionStatusReason() == Tp::ConnectionStatusReasonAuthenticationFailed &&
@@ -88,10 +85,10 @@ void AuthHandler::processStatusChange(AccountEntry *account, Tp::ConnectionStatu
 
     NotificationMenu *menu = &mMenuNotification;
     QString yesActionId = "yes_id";
-    QString yesActionLabel = C::gettext("Yes");
+    QString yesActionLabel = gettext("Yes");
 
     QString noActionId = "no_id";
-    QString noActionLabel = C::gettext("No");
+    QString noActionLabel = gettext("No");
 
     QStringList actions;
     actions << yesActionId << yesActionLabel << noActionId << noActionLabel;

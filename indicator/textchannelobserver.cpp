@@ -35,6 +35,7 @@
 #include "phoneutils.h"
 #include "accountentry.h"
 #include "ofonoaccountentry.h"
+#include <libintl.h>
 #include <TelepathyQt/AvatarData>
 #include <TelepathyQt/TextChannel>
 #include <TelepathyQt/ReceivedMessage>
@@ -48,10 +49,6 @@
 #include <QImage>
 #include <History/TextEvent>
 #include <History/Manager>
-
-namespace C {
-#include <libintl.h>
-}
 
 // notification handling
 
@@ -222,18 +219,18 @@ void TextChannelObserver::sendMessage(NotificationData notificationData)
         bool simLocked = (ofonoAccount && ofonoAccount->simLocked());
 
         if (simLocked) {
-            failureMessage = C::gettext("Unlock your sim card and try again from the messaging application.");
+            failureMessage = gettext("Unlock your sim card and try again from the messaging application.");
         } else if (ofonoAccount && TelepathyHelper::instance()->flightMode()) {
-            failureMessage = C::gettext("Deactivate flight mode and try again from the messaging application.");
+            failureMessage = gettext("Deactivate flight mode and try again from the messaging application.");
         } else {
             // generic error
-            failureMessage = C::gettext("Try again from the messaging application.");
+            failureMessage = gettext("Try again from the messaging application.");
         }
 
         // notify user about the failure
         GIcon *icon = g_themed_icon_new("cancel");
         gchar *iconPath = g_icon_to_string(icon);
-        NotifyNotification *notification = notify_notification_new(C::gettext("The message could not be sent"),
+        NotifyNotification *notification = notify_notification_new(gettext("The message could not be sent"),
                                                                failureMessage.toStdString().c_str(),
                                                                iconPath);
         g_object_unref(icon);
@@ -246,7 +243,7 @@ void TextChannelObserver::sendMessage(NotificationData notificationData)
         // add the callback action
         notify_notification_add_action (notification,
                                         "notification_action",
-                                        C::gettext("View message"),
+                                        gettext("View message"),
                                         notification_action,
                                         data,
                                         NULL /* will be deleted when closed */);
@@ -292,21 +289,21 @@ void TextChannelObserver::showNotificationForNewGroup(const History::Thread &thr
     data->timestamp = QDateTime::currentDateTime();
     data->targetId = thread.threadId();
     data->targetType = Tp::HandleTypeRoom;
-    data->notificationTitle = QString::fromUtf8(C::gettext("New Group"));
+    data->notificationTitle = QString::fromUtf8(gettext("New Group"));
     data->encodedEventId = QByteArray(QDateTime::currentDateTime().toString("yyyy-MM-ddTHH:mm:ss.zzz").toUtf8()).toHex();
     data->icon = QUrl::fromLocalFile(telephonyServiceDir() + "/assets/contact-group.svg").toString();
     QVariantMap roomProps = thread.chatRoomInfo();
 
     if (roomProps.contains("Title") && !roomProps["Title"].toString().isEmpty()) {
         // TRANSLATORS : %1 is the group name
-        data->messageText = QString::fromUtf8(C::gettext("You joined group %1 ")).arg(roomProps["Title"].toString());
+        data->messageText = QString::fromUtf8(gettext("You joined group %1 ")).arg(roomProps["Title"].toString());
         data->roomName = roomProps["Title"].toString();
     } else if (roomProps.contains("RoomName") && !roomProps["RoomName"].toString().isEmpty()) {
         // TRANSLATORS : %1 is the group name
-        data->messageText = QString::fromUtf8(C::gettext("You joined group %1")).arg(roomProps["RoomName"].toString());
+        data->messageText = QString::fromUtf8(gettext("You joined group %1")).arg(roomProps["RoomName"].toString());
         data->roomName = roomProps["RoomName"].toString();
     } else {
-        data->messageText = QString::fromUtf8(C::gettext("You joined a new group"));
+        data->messageText = QString::fromUtf8(gettext("You joined a new group"));
     }
 
     if (roomProps["CreationTimestamp"].toDateTime().isValid()) {
@@ -325,7 +322,7 @@ void TextChannelObserver::showNotificationForNewGroup(const History::Thread &thr
  
     notify_notification_add_action (notification,
                                     "notification_action",
-                                    C::gettext("View Group"),
+                                    gettext("View Group"),
                                     notification_action,
                                     data,
                                     NULL);
@@ -364,13 +361,13 @@ void TextChannelObserver::showNotificationForFlashMessage(const Tp::ReceivedMess
  
     notify_notification_add_action (notification,
                                     "notification_ok_action",
-                                    C::gettext("Ok"),
+                                    gettext("Ok"),
                                     flash_notification_action,
                                     NULL,
                                     NULL);
     notify_notification_add_action (notification,
                                     "notification_save_action",
-                                    C::gettext("Save"),
+                                    gettext("Save"),
                                     flash_notification_action,
                                     data,
                                     NULL);
@@ -465,24 +462,24 @@ void TextChannelObserver::showNotificationForCellBroadcast(const Tp::TextChannel
 
     // Display different icons according to severity
     if (type == CellBroadcast::TYPE_LEVEL_1) {
-        title = QString::fromUtf8(C::gettext("Emergency Alert"));
+        title = QString::fromUtf8(gettext("Emergency Alert"));
         iconTheme = "security-alert";
     } else if (type == CellBroadcast::TYPE_LEVEL_2) {
-        title = QString::fromUtf8(C::gettext("Emergency Alert: Extreme"));
+        title = QString::fromUtf8(gettext("Emergency Alert: Extreme"));
         iconTheme = "dialog-warning-symbolic";
     } else if (type == CellBroadcast::TYPE_LEVEL_3) {
-        title = QString::fromUtf8(C::gettext("Emergency Alert: Severe"));
+        title = QString::fromUtf8(gettext("Emergency Alert: Severe"));
         iconTheme = "dialog-warning-symbolic";
     }   else if (type == CellBroadcast::TYPE_LEVEL_4) {
-        title = QString::fromUtf8(C::gettext("Emergency Alert: Notice"));
+        title = QString::fromUtf8(gettext("Emergency Alert: Notice"));
         iconTheme = "dialog-warning-symbolic";
     } else {
 
         if (type == CellBroadcast::TYPE_AMBER) {
-            title = QString::fromUtf8(C::gettext("AMBER Alert"));
+            title = QString::fromUtf8(gettext("AMBER Alert"));
             iconTheme = "dialog-warning-symbolic";
         } else {
-            title = QString::fromUtf8(C::gettext("Alert"));
+            title = QString::fromUtf8(gettext("Alert"));
             iconTheme = "broadcast";
         }
     }
@@ -528,7 +525,7 @@ void TextChannelObserver::showNotificationForCellBroadcast(const Tp::TextChannel
 
     notify_notification_add_action (notification,
                                     "notification_action",
-                                    C::gettext("Show alert"),
+                                    gettext("Show alert"),
                                     notification_action,
                                     data,
                                     NULL);
@@ -601,18 +598,18 @@ void TextChannelObserver::showNotificationForMessage(const Tp::TextChannelPtr ch
         attachmentCount = imageCount + videoCount + contactCount;
 
         if (imageCount > 0 && attachmentCount == imageCount) {
-            messageText = QString::fromUtf8(C::ngettext("Attachment: %1 image", "Attachments: %1 images", imageCount)).arg(imageCount);
+            messageText = QString::fromUtf8(ngettext("Attachment: %1 image", "Attachments: %1 images", imageCount)).arg(imageCount);
         } else if (videoCount > 0 && attachmentCount == videoCount) {
-            messageText = QString::fromUtf8(C::ngettext("Attachment: %1 video", "Attachments: %1 videos", videoCount)).arg(videoCount);
+            messageText = QString::fromUtf8(ngettext("Attachment: %1 video", "Attachments: %1 videos", videoCount)).arg(videoCount);
         } else if (contactCount > 0 && attachmentCount == contactCount) {
-            messageText = QString::fromUtf8(C::ngettext("Attachment: %1 contact", "Attachments: %1 contacts", contactCount)).arg(contactCount);
+            messageText = QString::fromUtf8(ngettext("Attachment: %1 contact", "Attachments: %1 contacts", contactCount)).arg(contactCount);
         } else if (audioCount > 0 && attachmentCount == audioCount) {
-            messageText = QString::fromUtf8(C::ngettext("Attachment: %1 audio clip", "Attachments: %1 audio clips", audioCount)).arg(audioCount);
+            messageText = QString::fromUtf8(ngettext("Attachment: %1 audio clip", "Attachments: %1 audio clips", audioCount)).arg(audioCount);
         } else if (attachmentCount > 0) {
-            messageText = QString::fromUtf8(C::ngettext("Attachment: %1 file", "Attachments: %1 files", attachmentCount)).arg(attachmentCount);
+            messageText = QString::fromUtf8(ngettext("Attachment: %1 file", "Attachments: %1 files", attachmentCount)).arg(attachmentCount);
         } else {
             // TRANSLATORS : message displayed when any error occurred while receiving a MMS (case when cellular-data is off, or any downloading issue). Notify that there was a message, the user can find more about it in the messaging-app.
-            messageText = QString::fromUtf8(C::gettext("New MMS message"));
+            messageText = QString::fromUtf8(gettext("New MMS message"));
         }
     }
 
@@ -637,7 +634,7 @@ void TextChannelObserver::showNotificationForMessage(const Tp::TextChannelPtr ch
     if (alias.isEmpty()) {
         alias = telepathyContact->alias();
         if (alias == OFONO_UNKNOWN_NUMBER) {
-            alias = C::gettext("Unknown number");
+            alias = gettext("Unknown number");
         }
     }
     if (avatar.isEmpty()) {
@@ -668,19 +665,19 @@ void TextChannelObserver::showNotificationForMessage(const Tp::TextChannelPtr ch
            QVariantMap roomConfigInterfaceProps = getInterfaceProperties(roomConfigInterface);
            if (roomConfigInterfaceProps.contains("Title") && !roomConfigInterfaceProps["Title"].toString().isEmpty()) {
                // TRANSLATORS : %1 is the group name and %2 is the recipient name
-               title = QString::fromUtf8(C::gettext("Message to %1 from %2")).arg(roomConfigInterfaceProps["Title"].toString()).arg(alias);
+               title = QString::fromUtf8(gettext("Message to %1 from %2")).arg(roomConfigInterfaceProps["Title"].toString()).arg(alias);
                messagingMenuData.roomName = roomConfigInterfaceProps["Title"].toString();
            } else if (roomInterfaceProps.contains("RoomName") && !roomInterfaceProps["RoomName"].toString().isEmpty()) {
                // TRANSLATORS : %1 is the group name and %2 is the recipient name
-               title = QString::fromUtf8(C::gettext("Message to %1 from %2")).arg(roomInterfaceProps["RoomName"].toString()).arg(alias);
+               title = QString::fromUtf8(gettext("Message to %1 from %2")).arg(roomInterfaceProps["RoomName"].toString()).arg(alias);
                messagingMenuData.roomName = roomInterfaceProps["RoomName"].toString();
            } else {
                // TRANSLATORS : %1 is the recipient name
-               title = QString::fromUtf8(C::gettext("Message to group from %1")).arg(alias);
+               title = QString::fromUtf8(gettext("Message to group from %1")).arg(alias);
            }
        } else {
            // TRANSLATORS : %1 is the recipient name
-           title = QString::fromUtf8(C::gettext("Message to group from %1")).arg(alias);
+           title = QString::fromUtf8(gettext("Message to group from %1")).arg(alias);
        }
     } else {
         title = alias;
@@ -710,7 +707,7 @@ void TextChannelObserver::showNotificationForMessage(const Tp::TextChannelPtr ch
     // add the callback action
     notify_notification_add_action (notification,
                                     "notification_action",
-                                    C::gettext("View message"),
+                                    gettext("View message"),
                                     notification_action,
                                     data,
                                     NULL /* will be deleted when closed */);
@@ -746,7 +743,7 @@ void TextChannelObserver::updateNotifications(const QContact &contact)
         Q_FOREACH(const QContactPhoneNumber phoneNumber, contact.details(QContactDetail::TypePhoneNumber)) {
             if (account->compareIds(data->senderId, phoneNumber.number())) {
                 QString displayLabel = contact.detail<QContactDisplayLabel>().label();
-                QString title = QString::fromUtf8(C::gettext("Message from %1")).arg(displayLabel.isEmpty() ? data->alias : displayLabel);
+                QString title = QString::fromUtf8(gettext("Message from %1")).arg(displayLabel.isEmpty() ? data->alias : displayLabel);
                 QString avatar = contact.detail<QContactAvatar>().imageUrl().toEncoded();
 
                 if (avatar.isEmpty()) {
@@ -907,7 +904,7 @@ void TextChannelObserver::onReplyReceived(NotificationData notificationData)
     if (account->type() == AccountEntry::PhoneAccount
             && !TelepathyHelper::instance()->defaultMessagingAccount()
             && TelepathyHelper::instance()->activeAccounts().size() > 1) {
-        NotifyNotification *notification = notify_notification_new(C::gettext("Please, select a SIM card:"),
+        NotifyNotification *notification = notify_notification_new(gettext("Please, select a SIM card:"),
                                                                    notificationData.messageReply.toStdString().c_str(),
                                                                    "");
         NotificationData *data = new NotificationData();

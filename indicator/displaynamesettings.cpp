@@ -19,20 +19,18 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <libintl.h>
+
 #include "displaynamesettings.h"
 #include "accountentry.h"
 #include "greetercontacts.h"
 #include "telepathyhelper.h"
 
-namespace C {
-#include <libintl.h>
-}
-
 #define DUAL_SIM_NAMES_KEY "SimNames"
 
 // do not remove the following line.
 // it is used by the the ofono-setup script when creating new accounts
-#define SIM_DEFAULT_NAME C::gettext("SIM %1")
+#define SIM_DEFAULT_NAME gettext("SIM %1")
 
 DisplayNameSettings::DisplayNameSettings(QObject *parent) :
     QObject(parent)

@@ -70,7 +70,7 @@ pkg_check_modules(TPFS REQUIRED telepathy-farstream)
 pkg_check_modules(GST REQUIRED gstreamer-1.0)
 pkg_check_modules(FS REQUIRED farstream-0.2)
 pkg_check_modules(PULSEAUDIO libpulse)
-pkg_check_modules(HISTORY REQUIRED history-service)
+pkg_check_modules(HISTORY REQUIRED lomiri-history-service)
 
 if (WANT_UI_SERVICES)
     pkg_check_modules(MESSAGING_MENU REQUIRED messaging-menu)

@@ -20,6 +20,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <libintl.h>
 #include <libnotify/notify.h>
 
 #include "applicationutils.h"
@@ -38,19 +39,15 @@
 #include <TelepathyQt/AccountManager>
 #include <TelepathyQt/Contact>
 
-namespace C {
-#include <libintl.h>
-}
-
 int main(int argc, char **argv)
 {
     QCoreApplication app(argc, argv);
     QCoreApplication::setApplicationName("telephony-service-indicator");
 
-    C::bindtextdomain( "telephony-service", "/usr/share/locale" );
-    C::textdomain("telephony-service");
+    bindtextdomain( "telephony-service", "/usr/share/locale" );
+    textdomain("telephony-service");
 
-    notify_init(C::gettext("Telephony Service Indicator"));
+    notify_init(gettext("Telephony Service Indicator"));
 
     Tp::registerTypes();
 

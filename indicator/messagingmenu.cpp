@@ -36,14 +36,10 @@
 #include <QDateTime>
 #include <QDebug>
 #include <gio/gio.h>
+#include <libintl.h>
 #include <messaging-menu-message.h>
 #include <History/Manager>
 #include <History/TextEvent>
-
-namespace C {
-#include <libintl.h>
-}
-
 #define SOURCE_ID "telephony-service-indicator"
 
 QTCONTACTS_USE_NAMESPACE
@@ -80,11 +76,11 @@ MessagingMenu::MessagingMenu(QObject *parent) :
     GIcon *icon = g_icon_new_for_string("telephony-service-indicator", NULL);
     mMessagesApp = messaging_menu_app_new("telephony-service-sms.desktop");
     messaging_menu_app_register(mMessagesApp);
-    messaging_menu_app_append_source(mMessagesApp, SOURCE_ID, icon, C::gettext("Telephony Service"));
+    messaging_menu_app_append_source(mMessagesApp, SOURCE_ID, icon, gettext("Telephony Service"));
 
     mCallsApp = messaging_menu_app_new("telephony-service-call.desktop");
     messaging_menu_app_register(mCallsApp);
-    messaging_menu_app_append_source(mCallsApp, SOURCE_ID, icon, C::gettext("Telephony Service"));
+    messaging_menu_app_append_source(mCallsApp, SOURCE_ID, icon, gettext("Telephony Service"));
 
     g_object_unref(icon);
 }
@@ -104,13 +100,13 @@ void MessagingMenu::addFlashMessage(NotificationData notificationData) {
     /* FIXME: uncomment when messaging-menu support two regular buttons
     messaging_menu_message_add_action(message,
                                       "saveFlashMessage",
-                                      C::gettext("Save"),
+                                      gettext("Save"),
                                       NULL,
                                       NULL
                                       );
     messaging_menu_message_add_action(message,
                                       "dismiss",
-                                      C::gettext("Dismiss"),
+                                      gettext("Dismiss"),
                                       NULL,
                                       NULL
                                       );
@@ -148,7 +144,7 @@ void MessagingMenu::addNotification(NotificationData notificationData)
                                                                notificationData.timestamp.toMSecsSinceEpoch() * 1000); // the value is expected to be in microseconds
     messaging_menu_message_add_action(message,
                                       "quickReply",
-                                      C::gettext("Send"), // label
+                                      gettext("Send"), // label
                                       G_VARIANT_TYPE("s"),
                                       NULL // predefined values
                                       );
@@ -241,7 +237,7 @@ void MessagingMenu::addMessage(NotificationData notificationData)
         QUrl avatar;
 
         if (notificationData.senderId == OFONO_UNKNOWN_NUMBER) {
-            displayLabel = C::gettext("Unknown number");
+            displayLabel = gettext("Unknown number");
         } else if (request->contacts().size() > 0) {
             QContact contact = request->contacts().at(0);
             displayLabel = ContactUtils::formatContactName(contact);
@@ -259,14 +255,14 @@ void MessagingMenu::addMessage(NotificationData notificationData)
             if (notificationData.targetType == Tp::HandleTypeRoom) {
                 if (!notificationData.roomName.isEmpty()) {
                     // TRANSLATORS : %1 is the group name and %2 is the recipient name
-                    displayLabel = QString::fromUtf8(C::gettext("Message to %1 from %2")).arg(notificationData.roomName).arg(displayLabel);
+                    displayLabel = QString::fromUtf8(gettext("Message to %1 from %2")).arg(notificationData.roomName).arg(displayLabel);
                 } else {
                     // TRANSLATORS : %1 is the recipient name
-                    displayLabel = QString::fromUtf8(C::gettext("Message to the group from %1")).arg(displayLabel);
+                    displayLabel = QString::fromUtf8(gettext("Message to the group from %1")).arg(displayLabel);
                 }
             } else {
                 // TRANSLATORS : %1 is the recipient name
-                displayLabel = QString::fromUtf8(C::gettext("Message to the group from %1")).arg(displayLabel);
+                displayLabel = QString::fromUtf8(gettext("Message to the group from %1")).arg(displayLabel);
             }
         }
 
@@ -290,7 +286,7 @@ void MessagingMenu::addMessage(NotificationData notificationData)
                                                                    notificationData.timestamp.toMSecsSinceEpoch() * 1000); // the value is expected to be in microseconds
         messaging_menu_message_add_action(message,
                                           "quickReply",
-                                          C::gettext("Send"), // label
+                                          gettext("Send"), // label
                                           G_VARIANT_TYPE("s"),
                                           NULL // predefined values
                                           );
@@ -342,22 +338,22 @@ void MessagingMenu::addCallToMessagingMenu(Call call, const QString &text, bool 
     if (supportsTextReply && call.targetId != OFONO_PRIVATE_NUMBER && call.targetId != OFONO_UNKNOWN_NUMBER) {
         messaging_menu_message_add_action(message,
                                           "callBack",
-                                          C::gettext("Call back"), // label
+                                          gettext("Call back"), // label
                                           NULL, // argument type
                                           NULL // predefined values
                                           );
         const char *predefinedMessages[] = {
-                C::gettext("Missed your call \342\200\224 can you call me now?"),
-                C::gettext("Running late. On my way."),
-                C::gettext("Busy at the moment. Will call you later."),
-                C::gettext("I am 20 minutes late."),
-                C::gettext("Still busy. Will call you later."),
+                gettext("Missed your call \342\200\224 can you call me now?"),
+                gettext("Running late. On my way."),
+                gettext("Busy at the moment. Will call you later."),
+                gettext("I am 20 minutes late."),
+                gettext("Still busy. Will call you later."),
                 0
                 };
         messages = g_variant_new_strv(predefinedMessages, -1);
         messaging_menu_message_add_action(message,
                                           "replyWithMessage",
-                                          C::gettext("Send"), // label
+                                          gettext("Send"), // label
                                           G_VARIANT_TYPE("s"),
                                           messages // predefined values
                                           );
@@ -406,16 +402,16 @@ void MessagingMenu::addCall(const QString &targetId, const QString &accountId, c
     call.timestamp = timestamp;
 
     QString text;
-    text = QString::fromUtf8(C::ngettext("%1 missed call", "%1 missed calls", call.count)).arg(call.count);
+    text = QString::fromUtf8(ngettext("%1 missed call", "%1 missed calls", call.count)).arg(call.count);
 
     AccountEntry::addAccountLabel(accountId, text);
 
     if (targetId.startsWith(OFONO_PRIVATE_NUMBER)) {
-        call.contactAlias = C::gettext("Private number");
+        call.contactAlias = gettext("Private number");
         addCallToMessagingMenu(call, text);
         return;
     } else if (targetId.startsWith(OFONO_UNKNOWN_NUMBER)) {
-        call.contactAlias = C::gettext("Unknown number");
+        call.contactAlias = gettext("Unknown number");
         addCallToMessagingMenu(call, text);
         return;
     }
@@ -489,15 +485,15 @@ void MessagingMenu::showVoicemailEntry(AccountEntry *account)
     messaging_menu_app_remove_message_by_id(mCallsApp, account->accountId().toUtf8().data());
     mVoicemailIds.removeAll(account->accountId());
 
-    QString messageBody = C::gettext("Voicemail messages");
+    QString messageBody = gettext("Voicemail messages");
     uint count = ofonoAccount->voicemailCount();
     if (count != 0) {
-        messageBody = QString::fromUtf8(C::ngettext("%1 voicemail message", "%1 voicemail messages", count)).arg(count);
+        messageBody = QString::fromUtf8(ngettext("%1 voicemail message", "%1 voicemail messages", count)).arg(count);
     }
 
     GIcon *icon = g_themed_icon_new("indicator-call");
 
-    QString accountLabel(C::gettext("Voicemail"));
+    QString accountLabel(gettext("Voicemail"));
     AccountEntry::addAccountLabel(account->accountId(), accountLabel);
 
     MessagingMenuMessage *message = messaging_menu_message_new(account->accountId().toUtf8().data(),
