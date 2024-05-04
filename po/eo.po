@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-16 17:03+0100\n"
-"PO-Revision-Date: 2023-02-16 22:38+0000\n"
+"PO-Revision-Date: 2024-05-11 19:00+0000\n"
 "Last-Translator: phlostically <phlostically@mailinator.com>\n"
 "Language-Team: Esperanto <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/eo/>\n"
@@ -17,19 +17,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 5.5.4\n"
 
 #: indicator/telephony-service-call.desktop.in:4
 msgid "Phone Calls"
-msgstr ""
+msgstr "Telefonaj alvokoj"
 
 #: indicator/telephony-service-sms.desktop.in:4
 msgid "SMS"
-msgstr ""
+msgstr "Tekstmesaĝo"
 
 #: approver/approver.cpp:66
 msgid "Unknown caller"
-msgstr ""
+msgstr "Nekonata alvokanto"
 
 #: approver/approver.cpp:94
 msgid "I'm busy at the moment. I'll call later."
@@ -50,12 +50,12 @@ msgstr ""
 
 #: approver/approver.cpp:461 indicator/messagingmenu.cpp:414
 msgid "Private number"
-msgstr ""
+msgstr "Privata numero"
 
 #: approver/approver.cpp:464 indicator/messagingmenu.cpp:244
 #: indicator/messagingmenu.cpp:418 indicator/textchannelobserver.cpp:640
 msgid "Unknown number"
-msgstr ""
+msgstr "Nekonata numero"
 
 #: approver/approver.cpp:470 approver/approver.cpp:485
 msgid "Caller number is not available"
@@ -88,7 +88,7 @@ msgstr ""
 
 #: approver/approver.cpp:552
 msgid "Decline"
-msgstr ""
+msgstr "Malakcepti"
 
 #: approver/approver.cpp:560
 msgid "Message & decline"
@@ -113,7 +113,7 @@ msgstr "Ne"
 #: indicator/displaynamesettings.cpp:35
 #, qt-format
 msgid "SIM %1"
-msgstr ""
+msgstr "SIM %1"
 
 #: indicator/main.cpp:53
 msgid "Telephony Service Indicator"
@@ -121,19 +121,19 @@ msgstr ""
 
 #: indicator/messagingmenu.cpp:83 indicator/messagingmenu.cpp:87
 msgid "Telephony Service"
-msgstr ""
+msgstr "Telefona servo"
 
 #: indicator/messagingmenu.cpp:151 indicator/messagingmenu.cpp:293
 #: indicator/messagingmenu.cpp:360
 msgid "Send"
-msgstr "Rendi"
+msgstr "Sendi"
 
 #. TRANSLATORS : %1 is the group name and %2 is the recipient name
 #: indicator/messagingmenu.cpp:262 indicator/textchannelobserver.cpp:671
 #: indicator/textchannelobserver.cpp:675
 #, qt-format
 msgid "Message to %1 from %2"
-msgstr ""
+msgstr "Mesaĝo al %1 de %2"
 
 #. TRANSLATORS : %1 is the recipient name
 #: indicator/messagingmenu.cpp:265 indicator/messagingmenu.cpp:269
@@ -246,31 +246,31 @@ msgstr ""
 
 #: indicator/textchannelobserver.cpp:249 indicator/textchannelobserver.cpp:713
 msgid "View message"
-msgstr ""
+msgstr "Vidi mesaĝon"
 
 #: indicator/textchannelobserver.cpp:295
 msgid "New Group"
-msgstr ""
+msgstr "Nova grupo"
 
 #. TRANSLATORS : %1 is the group name
 #: indicator/textchannelobserver.cpp:302
 #, qt-format
 msgid "You joined group %1 "
-msgstr ""
+msgstr "Vi aliĝis al la grupo %1 "
 
 #. TRANSLATORS : %1 is the group name
 #: indicator/textchannelobserver.cpp:306
 #, qt-format
 msgid "You joined group %1"
-msgstr ""
+msgstr "Vi aliĝis al la grupo %1"
 
 #: indicator/textchannelobserver.cpp:309
 msgid "You joined a new group"
-msgstr ""
+msgstr "Vi aliĝis al nova grupo"
 
 #: indicator/textchannelobserver.cpp:328
 msgid "View Group"
-msgstr ""
+msgstr "Vidi grupon"
 
 #: indicator/textchannelobserver.cpp:367 indicator/ussdindicator.cpp:116
 msgid "Ok"
@@ -278,35 +278,35 @@ msgstr "Bone"
 
 #: indicator/textchannelobserver.cpp:373
 msgid "Save"
-msgstr ""
+msgstr "Konservi"
 
 #: indicator/textchannelobserver.cpp:468
 msgid "Emergency Alert"
-msgstr ""
+msgstr "Kriza averto"
 
 #: indicator/textchannelobserver.cpp:471
 msgid "Emergency Alert: Extreme"
-msgstr ""
+msgstr "Kriza averto: danĝerega"
 
 #: indicator/textchannelobserver.cpp:474
 msgid "Emergency Alert: Severe"
-msgstr ""
+msgstr "Kriza averto: danĝera"
 
 #: indicator/textchannelobserver.cpp:477
 msgid "Emergency Alert: Notice"
-msgstr ""
+msgstr "Kriza averto: danĝereta"
 
 #: indicator/textchannelobserver.cpp:482
 msgid "AMBER Alert"
-msgstr ""
+msgstr "Sciigo AMBER"
 
 #: indicator/textchannelobserver.cpp:485
 msgid "Alert"
-msgstr ""
+msgstr "Sciigo"
 
 #: indicator/textchannelobserver.cpp:531
 msgid "Show alert"
-msgstr ""
+msgstr "Montri sciigon"
 
 #: indicator/textchannelobserver.cpp:604
 #, qt-format
@@ -357,7 +357,7 @@ msgstr ""
 #: indicator/textchannelobserver.cpp:749
 #, qt-format
 msgid "Message from %1"
-msgstr ""
+msgstr "Mesaĝo de %1"
 
 #: indicator/textchannelobserver.cpp:910
 msgid "Please, select a SIM card:"
@@ -365,7 +365,7 @@ msgstr ""
 
 #: indicator/ussdindicator.cpp:119
 msgid "Reply"
-msgstr ""
+msgstr "Respondi"
 
 #: indicator/ussdindicator.cpp:142
 msgid "Cancel"
@@ -396,8 +396,8 @@ msgstr ""
 
 #: libtelephonyservice/contactwatcher.cpp:157
 msgid "Private Number"
-msgstr ""
+msgstr "Privata numero"
 
 #: libtelephonyservice/contactwatcher.cpp:159
 msgid "Unknown Number"
-msgstr ""
+msgstr "Nekonata numero"
