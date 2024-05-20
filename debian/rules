@@ -10,8 +10,11 @@ DEB_HOST_ARCH := $(shell dpkg-architecture -qDEB_HOST_ARCH)
 # Ref.: https://bugs.launchpad.net/ubuntu/+source/mesa/+bug/1585942
 qmltestskip_architectures := arm64 powerpc s390x
 
+# Add migrations add-on when build on Ubuntu & original name is available.
+DH_MIGRATIONS = $(shell type dh_migrations >/dev/null 2>&1 && echo "--with migrations")
+
 %:
-	dh $@
+	dh $@ $(DH_MIGRATIONS)
 
 override_dh_missing:
 	dh_missing --fail-missing
