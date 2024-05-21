@@ -1,13 +1,13 @@
 /*
  * Copyright (C) 2014 Canonical, Ltd.
  *
- * This file is part of telephony-service.
+ * This file is part of lomiri-telephony-service.
  *
- * telephony-service is free software; you can redistribute it and/or modify
+ * lomiri-telephony-service is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; version 3.
  *
- * telephony-service is distributed in the hope that it will be useful,
+ * lomiri-telephony-service is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -29,7 +29,7 @@ TestCase {
         var data = [];
         data.push({input: "6681800", expectedOutput: "668-1800"})                    // Local number
         data.push({input: "7327572923", expectedOutput: "(732) 757-2923"})           // Country number
-        data.push({input: "+558187042155", expectedOutput: "+55 81 8704-2155"})      // International number
+        data.push({input: "+558157042155", expectedOutput: "+55 81 5704-2155"})      // International number
         data.push({input: "55555555555", expectedOutput: "55555555555"})             // Invalid number
         data.push({input: "*144", expectedOutput: "*144"})                           // Special number
         data.push({input: "#123#", expectedOutput: "#123#"})                         // Operators command

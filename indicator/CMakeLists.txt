@@ -33,7 +33,7 @@ include_directories(
     ${TP_QT5_INCLUDE_DIRS}
     ${NOTIFY_INCLUDE_DIRS}
     ${MESSAGING_MENU_INCLUDE_DIRS}
-    ${CMAKE_SOURCE_DIR}/libtelephonyservice
+    ${CMAKE_SOURCE_DIR}/liblomiritelephonyservice
     ${CMAKE_CURRENT_BINARY_DIR}
     ${UserMetrics_INCLUDE_DIRS}
     ${HISTORY_INCLUDE_DIRS}
@@ -41,15 +41,15 @@ include_directories(
 
 link_directories(${MESSAGING_MENU_LIBRARY_DIRS})
 
-add_executable(telephony-service-indicator ${indicator_SRCS} ${indicator_HDRS})
+add_executable(lomiri-indicator-telephony-service ${indicator_SRCS} ${indicator_HDRS})
 
-target_link_libraries(telephony-service-indicator
+target_link_libraries(lomiri-indicator-telephony-service
     ${TP_QT5_LIBRARIES}
     ${NOTIFY_LIBRARIES}
     ${MESSAGING_MENU_LIBRARIES}
     ${UserMetrics_LIBRARIES}
     ${HISTORY_LIBRARIES}
-    telephonyservice
+    lomiritelephonyservice
     Qt5::Contacts
     Qt5::Core
     Qt5::DBus
@@ -58,15 +58,15 @@ target_link_libraries(telephony-service-indicator
     Qt5::Qml
     )
 
-enable_coverage(telephony-service-indicator)
+enable_coverage(lomiri-indicator-telephony-service)
 
 configure_file(org.freedesktop.Telepathy.Client.TelephonyServiceIndicator.service.in org.freedesktop.Telepathy.Client.TelephonyServiceIndicator.service)
-install(TARGETS telephony-service-indicator RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+install(TARGETS lomiri-indicator-telephony-service RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.freedesktop.Telepathy.Client.TelephonyServiceIndicator.service DESTINATION share/dbus-1/services)
-install(FILES TelephonyServiceIndicator.client DESTINATION share/telepathy/clients)
+install(FILES LomiriTelephonyServiceIndicator.client DESTINATION share/telepathy/clients)
 
 # Handle i18n in desktop files
-set(desktop_FILES telephony-service-sms.desktop telephony-service-call.desktop)
+set(desktop_FILES lomiri-telephony-service-sms.desktop lomiri-telephony-service-call.desktop)
 
 function(merge_desktop_translations DESKTOP_FILES)
     foreach(DESKTOP_FILE ${DESKTOP_FILES})

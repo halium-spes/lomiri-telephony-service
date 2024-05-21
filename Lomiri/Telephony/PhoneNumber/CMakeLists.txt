@@ -18,9 +18,9 @@ include_directories(
     ${LibPhoneNumber_INCLUDE_DIRS}
     )
 
-add_library(telephonyservice-phonenumber-qml SHARED ${PHONENUMBER_SRCS})
+add_library(lomiritelephonyservice-phonenumber-qml SHARED ${PHONENUMBER_SRCS})
 
-target_link_libraries(telephonyservice-phonenumber-qml
+target_link_libraries(lomiritelephonyservice-phonenumber-qml
     ${LibPhoneNumber_LIBRARIES}
     Qt5::Core
     Qt5::Qml
@@ -28,7 +28,7 @@ target_link_libraries(telephonyservice-phonenumber-qml
     )
 
 set(PHONENUMBER_PLUGIN_DIR ${QT_INSTALL_QML}/Lomiri/Telephony/PhoneNumber)
-install(TARGETS telephonyservice-phonenumber-qml DESTINATION ${PHONENUMBER_PLUGIN_DIR})
+install(TARGETS lomiritelephonyservice-phonenumber-qml DESTINATION ${PHONENUMBER_PLUGIN_DIR})
 install(FILES ${PHONENUMBER_QMLS} DESTINATION ${PHONENUMBER_PLUGIN_DIR})
 
 # make the files visible on qtcreator
@@ -44,5 +44,5 @@ foreach(QML_FILE ${PHONENUMBER_QMLS})
 endforeach()
 
 if (NOT ${CMAKE_CURRENT_BINARY_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
-    add_dependencies(telephonyservice-phonenumber-qml copy_qml)
+    add_dependencies(lomiritelephonyservice-phonenumber-qml copy_qml)
 endif()

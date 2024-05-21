@@ -2,7 +2,7 @@ include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
     ${TP_QT5_INCLUDE_DIRS}
     ${CMAKE_SOURCE_DIR}/Lomiri/Telephony
-    ${CMAKE_SOURCE_DIR}/libtelephonyservice
+    ${CMAKE_SOURCE_DIR}/liblomiritelephonyservice
     ${CMAKE_SOURCE_DIR}/tests/common
     ${CMAKE_BINARY_DIR}/tests/common
     ${GSETTINGS_QT_INCLUDE_DIRS}
@@ -11,7 +11,7 @@ include_directories(
 set(SOURCE_DIR ${CMAKE_SOURCE_DIR}/Lomiri/Telephony)
 generate_test(ContactWatcherTest USE_UI
               SOURCES ContactWatcherTest.cpp
-              LIBRARIES telephonyservice-qml Qt5::Contacts Qt5::Core Qt5::DBus Qt5::Qml Qt5::Test)
+              LIBRARIES lomiritelephonyservice-qml Qt5::Contacts Qt5::Core Qt5::DBus Qt5::Qml Qt5::Test)
 
 if(NOT SKIP_QML_TESTS)
     generate_test(context_properties QML_TEST tst_contextProperties.qml)
@@ -22,8 +22,8 @@ endif()
 
 generate_telepathy_test(PresenceRequestTest 
                         SOURCES PresenceRequestTest.cpp 
-                        LIBRARIES ${TP_QT5_LIBRARIES} telephonyservice mockcontroller telepathytest telephonyservice-qml)
+                        LIBRARIES ${TP_QT5_LIBRARIES} lomiritelephonyservice mockcontroller telepathytest lomiritelephonyservice-qml)
 
 # make the files visible on qtcreator
 file(GLOB QML_TESTS *.qml *.js)
-add_custom_target(telephonyservice_QMLTESTS ALL SOURCES ${QML_TESTS})
+add_custom_target(lomiritelephonyservice_QMLTESTS ALL SOURCES ${QML_TESTS})

@@ -1,5 +1,5 @@
 include_directories(${TP_QT5_INCLUDE_DIRS}
-                    ${CMAKE_SOURCE_DIR}/libtelephonyservice
+                    ${CMAKE_SOURCE_DIR}/liblomiritelephonyservice
                     ${CMAKE_CURRENT_BINARY_DIR}
                     ${GSETTINGS_QT_INCLUDE_DIRS})
 
@@ -13,7 +13,7 @@ add_library(mockcontroller STATIC mockcontroller.cpp mockcontroller.h ${mockcont
 target_link_libraries(mockcontroller Qt5::Core Qt5::DBus)
 
 add_library(telepathytest STATIC telepathytest.cpp telepathytest.h)
-target_link_libraries(telepathytest telephonyservice ${TP_QT5_LIBRARIES} ${GSETTINGS_QT_LDFLAGS} Qt5::Core Qt5::DBus)
+target_link_libraries(telepathytest lomiritelephonyservice ${TP_QT5_LIBRARIES} ${GSETTINGS_QT_LDFLAGS} Qt5::Core Qt5::DBus)
 
 add_subdirectory(mock)
 add_subdirectory(dbus-services)

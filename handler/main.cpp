@@ -4,13 +4,13 @@
  * Authors:
  *    Gustavo Pichorim Boiko <gustavo.boiko@canonical.com>
  *
- * This file is part of telephony-service.
+ * This file is part of lomiri-telephony-service.
  *
- * telephony-service is free software; you can redistribute it and/or modify
+ * lomiri-telephony-service is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; version 3.
  *
- * telephony-service is distributed in the hope that it will be useful,
+ * lomiri-telephony-service is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -38,7 +38,7 @@ Q_DECLARE_METATYPE(Tp::CallChannelPtr)
 int main(int argc, char **argv)
 {
     QCoreApplication app(argc, argv);
-    QCoreApplication::setApplicationName("telephony-service-handler");
+    QCoreApplication::setApplicationName("lomiri-telephony-service-handler");
 
     Tp::registerTypes();
     gst_init(&argc, &argv);

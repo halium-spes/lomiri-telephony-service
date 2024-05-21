@@ -9,9 +9,9 @@ install_manifest.txt
 
 config.h
 
-approver/telephony-service-approver
-handler/telephony-service-handler
-indicator/telephony-service-indicator
+approver/lomiri-telephony-service-approver
+handler/lomiri-telephony-service-handler
+indicator/lomiri-telephony-service-indicator
 
 moc_*.cxx
 moc_*.cpp
@@ -55,7 +55,7 @@ tests/common/mock/telepathy-mock
 tests/common/dbus-session.conf
 tests/common/dbus-services/*
 tests/Lomiri.Telephony/ContactWatcherTest
-tests/libtelephonyservice/GreeterContactsTestExe
-tests/libtelephonyservice/GreeterContactsTestServerExe
-tests/libtelephonyservice/*Mock
+tests/liblomiritelephonyservice/GreeterContactsTestExe
+tests/liblomiritelephonyservice/GreeterContactsTestServerExe
+tests/liblomiritelephonyservice/*Mock
 tests/indicator/NotificationsInterface.*

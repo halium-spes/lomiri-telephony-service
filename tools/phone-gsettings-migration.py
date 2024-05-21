@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 # Copyright 2016 Canonical
 #
-# This file is part of telephony-service.
+# This file is part of lomiri-telephony-service.
 #
-# telephony-service is free software: you can redistribute it and/or modify it
+# lomiri-telephony-service is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License version 3, as published
 # by the Free Software Foundation.
 

@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=SMS
-Exec=telephony-service-indicator
-Icon=telephony-service-message
-NoDisplay=true

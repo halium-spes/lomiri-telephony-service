@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(telephony-service VERSION 0.5.3 LANGUAGES CXX)
+project(lomiri-telephony-service VERSION 0.6.0 LANGUAGES CXX)
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules)
 
 # Standard install paths
@@ -15,7 +15,7 @@ set(CMAKE_AUTOMOC ON)
 # just to make debug easier, print the system processor
 message(STATUS "System processor: ${CMAKE_SYSTEM_PROCESSOR}")
 
-set(TELEPHONY_SERVICE_DIR ${CMAKE_INSTALL_FULL_DATADIR}/telephony-service)
+set(TELEPHONY_SERVICE_DIR ${CMAKE_INSTALL_FULL_DATADIR}/lomiri-telephony-service)
 
 configure_file(config.h.in ${CMAKE_CURRENT_BINARY_DIR}/config.h @ONLY)
 
@@ -107,7 +107,7 @@ set(DATA_DIR "${CMAKE_SOURCE_DIR}/data")
 set(ASSETS_DIR assets)
 install(DIRECTORY ${ASSETS_DIR} DESTINATION ${TELEPHONY_SERVICE_DIR})
 
-add_subdirectory(libtelephonyservice)
+add_subdirectory(liblomiritelephonyservice)
 add_subdirectory(Lomiri)
 add_subdirectory(handler)
 add_subdirectory(tools)

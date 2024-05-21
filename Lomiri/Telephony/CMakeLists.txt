@@ -8,25 +8,25 @@ set(plugin_SRCS
 
 include_directories(
     ${TP_QT5_INCLUDE_DIRS}
-    ${CMAKE_SOURCE_DIR}/libtelephonyservice
+    ${CMAKE_SOURCE_DIR}/liblomiritelephonyservice
     )
 
-add_library(telephonyservice-qml SHARED ${plugin_SRCS} ${plugin_HDRS})
+add_library(lomiritelephonyservice-qml SHARED ${plugin_SRCS} ${plugin_HDRS})
 
-target_link_libraries(telephonyservice-qml
+target_link_libraries(lomiritelephonyservice-qml
     ${TP_QT5_LIBRARIES}
-    telephonyservice
+    lomiritelephonyservice
     Qt5::Contacts
     Qt5::Core
     Qt5::Qml
     Qt5::Quick
     )
 
-enable_coverage(telephonyservice-qml)
+enable_coverage(lomiritelephonyservice-qml)
 
 configure_file(qmldir.in ${CMAKE_CURRENT_BINARY_DIR}/qmldir)
 set(PLUGIN_DIR ${QT_INSTALL_QML}/Lomiri/Telephony)
-install(TARGETS telephonyservice-qml DESTINATION ${PLUGIN_DIR})
+install(TARGETS lomiritelephonyservice-qml DESTINATION ${PLUGIN_DIR})
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/qmldir DESTINATION ${PLUGIN_DIR})
 
 add_subdirectory(PhoneNumber)

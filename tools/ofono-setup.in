@@ -114,7 +114,7 @@ if [ "$MODEM_COUNT" != "$EXISTING_OFONO_ACCOUNTS_COUNT" ]; then
         if [ -n "$EXISTING_NAME" ]; then
             NAME=$EXISTING_NAME
         else
-            SIM_NAME=$(gettext -d telephony-service "SIM %1")
+            SIM_NAME=$(gettext -d lomiri-telephony-service "SIM %1")
             # replace the %1 with the actual index
             NAME=$(echo $SIM_NAME | sed "s/%1$/$(($INDEX+1))/")
         fi

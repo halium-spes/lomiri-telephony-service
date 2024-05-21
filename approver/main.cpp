@@ -5,13 +5,13 @@
  *  Tiago Salem Herrmann <tiago.herrmann@canonical.com>
  *  Gustavo Pichorim Boiko <gustavo.boiko@canonical.com>
  *
- * This file is part of telephony-service.
+ * This file is part of lomiri-telephony-service.
  *
- * telephony-service is free software; you can redistribute it and/or modify
+ * lomiri-telephony-service is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; version 3.
  *
- * telephony-service is distributed in the hope that it will be useful,
+ * lomiri-telephony-service is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -35,12 +35,12 @@
 int main(int argc, char **argv)
 {
     QCoreApplication app(argc, argv);
-    QCoreApplication::setApplicationName("telephony-service-approver");
+    QCoreApplication::setApplicationName("lomiri-telephony-service-approver");
 
-    bindtextdomain( "telephony-service", "/usr/share/locale" );
-    textdomain("telephony-service");
+    bindtextdomain( "lomiri-telephony-service", "/usr/share/locale" );
+    textdomain("lomiri-telephony-service");
 
-    notify_init(gettext("Telephony Service Approver"));
+    notify_init(gettext("Lomiri Telephony Service Approver"));
 
     Tp::registerTypes();
 

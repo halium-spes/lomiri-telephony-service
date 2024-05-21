@@ -4,13 +4,13 @@
 # Authors:
 #  Gustavo Pichorim Boiko <gustavo.boiko@canonical.com>
 #
-# This file is part of telephony-service.
+# This file is part of lomiri-telephony-service.
 #
-# telephony-service is free software; you can redistribute it and/or modify
+# lomiri-telephony-service is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; version 3.
 #
-# telephony-service is distributed in the hope that it will be useful,
+# lomiri-telephony-service is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
@@ -118,11 +118,11 @@ function(generate_telepathy_test TESTNAME)
               --task /usr/lib/telepathy/mission-control-5 --task-name mission-control --wait-for ca.desrt.dconf --ignore-return
               --task ${CMAKE_BINARY_DIR}/tests/common/mock/telepathy-mock --task-name telepathy-mock --wait-for org.freedesktop.Telepathy.MissionControl5 --ignore-return
               # FIXME: maybe it would be better to decide whether to run the handler in a per-test basis?
-              --task ${CMAKE_BINARY_DIR}/handler/telephony-service-handler --task-name telephony-service-handler --wait-for org.freedesktop.Telepathy.ConnectionManager.mock --ignore-return
+              --task ${CMAKE_BINARY_DIR}/handler/lomiri-telephony-service-handler --task-name lomiri-telephony-service-handler --wait-for org.freedesktop.Telepathy.ConnectionManager.mock --ignore-return
               ${ARG_TASKS})
 
     if (NOT DEFINED ARG_LIBRARIES)
-        set(ARG_LIBRARIES ${TP_QT5_LIBRARIES} telephonyservice mockcontroller telepathytest)
+        set(ARG_LIBRARIES ${TP_QT5_LIBRARIES} lomiritelephonyservice mockcontroller telepathytest)
     endif(NOT DEFINED ARG_LIBRARIES)
 
     if (NOT DEFINED ARG_QT5_LIBRARIES)
